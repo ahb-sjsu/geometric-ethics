@@ -37,6 +37,8 @@ SOURCE_DIR = REPO / "source"
 TEMPLATE = (REPO / ".build" / "template.html").read_text(encoding="utf-8")
 VERSION = "1.23"
 TAGLINE = "The geometry was always real. The scalars were always insufficient."
+# Cover photo extracted from the docx (unreferenced in body); shown on the landing hero.
+COVER_IMAGE = "image1.png"
 
 
 def find_docx() -> Path:
@@ -155,9 +157,13 @@ def build(out: Path):
         inner = f"<strong>{title}</strong>" if is_part(title) else title
         cls_attr = f' class="{cls}"' if cls else ''
         items.append(f'  <li{cls_attr}><a href="{fn}">{inner}</a></li>')
+    cover = (COVER_IMAGE if (out / "images" / COVER_IMAGE).exists() else None)
+    cover_html = (f'  <img class="book-cover" src="images/{cover}" '
+                  f'alt="Geometric Ethics — book cover" />\n') if cover else ''
     hero = (f'<header class="book-hero">\n  <p class="book-number">Book 3 of the Geometric Series &middot; v{VERSION}</p>\n'
             f'  <h1>Geometric Ethics</h1>\n  <p class="book-subtitle">The Mathematical Structure of Moral Reasoning</p>\n'
-            f'  <p class="book-byline">A volume in the <em>Geometric Series</em> by Andrew H. Bond.</p>\n</header>\n'
+            f'  <p class="book-byline">A volume in the <em>Geometric Series</em> by Andrew H. Bond.</p>\n'
+            f'{cover_html}</header>\n'
             f'<h2>Contents</h2>\n<ol class="toc-chapters">\n' + "\n".join(items) + "\n</ol>")
     (out / "index.html").write_text(
         TEMPLATE.replace("{{title}}", "Contents").replace("{{content}}", hero)

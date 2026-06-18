@@ -305,6 +305,16 @@ h4.subsubsection-heading {
   font-family: 'Crimson Pro', serif;
 }
 
+.book-cover {
+  display: block;
+  margin: 2em auto 0.5em;
+  max-width: min(340px, 70%);
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+}
+
 .book-author {
   text-align: center;
   font-family: 'Crimson Pro', serif;
