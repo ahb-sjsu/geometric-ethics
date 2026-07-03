@@ -35,7 +35,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 SOURCE_DIR = REPO / "source"
 TEMPLATE = (REPO / ".build" / "template.html").read_text(encoding="utf-8")
-VERSION = "1.23"
+VERSION = "1.24"
 TAGLINE = "The geometry was always real. The scalars were always insufficient."
 # Cover photo extracted from the docx (unreferenced in body); shown on the landing hero.
 COVER_IMAGE = "image1.png"
