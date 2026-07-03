@@ -1839,6 +1839,97 @@ data confirms: the mathematical structure of moral reasoning.</em></p>
 that geometry sees what scalar frameworks miss — and that what it sees
 is confirmed by the data we have.</em></p>
 </blockquote>
+<h2 id="the-relational-tensor-structure-of-annotated-norm-corpora">17.15
+The Relational-Tensor Structure of Annotated Norm Corpora</h2>
+<p>Epistemic status: Established for the empirical structural claims
+(four public corpora, replicated across two domains and two extraction
+methods); Conjectural for the bridge to symmetry-based lossless
+compression. A companion manuscript reports the full analysis and
+reproduction code.</p>
+<p>The framework represents a governed situation as a relational tensor
+T[A, B, M, D, gamma] indexed by subject role A, object role B, deontic
+modality M (the Hohfeldian relations of Chapter 3 and Section 12.3),
+moral dimension D (the axes of Chapter 6), and context gamma. If moral
+knowledge has the geometric structure this book argues for, that
+structure should be visible in the tensors built from real,
+human-annotated normative judgments. We tested this by encoding four
+annotated corpora spanning a moral and a legal domain: Social Chemistry
+101, Moral Stories, NormBank, and European Court of Human Rights cases
+(the ECtHR subset of LexGLUE).</p>
+<h3 id="real-norm-tensors-are-sparse-but-not-low-rank">Real norm tensors
+are sparse but not low-rank</h3>
+<p>Across all four corpora the tensors are extremely sparse - between
+about 0.2% and 2.5% of cells are populated - and, beyond that sparsity,
+they carry little structure that generic low-rank methods can exploit.
+An exchangeable role-kernel representation is firmly rejected;
+tensor-train and Tucker decompositions improve on a plain sparse
+encoding by at most 1.6-fold, and only when a few percent of
+reconstruction error is tolerated. A per-tensor adaptive compressor that
+is free to choose among sparse, exchangeable, and low-rank encodings
+selects the plain sparse encoding, losslessly, in every case.</p>
+<p>This is not an artifact of a fine-grained context axis. The tensors
+remain sparse within the combinations of values that actually occur (the
+occupancy of the used-value box is 0.08 for Social Chemistry), the
+result survives collapsing the context axis entirely, and a
+marginal-preserving null shows the data are more concentrated than
+chance rather than random noise. Bootstrap resampling gives tight
+intervals - the subject-role effective rank of Social Chemistry is
+11.97, with a 95% interval of [11.96, 11.98]. The deontic-modality mode
+is near one-dimensional and the moral-dimension mode has low effective
+rank but is not collapsed by the tensor unfoldings.</p>
+<h3 id="a-contrasting-paradigm-forced-choice-preferences">A contrasting
+paradigm: forced-choice preferences</h3>
+<p>The absence of low-rank structure is a property of relational deontic
+norms, not of the method. As a positive control we analysed a
+structurally opposite kind of moral data: the Moral Machine experiment,
+in which forced-choice judgments in sacrificial dilemmas yield, for each
+of seventy-five large language models and a human reference, a dense
+vector of preferences over attribute dimensions. That matrix has the
+opposite geometry - fully dense and strongly low-rank, with two
+components explaining 89% of the variance, a single shared moral-worth
+axis. The same spectral tools that find no low rank in the norm tensors
+immediately find it here. The compressibility of moral data therefore
+depends on the elicitation paradigm: relational norms resist
+compression; forced-choice preferences collapse to a low-dimensional
+axis.</p>
+<h3 id="lossless-compression-comes-from-symmetry-not-from-rank">Lossless
+compression comes from symmetry, not from rank</h3>
+<p>These findings sharpen a prediction of the geometric framework. If
+moral-norm tensors were compressible in the way that natural images are,
+one would expect low-rank structure; the data show none. Yet the
+framework does predict exact redundancy, of a different kind. Section
+12.3 established that moral evaluation is gauge-invariant under
+admissible re-descriptions (the Bond Invariance Principle), and Chapter
+3 established that the Hohfeldian modalities close under a discrete
+symmetry group. Both are exact symmetries, not statistical regularities,
+and both permit lossless reduction: gauge-fixing collapses the
+re-description orbit to a canonical representative, and quotienting by
+the Hohfeldian correlative and negation symmetries stores one
+representative per orbit. The lossless compressibility of a moral-norm
+tensor is thus governed by its symmetry, not by its spectrum - which is
+exactly why low-rank approximation fails on data that nonetheless
+carries exact geometric redundancy.</p>
+<p>This reframes the engineering problem. A system that must store large
+normative knowledge bases should size for sparsity and exploit the
+manifold's symmetries for exact reduction, rather than assume a compact
+low-dimensional value model can stand in for a large set of
+context-specific obligations. The empirical result is deflationary in a
+useful way: it argues against compressing moral knowledge into a small
+value vector, and for representations that keep the sparse,
+role-specific, symmetry-structured character that the geometry
+predicts.</p>
+<h3 id="what-this-does-and-does-not-establish">What this does and does
+not establish</h3>
+<p>The corpus-to-tensor mapping is lossy - most severely for the corpus
+without gold role and dimension labels - and all four corpora are
+English-language and Western-skewed; the strong role-distinctness result
+rests on the single corpus with rich gold role annotations. The claim
+that symmetry-based reduction is the operative lossless mechanism is, at
+this stage, a theoretical bridge supported by the failure of the
+statistical alternatives, not a measured compression ratio on real data;
+quantifying the realized symmetry reduction on annotated corpora is left
+to future work. Full methods, robustness controls, and reproduction code
+accompany the companion manuscript.</p>
 
       </div>
       <div class="chapter-nav-bottom"><a href="index.html" class="nav-toc">&larr; Contents</a></div>
