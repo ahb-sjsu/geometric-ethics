@@ -127,13 +127,12 @@ philosophical thought experiments designed to isolate a single variable.
 They involve the full complexity of moral life: multiple agents,
 competing values, ambiguous facts, emotional stakes, and institutional
 contexts.</p>
-<p><strong>Expert ground truth.</strong> The columnist’s response
-provides a consistent, publicly available, expert moral judgment for
-each case. The judgment is not authoritative in the sense that moral
-philosophers use the term (the columnist is not a philosopher), but it
-represents a skilled moral reasoner applying implicit principles to
-concrete cases over three decades — a substantial sample of applied
-moral reasoning.</p>
+<p>A single consistent normative respondent. The columnist's response
+provides a consistent, publicly available moral judgment from one
+syndicated advice columnist. It is a stable normative respondent, not a
+philosophical or cross-cultural ground truth, and we treat it as such
+throughout: the corpus measures agreement with one respondent's
+normative stance, not moral reality.</p>
 <p><strong>Temporal depth.</strong> The 32-year span allows analysis of
 temporal stability: do the structural features of moral reasoning change
 over time, or are they stable across decades?</p>
@@ -857,10 +856,11 @@ structural features identified in the corpus may be features of this
 tradition rather than universal features of moral reasoning.
 Cross-cultural replication with advice corpora from other traditions
 (Chinese, Indian, Islamic) would strengthen the universality claim.</p>
-<p><strong>The Dear Ethicist game is in early deployment.</strong> The
-93 engineered probes have been tested with limited populations. Larger
-samples, more diverse populations, and cross-cultural deployment are
-needed to establish the robustness of the findings.</p>
+<p>The Dear Ethicist game is in early deployment. The 93 engineered
+probes have been tested with limited populations. Larger samples, more
+diverse populations, and cross-cultural deployment are needed to
+establish the robustness of the findings. These results are preliminary,
+not confirmatory.</p>
 <p><strong>The quantum cognition predictions are not yet
 conclusive.</strong> The interference and superposition predictions
 require experimental designs that can distinguish quantum from classical
@@ -957,6 +957,138 @@ reproducibility requires either licensing agreements or the development
 of openly available proxy corpora. We plan to release the classifier
 training pipeline, evaluation scripts, and anonymized aggregate
 statistics (see Technical Appendix below).</p>
+<h2 id="a-empirical-methods-summary">17.7a Empirical Methods
+Summary</h2>
+<p>Per-claim methods for the principal empirical results. Cells marked
+[to add] require the author's records (baselines, splits, corrections,
+preregistration status); this scaffold is provided so that each claim is
+stated at a reproducible standard.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Claim</strong></th>
+<th><strong>Dataset (N)</strong></th>
+<th><strong>Unit</strong></th>
+<th><strong>Label</strong></th>
+<th><strong>Model/tool</strong></th>
+<th><strong>Metric</strong></th>
+<th><strong>Baseline</strong></th>
+<th><strong>Result</strong></th>
+<th><strong>CI/p</strong></th>
+<th><strong>Status</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Moral eval. multi-dimensional</td>
+<td>Dear Abby (20,030)</td>
+<td>dilemma</td>
+<td>columnist</td>
+<td>LaBSE + linear probe</td>
+<td>F1</td>
+<td>chance</td>
+<td>0.74-0.91</td>
+<td>[to add]</td>
+<td>Empirical (model-mediated)</td>
+</tr>
+<tr>
+<td>Deontic cross-lingual transfer</td>
+<td>cross-lingual (109,294; 11 lang)</td>
+<td>passage</td>
+<td>derived</td>
+<td>LaBSE</td>
+<td>transfer</td>
+<td>[to add]</td>
+<td>100%</td>
+<td>[99.7,100]</td>
+<td>Empirical (LaBSE, not human)</td>
+</tr>
+<tr>
+<td>Dimensional decodability (repl.)</td>
+<td>Thiele 2026</td>
+<td>probe</td>
+<td>engineered</td>
+<td>[to add]</td>
+<td>F1</td>
+<td>[to add]</td>
+<td>~0.80</td>
+<td>[to add]</td>
+<td>Independent replication</td>
+</tr>
+<tr>
+<td>Semantic-gate discreteness</td>
+<td>Dear Abby</td>
+<td>dilemma</td>
+<td>derived</td>
+<td>[to add]</td>
+<td>--</td>
+<td>smooth gate</td>
+<td>discrete</td>
+<td>[to add]</td>
+<td>Empirical hypothesis</td>
+</tr>
+<tr>
+<td>Order effects (non-commutativity)</td>
+<td>Dear Ethicist (93)</td>
+<td>probe</td>
+<td>engineered</td>
+<td>[to add]</td>
+<td>order effect</td>
+<td>classical</td>
+<td>supported</td>
+<td>[to add]</td>
+<td>Preliminary</td>
+</tr>
+<tr>
+<td>Interference / Bell (quantum)</td>
+<td>[to add]</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>classical</td>
+<td>not confirmed / falsified</td>
+<td>[to add]</td>
+<td>Falsified</td>
+</tr>
+<tr>
+<td>Harm invariance (re-description)</td>
+<td>[to add]</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>supported</td>
+<td>[to add]</td>
+<td>Noether-inspired modeling</td>
+</tr>
+<tr>
+<td>Norm tensors sparse, not low-rank</td>
+<td>4 corpora (248k+)</td>
+<td>cell</td>
+<td>gold/keyword</td>
+<td>tensor SVD</td>
+<td>density / eff-rank</td>
+<td>sparse</td>
+<td>sparse, not low-rank</td>
+<td>bootstrap</td>
+<td>Empirical (17.15)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="the-shape-of-the-evidence">17.8 The Shape of the Evidence</h2>
 <h3 id="a-summary-table">A Summary Table</h3>
 <table>
@@ -1098,11 +1230,13 @@ predicted by the tensor formalism.</p>
 gate discreteness, the nullifier universality, and the sharp transitions
 between Hohfeldian states confirm that moral space is a
 Whitney-stratified space, not a smooth manifold.</p>
-<p><strong>3. The BIP holds empirically.</strong> The 100% deontic axis
-transfer across 11 languages is the strongest empirical result,
-confirming that the re-description symmetry predicted by the BIP is a
-genuine feature of moral reasoning, not merely a mathematical
-postulate.</p>
+<p>3. The BIP holds empirically. The 100% deontic axis transfer across
+11 languages is the strongest empirical result, confirming that the
+re-description symmetry predicted by the BIP is a genuine feature of
+moral reasoning, not merely a mathematical postulate. This 100% figure
+is a property of LaBSE embeddings, not yet a demonstration in human
+cognition (see Threats to Validity); the caveat applies wherever this
+number appears.</p>
 <p><strong>4. Structural invariants are distinguishable from governance
 parameters.</strong> The separation between universally transferring
 deontic structure and non-transferring moral content confirms the
