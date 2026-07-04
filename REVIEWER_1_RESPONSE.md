@@ -36,20 +36,25 @@ order-effect / quantum claims. Note: §17.15 (the new relational-tensor section)
 models this standard — its bootstrap CIs, robustness controls, and honest limitations are a
 template for upgrading the rest of Ch. 17.
 
-**4. "Quantum" is the riskiest framing. ★**
-Agree with the reviewer's logic: the evidence supports *non-commutativity / order effects*,
-not quantum states (interference unconfirmed, Bell falsified). *Recommended:* rename Ch. 13
-to **"Non-Commutative Normative Dynamics"** and demote "quantum" to a clearly-speculative
-subsection/appendix. This is a global find/replace-plus-judgment pass; author sign-off
-before we execute.
+**4. "Quantum" is the riskiest framing. — Author retains the SQND / quantum framing.**
+Rationale for the reviewer: this is a developed research program (Structured Quantum
+Normative Dynamics) with its own formal apparatus and empirical protocol (Ch. 13, Ch. 17),
+not a loose analogy; renaming it would misrepresent the body of work behind it. The
+reviewer's *substantive* concern — that an overextended "quantum" claim could discredit the
+strongest finding, order effects / non-commutativity — is addressed differently: by the
+tone calibration in #2 and by Ch. 17's explicit statement that interference was not
+confirmed and Bell-type violations were falsified while order effects were supported. We
+keep the program name and make the confirmed-vs-unconfirmed boundary unmistakable rather
+than rebrand.
 
-**5. No-Escape theorem — narrower rhetoric. ★**
-Agree. The result is conditional (canonicalization, gauge-invariant evaluation, audit
-completeness, external verification) and excludes compromised sensors, TCB failure,
-multi-agent, institutional capture. *Recommended rename:* **"No Redescription Escape for
-Structurally Contained Agents"** (or "Structural Containment Theorem"), with the conclusion
-reworded so it does not read as "AI safety is solved." Author sign-off, then we do the
-rename + statement edit throughout.
+**5. No-Escape theorem — narrower rhetoric. — Author retains the theorem name.**
+Rationale for the reviewer: "No Escape Theorem" is the established name for the result and
+the naming is deliberate. The theorem's conditional scope is already stated explicitly
+(Requirements 1–4; exclusions for compromised sensors, TCB failure, multi-agent
+coordination, institutional capture). The reviewer's concern is about surrounding rhetoric,
+which we address through the calibration in #2 (reframing "the obstacle is political" and the
+preface closer) rather than by renaming the theorem. We retain the name and rely on the
+calibrated claims around it to prevent a "solved" misreading.
 
 **6. Nine dimensions need justification. ✎/★**
 Agree there's a tension: Appendix E says <6 recovered factors would falsify the dimensional
@@ -121,8 +126,11 @@ established structures (vector utility, Hohfeld, order effects) rather than disc
 2. Qualify the **Noether** language in Ch. 12 (#7).
 3. Promote the **"Epistemic Status Tags"** heading if it is mis-leveled.
 
-## Awaiting author decision before executing
-- #1 scope split / domain compression; #4 Ch. 13 rename+demote of "quantum"; #5 No-Escape
-  rename + conclusion rewrite; the preface/conclusion tone rewrite (#2 / specific recs).
-  These change the book's framing and are the author's call — say the word and we execute
-  each as a scoped edit + rebuild.
+## Author decisions
+- **#2 tone / specific recs:** DONE (preface closer, modesty paragraph, "obstacle is
+  political" reframe, Claims Ladder).
+- **#4 (rename "quantum"): declined** — SQND is a developed program; concern met via #2 and
+  the confirmed-vs-unconfirmed distinction (see above).
+- **#5 (rename No-Escape): declined** — established name kept deliberately; concern met via
+  the #2 rhetoric calibration (see above).
+- **#1 scope split / domain compression: still open** — structural, the author's call.
