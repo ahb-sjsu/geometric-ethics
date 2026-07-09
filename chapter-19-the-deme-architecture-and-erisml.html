@@ -142,11 +142,11 @@ each stage.</p></figcaption>
 <tr>
 <td>Uncertainty tensor <span
 class="math inline">\Sigma^{\mu\nu}</span></td>
-<td>V3 rank-3 MoralTensor + CVaR</td>
+<td>V3 per-cell uncertainty metadata + rank-6 CVaR samples</td>
 </tr>
 <tr>
 <td>Temporal dynamics</td>
-<td>V3 rank-4 temporal tensor + discount <span
+<td>V3 rank-3 temporal tensor + discount <span
 class="math inline">\gamma</span></td>
 </tr>
 <tr>
@@ -703,12 +703,16 @@ moral agency of Chapter 14 at the institutional level.</p>
 <p><strong>V3 tensor extensions.</strong> In the DEME V3 implementation,
 the EM evaluation is not limited to scalar scores. Each EM can return a
 <code>MoralTensor</code> of rank 1–6, preserving dimensional structure
-through the aggregation pipeline. Rank-3 tensors attach per-dimension
-uncertainty estimates; rank-4 tensors model temporal evolution with
-configurable discount rates <span class="math inline">\gamma \in
-(0,1\rbrack</span>; rank-5 tensors represent coalition contexts for
-multi-agent scenarios; rank-6 tensors add a Monte Carlo sample dimension
-for distributional risk measures (CVaR, VaR). Tucker decomposition and
+through the aggregation pipeline. Rank-2 tensors carry a per-party
+(per-stakeholder) distributional axis; rank-3 tensors model temporal
+evolution with configurable discount rates <span class="math inline">\gamma \in
+(0,1\rbrack</span>; rank-4 tensors add candidate-action and coalition
+structure; rank-5 tensors represent coalition contexts evolving over time
+for multi-agent scenarios; rank-6 tensors add a Monte Carlo sample
+dimension for distributional risk measures (CVaR, VaR). Per-dimension
+uncertainty estimates are attached as cell metadata and reconstructed
+through the rank-6 sample axis rather than occupying a rank of their
+own. Tucker decomposition and
 tensor-train formats maintain computational tractability as rank
 increases. The aggregation layer contracts these higher-rank tensors
 using governance-specified weights at each rank level, producing an
@@ -1601,7 +1605,8 @@ human review; domains with lower stakes (content recommendation) might
 tolerate higher ambiguity. The audit trail (Requirement 3, Section 18.6)
 records whether the fail-safe was triggered and the Σᵘᵥ values at the
 time of routing. Implementation status: proposed; partially compatible
-with existing rank-3 MoralTensor infrastructure.</p>
+with the existing MoralTensor uncertainty-metadata and rank-6 sample
+infrastructure.</p>
 <h3
 id="proposal-3-rank-5-coalition-parsing-for-multi-agent-inputs">Proposal
 3: Rank-5 Coalition Parsing for Multi-Agent Inputs</h3>
@@ -1710,8 +1715,8 @@ moral barriers (Section 13.7): the multi-turn attack is the classical
 analogue of quantum tunneling through a constraint surface.</p>
 <p><strong>Implementation</strong>. The temporal canonicalization tensor
 requires maintaining state across turns, which the existing DEME V3
-architecture supports through the rank-4 temporal MoralTensor (Section
-6.1, dimensions k × k × k × τ). The holonomy computation requires a
+architecture supports through the rank-3 temporal MoralTensor (Section
+6.1, dimensions k × n × τ). The holonomy computation requires a
 connection on the moral manifold, which has not yet been empirically
 measured (this is Open Problem 19.2). In practice, an approximate
 connection can be estimated from the curvature implied by the Dear Abby

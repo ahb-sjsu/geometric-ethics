@@ -221,12 +221,15 @@ realized in the DEME V3 reference implementation (the ErisML library,
 196 commits across 15 development sprints). The <code>MoralTensor</code>
 class supports ranks 1 through 6: rank-1 vectors for single-stakeholder
 evaluation, rank-2 tensors <span class="math inline">\mathcal{T}_{\
-\nu}^{\mu}</span> for obligation–interest pairing, rank-3 for
-uncertainty-aware evaluation incorporating the covariance structure
-<span class="math inline">\Sigma^{\mu\nu}</span>, rank-4 for temporal
-sequences with discount factor <span class="math inline">\gamma</span>,
-rank-5 for multi-agent coalition contexts, and rank-6 for Monte Carlo
-sample dimensions enabling CVaR and other distributional risk measures.
+n}^{\mu}</span> carrying a per-party (per-stakeholder) distributional
+axis across affected parties, rank-3 for temporal sequences with discount
+factor <span class="math inline">\gamma</span>, rank-4 for
+action–coalition contexts, rank-5 for multi-agent coalition contexts
+evolving over time, and rank-6 for Monte Carlo sample dimensions enabling
+CVaR and other distributional risk measures. Per-dimension uncertainty —
+the covariance structure <span class="math inline">\Sigma^{\mu\nu}</span>
+— is carried as metadata on each tensor cell and reconstructed through
+the rank-6 sample axis rather than occupying a tensor rank of its own.
 Tucker and tensor-train decompositions maintain tractability at higher
 ranks. The contraction step is implemented as a separate, configurable
 module with governance-specified weights—exactly the architectural

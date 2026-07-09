@@ -115,8 +115,10 @@ moral evaluation, but it does not resolve the uncertainty itself. That
 requires evidence, not geometry.</p>
 <p><strong>Computational realization (February 2026).</strong> The DEME
 V3 reference implementation operationalizes the uncertainty tensor
-through rank-3 <code>MoralTensor</code> objects that jointly represent
-obligation vectors and their per-dimension uncertainty. Beyond the
+through per-dimension uncertainty metadata attached to each
+<code>MoralTensor</code> cell together with the rank-6 Monte Carlo sample
+axis, which jointly represent obligation vectors and their per-dimension
+uncertainty. Beyond the
 covariance structure <span class="math inline">\Sigma^{\mu\nu}</span>,
 V3 provides distributional risk measures: Conditional Value-at-Risk
 (CVaR) for tail-risk-sensitive evaluation, Value-at-Risk (VaR) for

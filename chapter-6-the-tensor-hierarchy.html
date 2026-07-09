@@ -118,9 +118,10 @@ evaluation:</p>
 </tr>
 </tbody>
 </table>
-<p>The hierarchy continues beyond rank 2. Chapters 14 and 16 introduce
-higher-rank tensors for collective agency and uncertainty, and the DEME
-V3 implementation (Chapter 19) extends the hierarchy to rank 6:</p>
+<p>The hierarchy continues beyond the rank-1 obligation vector. Chapters
+14 and 16 introduce higher-rank tensors for collective agency and
+uncertainty, and the DEME V3 implementation (Chapter 19) extends the
+hierarchy to rank 6:</p>
 <table style="width:100%;">
 <colgroup>
 <col style="width: 8%" />
@@ -138,40 +139,52 @@ V3 implementation (Chapter 19) extends the hierarchy to rank 6:</p>
 </thead>
 <tbody>
 <tr>
-<td>3</td>
-<td>Uncertainty-aware tensor</td>
-<td>Per-dimension confidence; covariance structure <span
-class="math inline">\Sigma^{\mu\nu}</span></td>
-<td>k×k×k</td>
+<td>2</td>
+<td>Per-party (distributional) tensor</td>
+<td>Per-stakeholder obligation profiles across all affected parties (the
+DEME distributional axis)</td>
+<td>k×n</td>
 </tr>
 <tr>
-<td>4</td>
+<td>3</td>
 <td>Temporal tensor</td>
 <td>Time evolution with discount <span
 class="math inline">\gamma</span>; trajectory analysis</td>
-<td>k×k×k×τ</td>
+<td>k×n×τ</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Action–coalition tensor</td>
+<td>Obligations across candidate actions and coalitions</td>
+<td>k×n×a×c</td>
 </tr>
 <tr>
 <td>5</td>
 <td>Coalition tensor</td>
-<td>Multi-agent coordination; Shapley credit assignment</td>
-<td>k×k×k×τ×n</td>
+<td>Multi-agent coordination over time; Shapley credit assignment</td>
+<td>k×n×τ×a×c</td>
 </tr>
 <tr>
 <td>6</td>
 <td>Sample tensor</td>
 <td>Monte Carlo distributional risk (CVaR, VaR)</td>
-<td>k×k×k×τ×n×s</td>
+<td>k×n×τ×a×c×s</td>
 </tr>
 </tbody>
 </table>
 <p>where <span class="math inline">k = 9</span> is the moral manifold
-dimension, <span class="math inline">\tau</span> is the number of time
-steps, <span class="math inline">n</span> the number of agents or
-coalitions, and <span class="math inline">s</span> the number of Monte
-Carlo samples. Tucker decomposition and tensor-train formats maintain
-tractability as rank increases (see Chapter 19 for implementation
-details). <img
+dimension, <span class="math inline">n</span> the number of stakeholders
+or parties, <span class="math inline">\tau</span> the number of time
+steps, <span class="math inline">a</span> the number of candidate
+actions, <span class="math inline">c</span> the number of coalitions, and
+<span class="math inline">s</span> the number of Monte Carlo samples.
+Per-dimension uncertainty — the covariance structure <span
+class="math inline">\Sigma^{\mu\nu}</span> of Chapter 16 — is not carried
+as a separate tensor rank in DEME V3; it is realized as uncertainty
+metadata attached to each tensor cell and reconstructed through the
+rank-6 Monte Carlo sample axis. Tucker decomposition and tensor-train
+formats maintain tractability as rank increases (see Chapter 19 for
+implementation details). <img
 src="images/image4.png"
 style="width:5.5in;height:3.52431in" />Figure <a
 href="#fig:tensor-hierarchy">1</a> illustrates the full rank hierarchy
@@ -606,18 +619,25 @@ would turn out to be decisive. The uncertainty tensor captures this
 shape, and the contraction with the interest covector determines how
 much the uncertainty matters.</p>
 <p><strong>Higher-rank extensions.</strong> The uncertainty tensor <span
-class="math inline">\Sigma^{\mu\nu}</span> is a rank-2 object attached
-to the rank-1 obligation vector. In the DEME V3 implementation (Chapter
-19), these combine into a single rank-3 <code>MoralTensor</code> that
-jointly represents the obligation and its per-dimension uncertainty.
-Further extensions add temporal indices (rank 4) for tracking how
-uncertainty evolves through time, coalition indices (rank 5) for
-multi-agent scenarios where different coalitions face different
-uncertainty structures, and sample indices (rank 6) for distributional
-risk measures such as CVaR that require Monte Carlo estimation of tail
-risk. These higher-rank tensors are developed theoretically in Chapters
-10 (temporal), 14 (collective), and 16 (uncertainty), and implemented
-computationally in Chapter 19.</p>
+class="math inline">\Sigma^{\mu\nu}</span> is a symmetric object attached
+to the rank-1 obligation vector, capturing the shape of moral
+uncertainty (Chapter 16). In the DEME V3 implementation (Chapter 19), the
+<code>MoralTensor</code> hierarchy adds a per-party (per-stakeholder)
+index at rank 2 — the distributional axis <span
+class="math inline">n</span> that carries a separate obligation profile
+for each affected party — temporal indices at rank 3 for tracking how
+obligations evolve through time, action and coalition indices at rank 4
+for evaluating candidate actions across coalitions, combined
+coalition-over-time indices at rank 5 for multi-agent scenarios, and
+sample indices at rank 6 for distributional risk measures such as CVaR
+that require Monte Carlo estimation of tail risk. The covariance <span
+class="math inline">\Sigma^{\mu\nu}</span> itself is not carried as a
+separate tensor axis in V3: it is realized (a) as per-dimension
+uncertainty metadata attached to each tensor cell and (b) through the
+rank-6 Monte Carlo sample axis <span class="math inline">s</span>, whose
+spread reconstructs the covariance structure. These higher-rank tensors
+are developed theoretically in Chapters 10 (temporal), 14 (collective),
+and 16 (uncertainty), and implemented computationally in Chapter 19.</p>
 <h2 id="scalar-ethics-as-a-special-case">6.7 Scalar Ethics as a Special
 Case</h2>
 <h3 id="recovery-by-contraction">Recovery by Contraction</h3>
@@ -897,7 +917,7 @@ yields scalar action-guidance.</p>
 </tr>
 <tr>
 <td>Temporal <span class="math inline">\mathcal{T}</span></td>
-<td>rank-4 tensor</td>
+<td>rank-3 tensor</td>
 <td>Obligation evolution over time</td>
 <td>T^μ_{ν,τ} = γ^τ O^μ_ν(t_τ)</td>
 </tr>
