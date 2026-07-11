@@ -1,6 +1,6 @@
-# Geometric Ethics (Book 3)
+# Geometric Ethics (Book 2)
 
-The Mathematical Structure of Moral Reasoning. Volume 3 of the Geometric Series.
+The Mathematical Structure of Moral Reasoning. Volume 2 of the Geometric Series.
 Served at https://erisml.org/book/ via the erisml-lib `site` submodule.
 
 ## Structure
