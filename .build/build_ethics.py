@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Build Geometric Ethics (Book 3 of the Geometric Series) from the source docx.
+Build Geometric Ethics (Book 2 of the Geometric Series) from the source docx.
 
 The docx in source/ is the source of truth. This script regenerates the served
 HTML (per-section files + index.html + images/) at the repo root, in the
@@ -160,7 +160,7 @@ def build(out: Path):
     cover = (COVER_IMAGE if (out / "images" / COVER_IMAGE).exists() else None)
     cover_html = (f'  <img class="book-cover" src="images/{cover}" '
                   f'alt="Geometric Ethics — book cover" />\n') if cover else ''
-    hero = (f'<header class="book-hero">\n  <p class="book-number">Book 3 of the Geometric Series &middot; v{VERSION}</p>\n'
+    hero = (f'<header class="book-hero">\n  <p class="book-number">Book 2 of the Geometric Series &middot; v{VERSION}</p>\n'
             f'  <h1>Geometric Ethics</h1>\n  <p class="book-subtitle">The Mathematical Structure of Moral Reasoning</p>\n'
             f'  <p class="book-byline">A volume in the <em>Geometric Series</em> by Andrew H. Bond.</p>\n'
             f'{cover_html}</header>\n'
