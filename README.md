@@ -3,6 +3,16 @@
 The Mathematical Structure of Moral Reasoning. Volume 3 of the Geometric Series.
 Served at https://erisml.org/book/ via the erisml-lib `site` submodule.
 
+> **Epistemic status (2026-07-14): posited framework, partially instrumented.**
+> This is the series' most-instrumented domain: MoBSE's moral-dimension encoders clear a
+> pre-registered frozen-null gate on **8 of 9 dimensions** (`rights_respect` fails and is
+> reported as failed), and the Moral Spectrum Analyzer's discovery loop has validated one
+> discovered dimension, retracted another, and declined a third. Everything beyond those gated
+> measurements — including the book's broader geometric thesis — is *posited* theory at licensed
+> strength. See [xbse](https://github.com/ahb-sjsu/xbse) (admission filter + gate) and
+> [moral-spectrum-analyzer](https://github.com/ahb-sjsu/moral-spectrum-analyzer). Formal-claim
+> status is tracked per claim in Appendix F (mathematical ledger).
+
 ## Structure
 
 - `source/*.docx` — the manuscript (source of truth; currently v1.23).
