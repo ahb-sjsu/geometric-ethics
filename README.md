@@ -1,6 +1,6 @@
-# Geometric Ethics (Book 3)
+# Geometric Ethics (Book 2)
 
-The Mathematical Structure of Moral Reasoning. Volume 3 of the Geometric Series.
+The Mathematical Structure of Moral Reasoning. Volume 2 of the Geometric Series.
 Served at https://erisml.org/book/ via the erisml-lib `site` submodule.
 
 > **Epistemic status (2026-07-14): posited framework, partially instrumented.**
@@ -15,7 +15,7 @@ Served at https://erisml.org/book/ via the erisml-lib `site` submodule.
 
 ## Structure
 
-- `source/*.docx` — the manuscript (source of truth; currently v1.23).
+- `source/*.docx` — the manuscript (source of truth; currently v1.24).
 - `*.html`, `images/` — the published per-section HTML + figures, **generated**
   from the docx and served. `book.css` is a static shared asset.
 - `.build/` — the build kit (`build_ethics.py` + `template.html`).
