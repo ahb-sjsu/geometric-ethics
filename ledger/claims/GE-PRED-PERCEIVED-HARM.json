@@ -10,6 +10,11 @@
    "registration": "ledger/prereg/GE-P-2026-007-conservation-of-perceived-harm.md",
    "status": "DRAFT-UNSEALED 2026-08-25",
    "note": "Seal is BLOCKED on the required pilot: this programme has no verified effect size for the ethical variant under its own stimulus set. Power before bars."
+  },
+  {
+   "protocol": "ledger/prereg/GE-P-2026-007-STAGE0-protocol.md",
+   "status": "DRAFT, NOT EXECUTED 2026-08-25",
+   "note": "Stimulus construction, norming, kappa estimator, pilot and control arms. No item pool exists yet; nothing has been collected. IRB approval required before norming, which is itself human-subjects research."
   }
  ],
  "depends": {
@@ -36,6 +41,10 @@
   {
    "date": "2026-08-25",
    "event": "CLASS exploratory and it stays there. Registration is not evidence."
+  },
+  {
+   "date": "2026-08-25",
+   "event": "STAGE 0 PROTOCOL DRAFTED. Estimator VERIFIED NUMERICALLY BEFORE USE (experiments/ge007_kappa_recovery.py, seed 20260825): kappa recovered across 0.00-1.00 with a disclosed additive bias of -0.011, downward and therefore conservative against the 0.5 bar. Degenerate-case gate exercised under a weak manipulation and fires as intended. Two design failure modes identified and gated: (1) an item pool dense at the extremes rather than the ambiguous middle has NO resolution for threshold shift regardless of true effect size; (2) mid-scale CONTESTED items (bimodal, raters disagree) are not continuum positions and can mimic threshold shift with no concept change -- excluded by SD and dip test, and reported separately rather than discarded, since disagreement about what is harmful is independently interesting to this corpus."
   }
  ]
 }
