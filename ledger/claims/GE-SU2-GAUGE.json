@@ -1,0 +1,26 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-SU2-GAUGE",
+ "retrospective": false,
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "entered as refuted; falsification documented in the corpus (PE-BRW-1.0 s5.4)"
+  }
+ ],
+ "statement": "The moral gauge group is SU(2)_i x U(1)_H (continuous, non-abelian), predicting quantum contextuality.",
+ "class": "refuted",
+ "scope": "Superseded by D4 x U(1)_H. Book \u00a713.9/\u00a717.10.",
+ "evidence": [
+  {
+   "source": "CHSH Bell v3 test, N=9600, 18 configs, 6 languages",
+   "result": "all |S| <= 2 (classical bound never violated)"
+  }
+ ]
+}

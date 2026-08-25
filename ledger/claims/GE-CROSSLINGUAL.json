@@ -1,0 +1,28 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-CROSSLINGUAL",
+ "statement": "The nine-dimensional moral structure is stable across 109,294 passages, 11 languages and 3,000 years -- not an artifact of the formalism.",
+ "class": "exploratory",
+ "scope": "The corpus's central empirical claim.",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "cross-lingual corpus, n=109,294",
+   "note": "NO test statistic, effect size, CI or null model is reported anywhere; the summary table reads 'Confirmed'. The companion paper concedes the confound: results are measured THROUGH a multilingual embedding model whose language-agnostic representation may itself carry the apparent universality -- 'until that confound is excluded, the axes are invariant retains a deflationary reading'."
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-DEF-5-2"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "entered exploratory: retrospective, model-mediated, and the instrument confound is conceded but not excluded"
+  }
+ ]
+}

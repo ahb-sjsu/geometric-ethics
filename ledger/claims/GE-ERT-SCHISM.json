@@ -1,0 +1,26 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-ERT-SCHISM",
+ "statement": "Moral schism concentrates on high-curvature (sacred/identity) axes rather than tradeable ones.",
+ "class": "refuted",
+ "scope": "Endogenous Reference Theory, the theory's sole distinctive falsifiable content.",
+ "retrospective": false,
+ "evidence": [
+  {
+   "source": "Moral Machine, n=177 agents; GlobalOpinionQA n=26",
+   "result": "FALSIFIED -- multimodality concentrates on impartial/consequentialist axes; sacred axes show consensus (Mann-Whitney p=0.90, the wrong direction). Zero confirmations."
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "entered refuted; the corpus reports this prominently and retires the conjecture while keeping the diagnostic"
+  }
+ ]
+}

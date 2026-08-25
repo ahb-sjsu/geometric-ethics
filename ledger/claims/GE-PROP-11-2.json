@@ -1,0 +1,31 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-PROP-11-2",
+ "statement": "Consistency from Metric Compatibility",
+ "class": "proved",
+ "scope": "Geometric Ethics v1.24, \u00a7\u00a711.4; author status: Proved",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex \u00a7\u00a711.4",
+   "author_status": "Proved",
+   "kind": "theorem",
+   "mathematical_status": "follows from standard mathematics alone"
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-DEF-4-5",
+   "GE-DEF-11-4"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "brownfield conversion from Appendix F registry (PE-BRW-1.0 s5.1-5.2); author status carried over"
+  }
+ ]
+}

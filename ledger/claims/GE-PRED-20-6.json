@@ -1,0 +1,35 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-PRED-20-6",
+ "statement": "Manifold Dimensionality",
+ "class": "exploratory",
+ "scope": "Geometric Ethics v1.24, ch.20 (economics) falsifiable-predictions section; UNTESTED",
+ "retrospective": false,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex line 28597",
+   "author_status": "untested prediction"
+  },
+  {
+   "registration": "ledger/prereg/GE-P-2026-006-manifold-dimensionality.md",
+   "status": "DRAFT-UNSEALED 2026-08-25",
+   "note": "design registered prospectively; class stays exploratory until a result exists -- registration is not evidence"
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "registrable",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "FORWARD EXPOSURE: an untested prediction with a pre-written falsification clause, never registered. Registering it prospectively is the corpus's cheapest route out of retrospective debt (PE-BRW-1.0 s5.5)."
+  },
+  {
+   "date": "2026-08-25",
+   "event": "REGISTRATION DRAFTED (PE-BRW-1.0 s5.5): design operationalized -- corpora, parallel-analysis retention rule fixed in advance, split-result handling, and what a pass would NOT establish. Awaiting seal per the rate-limit rule."
+  }
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-LEMMA-A-2",
+ "statement": "Aut(C\u2084) \u2245 D\u2084",
+ "class": "proved",
+ "scope": "Geometric Ethics v1.24, \u00a7\u00a711 TA; author status: Proved",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex \u00a7\u00a711 TA",
+   "author_status": "Proved",
+   "kind": "theorem",
+   "mathematical_status": "follows from standard mathematics alone"
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "brownfield conversion from Appendix F registry (PE-BRW-1.0 s5.1-5.2); author status carried over"
+  }
+ ]
+}

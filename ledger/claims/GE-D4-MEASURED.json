@@ -1,0 +1,29 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-D4-MEASURED",
+ "statement": "The deontic gauge group D4 was DISCOVERED IN DATA ('found by testing every transformation against thousands of moral scenarios').",
+ "class": "exploratory",
+ "scope": "As asserted in the methodology chapter (\u00a717.0.2) and the objective/governed table (\u00a717.0.3).",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "book lines 21736, 21803",
+   "note": "CONTRADICTED by the book's own registry, which grades D4 a Conditional Theorem from Axioms A1-A5, and by Appendix E which states the D4 empirical test HAS NOT BEEN RUN (line 41711). The measured 82-87% correlative symmetry supports the two involutions (the Klein-four core V4); the quarter-turn generator that promotes V4 to D4 is nowhere measured."
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": [
+   "GE-THM-12-2",
+   "GE-THM-12-3"
+  ]
+ },
+ "status": "suspended",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "SUSPENDED on conversion: asserts as measured what the corpus's own registry grades as conditional and untested. Resolve by (a) withdrawing the discovered-in-data wording, or (b) registering the quarter-turn measurement prospectively."
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-THM-15-1",
+ "statement": "Scalar Irrecoverability: any Q: R^9 -> R is non-injective, admits no left inverse, and yields paths diverging unboundedly from the true geodesic.",
+ "class": "exploratory",
+ "scope": "Book ch.15, tagged [Proved] by the author (rank-nullity + the data-processing inequality). Absent from Appendix F's registry.",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex ch.15",
+   "author_status": "[Proved.]",
+   "note": "A root of the domain chapters: Thms 20.2, 21.2, 23.4 and 26.1 all instantiate it. Entered exploratory rather than proved because its ethical consequent depends on the 9-dimensional basis (a modeling axiom); the mathematical implication is sound."
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-DEF-5-2"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "added as a root: the inventory found the domain chapters hang off it, but the source registry never lists it"
+  }
+ ]
+}

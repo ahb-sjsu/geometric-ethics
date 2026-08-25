@@ -1,0 +1,34 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-PRED-20-3",
+ "statement": "Cross-Cultural Metric Variation",
+ "class": "exploratory",
+ "scope": "Geometric Ethics v1.24, ch.20 (economics) falsifiable-predictions section; UNTESTED",
+ "retrospective": false,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex line 28581",
+   "author_status": "untested prediction"
+  },
+  {
+   "registration_blocker": "UNFALSIFIABLE AS WRITTEN: names no specific cultural dimensions and no functional form; author must name the predicted mapping in advance",
+   "assessed": "2026-08-25"
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "registrable",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "FORWARD EXPOSURE: an untested prediction with a pre-written falsification clause, never registered. Registering it prospectively is the corpus's cheapest route out of retrospective debt (PE-BRW-1.0 s5.5)."
+  },
+  {
+   "date": "2026-08-25",
+   "event": "registration pass: NOT registrable yet -- UNFALSIFIABLE AS WRITTEN: names no specific cultural dimensions and no functional form; author must name the predicted mapping in advance"
+  }
+ ]
+}

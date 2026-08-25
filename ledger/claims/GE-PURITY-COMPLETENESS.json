@@ -1,0 +1,28 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-PURITY-COMPLETENESS",
+ "statement": "The nine-dimensional basis is complete: no genuine moral consideration is independent of all nine.",
+ "class": "refuted",
+ "scope": "Keystone completeness claim with its own stated falsification condition.",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Moral Spectrum Analyzer, pre-registered cross-dataset gate",
+   "result": "FALSIFIED by its own condition -- Purity/sanctity feeder cleared the gate at cross-corpus AUROC 0.811, a genuine moral consideration with no cell in the basis"
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-DEF-5-2"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "the corpus's own revision catches this; note the earlier draft treated Purity's absence as a NEGATIVE CONTROL, i.e. used the basis's incompleteness as evidence FOR the basis -- the same row asserted in opposite directions"
+  }
+ ]
+}

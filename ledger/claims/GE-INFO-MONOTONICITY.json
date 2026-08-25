@@ -1,0 +1,26 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-INFO-MONOTONICITY",
+ "statement": "Any contraction of a rank>=1 moral tensor to a scalar is irreversibly lossy.",
+ "class": "exploratory",
+ "scope": "Cited as the formal foundation for the insufficiency of scalar alignment (RLHF).",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Geometric_Ethics_Foundational_Paper.tex Thm; proof sketch via the data-processing inequality",
+   "note": "Full proof DEFERRED to an uncirculated monograph (bond2026geometric Thm 14.1). One of six such deferrals; the DAG root lies outside the corpus."
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "entered exploratory rather than proved: no proof resolves inside the ledger (PE-CLS-1.0 s4, P4)"
+  }
+ ]
+}

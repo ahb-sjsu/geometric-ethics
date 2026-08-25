@@ -1,0 +1,26 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-THM-22-6",
+ "statement": "Optimal Legal Argument",
+ "class": "exploratory",
+ "scope": "Geometric Ethics v1.24, ch.22 (law); UNTAGGED in source and absent from Appendix F",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex line 29676",
+   "author_status": "untagged -- no epistemic tag in the source, no registry row"
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "brownfield conversion phase 2: entered from the untagged domain chapters. Class is exploratory by characterization (PE-BRW-1.0 s5.2), not by the author's assessment -- the source assigns none."
+  }
+ ]
+}
