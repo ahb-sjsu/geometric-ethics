@@ -1,0 +1,42 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-HARM-CONSERVATION",
+ "statement": "Conservation of Harm: harm is a conserved quantity of moral dynamics, in the sense of a conservation law obtained from a symmetry via Noether's theorem.",
+ "class": "withdrawn",
+ "scope": "Asserted through Geometric Ethics v1.23 and earlier as a thesis of the work: the title of Chapter 12, a table-of-contents entry, figure titles, and cross-references in Ch15 and Ch17. WITHDRAWN by the author 2026-06-19 and replaced by the weaker claim of representation-invariance of harm accounting.",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "git 8601fa2 (merged to main via PR #1)",
+   "note": "The withdrawal is attested ONLY by this commit. Its message states the reason in the author's own words: the book 'had committed to \"Conservation of Harm\" as a thesis ... a stronger claim than is established. The defensible claim is representation-invariance of harm accounting, not a conservation law.' 87 occurrences were rewritten in the master document, text nodes only, with the 2,126 equations verified unchanged before and after."
+  },
+  {
+   "source": "Geometric-Ethics-v1.24.tex",
+   "note": "VERIFIED 2026-08-25: 0 occurrences of 'conservation of harm' remain; 47 occurrences of 'invariance of harm accounting'. The replacement is complete and the withdrawn claim is absent from the published text."
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": [
+   "GE-THM-12-1",
+   "GE-THM-A-1",
+   "GE-DEF-12-2"
+  ]
+ },
+ "status": "withdrawn",
+ "history": [
+  {
+   "date": "2026-06-19",
+   "event": "WITHDRAWN by the author. Not refuted: no evidence said no. The author judged that the corpus had committed to a conservation LAW where only representation-invariance was established, and retreated to the defensible claim. An honesty pass, and a good-faith one."
+  },
+  {
+   "date": "2026-08-25",
+   "event": "ENTERED RETROSPECTIVELY, and the entry is the point. The withdrawal was propagated COMPLETELY through the text -- so completely that v1.24 reads as though the stronger claim was never made. A reader of the published book cannot discover that a thesis was retired. This row exists so the ledger remembers what the prose no longer can. Rows are deprecated, never deleted (PE-CLS-1.0)."
+  },
+  {
+   "date": "2026-08-25",
+   "event": "BLAST RADIUS: ZERO suspensions, and that is the finding rather than an absence of one. No live claim is suspended because the author had already rewritten every dependent passage to assert the weaker claim. The defect here is not an unpropagated correction (cf. GE-D4-MEASURED) but an UNRECORDED one: propagation was complete, the record was lost."
+  }
+ ]
+}

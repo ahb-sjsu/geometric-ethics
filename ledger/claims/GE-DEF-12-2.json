@@ -18,13 +18,19 @@
    "GE-PROP-12-1"
   ],
   "corroborates": [],
-  "cites": []
+  "cites": [
+   "GE-HARM-CONSERVATION"
+  ]
  },
  "status": "classified",
  "history": [
   {
    "date": "2026-08-25",
    "event": "brownfield conversion from Appendix F registry (PE-BRW-1.0 s5.1-5.2); author status carried over"
+  },
+  {
+   "date": "2026-08-25",
+   "event": "REFRAME RECORDED (author, 2026-06-19, git 8601fa2): Defines harm AS the Noether charge, which is the construct that made the conservation reading available. It now supports only the invariance reading. See GE-HARM-CONSERVATION for the withdrawn stronger claim. This row is NOT suspended: it correctly asserts the weaker claim in v1.24. The history entry exists because the reframe left no trace in the published text."
   }
  ]
 }

@@ -16,13 +16,19 @@
  "depends": {
   "uses": [],
   "corroborates": [],
-  "cites": []
+  "cites": [
+   "GE-HARM-CONSERVATION"
+  ]
  },
  "status": "classified",
  "history": [
   {
    "date": "2026-08-25",
    "event": "brownfield conversion from Appendix F registry (PE-BRW-1.0 s5.1-5.2); author status carried over"
+  },
+  {
+   "date": "2026-08-25",
+   "event": "REFRAME RECORDED (author, 2026-06-19, git 8601fa2): Chapter 12's title and thesis. Before 2026-06-19 this row's surrounding framing asserted 'Conservation of Harm'; the chapter title was reframed to '...Symmetry, Invariance, and Harm Accounting' and the theorem's framing weakened from a conservation law to representation-invariance. See GE-HARM-CONSERVATION for the withdrawn stronger claim. This row is NOT suspended: it correctly asserts the weaker claim in v1.24. The history entry exists because the reframe left no trace in the published text."
   }
  ]
 }
