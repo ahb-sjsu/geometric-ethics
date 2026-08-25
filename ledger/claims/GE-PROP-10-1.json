@@ -1,0 +1,28 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-PROP-10-1",
+ "statement": "Parallel Transport Preserves Satisfaction",
+ "class": "exploratory",
+ "scope": "Geometric Ethics v1.24, \u00a7\u00a710 TA; author status: Conditional Theorem",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex \u00a7\u00a710 TA",
+   "author_status": "Conditional Theorem",
+   "kind": "theorem",
+   "mathematical_status": "proved given the stated premises; the assertion about moral reasoning inherits the premises' class"
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "brownfield conversion from Appendix F registry (PE-BRW-1.0 s5.1-5.2); author status carried over"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-COR-21-2",
+ "statement": "The Consent Paradox in Low Health Literacy",
+ "class": "exploratory",
+ "scope": "Geometric Ethics v1.24, ch.21 (clinical); UNTAGGED in source and absent from Appendix F",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex line 29070",
+   "author_status": "untagged -- no epistemic tag in the source, no registry row"
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-AXIOM-5-1",
+   "GE-DEF-5-2"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "brownfield conversion phase 2: entered from the untagged domain chapters. Class is exploratory by characterization (PE-BRW-1.0 s5.2), not by the author's assessment -- the source assigns none."
+  }
+ ]
+}

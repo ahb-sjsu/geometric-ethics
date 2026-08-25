@@ -1,0 +1,29 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-PROP-20-1",
+ "statement": "Curvature Detection Criterion",
+ "class": "exploratory",
+ "scope": "Geometric Ethics v1.24, \u00a7\u00a719 TA; author status: Conjecture/Proposal",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex \u00a7\u00a719 TA",
+   "author_status": "Conjecture/Proposal",
+   "kind": "conjecture"
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-DEF-10-3"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "brownfield conversion from Appendix F registry (PE-BRW-1.0 s5.1-5.2); author status carried over"
+  }
+ ]
+}

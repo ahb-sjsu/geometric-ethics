@@ -127,13 +127,12 @@ philosophical thought experiments designed to isolate a single variable.
 They involve the full complexity of moral life: multiple agents,
 competing values, ambiguous facts, emotional stakes, and institutional
 contexts.</p>
-<p><strong>Expert ground truth.</strong> The columnist’s response
-provides a consistent, publicly available, expert moral judgment for
-each case. The judgment is not authoritative in the sense that moral
-philosophers use the term (the columnist is not a philosopher), but it
-represents a skilled moral reasoner applying implicit principles to
-concrete cases over three decades — a substantial sample of applied
-moral reasoning.</p>
+<p>A single consistent normative respondent. The columnist's response
+provides a consistent, publicly available moral judgment from one
+syndicated advice columnist. It is a stable normative respondent, not a
+philosophical or cross-cultural ground truth, and we treat it as such
+throughout: the corpus measures agreement with one respondent's
+normative stance, not moral reality.</p>
 <p><strong>Temporal depth.</strong> The 32-year span allows analysis of
 temporal stability: do the structural features of moral reasoning change
 over time, or are they stable across decades?</p>
@@ -857,10 +856,11 @@ structural features identified in the corpus may be features of this
 tradition rather than universal features of moral reasoning.
 Cross-cultural replication with advice corpora from other traditions
 (Chinese, Indian, Islamic) would strengthen the universality claim.</p>
-<p><strong>The Dear Ethicist game is in early deployment.</strong> The
-93 engineered probes have been tested with limited populations. Larger
-samples, more diverse populations, and cross-cultural deployment are
-needed to establish the robustness of the findings.</p>
+<p>The Dear Ethicist game is in early deployment. The 93 engineered
+probes have been tested with limited populations. Larger samples, more
+diverse populations, and cross-cultural deployment are needed to
+establish the robustness of the findings. These results are preliminary,
+not confirmatory.</p>
 <p><strong>The quantum cognition predictions are not yet
 conclusive.</strong> The interference and superposition predictions
 require experimental designs that can distinguish quantum from classical
@@ -957,6 +957,138 @@ reproducibility requires either licensing agreements or the development
 of openly available proxy corpora. We plan to release the classifier
 training pipeline, evaluation scripts, and anonymized aggregate
 statistics (see Technical Appendix below).</p>
+<h2 id="a-empirical-methods-summary">17.7a Empirical Methods
+Summary</h2>
+<p>Per-claim methods for the principal empirical results. Cells marked
+[to add] require the author's records (baselines, splits, corrections,
+preregistration status); this scaffold is provided so that each claim is
+stated at a reproducible standard.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th><strong>Claim</strong></th>
+<th><strong>Dataset (N)</strong></th>
+<th><strong>Unit</strong></th>
+<th><strong>Label</strong></th>
+<th><strong>Model/tool</strong></th>
+<th><strong>Metric</strong></th>
+<th><strong>Baseline</strong></th>
+<th><strong>Result</strong></th>
+<th><strong>CI/p</strong></th>
+<th><strong>Status</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Moral eval. multi-dimensional</td>
+<td>Dear Abby (20,030)</td>
+<td>dilemma</td>
+<td>columnist</td>
+<td>LaBSE + linear probe</td>
+<td>F1</td>
+<td>chance</td>
+<td>0.74-0.91</td>
+<td>[to add]</td>
+<td>Empirical (model-mediated)</td>
+</tr>
+<tr>
+<td>Deontic cross-lingual transfer</td>
+<td>cross-lingual (109,294; 11 lang)</td>
+<td>passage</td>
+<td>derived</td>
+<td>LaBSE</td>
+<td>transfer</td>
+<td>[to add]</td>
+<td>100%</td>
+<td>[99.7,100]</td>
+<td>Empirical (LaBSE, not human)</td>
+</tr>
+<tr>
+<td>Dimensional decodability (repl.)</td>
+<td>Thiele 2026</td>
+<td>probe</td>
+<td>engineered</td>
+<td>[to add]</td>
+<td>F1</td>
+<td>[to add]</td>
+<td>~0.80</td>
+<td>[to add]</td>
+<td>Independent replication</td>
+</tr>
+<tr>
+<td>Semantic-gate discreteness</td>
+<td>Dear Abby</td>
+<td>dilemma</td>
+<td>derived</td>
+<td>[to add]</td>
+<td>--</td>
+<td>smooth gate</td>
+<td>discrete</td>
+<td>[to add]</td>
+<td>Empirical hypothesis</td>
+</tr>
+<tr>
+<td>Order effects (non-commutativity)</td>
+<td>Dear Ethicist (93)</td>
+<td>probe</td>
+<td>engineered</td>
+<td>[to add]</td>
+<td>order effect</td>
+<td>classical</td>
+<td>supported</td>
+<td>[to add]</td>
+<td>Preliminary</td>
+</tr>
+<tr>
+<td>Interference / Bell (quantum)</td>
+<td>[to add]</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>classical</td>
+<td>not confirmed / falsified</td>
+<td>[to add]</td>
+<td>Falsified</td>
+</tr>
+<tr>
+<td>Harm invariance (re-description)</td>
+<td>[to add]</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>--</td>
+<td>supported</td>
+<td>[to add]</td>
+<td>Noether-inspired modeling</td>
+</tr>
+<tr>
+<td>Norm tensors sparse, not low-rank</td>
+<td>4 corpora (248k+)</td>
+<td>cell</td>
+<td>gold/keyword</td>
+<td>tensor SVD</td>
+<td>density / eff-rank</td>
+<td>sparse</td>
+<td>sparse, not low-rank</td>
+<td>bootstrap</td>
+<td>Empirical (17.15)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="the-shape-of-the-evidence">17.8 The Shape of the Evidence</h2>
 <h3 id="a-summary-table">A Summary Table</h3>
 <table>
@@ -1098,11 +1230,13 @@ predicted by the tensor formalism.</p>
 gate discreteness, the nullifier universality, and the sharp transitions
 between Hohfeldian states confirm that moral space is a
 Whitney-stratified space, not a smooth manifold.</p>
-<p><strong>3. The BIP holds empirically.</strong> The 100% deontic axis
-transfer across 11 languages is the strongest empirical result,
-confirming that the re-description symmetry predicted by the BIP is a
-genuine feature of moral reasoning, not merely a mathematical
-postulate.</p>
+<p>3. The BIP holds empirically. The 100% deontic axis transfer across
+11 languages is the strongest empirical result, confirming that the
+re-description symmetry predicted by the BIP is a genuine feature of
+moral reasoning, not merely a mathematical postulate. This 100% figure
+is a property of LaBSE embeddings, not yet a demonstration in human
+cognition (see Threats to Validity); the caveat applies wherever this
+number appears.</p>
 <p><strong>4. Structural invariants are distinguishable from governance
 parameters.</strong> The separation between universally transferring
 deontic structure and non-transferring moral content confirms the
@@ -1839,13 +1973,104 @@ data confirms: the mathematical structure of moral reasoning.</em></p>
 that geometry sees what scalar frameworks miss — and that what it sees
 is confirmed by the data we have.</em></p>
 </blockquote>
+<h2 id="the-relational-tensor-structure-of-annotated-norm-corpora">17.15
+The Relational-Tensor Structure of Annotated Norm Corpora</h2>
+<p>Epistemic status: Established for the empirical structural claims
+(four public corpora, replicated across two domains and two extraction
+methods); Conjectural for the bridge to symmetry-based lossless
+compression. A companion manuscript reports the full analysis and
+reproduction code.</p>
+<p>The framework represents a governed situation as a relational tensor
+T[A, B, M, D, gamma] indexed by subject role A, object role B, deontic
+modality M (the Hohfeldian relations of Chapter 3 and Section 12.3),
+moral dimension D (the axes of Chapter 6), and context gamma. If moral
+knowledge has the geometric structure this book argues for, that
+structure should be visible in the tensors built from real,
+human-annotated normative judgments. We tested this by encoding four
+annotated corpora spanning a moral and a legal domain: Social Chemistry
+101, Moral Stories, NormBank, and European Court of Human Rights cases
+(the ECtHR subset of LexGLUE).</p>
+<h3 id="real-norm-tensors-are-sparse-but-not-low-rank">Real norm tensors
+are sparse but not low-rank</h3>
+<p>Across all four corpora the tensors are extremely sparse - between
+about 0.2% and 2.5% of cells are populated - and, beyond that sparsity,
+they carry little structure that generic low-rank methods can exploit.
+An exchangeable role-kernel representation is firmly rejected;
+tensor-train and Tucker decompositions improve on a plain sparse
+encoding by at most 1.6-fold, and only when a few percent of
+reconstruction error is tolerated. A per-tensor adaptive compressor that
+is free to choose among sparse, exchangeable, and low-rank encodings
+selects the plain sparse encoding, losslessly, in every case.</p>
+<p>This is not an artifact of a fine-grained context axis. The tensors
+remain sparse within the combinations of values that actually occur (the
+occupancy of the used-value box is 0.08 for Social Chemistry), the
+result survives collapsing the context axis entirely, and a
+marginal-preserving null shows the data are more concentrated than
+chance rather than random noise. Bootstrap resampling gives tight
+intervals - the subject-role effective rank of Social Chemistry is
+11.97, with a 95% interval of [11.96, 11.98]. The deontic-modality mode
+is near one-dimensional and the moral-dimension mode has low effective
+rank but is not collapsed by the tensor unfoldings.</p>
+<h3 id="a-contrasting-paradigm-forced-choice-preferences">A contrasting
+paradigm: forced-choice preferences</h3>
+<p>The absence of low-rank structure is a property of relational deontic
+norms, not of the method. As a positive control we analysed a
+structurally opposite kind of moral data: the Moral Machine experiment,
+in which forced-choice judgments in sacrificial dilemmas yield, for each
+of seventy-five large language models and a human reference, a dense
+vector of preferences over attribute dimensions. That matrix has the
+opposite geometry - fully dense and strongly low-rank, with two
+components explaining 89% of the variance, a single shared moral-worth
+axis. The same spectral tools that find no low rank in the norm tensors
+immediately find it here. The compressibility of moral data therefore
+depends on the elicitation paradigm: relational norms resist
+compression; forced-choice preferences collapse to a low-dimensional
+axis.</p>
+<h3 id="lossless-compression-comes-from-symmetry-not-from-rank">Lossless
+compression comes from symmetry, not from rank</h3>
+<p>These findings sharpen a prediction of the geometric framework. If
+moral-norm tensors were compressible in the way that natural images are,
+one would expect low-rank structure; the data show none. Yet the
+framework does predict exact redundancy, of a different kind. Section
+12.3 established that moral evaluation is gauge-invariant under
+admissible re-descriptions (the Bond Invariance Principle), and Chapter
+3 established that the Hohfeldian modalities close under a discrete
+symmetry group. Both are exact symmetries, not statistical regularities,
+and both permit lossless reduction: gauge-fixing collapses the
+re-description orbit to a canonical representative, and quotienting by
+the Hohfeldian correlative and negation symmetries stores one
+representative per orbit. The lossless compressibility of a moral-norm
+tensor is thus governed by its symmetry, not by its spectrum - which is
+exactly why low-rank approximation fails on data that nonetheless
+carries exact geometric redundancy.</p>
+<p>This reframes the engineering problem. A system that must store large
+normative knowledge bases should size for sparsity and exploit the
+manifold's symmetries for exact reduction, rather than assume a compact
+low-dimensional value model can stand in for a large set of
+context-specific obligations. The empirical result is deflationary in a
+useful way: it argues against compressing moral knowledge into a small
+value vector, and for representations that keep the sparse,
+role-specific, symmetry-structured character that the geometry
+predicts.</p>
+<h3 id="what-this-does-and-does-not-establish">What this does and does
+not establish</h3>
+<p>The corpus-to-tensor mapping is lossy - most severely for the corpus
+without gold role and dimension labels - and all four corpora are
+English-language and Western-skewed; the strong role-distinctness result
+rests on the single corpus with rich gold role annotations. The claim
+that symmetry-based reduction is the operative lossless mechanism is, at
+this stage, a theoretical bridge supported by the failure of the
+statistical alternatives, not a measured compression ratio on real data;
+quantifying the realized symmetry reduction on annotated corpora is left
+to future work. Full methods, robustness controls, and reproduction code
+accompany the companion manuscript.</p>
 
       </div>
       <div class="chapter-nav-bottom"><a href="index.html" class="nav-toc">&larr; Contents</a></div>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.23</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

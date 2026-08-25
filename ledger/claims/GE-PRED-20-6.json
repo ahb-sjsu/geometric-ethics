@@ -1,0 +1,44 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-PRED-20-6",
+ "statement": "Manifold Dimensionality",
+ "class": "exploratory",
+ "scope": "Geometric Ethics v1.24, ch.20 (economics) falsifiable-predictions section; REGISTERED, UNTESTED",
+ "retrospective": false,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex line 28597",
+   "author_status": "untested prediction"
+  },
+  {
+   "registration": "ledger/prereg/GE-P-2026-006-manifold-dimensionality.md",
+   "status": "SEALED 2026-08-25",
+   "hash": "sha256:11c168e5942a5e3b63da0cdb38e446c3d9d7c0cd5663e3fb48fd4df5463144e1",
+   "note": "design registered prospectively; class stays exploratory until a result exists -- registration is not evidence"
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "registered",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "FORWARD EXPOSURE: an untested prediction with a pre-written falsification clause, never registered. Registering it prospectively is the corpus's cheapest route out of retrospective debt (PE-BRW-1.0 s5.5)."
+  },
+  {
+   "date": "2026-08-25",
+   "event": "REGISTRATION DRAFTED (PE-BRW-1.0 s5.5): design operationalized -- corpora, parallel-analysis retention rule fixed in advance, split-result handling, and what a pass would NOT establish. Awaiting seal per the rate-limit rule."
+  },
+  {
+   "date": "2026-08-25",
+   "event": "REREAD BEFORE SEAL -- REGISTRATION REWRITTEN, NOT RUBBER-STAMPED. The cold reread found the draft's Moral Machine corpus carries nine attribute dimensions BY DESIGN, making the published clause's 'more than eleven' branch unreachable by construction (a one-sided test), and that it is moral-dilemma rather than economic data. Corpus removed. The instrument gate of 20 items was below the 33 needed to identify 11 factors, and was raised with the derivation stated. The unnamed third corpus was replaced by a fixed search order. A Stage 0 item-freeze amendment was added and made mandatory before Stage 1."
+  },
+  {
+   "date": "2026-08-25",
+   "event": "SEALED. sha256:11c168e5942a5e3b63da0cdb38e446c3d9d7c0cd5663e3fb48fd4df5463144e1. Status registrable -> registered. Class UNCHANGED at exploratory: a design is not a result."
+  }
+ ]
+}

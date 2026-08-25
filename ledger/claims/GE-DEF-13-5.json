@@ -1,0 +1,30 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-DEF-13-5",
+ "statement": "Stratified Lagrangian",
+ "class": "exploratory",
+ "scope": "Geometric Ethics v1.24, \u00a7\u00a713.5; author status: Modeling Axiom",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex \u00a7\u00a713.5",
+   "author_status": "Modeling Axiom",
+   "kind": "axiom"
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-DEF-12-1",
+   "GE-DEF-8-1"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "brownfield conversion from Appendix F registry (PE-BRW-1.0 s5.1-5.2); author status carried over"
+  }
+ ]
+}

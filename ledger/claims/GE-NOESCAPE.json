@@ -1,0 +1,28 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-NOESCAPE",
+ "statement": "A structurally contained agent satisfying R1-R4 cannot circumvent moral constraints by representational manipulation.",
+ "class": "exploratory",
+ "scope": "Conditional on canonicalization, grounded evaluation, audit completeness and EXTERNAL VERIFICATION (Req 3.4).",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "no_escape.tex Theorem 3.5",
+   "note": "The abstract lists only three requirements; the proof needs four -- Req 3.4 (external verification) is indispensable to part (iii). The appendix promising the full formal proof is a bracketed placeholder."
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-AXIOM-5-1"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "entered exploratory: the load-bearing assumption G4 (Psi distinguishes ALL morally relevant differences) is undefended, and the corpus itself states the theorem does not prove agents WILL be contained"
+  }
+ ]
+}

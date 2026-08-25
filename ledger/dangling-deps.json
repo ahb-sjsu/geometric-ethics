@@ -1,0 +1,116 @@
+{
+ "GE-DEF-6-3": [
+  "GE-DEFS-6-1-6-2"
+ ],
+ "GE-DEF-6-4": [
+  "GE-DEFS-6-1-6-3"
+ ],
+ "GE-PROP-6-1": [
+  "GE-DEFS-6-1-6-3"
+ ],
+ "GE-DEF-8-1": [
+  "GE-DEFS-4-7",
+  "GE-5-4"
+ ],
+ "GE-DEF-8-9": [
+  "GE-DEFS-8-4-8-5"
+ ],
+ "GE-DEF-8-10": [
+  "GE-DEFS-8-1",
+  "GE-8-5"
+ ],
+ "GE-CONV-8-1": [
+  "GE-DEFS-8-1",
+  "GE-8-11",
+  "GE-4-4"
+ ],
+ "GE-PROP-8-1": [
+  "GE-DEFS-5-4",
+  "GE-4-7"
+ ],
+ "GE-PROP-10-1": [
+  "GE-DEFS-10-2",
+  "GE-6-3"
+ ],
+ "GE-PROP-10-2": [
+  "GE-DEFS-10-3",
+  "GE-4-5"
+ ],
+ "GE-DEF-11-1": [
+  "GE-DEF-6-4-BF"
+ ],
+ "GE-THM-11-1": [
+  "GE-CH-8-STRATIFICATION"
+ ],
+ "GE-PROP-11-4": [
+  "GE-DEF-8-1-WHITNEY"
+ ],
+ "GE-AXIOM-A3": [
+  "GE-AXIOMS-A1",
+  "GE-AXIOMS-A2"
+ ],
+ "GE-AXIOM-A5": [
+  "GE-AXIOMS-A1",
+  "GE-AXIOMS-A2",
+  "GE-AXIOMS-A3",
+  "GE-AXIOMS-A4"
+ ],
+ "GE-DEF-12-1": [
+  "GE-DEFS-4-4",
+  "GE-5-1"
+ ],
+ "GE-THM-12-2": [
+  "GE-AXIOMS-A1",
+  "GE-AXIOMS-A2",
+  "GE-AXIOMS-A3"
+ ],
+ "GE-THM-12-3": [
+  "GE-AXIOMS-A1",
+  "GE-AXIOMS-A2",
+  "GE-AXIOMS-A3",
+  "GE-AXIOMS-A4",
+  "GE-AXIOMS-A5"
+ ],
+ "GE-DEF-13-6": [
+  "GE-DEFS-12-5",
+  "GE-8-11"
+ ],
+ "GE-PROP-13-1": [
+  "GE-DEFS-12-1-12-2"
+ ],
+ "GE-DEF-14-1": [
+  "GE-DEFS-6-1-6-4"
+ ],
+ "GE-PROP-14-2": [
+  "GE-DEFS-13-1-13-2"
+ ],
+ "GE-DEF-15-1": [
+  "GE-DEFS-6-1-6-4"
+ ],
+ "GE-PROP-15-1": [
+  "GE-DEFS-14-1-14-2"
+ ],
+ "GE-PROP-15-2": [
+  "GE-DEFS-14-1",
+  "GE-11-2"
+ ],
+ "GE-PROP-15-4": [
+  "GE-DEFS-14-1-14-2"
+ ],
+ "GE-THM-18-1": [
+  "GE-REQS-1",
+  "GE-REQS-2",
+  "GE-REQS-3",
+  "GE-REQS-4"
+ ],
+ "GE-PROP-18-3": [
+  "GE-REQS-1",
+  "GE-REQS-2",
+  "GE-REQS-3",
+  "GE-REQS-4"
+ ],
+ "GE-PROP-19-2": [
+  "GE-DEFS-18-1",
+  "GE-14-1"
+ ]
+}

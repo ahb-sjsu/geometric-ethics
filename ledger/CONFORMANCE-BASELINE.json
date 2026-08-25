@@ -1,0 +1,41 @@
+{
+  "spec": "PE-BRW-1.0 s5.6",
+  "ledger": "geometric-ethics",
+  "opened": "2026-08-25",
+  "purpose": "These four P4 support-cap errors are REAL and OPEN. They are acknowledged, not resolved, so that the L3 gate can block NEW conformance failures while these await the one decision that can settle them. Every entry names the owner and the resolution. The linter prints all four on every run and refuses to report unconditional conformance while any remain. If this file grows, that is a regression; it may only shrink.",
+  "finding": "Appendix F of Geometric Ethics v1.24 defines 'Proved' as 'a result that follows from standard mathematics alone, WITHOUT ethical modeling assumptions', yet three rows carry that status while their own Dependencies column lists ethical modeling constructs. The registry contradicts its own definition. Either the status or the dependency list is wrong on each row, and only the author knows which.",
+  "acknowledged": [
+    {
+      "prop": "P4",
+      "claim": "GE-PROP-11-3",
+      "message": "class 'proved' exceeds weakest load-bearing dependency 'GE-DEF-6-1' (exploratory) -- support-cap violation",
+      "owner": "author (A. Bond)",
+      "resolution_required": "Decide which side of the contradiction is wrong for Prop 11.3 (Satisfaction as Directional Derivative). EITHER downgrade the row from 'Proved' to 'Conditional Theorem' -- the honest reading if the derivative genuinely requires Def 6.1's modeling construct -- OR, if the proposition is pure differential geometry that merely mentions Def 6.1 for interpretation, remove Def 6.1 from its Dependencies and keep 'Proved'.",
+      "note": "Not resolvable by conversion: PE-BRW-1.0 s3 forbids re-deriving or editing claims, and choosing between the two readings is an authorial judgement about what the proof actually uses."
+    },
+    {
+      "prop": "P4",
+      "claim": "GE-PROP-11-3",
+      "message": "class 'proved' exceeds weakest load-bearing dependency 'GE-PROP-11-1' (exploratory) -- support-cap violation",
+      "owner": "author (A. Bond)",
+      "resolution_required": "Same decision as the Def 6.1 arm above, applied to the Prop 11.1 dependency. Note that Prop 11.1 is one of the six theorems whose proof is deferred to the uncirculated companion monograph, so this arm cannot be discharged by inspection of the published corpus alone.",
+      "note": "Two entries, not one: a row can be over-graded relative to more than one dependency, and each arm needs its own answer."
+    },
+    {
+      "prop": "P4",
+      "claim": "GE-PROP-11-4",
+      "message": "class 'proved' exceeds weakest load-bearing dependency 'GE-DEF-11-2' (exploratory) -- support-cap violation",
+      "owner": "author (A. Bond)",
+      "resolution_required": "Decide for Prop 11.4 (A* Optimality on Stratified Spaces). A* optimality under an admissible heuristic IS standard mathematics, which makes 'Proved' plausible here -- but only if Def 11.2 supplies the stratified-space setting rather than an ethical assumption. If Def 11.2 is doing ethical work, downgrade; if it is a bare geometric stipulation, reclass Def 11.2 as 'definition' and the cap lifts.",
+      "note": "This is the entry most likely to resolve in favour of keeping 'Proved'."
+    },
+    {
+      "prop": "P4",
+      "claim": "GE-PROP-6-2",
+      "message": "class 'proved' exceeds weakest load-bearing dependency 'GE-DEF-6-4' (exploratory) -- support-cap violation",
+      "owner": "author (A. Bond)",
+      "resolution_required": "Decide for Prop 6.2 (Decomposition of Disagreement). If the decomposition is a linear-algebra identity that holds for any inner-product space, remove the modeling dependency and keep 'Proved'. If it depends on Def 6.4 being the MORAL metric specifically, downgrade -- and note that specifying that metric is the corpus's own stated principal open problem, which would make this row rest on an unsolved problem.",
+      "note": "The second branch, if correct, is the more interesting finding: it would connect a 'Proved' row to the same open problem that blocks Prediction 20.5."
+    }
+  ]
+}

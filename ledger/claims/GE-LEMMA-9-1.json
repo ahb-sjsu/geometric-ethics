@@ -1,0 +1,38 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-LEMMA-9-1",
+ "statement": "D\u2084 Constraint on Metric Components",
+ "class": "exploratory",
+ "scope": "Geometric Ethics v1.24, \u00a7\u00a79 TA; author status: Conditional Theorem",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex \u00a7\u00a79 TA",
+   "author_status": "Conditional Theorem",
+   "kind": "theorem",
+   "mathematical_status": "proved given the stated premises; the assertion about moral reasoning inherits the premises' class"
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-DEF-A-1",
+   "GE-AXIOM-A1",
+   "GE-AXIOM-A2",
+   "GE-AXIOM-A3",
+   "GE-D4-MEASURED"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "brownfield conversion from Appendix F registry (PE-BRW-1.0 s5.1-5.2); author status carried over"
+  },
+  {
+   "date": "2026-08-25",
+   "event": "edge to GE-D4-MEASURED added during conversion: this row is ABOUT the gauge group, so it depends on the gauge-group claim -- an edge the book carried in prose only (PE-BRW-1.0 s5.3)"
+  }
+ ]
+}

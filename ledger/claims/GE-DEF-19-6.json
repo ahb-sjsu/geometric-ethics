@@ -1,0 +1,30 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-DEF-19-6",
+ "statement": "Rank-3 Uncertainty-Aware Canon. Tensor",
+ "class": "exploratory",
+ "scope": "Geometric Ethics v1.24, \u00a7\u00a719.13; author status: Conjecture/Proposal",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex \u00a7\u00a719.13",
+   "author_status": "Conjecture/Proposal",
+   "kind": "conjecture"
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-DEF-19-5",
+   "GE-DEF-6-4"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "brownfield conversion from Appendix F registry (PE-BRW-1.0 s5.1-5.2); author status carried over"
+  }
+ ]
+}

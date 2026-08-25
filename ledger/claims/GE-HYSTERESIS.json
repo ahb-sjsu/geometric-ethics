@@ -1,0 +1,26 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-HYSTERESIS",
+ "retrospective": false,
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "entered as refuted; falsification documented in the corpus (PE-BRW-1.0 s5.4)"
+  }
+ ],
+ "statement": "Obligation transitions exhibit hysteresis: asymmetric O<->L thresholds ('obligation stickiness').",
+ "class": "refuted",
+ "scope": "Book \u00a716.10/\u00a717.10.",
+ "evidence": [
+  {
+   "source": "double-blind context experiment, N=630",
+   "result": "not confirmed; effect reversed (busy 100% vs free 77%, p=0.016) and reinterpreted as context-dependent salience"
+  }
+ ]
+}

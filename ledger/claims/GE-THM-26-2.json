@@ -1,0 +1,29 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-THM-26-2",
+ "statement": "Impossibility of Perfect Scalar Alignment",
+ "class": "exploratory",
+ "scope": "Geometric Ethics v1.24, ch.26 (ai); UNTAGGED in source and absent from Appendix F",
+ "retrospective": true,
+ "evidence": [
+  {
+   "source": "Geometric-Ethics-v1.24.tex line 32892",
+   "author_status": "untagged -- no epistemic tag in the source, no registry row"
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-DEF-5-2",
+   "GE-THM-15-1"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "brownfield conversion phase 2: entered from the untagged domain chapters. Class is exploratory by characterization (PE-BRW-1.0 s5.2), not by the author's assessment -- the source assigns none."
+  }
+ ]
+}
