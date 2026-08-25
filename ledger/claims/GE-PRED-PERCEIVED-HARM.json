@@ -1,0 +1,41 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-PRED-PERCEIVED-HARM",
+ "statement": "Conservation of perceived harm: as the actual prevalence of harmful items falls, the harm-classification threshold shifts downward so that total perceived harm is substantially conserved (conservation coefficient kappa >= 0.5).",
+ "class": "exploratory",
+ "scope": "NEW claim, 2026-08-25. Not present in Geometric Ethics v1.24. Adjacent to, and explicitly NOT a revival of, the withdrawn GE-HARM-CONSERVATION.",
+ "retrospective": false,
+ "evidence": [
+  {
+   "registration": "ledger/prereg/GE-P-2026-007-conservation-of-perceived-harm.md",
+   "status": "DRAFT-UNSEALED 2026-08-25",
+   "note": "Seal is BLOCKED on the required pilot: this programme has no verified effect size for the ethical variant under its own stimulus set. Power before bars."
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": [
+   "GE-HARM-CONSERVATION"
+  ]
+ },
+ "status": "registered-draft",
+ "history": [
+  {
+   "date": "2026-08-25",
+   "event": "OPENED as forward exposure (PE-BRW-1.0 s5.5), and only the SECOND non-retrospective row in the ledger. Prompted by recording GE-HARM-CONSERVATION: the metaphysical conservation claim is blocked on the moral metric, but the psychological claim in its neighbourhood is testable now without committing to any moral geometry."
+  },
+  {
+   "date": "2026-08-25",
+   "event": "SCOPING PREMISE ADOPTED AND RECORDED (author): 'morality hinges on what is perceived anyway, so the distinction isn't that important.' Adopted rather than argued, and recorded so it can be revisited. The perceived/actual distinction is nonetheless RETAINED IN THE DESIGN, because experimenter-set prevalence is the only non-perceptual anchor and without it kappa is not estimable -- the claim would be unfalsifiable."
+  },
+  {
+   "date": "2026-08-25",
+   "event": "REGISTERED IN ADVANCE, the tension with the RETAINED claim: under the adopted premise a positive result says the same act carries a different harm value depending on what it was judged alongside, which is prima facie a failure of invariance of harm accounting. Whether prevalence framing counts as a 'representation change' in the book's sense is undecided and MUST be decided before results are seen. This experiment may bite the claim the corpus holds, not the one it withdrew."
+  },
+  {
+   "date": "2026-08-25",
+   "event": "CLASS exploratory and it stays there. Registration is not evidence."
+  }
+ ]
+}
