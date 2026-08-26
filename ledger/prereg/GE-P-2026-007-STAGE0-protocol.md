@@ -1,11 +1,17 @@
-# GE-P-2026-007 — Stage 0 protocol: stimulus construction, norming, pilot
+# GE-P-2026-007 — Stage 0 protocol: sampling, norming, pilot
 
 **Status: DRAFT, NOT EXECUTED.** This is the procedure that must run, and be
 committed as a dated amendment to `GE-P-2026-007`, **before any main-run data is
-collected**. Nothing here has been executed; no item pool exists yet.
+collected**. The registration is sealed only after this protocol has run,
+because the bar depends on the pilot (§7). *Power before bars.*
 
-The registration is sealed only after this protocol has run, because the bar
-depends on the pilot (§5). *Power before bars.*
+**Revision, 2026-08-26.** This protocol previously specified *constructing* an
+800-item pool of synthetic research-ethics vignettes. That approach was
+**abandoned and the generator retired to a fallback role** (§3.4). Items are now
+**sampled from Social-Chem-101**, a corpus of real human-written situations
+already held at `/archive/ethics-corpora/social-chem-101` on Atlas. The reason
+is recorded in §11 because it is the most useful methodological finding this
+registration has produced.
 
 ---
 
@@ -13,233 +19,288 @@ depends on the pilot (§5). *Power before bars.*
 
 **IRB approval is required before any data collection, including norming.**
 Norming is human-subjects research, not a pre-step to it. Items describing
-research misconduct can be mildly aversive: include a content advisory, permit
-withdrawal at any point without penalty, and pay at or above platform minimum
-for all phases including the pilot.
+interpersonal wrongs can be mildly aversive: content advisory, withdrawal
+without penalty, payment at or above platform minimum for all phases.
 
-No item may describe a real, identifiable study or person.
-
----
+Source items are third-party accounts of real situations already published in
+a public research corpus. No item may be presented in a way that could identify
+an original poster.
 
 ## 1. What the instrument has to resolve
 
-The whole experiment measures **a shift in a classification threshold**. That
-imposes a requirement most stimulus sets fail:
+The experiment measures **a shift in a classification threshold**. That imposes
+a requirement most stimulus sets fail:
 
-> **The item pool must be dense near the threshold.** A pool of clearly-benign
-> and clearly-atrocious items has no resolution: every observer classifies every
-> item identically in every block, and κ is unmeasurable regardless of how large
-> the true effect is.
+> **The pool must be dense near the threshold.** A pool of clearly-benign and
+> clearly-severe items has no resolution: every observer classifies every item
+> identically in every block, and κ is unmeasurable regardless of the true
+> effect size.
 
-The pool is therefore built to be **densest in the ambiguous middle** and sparse
-at the extremes — the opposite of how a stimulus set is usually balanced. The
-extremes exist only to anchor the scale and to serve as attention checks.
+The sample is therefore built densest in the ambiguous middle and sparse at the
+extremes. The extremes exist only to anchor the scale and to serve as attention
+checks.
 
-## 2. Item pool construction
+## 2. Source
 
-**Domain.** Research-ethics proposals: short descriptions of a proposed study,
-judged harmful / not harmful. This is the domain in which the prevalence effect
-was originally demonstrated for ethical judgment, which matters because the
-non-moral positive control (§6) can only license inference about the ethical arm
-if the ethical arm stays close to a paradigm known to work.
+**Social-Chem-101** (Forbes, Hwang, Shwartz, Sap & Choi, EMNLP 2020),
+`social-chem-101.v1.0.tsv`, 355,922 rows / **260,627 distinct actions**, held
+locally at `/archive/ethics-corpora/social-chem-101/`.
 
-**Target pool: 800 items**, generated to span a harm continuum:
+The item unit is the **`action`** field: a short human-written description of a
+thing someone did. Verified length distribution — p5 = 4, **p50 = 7**, p75 = 9,
+p95 = 13 words. Examples at judgment −1:
 
-| Stratum | Target normed harm (0–100) | Count | Purpose |
-|---|---|---|---|
-| Anchor-benign | 0–10 | 60 | scale anchor, attention check |
-| Low | 10–30 | 120 | continuum |
-| **Ambiguous** | **30–70** | **440** | **where threshold shift is detected** |
-| High | 70–90 | 120 | continuum |
-| Anchor-severe | 90–100 | 60 | scale anchor, attention check |
+> *insulting a friend's accomplishments* · *flaking out on your friends* ·
+> *dating a convicted sex offender*
 
-**Balanced across the continuum, not correlated with it.** Each item is tagged
-for topic (medical, psychological, data-privacy, deception, consent, animal,
-economic), study population, and length in words. **Topic must be balanced
-*within* each harm stratum.** If harmful items are disproportionately medical,
-then dropping the prevalence of harmful items also drops the prevalence of
-medical items, and any threshold shift is confounded with topic drift. This is
-the most likely way to build a broken pool.
+**This is a better stimulus than the vignettes it replaces, for three reasons.**
+(i) It is short enough for the hundreds of rapid trials the paradigm needs.
+(ii) It is human-written, so it cannot contain the frame/feature contradictions
+that defeated the generator. (iii) **There is no summarization step**, and
+therefore no point at which anyone chooses which facts survive — decisive here,
+because a study of how context shifts harm judgment must not have uncontrolled
+framing injected at item creation.
 
-**Length and syntactic complexity are matched across strata** for the same
-reason: reading time must not covary with harm level.
+**BLOCKING CHECK BEFORE SEALING:** confirm the licence permits research reuse
+and re-presentation to paid participants. Recorded as unverified as of drafting.
 
-## 3. Norming
+## 3. Sampling frame
 
-**Sample.** n = 200, independent of the main and pilot samples, with no
-participant appearing in more than one phase. Platform-level exclusion is
-enforced by ID, not by self-report.
+### 3.1 Filters, and the counts they yield (verified 2026-08-26)
 
-**Task.** Each participant rates a random 100-item subset on a **continuous
-0–100 harm slider** (not a binary judgment — the norming phase must produce the
-graded quantity the main run's binary judgments are scored against). Each item
-receives ≥ 25 independent ratings.
+| filter | rationale |
+|---|---|
+| drop `area = rocstories` | crowdsourced **fiction**; the other three sources are real reported situations |
+| `action-hypothetical ∈ {explicit, probable}` | exclude hypotheticals and negated actions |
+| `action-moral-judgment` and `action-agree` both present | ~12.5% of rows are unannotated |
+| 4 ≤ words ≤ 25 | readable in a rapid series; excludes fragments |
 
-**Derived per item:** mean harm `h_i`, SD `s_i`, and inter-rater agreement.
+**82,757 distinct actions survive** (AITA 37,251 · confessions 33,717 ·
+Dear Abby 11,789). Cross-tabulated:
 
-### 3.1 The distinction that has to be enforced
+| `action-moral-judgment` | agree ≥ 3 (graded) | agree ≤ 1 (contested) |
+|---|---|---|
+| −2 | 5,299 | 48 |
+| −1 | 27,323 | 924 |
+| 0 | 25,940 | 951 |
+| +1 | 8,172 | 133 |
+| +2 | 1,967 | 6 |
 
-An item can sit mid-scale for two entirely different reasons, and only one of
-them is a continuum position:
+**Density is a solved problem.** The ambiguous band needs 440 items against
+27,323 candidates — **62× headroom** — so the sample can be filtered hard on
+length, source and moral foundation and still fill every stratum. Both anchors
+are available (1,967 benign, 5,299 severe).
 
-- **Graded** — raters agree it is *moderately* harmful. Mean 50, low SD. This is
-  a genuine point on the harm continuum.
-- **Contested** — raters disagree: half say benign, half say severe. Mean 50,
-  high SD. This is *not* a mid-continuum item; it is two populations.
+### 3.2 Over-sample, because the source's judgment is not the study's harm scale
 
-Contested items add variance without adding resolution, and worse, a prevalence
-manipulation can shift *which* reading dominates — producing threshold-shift-like
-behaviour with no concept change at all.
+`action-moral-judgment` is a 5-point scale from a different rater population
+under different instructions. It is used **only to stratify the sample**; where
+an item actually falls is decided by this study's own norming (§5).
 
-**Exclusion rule, fixed here:** an item is excluded if `s_i > 20` (on the 0–100
-scale) or if its rating distribution is significantly bimodal (Hartigan's dip
-test, p < .05). Excluded-as-contested items are **retained and reported as a
-separate list** — disagreement about which acts are harmful is independently
-interesting to this corpus and should not be discarded silently.
+Therefore: **sample 1,200 items — 50% more than the 800 required — norm all
+1,200, and select the 800 that best fill the normed strata.** The surplus
+absorbs the mismatch between source judgment and normed harm. Selecting 800
+from 1,200 *after norming but before the main run* is legitimate and is fixed
+here in advance; selecting after seeing main-run data would not be.
 
-**Retention target:** ≥ 500 items surviving, with ≥ 280 in the ambiguous
-stratum. If the ambiguous stratum falls below 280, the pool is unfit and items
-are regenerated — **the shortfall is not absorbed by widening the ambiguous
-band**, which would silently change what the experiment measures.
+Sampling targets, by source judgment: +2 → 90 · +1/0 → 180 · −1 → 660 ·
+−2 → 270.
 
-## 4. The κ estimator, stated explicitly
+### 3.3 Balance, fixed before sampling
+
+- **Moral foundation** (`rot-moral-foundations`) balanced within each stratum.
+  Necessary because the corpus is dominated by care-harm (157,355 vs 66,800 for
+  the next), and an unbalanced sample would let foundation proxy for severity.
+- **Characters involved** (`action-char-involved`) balanced within stratum, so
+  the number of affected parties cannot track harm level.
+- **Source** (`area`) balanced within stratum: AITA, confessions and Dear Abby
+  differ in register and in who is narrating.
+- **Word count** matched across strata, verified after sampling.
+
+### 3.4 The generator's remaining role
+
+`experiments/ge007_build_item_pool.py` is **retired to a fallback**: if a
+stratum cannot be filled from the corpus after balance constraints, synthetic
+items may fill the gap, and every such item **must be flagged in the item
+manifest and reported separately in any result.** On the verified counts this
+should not be needed.
+
+## 4. Contested versus graded — and a correction to the previous protocol
+
+The previous protocol proposed to separate *graded* items (raters agree it is
+moderately harmful — a genuine continuum position) from *contested* items
+(raters disagree; two populations, not a midpoint) using SD and a dip test on
+norming data. **That distinction still matters and the screen is retained.**
+But the corpus complicates it in a way worth registering:
+
+**`action-agree` is ANTICIPATED agreement, not observed agreement.** It records
+one worker's *prediction* of how much others would agree. Where actual
+agreement can be observed — the 24,013 actions with ≥2 independent annotations —
+**46.5% show outright disagreement on the judgment label** (10,121 of 21,769).
+
+Two consequences, both fixed here:
+
+1. `action-agree` is used as a **cheap prior for sampling**, never as the
+   contestedness screen. The screen remains this study's own norming SD and dip
+   test (§5). Anticipated consensus is not measured consensus.
+2. The 24,013 multi-annotated actions become a **calibration set**: whether
+   `action-agree` predicts observed annotator disagreement is checkable *before*
+   any main-run data, and the answer is reported in the Stage 0 amendment
+   whichever way it falls.
+
+Note also that **89.5% of actions carry only one annotation** (233,389 of
+260,627), so within-item annotator variance is unavailable for most of the pool.
+This is why the study's own norming cannot be skipped.
+
+## 5. Norming — what the corpus cannot replace
+
+The κ estimator (§6) compares each participant's threshold against per-item harm
+values. Those values must be on **this study's scale, from this study's
+population, under this study's instructions**. Imported labels satisfy none of
+those. The corpus replaces *authoring*, not norming.
+
+- **Sample.** n = 300, independent of pilot and main samples, enforced by
+  platform ID rather than self-report.
+- **Task.** Each participant rates a random 100-item subset of the 1,200 on a
+  **continuous 0–100 harm slider**. Each item receives ≥ 25 independent ratings.
+- **Derived per item:** mean harm `h_i`, SD `s_i`, agreement.
+- **Exclusion:** an item is excluded as contested if `s_i > 20` or its rating
+  distribution is significantly bimodal (Hartigan's dip, p < .05). Excluded
+  items are **retained and reported as a list** — disagreement about which acts
+  are harmful is independently interesting to this corpus.
+
+## 6. The κ estimator
 
 Per participant, per block, fit a logistic psychometric function of
 P(judge harmful) against normed harm `h`. The **threshold θ** is the 50% point.
 
-Let, for a participant:
-
 - `B` = count judged harmful in the **baseline block** (prevalence `p₁`)
 - `O` = count judged harmful in the **final block** (prevalence `p₂ < p₁`)
-- `E` = count in the final block with `hᵢ > θ_baseline` — i.e. the count expected
-  **if the threshold had not moved at all**
-
-Then
+- `E` = count in the final block with `hᵢ > θ_baseline` — the count expected
+  **if the threshold had not moved**
 
 ```
-        O − E            (observed harmful count) − (count if threshold were fixed)
-κ  =  ─────────   =    ───────────────────────────────────────────────────────────
-        B − E            (baseline count)        − (count if threshold were fixed)
+        O − E
+κ  =  ─────────
+        B − E
 ```
 
 `κ = 1` when `O = B` (total perceived harm unchanged — conservation).
 `κ = 0` when `O = E` (threshold fixed — pure tracking).
 
-This is algebraically identical to the registration's
-`1 − (observed drop)/(drop expected under fixed threshold)`.
+### 6.1 Degenerate case
 
-### 4.1 The degenerate case, and the gate it requires
+**If `B = E` the estimator is 0/0.** This is the expected outcome for any
+participant whose threshold sits above nearly every item, and pooling them
+silently would let denominator noise drive the estimate. A participant
+contributes only if `B − E ≥ 5`; failures are **reported with their thresholds**,
+not dropped. **If more than 25% fail, the prevalence manipulation was too weak
+and the run is void** — that is not fixable by reanalysis.
 
-**If `B = E` the estimator is 0/0 and κ is undefined.** This happens when the
-prevalence manipulation, expressed in *normed* terms against that participant's
-own threshold, imposed no real drop — for instance if their threshold sits above
-almost every item in both blocks.
+### 6.2 Verified before use
 
-This is not a hypothetical: it is the expected outcome for any participant with
-an extreme threshold, and pooling them in silently would bias κ toward whatever
-the denominator noise happens to do.
+`experiments/ge007_kappa_recovery.py` (seed 20260825) recovers κ across
+0.00–1.00 with a **disclosed additive bias of −0.011**, constant across the
+range, from integer rounding of the target count. The bias is **downward**: it
+under-states κ and so biases toward **refuting** conservation. Negligible
+against a 0.5 bar and conservative in direction, but recorded rather than left
+to be rediscovered. The §6.1 gate was exercised under a deliberately weak
+manipulation and fires as intended.
 
-**Gate, fixed in advance:** a participant contributes to the κ estimate only if
-`B − E ≥ 5` items. Participants failing this are **reported as a count, with
-their thresholds**, not silently dropped. If more than 25% of participants fail
-it, the *prevalence manipulation was too weak* — an instrument failure that
-voids the run and requires a stronger manipulation, not a reanalysis.
+## 7. Pilot
 
-### 4.2 The estimator was checked before it was trusted
-
-`experiments/ge007_kappa_recovery.py` (seed 20260825) simulates participants
-with a **known** true κ and confirms the estimator recovers it. This is a test
-of the *instrument*, not of the hypothesis, and it was run before the instrument
-was pointed at anything:
-
-| true κ | recovered | bias |
-|---|---|---|
-| 0.00 | −0.011 | −0.011 |
-| 0.25 | 0.238 | −0.012 |
-| 0.50 | 0.489 | −0.011 |
-| 0.75 | 0.738 | −0.012 |
-| 1.00 | 0.989 | −0.011 |
-
-**Disclosed bias: ≈ −0.011, additive and constant across the range**, arising
-from integer rounding of the target count. It is **downward**, meaning the
-estimator *under*-states κ and therefore biases toward **refuting** conservation.
-Against a bar of 0.5 it is negligible, and it errs in the conservative
-direction — but it is recorded here rather than left for someone to rediscover,
-because an undisclosed bias of unknown sign is a different object from a
-disclosed one of known sign.
-
-The degenerate-case gate was exercised the same way: under a deliberately weak
-manipulation (p₁ = .50 → p₂ = .48) roughly half of simulated participants fail
-`B − E ≥ 5`, confirming §4.1 fires when it should.
-
-## 5. Pilot
-
-**n = 60** (30 per condition), full procedure, main-run identical.
-
-Purpose is **not** to test the hypothesis. It is to estimate:
+**n = 60** (30 per condition), procedure identical to the main run. Purpose is
+**not** to test the hypothesis, but to estimate:
 
 1. `Var(κ)` across participants → fixes main-run n for 90% power to detect
    κ = 0.5 against κ = 0;
 2. the proportion failing the `B − E ≥ 5` gate → confirms manipulation strength;
-3. the exclusion rate from attention checks;
-4. whether the non-moral control arm reproduces the prevalence effect *on this
-   platform and sample* (§6).
+3. the attention-check exclusion rate;
+4. whether the non-moral control arm reproduces the prevalence effect **on this
+   platform and sample** (§8).
 
-**The pilot is not analysed for κ's value, and the pilot participants are not
-reused.** Pilot κ is computed only as a variance input; its point estimate is
-**not reported as a result and not used to adjust the bar**, which would convert
-the pilot into an unregistered first look.
+**Pilot κ is a variance input only.** Its point estimate is not reported as a
+result and not used to adjust the bar, which would convert the pilot into an
+unregistered first look. Pilot participants are not reused.
 
-## 6. The control arms
+## 8. Control arms
 
-**Positive / instrument gate — non-moral.** A colour-classification arm run in
-the same sample, on the same platform, in the same session structure, must
-reproduce the standard prevalence effect. **If it does not, the ethical arm is
-not interpreted at all** — a null there would be uninterpretable, since "moral
-judgment shows no concept change" and "this sample shows no concept change"
-would be indistinguishable.
+- **Positive / instrument gate — non-moral.** A colour-classification arm, same
+  sample, same platform, same session structure, must reproduce the standard
+  prevalence effect. **If it does not, the ethical arm is not interpreted at
+  all** — a null there would be uninterpretable, since "moral judgment shows no
+  concept change" and "this sample shows no concept change" are indistinguishable.
+- **Negative — stable prevalence.** No threshold drift across blocks. Drift means
+  fatigue, practice or scale contraction, and voids the run.
+- **Order — counterbalanced.** A shift surviving order reversal is concept
+  change; one following time-on-task regardless of prevalence direction is an
+  artifact.
 
-**Negative — stable prevalence.** Threshold drift across blocks must be absent.
-Drift here means fatigue, practice, or scale contraction, and voids the run.
+## 9. Exclusions, all fixed before data
 
-**Order — counterbalancing.** Block order is counterbalanced. A threshold shift
-that survives order reversal is concept change; one that follows time-on-task
-regardless of prevalence direction is an artifact.
-
-## 7. Exclusions, all fixed before data
-
-- Attention checks: anchor-benign items judged harmful, or anchor-severe judged
-  not harmful, at > 20% → exclude participant.
-- Response times below 300 ms on > 10% of trials → exclude.
-- Straight-lining: identical response on > 95% of a block → exclude.
+- Anchor items misclassified at > 20% → exclude participant.
+- Response times < 300 ms on > 10% of trials → exclude.
+- Straight-lining on > 95% of a block → exclude.
 - Incomplete blocks → exclude.
 
-**Target exclusion rate ≤ 15%.** Exceeding 25% voids the run rather than
-licensing a cleaned reanalysis.
+**Target ≤ 15%. Exceeding 25% voids the run** rather than licensing a cleaned
+reanalysis.
 
-## 8. What Stage 0 commits, and when
+## 10. What Stage 0 commits
 
-The Stage 0 amendment to `GE-P-2026-007` must contain, committed **before** the
-main run:
+Committed as a dated amendment **before** the main run:
 
-1. the final item list with every `hᵢ`, `sᵢ`, and topic tag;
+1. the 1,200 sampled item IDs with source row references, and the 800 selected
+   after norming, with every `hᵢ`, `sᵢ`, foundation and character tag;
 2. the contested-item exclusion list;
-3. the pilot's `Var(κ)` and the resulting main-run `n`;
-4. the pilot's gate-failure and exclusion rates;
+3. the `action-agree` calibration result (§4.2), whichever way it falls;
+4. the pilot's `Var(κ)`, resulting main-run `n`, gate-failure and exclusion rates;
 5. the non-moral control result;
-6. the analysis code, **unexecuted against main-run data**, hashed.
+6. the analysis code, **unexecuted against main-run data**, hashed;
+7. any synthetic fallback items, flagged (§3.4).
 
 Only then is `GE-P-2026-007` sealed.
 
-## 9. Decision owed by the author before results
+## 11. Registered limitations
 
-Recorded in the registration and repeated here because it is the highest-leverage
-open item and cannot be settled afterwards:
+**Range compression, and it costs power.** Social-Chem-101's −2 tops out at
+ordinary interpersonal wrongs — *dating a convicted sex offender*, not
+atrocities. The harm continuum is **truncated at the severe end** relative to
+the synthetic pool it replaces. A compressed range gives the threshold less room
+to travel, which **shrinks the effect the pilot must detect**. Registered in
+advance so that a small κ is not later attributed to the absence of the
+phenomenon when it may reflect the instrument's range.
+
+**Population and cultural skew.** AITA, confessions and Dear Abby are
+US-centric, English-language and self-selected. Findings generalise to that
+population and no further.
+
+**Care-harm dominance.** The corpus's moral-foundation distribution is
+dominated by care-harm. §3.3 balances within stratum, but the underlying supply
+is skewed and some foundations will be thinly represented.
+
+**Why the previous approach was abandoned — the finding worth keeping.** The
+generator composed items from a frame, a population and an ethical feature.
+Those three are **not semantically independent**: a records-only study cannot
+enrol at a bedside, a job-training trial has no loan terms, a zebrafish study
+has no rabbits. Three keyword screens were added, *each after reading samples
+rather than by prior design*, and each caught a class the previous ones missed;
+a fresh six-item sample after the third still contained obvious contradictions.
+Every structural check — counts, balance, length matching, uniqueness — passed
+throughout. **Semantic incoherence is invisible to structural verification**,
+and a pool that passes every automated check can still be unfit. Worse, the
+failure mode is silent: incoherent items produce rater disagreement that looks
+like genuine contestedness, which §5's dip test would then exclude, deleting
+real continuum coverage while appearing to work correctly.
+
+The corpus removes the failure class entirely, because real situations are
+coherent by construction.
+
+## 12. Decision owed by the author before results
+
+Repeated from the registration because it cannot be settled afterwards:
 
 > **Does a prevalence-framing shift count as a "representation change" in the
 > book's sense?** If it does, a positive result challenges the retained
 > invariance-of-harm-accounting claim. If it does not, the author must say what
 > distinguishes them — *before* seeing whether κ > 0.
-
-Deciding this after the result is the exact degree of freedom registration
-exists to remove.

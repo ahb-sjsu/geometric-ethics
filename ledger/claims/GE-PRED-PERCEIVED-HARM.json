@@ -13,8 +13,8 @@
   },
   {
    "protocol": "ledger/prereg/GE-P-2026-007-STAGE0-protocol.md",
-   "status": "DRAFT, NOT EXECUTED 2026-08-25",
-   "note": "Stimulus construction, norming, kappa estimator, pilot and control arms. No item pool exists yet; nothing has been collected. IRB approval required before norming, which is itself human-subjects research."
+   "status": "DRAFT v2, NOT EXECUTED 2026-08-26",
+   "note": "Rewritten around Social-Chem-101 (/archive/ethics-corpora on Atlas, 260,627 distinct actions). Synthetic generation abandoned; generator retired to fallback. Sampling frame verified empirically: 82,757 actions survive filters, 27,323 available for the 440-item ambiguous band (62x headroom), both anchors available (1,967 benign / 5,299 severe)."
   }
  ],
  "depends": {
@@ -45,6 +45,22 @@
   {
    "date": "2026-08-25",
    "event": "STAGE 0 PROTOCOL DRAFTED. Estimator VERIFIED NUMERICALLY BEFORE USE (experiments/ge007_kappa_recovery.py, seed 20260825): kappa recovered across 0.00-1.00 with a disclosed additive bias of -0.011, downward and therefore conservative against the 0.5 bar. Degenerate-case gate exercised under a weak manipulation and fires as intended. Two design failure modes identified and gated: (1) an item pool dense at the extremes rather than the ambiguous middle has NO resolution for threshold shift regardless of true effect size; (2) mid-scale CONTESTED items (bimodal, raters disagree) are not continuum positions and can mimic threshold shift with no concept change -- excluded by SD and dip test, and reported separately rather than discarded, since disagreement about what is harmful is independently interesting to this corpus."
+  },
+  {
+   "date": "2026-08-26",
+   "event": "STAGE 0 REWRITTEN AROUND A REAL CORPUS; SYNTHETIC GENERATION ABANDONED. The generator composed items from a frame, a population and an ethical feature, which are NOT semantically independent -- a records-only study cannot enrol at a bedside, a zebrafish study has no rabbits. Three keyword screens were added, each AFTER READING SAMPLES rather than by prior design, and each caught a class the previous missed; a fresh sample after the third still contained obvious contradictions. Every structural check passed throughout. THE FINDING: semantic incoherence is invisible to structural verification, and the failure is silent -- incoherent items produce rater disagreement that mimics genuine contestedness, which the dip test would then exclude, deleting real continuum coverage while appearing to work. Real situations are coherent by construction, which removes the failure class rather than screening it."
+  },
+  {
+   "date": "2026-08-26",
+   "event": "CORPUS SUBSTITUTES FOR AUTHORING, NOT FOR NORMING. kappa compares each participant's threshold against per-item harm values, which must be on this study's scale, from this study's population, under this study's instructions. Imported labels satisfy none. Design accordingly over-samples 1,200 items for 800 slots, norms all 1,200 on a 0-100 scale, and selects after norming but BEFORE the main run -- fixed in advance, since the same selection after main-run data would not be legitimate."
+  },
+  {
+   "date": "2026-08-26",
+   "event": "CORRECTION FOUND IN THE SOURCE ANNOTATIONS. `action-agree` is ANTICIPATED agreement -- one worker's prediction of consensus -- not observed agreement. Where agreement IS observable (24,013 actions with >=2 independent annotations), 46.5% disagree outright on the judgment label. The field is therefore demoted to a sampling prior and is NOT the contestedness screen; the screen remains this study's own norming SD and dip test. The multi-annotated subset becomes a calibration set, checkable before any main-run data, reported whichever way it falls. Also: 89.5% of actions carry a single annotation, so within-item annotator variance is unavailable for most of the pool -- which is why norming cannot be skipped."
+  },
+  {
+   "date": "2026-08-26",
+   "event": "LIMITATION REGISTERED IN ADVANCE: RANGE COMPRESSION COSTS POWER. Social-Chem-101's severe end tops out at ordinary interpersonal wrongs, not atrocities, so the harm continuum is truncated relative to the synthetic pool it replaces. A compressed range gives the threshold less room to travel and SHRINKS the effect the pilot must detect. Registered so that a small kappa is not later attributed to absence of the phenomenon when it may reflect the instrument's range. Also registered: US/English/self-selected population, and care-harm dominance in the source's moral-foundation distribution."
   }
  ]
 }
