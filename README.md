@@ -36,3 +36,23 @@ filenames are reused so URLs stay stable; empty `<h1>` dividers are skipped.
 `python .build/build_ethics.py --check` exits non-zero if the served HTML is
 out of sync with the docx — suitable for CI. Bump the version stamp via
 `VERSION` in the script when the docx version changes.
+
+## License
+
+Two licenses, split by what the file is.
+
+| What | License | File |
+|---|---|---|
+| Prose and figures: chapters, appendices, front and back matter, figures, ledgers, protocol and standards documents, README | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | `LICENSE-TEXT` |
+| Source code: build scripts, tools, experiment harnesses, site generators | [MIT](https://opensource.org/licenses/MIT) | `LICENSE` |
+
+Manuscripts under `paper/` or `papers/` that are submitted, accepted or
+published elsewhere are outside both files. They carry the rights their
+publisher agreement assigns.
+
+CC BY asks you to attribute and to indicate whether you changed anything. Both
+halves of that matter here. Every claim in this series carries a status label,
+such as `[proved]`, `[posited]` or `[open]`, graded against a claim ledger, and
+an adapted version presented as the original misstates the evidence behind it.
+Attribution that names the author, the volume and this repository, and that
+says whether the text was changed, is enough.
