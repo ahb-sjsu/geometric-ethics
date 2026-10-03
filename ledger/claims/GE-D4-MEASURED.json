@@ -3,7 +3,7 @@
  "id": "GE-D4-MEASURED",
  "statement": "The deontic gauge group D4 was DISCOVERED IN DATA ('found by testing every transformation against thousands of moral scenarios').",
  "class": "exploratory",
- "scope": "As asserted in the methodology chapter (\u00a717.0.2) and the objective/governed table (\u00a717.0.3).",
+ "scope": "As asserted in the methodology chapter (§17.0.2) and the objective/governed table (§17.0.3).",
  "retrospective": true,
  "evidence": [
   {
@@ -19,11 +19,15 @@
    "GE-THM-12-3"
   ]
  },
- "status": "suspended",
+ "status": "withdrawn",
  "history": [
   {
    "date": "2026-08-25",
    "event": "SUSPENDED on conversion: asserts as measured what the corpus's own registry grades as conditional and untested. Resolve by (a) withdrawing the discovered-in-data wording, or (b) registering the quarter-turn measurement prospectively."
+  },
+  {
+   "date": "2026-10-03",
+   "event": "Resolved as path (a), the wording withdrawn. Owner decision 2026-10-03: D4 is obsolete. The two demonstrated operations generate V4 (erisml-lib formal/HohfeldV4.lean, machine-checked); the quarter-turn is not generated, has never been demonstrated, and the quarter-turn hunt (erisml-lib docs/papers/quarter-turn-hunt) did not find it."
   }
  ]
 }
