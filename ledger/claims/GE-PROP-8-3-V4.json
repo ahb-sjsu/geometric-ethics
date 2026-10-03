@@ -1,0 +1,36 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-PROP-8-3-V4",
+ "statement": "V4 Structure of Hohfeldian Transitions: the correlative s and the jural flip n are commuting involutions generating the Klein four-group V4 = Z2 x Z2, acting regularly on the four positions; the quarter-turn is not generated.",
+ "class": "proved",
+ "scope": "Geometric Ethics, section 8.4 (source/updates/sec8_4_hohfeld_v4.tex)",
+ "retrospective": false,
+ "evidence": [
+  {
+   "source": "erisml-lib formal/HohfeldV4.lean",
+   "author_status": "Proved",
+   "kind": "theorem",
+   "mathematical_status": "machine-checked in Lean 4 + Mathlib"
+  },
+  {
+   "source": "erisml-lib tests/test_hohfeld_v4.py",
+   "kind": "test"
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-AXIOM-A1"
+  ],
+  "corroborates": [],
+  "cites": [
+   "GE-PROP-8-3"
+  ]
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-10-03",
+   "event": "added with the strata and V4 content updates (source/updates/)"
+  }
+ ]
+}
