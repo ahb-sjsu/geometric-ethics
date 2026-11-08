@@ -224,16 +224,19 @@ pre-edit manifold topology. The modification is not merely irreversible
 for the individual (as in somatic editing) but topologically
 irreversible for the species.</p>
 <p>Proof. Let G be a germline modification applied at generation t to an
-individual with n descendants at generation t+k. By heritability, all n
-descendants carry the modification. The number of affected vertices
-grows as n(k) &gt;= 2^k (assuming replacement fertility). To reverse the
-modification requires applying the inverse edit G^{-1} to every affected
-individual at every future generation — a set that grows exponentially
-and, after sufficient generations, encompasses a substantial fraction of
-the population. Even if the inverse edit exists in principle, the
-logistical requirement of modifying every carrier is practically
-infinite. Moreover, the inverse edit G^{-1} must be applied to
-individuals who may not consent to reversal, creating a new consent
+individual with n descendants at generation t+k. Each child of a carrier
+inherits a heterozygous edit with probability 1/2, so under replacement
+fertility the 2^k descendants at generation t+k include on average only
+about one carrier: spread is not automatic, and a neutral edit can be
+lost by drift. The theorem concerns an edit that has propagated (by
+selection, repeated use, or drift), so that its carriers are a
+substantial fraction of the population, scattered among descendants who
+cannot be told apart without genome screening. To reverse the
+modification requires applying the inverse edit G^{-1} to every carrier
+at every future generation. Even if the inverse edit exists in
+principle, the logistical requirement of modifying every carrier is
+practically infinite. Moreover, the inverse edit G^{-1} must be applied
+to individuals who may not consent to reversal, creating a new consent
 impossibility boundary. The pre-edit topology T(B) is unreachable from
 B': no finite sequence of actions on B' returns the complex to T(B). The
 modified state is absorbing. []</p>
@@ -562,8 +565,8 @@ modifications to another agent's d_4.</p>
 Modifications that expand d_4 capacity (cognitive enhancement, voluntary
 neural augmentation) and modifications that restrict d_4 capacity
 (involuntary medication, neural surveillance, coerced brain-computer
-interfaces) have opposite curvature signatures on the bioethical
-decision complex. Specifically:</p>
+interfaces) have opposite effects on edge weights and reachable sets on
+the bioethical decision complex. (Corrected in v1.25.) Specifically:</p>
 <p>(1) d_4-expanding modifications reduce edge weights from the agent's
 current vertex, increasing the agent's reachable set R(a). The agent can
 access more vertices — more options for autonomous action.</p>
@@ -571,11 +574,11 @@ access more vertices — more options for autonomous action.</p>
 agent's current vertex, shrinking the agent's reachable set R(a). The
 agent can access fewer vertices — fewer options for autonomous
 action.</p>
-<p>The two types of modification have opposite signs on the d_4
-component of the curvature tensor: d_4-expansion produces negative
-curvature (diverging geodesics — more paths become available), while
-d_4-restriction produces positive curvature (converging geodesics —
-paths are funneled toward fewer outcomes).</p>
+<p>The two types of modification act in opposite directions on d_4:
+d_4-expansion spreads the agent's options (more paths become available),
+while d_4-restriction funnels paths toward fewer outcomes. The
+difference is in the sign of the change in edge weights, not in the sign
+of the curvature tensor. (Corrected in v1.25.)</p>
 <p><strong>Proof</strong>. The edge weight from vertex v to any adjacent
 vertex v' includes the d_4 component of the Mahalanobis distance: the
 d_4 contribution to w(v, v') is proportional to (Da_4)^2 / sigma_44,
@@ -585,10 +588,11 @@ for edges toward high-autonomy vertices (the agent is closer to
 autonomous states) and thereby reducing edge weights. The reachable set
 expands. A d_4-restricting modification decreases d_4, increasing Da_4
 for edges toward autonomous states and increasing edge weights. The
-reachable set contracts. The curvature follows from the second
-derivative of the metric: expansion yields d^2w/dv^2 &lt; 0 (negative
-curvature, diverging paths); restriction yields d^2w/dv^2 &gt; 0
-(positive curvature, converging paths). []</p>
+reachable set contracts. The opposite signs are in the first-order
+change of edge weights, not in their curvature: the d_4 term (Da_4)^2 /
+sigma_44 is convex in Da_4 whichever way the modification moves it
+(d^2w/d(Da_4)^2 = 2/sigma_44 &gt; 0, and 2 (Sigma_B^{-1})_44 &gt; 0 in
+general). []</p>
 <p><strong>Compulsory Psychiatric Medication</strong>. The involuntary
 administration of antipsychotic medication to psychiatric patients is a
 paradigmatic case of d_4-restriction. The institution overrides the
@@ -1093,9 +1097,9 @@ downstream path, formalizing the gain-of-function debate as a
 multi-dimensional trade-off that scalar risk-benefit analysis cannot
 capture.</p>
 <p>7. Neural modification asymmetry: d_4-expanding and d_4-restricting
-modifications have opposite curvature signatures, providing a formal
-basis for distinguishing cognitive enhancement from cognitive
-coercion.</p>
+modifications have opposite effects on edge weights and reachable sets,
+providing a formal basis for distinguishing cognitive enhancement from
+cognitive coercion.</p>
 <p>8. Public health mandates as collective-individual geodesic
 divergence, with vaccine hesitancy formalized as inadmissible and
 gauge-variant heuristic miscalibration.</p>
@@ -1105,7 +1109,7 @@ gauge-variant heuristic miscalibration.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

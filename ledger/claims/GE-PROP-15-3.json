@@ -11,6 +11,11 @@
    "author_status": "Proved",
    "kind": "theorem",
    "mathematical_status": "follows from standard mathematics alone"
+  },
+  {
+   "source": "geometric-ethics formal/lean (Lean 4.32.2 + Mathlib 905b958), RESULTS-2026-11-08.txt",
+   "kind": "theorem",
+   "mathematical_status": "machine-checked in Lean 4 + Mathlib; 0 sorry; standard axioms only"
   }
  ],
  "depends": {
@@ -25,6 +30,10 @@
   {
    "date": "2026-08-25",
    "event": "brownfield conversion from Appendix F registry (PE-BRW-1.0 s5.1-5.2); author status carried over"
+  },
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: the 'if and only if' needs strictly positive weights (a zero weight breaks 'only if', a negative weight breaks 'if'); corrected. Lean: C1_eq_C2_iff_pos, two counterexamples."
   }
  ]
 }

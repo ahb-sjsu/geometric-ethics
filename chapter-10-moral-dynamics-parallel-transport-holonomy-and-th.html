@@ -378,22 +378,19 @@ identity), moral space is flat at <span class="math inline">p</span> —
 all loops preserve obligations exactly. If <span
 class="math inline">\text{Hol}(\nabla,p)</span> is large, the curvature
 is rich — many different loops produce many different rotations.</p>
-<p><strong>Connection to the</strong> <span
-class="math inline">D_{4}</span> <strong>structure.</strong> In
-stratified moral space (Chapter 8), the holonomy around a loop that
-crosses Hohfeldian boundaries is constrained by the <span
-class="math inline">D_{4}</span> group. A loop that enters the
-obligation stratum and returns to the liberty stratum may induce a
-transformation from <span class="math inline">D_{4}</span> — a rotation
-or reflection of the Hohfeldian square. The holonomy group of the
-stratified moral manifold includes <span
-class="math inline">D_{4}</span> as a discrete subgroup, contributing to
-what might be called the <em>non-abelian</em> character of moral
-dynamics.</p>
+<p><strong>Connection to the V₄ structure.</strong> In stratified moral
+space (Chapter 8), a loop that crosses Hohfeldian boundaries carries a
+discrete part: an element of V₄ recording its net perspective shifts and
+negations. V₄ is abelian, so that part depends only on how many
+crossings of each kind the loop makes, never on their order. Any order
+dependence a loop shows must therefore come from the curvature of the
+continuous connection, not from the Hohfeldian group. (Earlier editions
+said the holonomy group includes D₄ and that this gives moral dynamics a
+non-abelian character. D₄ is withdrawn: §8.4.)</p>
 <p><strong>Selective path dependence.</strong> [Empirical result
 (preliminary).] Experimental testing of path dependence across 8 moral
-scenarios (N = 640 evaluations) reveals that the non-abelian structure
-is selective: path dependence was detected in exactly 2 of 8 scenarios
+scenarios (N = 640 evaluations) reveals that path dependence is
+selective: path dependence was detected in exactly 2 of 8 scenarios
 (combined χ² = 72.14, p &lt; 10⁻⁸), and both path-dependent scenarios
 involved considerations that point to different Hohfeldian bond
 types.</p>
@@ -408,9 +405,10 @@ flips the dominant verdict between L and O.</p>
 <p>The remaining 6 scenarios—where both considerations point to the same
 bond type—showed no path dependence (p &gt; 0.2 for all). This yields a
 precise structural prediction: within-type moral operations commute;
-cross-type operations do not. The non-abelian character of the D₄ gauge
-group (§12.3) is not a global property of all moral reasoning but a
-local property of boundary-crossing deliberation.</p>
+cross-type operations do not. This path dependence is not a property of
+the Hohfeldian group, which is abelian (§8.4). It is a local property of
+boundary-crossing deliberation, which this framework reads as curvature
+of the continuous connection.</p>
 <h2 id="the-curvature-of-moral-space">10.6 The Curvature of Moral
 Space</h2>
 <h3 id="the-riemann-curvature-tensor-1">The Riemann Curvature
@@ -1025,21 +1023,23 @@ class="math inline">\delta A</span> <em>in the plane spanned by</em>
 <span class="math inline">e_{\alpha}</span> <em>and</em> <span
 class="math inline">e_{\beta}</span><em>, the holonomy acts on a
 vector</em> <span class="math inline">O</span> <em>as:</em></p>
-<p><span class="math display">H_{\gamma}(O)^{\mu} - O^{\mu} =
+<p><span class="math display">H_{\gamma}(O)^{\mu} - O^{\mu} = -
 R_{\nu\alpha\beta}^{\mu}O^{\nu}\delta A^{\alpha\beta}</span></p>
-<p><em>The Riemann tensor is the infinitesimal holonomy.</em></p>
+<p><em>The Riemann tensor, with a minus sign, is the infinitesimal
+holonomy (for a loop traversed first along e_α, then along e_β).
+(Corrected in v1.25.)</em></p>
 <p><em><strong>Proof</strong>. Consider the infinitesimal parallelogram
 at point p spanned by ε e_α and ε e_β. Transport Oᵘ parallel along the
 four sides. At each leg, the parallel transport equation ∇_{e_α} Oᵘ =
 −Γᵘ_{να} Oᵛ introduces a correction of order ε. After the first two legs
 (to order ε²): Oᵘ(p + ε e_α + ε e_β) = Oᵘ − εΓᵘ_{να}Oᵛ − εΓᵘ_{νβ}Oᵛ +
-ε²Γᵘ_{σβ}Γᵠ_{να}Oᵛ + ε²∂_αΓᵘ_{νβ}Oᵛ + O(ε³). After the return legs, the
-net change upon completing the loop is: δOᵘ = ε²(∂_αΓᵘ_{νβ} − ∂_βΓᵘ_{να}
-+ Γᵘ_{σα}Γᵠ_{νβ} − Γᵘ_{σβ}Γᵠ_{να})Oᵛ = Rᵘ_{ναβ} Oᵛ ε². Identifying
-δA^{αβ} = ε²: H_γ(O)ᵘ − Oᵘ = Rᵘ_{ναβ} Oᵛ δA^{αβ}. □</em><span
-class="math inline">\epsilon e_{\alpha}\epsilon e_{\beta}\delta O^{\mu}
-= R_{\nu\alpha\beta}^{\mu}O^{\nu}\epsilon^{2} +
-O(\epsilon^{3})▫</span></p>
+ε²Γᵘ_{σβ}Γᵠ_{να}Oᵛ − ε²∂_αΓᵘ_{νβ}Oᵛ + O(ε³). After the return legs, the
+net change upon completing the loop is: δOᵘ = −ε²(∂_αΓᵘ_{νβ} −
+∂_βΓᵘ_{να} + Γᵘ_{σα}Γᵠ_{νβ} − Γᵘ_{σβ}Γᵠ_{να})Oᵛ = −Rᵘ_{ναβ} Oᵛ ε².
+Identifying δA^{αβ} = ε²: H_γ(O)ᵘ − Oᵘ = −Rᵘ_{ναβ} Oᵛ δA^{αβ}.
+□</em><span class="math inline">\epsilon e_{\alpha}\epsilon
+e_{\beta}\delta O^{\mu} = - R_{\nu\alpha\beta}^{\mu}O^{\nu}\epsilon^{2}
++ O(\epsilon^{3})▫</span></p>
 <p><strong>Proposition 10.3 (Geodesic Deviation Equation).</strong>
 <em>Two nearby geodesics</em> <span class="math inline">\gamma</span>
 <em>and</em> <span class="math inline">\gamma&#39;</span> <em>with
@@ -1080,7 +1080,7 @@ depth.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

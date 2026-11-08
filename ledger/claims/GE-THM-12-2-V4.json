@@ -1,0 +1,36 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-THM-12-2-V4",
+ "statement": "Discrete Symmetry = V4: the correlative and jural involutions of axioms A1-A2 generate the Klein four-group V4 = Z2 x Z2 acting on the Hohfeldian positions.",
+ "class": "proved",
+ "scope": "Geometric Ethics v1.25, section 12.3 (Theorem 12.2)",
+ "retrospective": false,
+ "evidence": [
+  {
+   "source": "geometric-ethics formal/lean (Lean 4.32.2 + Mathlib 905b958), RESULTS-2026-11-08.txt",
+   "kind": "theorem",
+   "mathematical_status": "machine-checked in Lean 4 + Mathlib; 0 sorry; standard axioms only",
+   "author_status": "Proved"
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": [
+   "GE-THM-12-2",
+   "GE-PROP-8-3-V4",
+   "GE-AXIOM-A1"
+  ]
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: replaces GE-THM-12-2 (D4, withdrawn). Lean: gauge_group_V4."
+  },
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: GE-AXIOM-A1 moved from uses to cites. The proof is about the permutation group of four labels and does not rest on the modeling axiom; pe_lint P4 had flagged a support-cap violation."
+  }
+ ]
+}

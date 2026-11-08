@@ -526,10 +526,10 @@ Theorem 5.3.</p>
 ∝ (1/ε)⁹, the total complexity becomes O(m · (1/ε)¹⁸ · d² ·
 log(m(1/ε)⁹)). For practical accuracy ε = 0.01, N ∝ 10¹⁸ per stratum.
 The total vertex count across m strata is on the order of m · 10¹⁸, and
-the edge count on the order of m · 10¹⁸. Even with m = 1, a single
-Dijkstra evaluation requires on the order of 10¹⁸ metric evaluations —
-vastly exceeding the computational capacity of any physical system
-operating in real time.</p>
+the edge count on the order of m · 10³⁶. Even with m = 1, a single
+Dijkstra evaluation requires on the order of 10³⁶ metric evaluations
+(one per edge) — vastly exceeding the computational capacity of any
+physical system operating in real time.</p>
 <p><strong>Step 4:</strong> Multi-agent and temporal extensions. In a
 multi-agent setting with n stakeholders, the state space grows by a
 factor of n (each stakeholder contributes a perspective). With a
@@ -606,15 +606,17 @@ what the affected parties need (the interest covector I_μ). In the A*
 framework, this contraction is the moment when the search yields a
 decision.</p>
 <p>Proposition 11.3 (Satisfaction as Directional Derivative of the
-Heuristic). [Proved.] The satisfaction scalar is the directional
-derivative of the heuristic function h in the interest direction:</p>
+Heuristic). [Proved.] The satisfaction scalar is minus the directional
+derivative of the heuristic function h in the interest direction, for a
+symmetric metric:</p>
 <p>S = I_μ Oᵐ = −I_μ gᵐᵛ ∂ₙh</p>
 <p><strong>Proof</strong>. By Proposition 11.1, Oᵐ = −gᵐᵛ ∂ₙh.
 Substituting into the satisfaction formula (Definition 6.3), S = I_μ Oᵐ
 = I_μ(−gᵐᵛ ∂ₙh) = −I_μ gᵐᵛ ∂ₙh. This is the contraction of the interest
-covector with the metric-raised gradient of h, which is by definition
-the directional derivative of h in the direction determined by I_μ
-through the metric. □</p>
+covector with the metric-raised gradient of h, which, since g is
+symmetric, is minus the directional derivative of h in the direction
+determined by I_μ through the metric. (v1.24 omitted the sign and the
+symmetry. Corrected in v1.25; machine-checked, formal/lean.) □</p>
 <p>When S &gt; 0, the heuristic’s recommended direction (the obligation)
 aligns with the patient’s needs (the interest): following the moral rule
 serves the stakeholder. When S &lt; 0, obligation and interest conflict:
@@ -1009,7 +1011,7 @@ about us.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

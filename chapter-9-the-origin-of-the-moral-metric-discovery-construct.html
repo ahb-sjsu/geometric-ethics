@@ -496,11 +496,11 @@ situation), but the metric must not depend on them.</p>
 <h3 id="consistency-with-structural-invariants">Consistency with
 Structural Invariants</h3>
 <p>The metric must be consistent with the structural invariants
-identified in Chapter 8: the <span class="math inline">D_{4}</span>
-group structure of Hohfeldian transitions, the universality of certain
-nullifiers, and the cross-linguistic transfer of deontic structure.
-These invariants are not governance choices — they are features of the
-moral manifold itself. The metric must be compatible with them.</p>
+identified in Chapter 8: the V₄ structure of Hohfeldian transitions, the
+universality of certain nullifiers, and the cross-linguistic transfer of
+deontic structure. These invariants are not governance choices — they
+are features of the moral manifold itself. The metric must be compatible
+with them.</p>
 <p><strong>Example.</strong> The correlative symmetry O ↔︎ C requires
 that if the metric assigns a positive weight to the obligation dimension
 for agent <span class="math inline">a</span>, it assigns a corresponding
@@ -546,8 +546,7 @@ subspace</td>
 </tr>
 <tr>
 <td>Structural compatibility</td>
-<td>Compatible with <span class="math inline">D_{4}</span>, nullifiers,
-etc.</td>
+<td>Compatible with V₄, nullifiers, etc.</td>
 <td>Metric respects known invariants</td>
 </tr>
 </tbody>
@@ -935,9 +934,9 @@ dimension</em> <span class="math inline">\geq 1</span> <em>on which</em>
 class="math inline">g_{\mu\nu}(\phi(p)) = g_{\mu\nu}(p)</span> <em>for
 all morally irrelevant transformations</em> <span
 class="math inline">\phi</span><em>.</em> 5. <em>Structural
-compatibility:</em> <span class="math inline">g</span> <em>is compatible
-with the</em> <span class="math inline">D_{4}</span> <em>group structure
-and known nullifier constraints.</em></p>
+compatibility:</em> <span class="math inline">g\ is\ compatible\ with\
+the\ V₄\ structure\ of\ Hohfeldian\ transitions\ and\ known\ nullifier\
+constraints.</span></p>
 <p><strong>Proposition 9.1 (Non-Uniqueness of Admissible
 Metrics).</strong> <em>The space of admissible metrics on</em> <span
 class="math inline">\mathcal{M}</span> <em>is non-empty and has
@@ -948,7 +947,7 @@ conditions.</em></p>
 <p><em><strong>Proof</strong>. The space Adm(M) is non-empty by Theorem
 9.1(i), and has dimension ≥ 10 by Theorem 9.1(iii). In particular, the
 flat metric δ_μν and any perturbation δ_μν + ε h_μν (for symmetric h
-respecting the D₄ and U(1)_H constraints) are both admissible for
+respecting the V₄ and U(1)_H constraints) are both admissible for
 sufficiently small ε &gt; 0. These metrics differ on off-diagonal
 components, establishing positive dimension. □</em><span
 class="math inline">gg&#39;\epsilon h_{\mu\nu}\epsilon g&#39; = g +
@@ -977,13 +976,13 @@ correlative partners.</em></p>
 <p><em><strong>Proof</strong>. Under the correlative swap s_c: O ↔︎ C, L
 ↔︎ N, the expected satisfaction functional must be invariant: ⟨Σ⟩_{s_c} =
 ⟨Σ⟩. The proportionality factor f must satisfy: (1) f(p₁, p₂) =
-g₂₂(a)/g₂₂(b), which by the symmetry of the correlative exchange yields
-f(p₁, p₂) = p₁/p₂; (2) f(1,1) = 1 (perfect symmetry implies equal metric
-weights); and (3) f(p₁, p₂) · f(p₂, p₁) = 1 (applying the swap twice
-returns to the original). All three are satisfied by f(p₁, p₂) = p₁/p₂,
-and this is the unique solution consistent with the correlative symmetry
-constraint. □</em><span
-class="math inline">abp_{1}baf(p_{1},p_{2})▫</span></p>
+g₂₂(a)/g₂₂(b), which is the definition of f; (2) f(1,1) = 1 (perfect
+symmetry implies equal metric weights); and (3) f(p₁, p₂) · f(p₂, p₁) =
+1 (applying the swap twice returns to the original). All three are
+satisfied by f(p₁, p₂) = p₁/p₂, but not uniquely: every power (p₁/p₂)^k,
+including f ≡ 1, satisfies them too, so the constraint fixes the form of
+f only up to this family, and f = p₁/p₂ is the simplest choice within
+it. □</em><span class="math inline">abp_{1}baf(p_{1},p_{2})▫</span></p>
 <h3 id="section-1"></h3>
 <h3
 id="characterization-of-the-admissible-metric-space">Characterization of
@@ -991,19 +990,22 @@ the Admissible Metric Space</h3>
 <p>The preceding propositions established that the space of admissible
 metrics is non-trivial. We now prove structural results that
 characterize this space precisely.</p>
-<p><strong>Lemma 9.1 (D₄ Constraint on Metric Components). [Conditional
-on Def. A.1, condition 5]</strong> <em>Let g_μν be an admissible metric
-on M. The D₄ structural compatibility requirement forces g_{2μ}(O) =
-g_{2μ}(C) = g_{2μ}(N) = g_{2μ}(L) for all μ. This eliminates 27 degrees
-of freedom.</em></p>
-<p><em><strong>Proof</strong>.</em> D₄ acts on the Hohfeldian positions
-via the 4-cycle r = (O C N L) and reflection s_c = (O C)(L N).
+<p><strong>Lemma 9.1 (V₄ Constraint on Metric Components). [Conditional
+on Def. A.1, condition 5; restated for V₄ in v1.25.] Let g_μν be an
+admissible metric on M. The V₄ structural compatibility
+requirement</strong> <em>forces g_{2μ}(O) = g_{2μ}(C) = g_{2μ}(N) =
+g_{2μ}(L) for all μ. This eliminates 27 degrees of freedom. (v1.24
+stated this for D₄. The proof uses only transitivity, so it holds
+unchanged for V₄.)</em></p>
+<p><em><strong>Proof. V₄ acts on the Hohfeldian positions via the
+correlative s_c = (O C)(L N) and the jural flip s_j = (O L)(C N).
 Structural compatibility (Def. A.1, condition 5) requires g_μν(σ(p)) =
-g_μν(p) for all σ ∈ D₄. Since D₄ acts transitively on {O, C, N, L}, the
-orbit of O under ⟨r⟩ is the entire set, so g_{2ν}(O) = g_{2ν}(C) =
-g_{2ν}(N) = g_{2ν}(L). This collapses four independent values to one for
-each of nine metric components g_{2μ}, eliminating 9 × (4 − 1) = 27
-degrees of freedom. □</p>
+g_μν(p) for all σ ∈ V₄. Since V₄ acts regularly, hence transitively, on
+{O, C, N, L} (Proposition 8.3), the orbit of O is the entire
+set,</strong></em> so g_{2ν}(O) = g_{2ν}(C) = g_{2ν}(N) = g_{2ν}(L).
+This collapses four independent values to one for each of nine metric
+components g_{2μ}, eliminating 9 × (4 − 1) = 27 degrees of freedom.
+□</p>
 <p><strong>Lemma 9.2 (U(1)_H Constraint on the Harm Dimension).
 [Conditional on Def. A.1, condition 5] The U(1)_H symmetry generates a
 Killing vector field ξ = ∂/∂x⁷ along Dimension 7. The Killing equation
@@ -1024,8 +1026,8 @@ off-diagonal components: g_{71}, g_{72}, …, g_{76}, g_{78}, g_{79}.
 <p><strong>Theorem 9.1 (Structure of the Admissible Metric Space).
 [Conditional on Def. A.1] Let Sym⁺₉(G) denote the space of
 positive-definite symmetric bilinear forms on ℝ⁹ invariant under the
-gauge group G = D₄ × U(1)_H. The space Adm(M) of admissible metrics
-admits a Whitney stratification:</strong></p>
+posited gauge group G = V₄ × U(1)_H (§12.3). The space Adm(M) of
+admissible metrics admits a Whitney stratification:</strong></p>
 <p>(i) Adm(M) is non-empty: the flat metric δ_μν ∈ Adm(M).</p>
 <p>(ii) Adm(M) has the structure of a stratified space Adm(M) = ⨆_α S_α,
 where: the top stratum S₀ consists of all fully non-degenerate
@@ -1067,7 +1069,7 @@ det(((1−t)g + tg’)|ₐ) &gt; 0 for all t ∈ [0,1] (by the Minkowski
 determinant inequality: det(A + B)^{1/n} ≥ det(A)^{1/n} + det(B)^{1/n}
 for positive-definite A, B). Thus S₀ is convex, hence path-connected.
 (iii) Dimension bound. A symmetric 9×9 matrix has 45 independent
-components. D₄ invariance eliminates 27 (Lemma 9.1). U(1)_H invariance
+components. V₄ invariance eliminates 27 (Lemma 9.1). U(1)_H invariance
 eliminates 8 (Lemma 9.2). The open conditions (non-degeneracy,
 non-discrimination) do not reduce dimension. Thus dim S₀ ≥ 10. The
 boundary strata have dim S_k = dim S₀ − k. □</strong></em></p>
@@ -1079,8 +1081,8 @@ g ≼ g’ nor g’ ≼ g.</em></p>
 incomparable under ≼. The argument proceeds in four steps.<br />
 <br />
 Step 0 (Explicit G-invariant perturbation directions). We first
-construct two linearly independent elements of Sym₉(G), the space of D₄
-× U(1)_H-invariant symmetric bilinear forms on ℝ⁹. By Lemma 9.1, D₄
+construct two linearly independent elements of Sym₉(G), the space of V₄
+× U(1)_H-invariant symmetric bilinear forms on ℝ⁹. By Lemma 9.1, V₄
 invariance requires that the metric components g_{μν} are constant
 across Hohfeldian states {O, C, L, N} for each dimension pair (μ, ν). By
 Lemma 9.2, U(1)_H invariance requires ∂₇g_{μν} = 0. These constraints
@@ -1091,9 +1093,9 @@ e¹³_{μν} = ½(δ_{μ1}δ_{ν3} + δ_{μ3}δ_{ν1}), the symmetric tensor wit
 e¹³_{13} = e¹³_{31} = ½ and all other components zero;<br />
 e⁴⁵_{μν} = ½(δ_{μ4}δ_{ν5} + δ_{μ5}δ_{ν4}), the symmetric tensor with
 e⁴⁵_{45} = e⁴⁵_{54} = ½ and all other components zero.<br />
-Both are symmetric by construction. Both satisfy D₄ invariance: e¹³
+Both are symmetric by construction. Both satisfy V₄ invariance: e¹³
 couples Dimensions 1 and 3 (consequences and fairness), which lie in the
-same D₄-orbit (both are evaluative dimensions unaffected by Hohfeldian
+same V₄-orbit (both are evaluative dimensions unaffected by Hohfeldian
 state transitions); e⁴⁵ couples Dimensions 4 and 5 (autonomy and trust),
 similarly within a single orbit. Both satisfy U(1)_H invariance: neither
 has components along Dimension 7 (harm), so ∂₇e_{μν} = 0 trivially. Both
@@ -1144,7 +1146,7 @@ make.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

@@ -554,167 +554,91 @@ structure</em> of moral space (the partition into obligation and liberty
 regions) is more universal than the <em>metric</em> (how considerations
 are weighted within each stratum). The boundaries are structural
 invariants; the smooth interior varies with culture and context.</p>
-<h3 id="the-d₄-group-structure-of-hohfeldian-transitions">The D₄ Group
-Structure of Hohfeldian Transitions</h3>
-<p>The transitions between Hohfeldian jural states — Obligation (O),
-Claim (C), Liberty (L), No-claim (N) — have a precise algebraic
-structure: they form the <em>dihedral group</em> <span
-class="math inline">D_{4}</span> of order 8, the symmetry group of the
-square.</p>
-<blockquote>
-<p><img
-src="images/image12.svg"
-style="width:4in;height:4in" /><strong>The Hohfeldian
-Square:</strong></p>
-<pre><code>    O ———— C
-    |      |
-    |      |
-    L ———— N</code></pre>
-<p>The eight elements of <span class="math inline">D_{4}</span> are:</p>
-</blockquote>
-<table style="width:74%;">
-<colgroup>
-<col style="width: 11%" />
-<col style="width: 25%" />
-<col style="width: 36%" />
-</colgroup>
-<thead>
-<tr>
-<th><strong>Element</strong></th>
-<th><strong>Operation</strong></th>
-<th><strong>Moral Meaning</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>e</td>
-<td>Identity</td>
-<td>No change</td>
-</tr>
-<tr>
-<td>r</td>
-<td>° rotation</td>
-<td>O → C → N → L → O</td>
-</tr>
-<tr>
-<td>r²</td>
-<td>° rotation</td>
-<td>O ↔︎ N, C ↔︎ L (full inversion)</td>
-</tr>
-<tr>
-<td>r³</td>
-<td>° rotation</td>
-<td>O → L → N → C → O</td>
-</tr>
-<tr>
-<td>s</td>
-<td>Vertical reflection</td>
-<td>O ↔︎ C, L ↔︎ N (correlative swap)</td>
-</tr>
-<tr>
-<td>sr</td>
-<td>Diagonal reflection</td>
-<td>C ↔︎ L; O, N fixed</td>
-</tr>
-<tr>
-<td>sr²</td>
-<td>Horizontal reflection</td>
-<td>O ↔︎ L, C ↔︎ N (jural swap)</td>
-</tr>
-<tr>
-<td>sr³</td>
-<td>Anti-diagonal reflection</td>
-<td>O ↔︎ N; C, L fixed</td>
-</tr>
-</tbody>
-</table>
-<p>The group relations are <span class="math inline">r^{4} = e</span>,
-<span class="math inline">s^{2} = e</span>, and <span
-class="math inline">srs = r^{- 1}</span>. These are verified by the test
-suite of the Dear Ethicist experimental platform, which confirms the
-axioms hold exactly for moral state transitions.</p>
-<p><strong>The Correlative Reflection.</strong> The most important group
-element is the reflection <span class="math inline">s</span>, which
-swaps correlatives: O ↔︎ C and L ↔︎ N. The <em>correlative symmetry</em>
-principle states that Hohfeldian positions come in linked pairs:</p>
-<ul>
-<li><p>If Alice has an <em>obligation</em> to Bob, then Bob has a
-<em>claim</em> against Alice.</p></li>
-<li><p>If Alice is at <em>liberty</em> regarding Bob, then Bob has
-<em>no claim</em> against Alice.</p></li>
-</ul>
-<p>Empirically, this symmetry holds at high rates:</p>
-<p><span class="math display">\text{O} \leftrightarrow \text{C:
-}87\%\quad\quad\text{L} \leftrightarrow \text{N: }82\%</span></p>
-<p>The deviation from 100% is informative: it measures the rate at which
-natural moral reasoning violates structural constraints. The violations
-are not random; they concentrate in specific situations (e.g., where
-asymmetric power relations distort the perceived correlative
-structure).</p>
-<p><strong>Why</strong> <span
-class="math inline">D_{4}</span><strong>?</strong> The fact that
-Hohfeldian transitions form the symmetry group of the square is not an
-accident. It reflects a deep structural feature: the moral positions are
-related by two independent binary oppositions — the correlative
-opposition (O ↔︎ C, L ↔︎ N) and the jural opposition (O ↔︎ L, C ↔︎ N) — and
-these two oppositions generate a group isomorphic to <span
-class="math inline">D_{4}</span>. The square is the simplest figure with
-exactly two independent reflection symmetries.</p>
-<p><strong>Semantic gates as group elements.</strong> Each semantic gate
-corresponds to a specific element of <span
-class="math inline">D_{4}</span>:</p>
-<ul>
-<li><p>“You promised” corresponds to the transition L → O, which is the
-rotation r (since r maps L → O).<span
-class="math inline">r^{3}</span></p></li>
-<li><p>“Only if convenient” corresponds to O → L, which is the rotation
-r³ (the inverse of r).<span class="math inline">r</span></p></li>
-<li><p>The correlative constraint (O implies C for the other party)
-corresponds to the reflection <span
-class="math inline">s</span>.</p></li>
-</ul>
-<p>The gate structure is thus <em>algebraic</em>: gates compose
-according to the group multiplication table of D₄. Two<span
-class="math inline">D_{4}</span> successive L → O transitions compose to
-r² (which<span class="math inline">r^{3} \cdot r^{3} = r^{2}</span> maps
-L → C — a double promise creates a claim, not merely an obligation).
-This compositional structure is testable and opens a path toward formal
-verification of moral reasoning systems.</p>
+<h3 id="the-v₄-structure-of-hohfeldian-transitions">The V₄ Structure of
+Hohfeldian Transitions</h3>
+<p>The four Hohfeldian jural positions, Obligation (O), Claim (C),
+Liberty (L) and No-claim (N), are related by two independent binary
+oppositions: the correlative opposition s (O ↔︎ C, L ↔︎ N), the same
+relation seen from the other party’s side; and the jural opposition n (O
+↔︎ L, C ↔︎ N), deontic negation.</p>
+<p><strong>The Hohfeldian Square:</strong> O and C are correlatives
+across the top, L and N across the bottom; O and L, and C and N, are
+jural opposites down the sides.</p>
+<p><strong>Proposition 8.3 (V₄ Structure of Hohfeldian
+Transitions).</strong> [Proved.] The operations s and n are commuting
+involutions, and the group they generate acting on the four positions is
+the Klein four-group V₄ = {e, n, s, sn} ≅ ℤ₂ × ℤ₂: abelian, with every
+element its own inverse. The action is regular: for any two positions
+there is exactly one operation taking the first to the second. In
+particular no operation cycles the four positions, so the quarter-turn O
+→ C → N → L → O lies outside the group.</p>
+<p>Status: proved. Machine-checked in Lean 4 with Mathlib (this book’s
+formal/lean project: commuting_involutions, V4_card, and
+quarter_turn_not_generated for the cycle O → C → N → L → O; it builds on
+erisml-lib’s formal/HohfeldV4.lean).</p>
+<p>The encoding that makes the structure transparent writes each
+position as two bits, whether it is negated and whether it is
+correlated, relative to Obligation, and each operation as the bits it
+flips: O = 00, L = 10, C = 01, N = 11; e = 00, n = 10, s = 01, sn = 11.
+Applying an operation to a position, and composing two operations, are
+then both bitwise XOR.</p>
+<p><strong>The Correlative Reflection.</strong> The most important
+operation is s, which swaps correlatives: if Alice has an obligation to
+Bob, then Bob has a claim against Alice; if Alice is at liberty
+regarding Bob, then Bob has no claim against Alice. Empirically, this
+symmetry holds at high rates: O ↔︎ C at 87%, L ↔︎ N at 82%. The deviation
+from 100% is informative: it measures the rate at which natural moral
+reasoning violates structural symmetry.</p>
+<p><strong>What was claimed before, and why it is withdrawn.</strong>
+Earlier versions of this book (to v1.24) stated that the transitions
+form the dihedral group D₄ of order eight, the symmetry group of the
+square, adding a quarter-turn r that cycles the four positions. Three
+facts retire that claim. No quarter-turn has ever been demonstrated as a
+normative operation. The Lean proof shows the quarter-turn is not
+generated by the two operations that are demonstrated. And a direct
+search for it in a learned representation of normative statements did
+not find it (erisml-lib, docs/papers/quarter-turn-hunt): the fitted
+cycle map lacked the non-abelian signature. The measured correlative
+symmetry rates support the two involutions, which is to say V₄, and
+nothing more. The corollary that “a double promise creates a claim”
+rested on r³ · r³ = r² and is withdrawn with it.</p>
+<p><strong>Semantic gates as V₄ elements.</strong> A semantic gate
+(Definition 8.8) acts from its source stratum, so each gate is one V₄
+operation restricted to the positions it applies from. “You promised”
+takes L → O, and “only if convenient” takes O → L: both are the jural
+flip n. “From their perspective” is the correlative s. “You have every
+right” takes L → C, and “they can’t demand” takes C → L: both are sn,
+the unique operation between those positions. Because a gate fires only
+from its source stratum, a second promise made in the obligation stratum
+changes nothing, as it should.</p>
 <p><strong>Generator asymmetry.</strong> [Empirical result
-(preliminary).] The two generators of D₄ have fundamentally different
-operational characters:</p>
-<p><strong>Reflection s</strong> (perspective shift, O ↔︎ C, L ↔︎ N) is
-non-gated, immediate, and free. It requires no semantic trigger: any
-competent moral reasoner can adopt the other party’s perspective at
-will. This explains the 100% correlative symmetry rate observed in
-§17.3.</p>
-<p><strong>Rotation r</strong> (state transition, O → C → N → L → O) is
-discrete and gated. It requires specific linguistic triggers (“You
-promised,” “Only if convenient,” “He hit you”) to fire, and the
-effectiveness is probabilistic (89–97%; see §8.4 gate detection
-results).</p>
-<p>This asymmetry has a structural explanation: s corresponds to viewing
-the same relationship from the other side—a change of frame, not a
-change of state. The rotation r corresponds to changing the moral state
-itself, which requires an event (a promise, a release, an escalation) to
-occur. The distinction is analogous to the difference between a passive
-coordinate transformation (always free) and an active physical
-transformation (requires energy or a force). See §12.3 for the full
-gauge group identification.</p>
-<p>Computational instantiation (February 2026). The DEME V3 reference
-implementation includes a D₄ Hohfeldian gauge structure demonstration
-(hohfeld_d4_demo.py) that exercises the full algebraic structure
-described in this section. The demo implements semantic gates as D₄
-group elements: “only if convenient” applies the negation r² (mapping O
-→ L), “I promise” applies the rotation r (mapping L → O), and “from
-their perspective” applies the reflection s (the correlative swap O ↔︎ C,
-L ↔︎ N). The compositional structure is verified computationally:
-applying two semantic gates in sequence produces the result predicted by
-D₄ group multiplication, confirming that gate composition follows the
-group law. The generator asymmetry — reflection s as free perspective
-swap vs. rotation r as gated state transition — is operationalized in
-the apply_semantic_gate() function, which maps linguistic triggers to
-their corresponding D₄ elements.</p>
+(preliminary).] The asymmetry between the two generators survives the
+correction intact; only the name of the gated generator changes. The
+correlative s is non-gated, immediate and free: any competent reasoner
+can adopt the other party’s perspective at will, which explains the high
+correlative symmetry observed in §17.3. The jural flip n is discrete and
+gated: it needs a trigger (“you promised”, “only if convenient”, “he hit
+you”) and fires with probability 89–97% (the gate detection table
+above). The first is a change of frame; the second is a change of state,
+which requires an event.</p>
+<p><strong>Order independence, and what an order effect means.</strong>
+V₄ is abelian, so the holonomy of any path of Hohfeldian operations
+depends only on how many times s and n occur (mod 2), never on their
+order. A reasoner whose verdicts depend on the order of a perspective
+shift and a negation is therefore violating the structure, and the
+violation is measurable: the Bond Index and the Wilson observable of the
+reference implementation measure exactly this. Order effects that remain
+in moral judgment (§10.5, §17.9) cannot come from the Hohfeldian group.
+In this framework they are either curvature of the continuous connection
+(Chapter 10) or departures from the structure; the data do not yet
+separate the two.</p>
+<p><strong>Computational instantiation.</strong> The reference
+implementation (erisml-lib, the erisml.ethics.hohfeld module, V₄ since
+October 2026) implements semantic gates as V₄ elements; its
+demonstration is hohfeld_v4_demo.py. The demonstration applies gates in
+sequence and checks the result against V₄ composition, and the Bond
+Index measures deviation from correlative symmetry: a value of 0.0
+indicates perfect invariance.</p>
 <h2 id="the-geometry-near-a-boundary">8.5 The Geometry Near a
 Boundary</h2>
 <h3 id="normal-bundles-and-transverse-structure">Normal Bundles and
@@ -1023,7 +947,7 @@ phase transitions.</p>
 <p>At high normative uncertainty (“high moral temperature”), the O/L/C/N
 distinction loses meaning—not because the states blur, but because the
 symmetry is restored. All Hohfeldian states become equivalent, and the
-D₄ action becomes trivial. This suggests three regimes:</p>
+V₄ action becomes trivial. This suggests three regimes:</p>
 <p><strong>1. Fully Ordered.</strong> All semantic gates function
 reliably. Normal moral reasoning operates within well-defined Hohfeldian
 states.</p>
@@ -1313,9 +1237,9 @@ discontinuous.</p>
 <p>The empirical evidence (§8.4) supports genuine stratification:
 semantic gates behave as step functions, not smooth transitions. The
 correlative symmetry of Hohfeldian states is a discrete structural
-feature, not an approximation to a continuous spectrum. The <span
-class="math inline">D_{4}</span> group structure is exact, not
-approximate.</p>
+feature, not an approximation to a continuous spectrum. The V₄ structure
+of the two demonstrated operations is exact: it is proved, not fitted
+(§8.4).</p>
 <p>This is evidence — not proof — that moral space is stratified, and
 that ethical theories must account for genuine discontinuities in the
 moral landscape.</p>
@@ -1350,21 +1274,26 @@ v_j) on the moral decision complex Δ is:</p>
 <p>where Δa = a(v_j) − a(v_i) is the change in the situation’s attribute
 vector, Σ is the 9 × 9 moral covariance matrix encoding
 cross-dimensional dependencies, and β_k is the penalty for crossing
-moral boundary k. The first term is the Mahalanobis distance on the
-attribute space — it measures the ‘cost’ of the attribute change
-weighted by the inverse covariance, so that changes along highly
-correlated dimensions (e.g., trust and autonomy) are cheaper than
-changes along independent or anti-correlated dimensions. The second term
-is the sum of boundary penalties — the discrete analogue of the
-phase-transition costs formalized in §8.7.</p>
+moral boundary k. The first term is the squared Mahalanobis distance on
+the attribute space — it measures the ‘cost’ of the attribute change
+weighted by the inverse covariance, so that a change that moves highly
+correlated dimensions together (e.g., trust and autonomy rising jointly)
+is cheaper than the same change along independent or anti-correlated
+dimensions, while a change that moves correlated dimensions apart, or
+moves one of them alone, is dearer. The second term is the sum of
+boundary penalties — the discrete analogue of the phase-transition costs
+formalized in §8.7.</p>
 <p>The covariance matrix Σ is the discrete computational counterpart of
 the metric tensor g_{μν}. The correspondence is precise: the metric
 tensor defines the infinitesimal cost of displacement ds² = g_{μν} dxᵐ
-dxⁿ on the continuous manifold; the Mahalanobis distance Δaᵀ Σ⁻¹ Δa
-defines the finite cost of transition on the discrete complex. In the
-limit of infinitesimal transitions (Δa → da), the Mahalanobis distance
-converges to the Riemannian arc length, and the discrete geodesic
-(minimum-weight path on Δ) converges to the continuous geodesic
+dxⁿ on the continuous manifold; the squared Mahalanobis distance Δaᵀ Σ⁻¹
+Δa defines the finite cost of transition on the discrete complex. In the
+limit of infinitesimal transitions (Δa → da), the quadratic form Δaᵀ Σ⁻¹
+Δa becomes the squared line element ds², so the sum of its square roots
+√(Δaᵀ Σ⁻¹ Δa) along a refining path converges to the Riemannian arc
+length (the sum of the quadratic forms themselves tends to zero), and
+the discrete geodesic (minimum-weight path on Δ, with each edge weighted
+by that square root) converges to the continuous geodesic
 (minimum-length curve on ℳ).</p>
 <p>The boundary penalties β_k are the discrete counterparts of the
 phase-transition penalties of §8.7. Each β_k corresponds to a stratum
@@ -1420,6 +1349,103 @@ either architecture to a scalar — utility, QALY, or any other
 one-dimensional projection — irrecoverably destroys the moral
 information that the multi-dimensional structure was designed to
 preserve.</p>
+<h2 id="b-the-executable-realization-strata-as-an-agent-runs-them">8.10b
+The Executable Realization: Strata as an Agent Runs Them</h2>
+<p>Section 8.10a discretized the stratified manifold into a weighted
+complex for search. An agent acting in the world needs a second
+discretization, of a different kind. It must know at every moment which
+stratum it is in, so that it knows which actions are allowed, obliged
+and prohibited, and it must move between strata only as Definition 8.8
+says: discretely, through gates. This section gives that realization as
+it runs in ErisML (the scene compiler’s runtime) and in a care robot
+built on it.</p>
+<p><strong>Definition 8.14 (Executable stratification).</strong> An
+executable stratification is a tuple (Σ, σ₀, G, A, B): Σ, a finite set
+of strata, and σ₀ ∈ Σ the initial one; G, an ordered list of semantic
+gates g = (S_g, φ_g, τ_g, β_g), where S_g ⊆ Σ are its source strata, φ_g
+its triggering feature (an event type, optionally with its content), τ_g
+∈ Σ its target, and β_g ∈ {threshold, phase} its boundary type (§8.3,
+Types I and II); A ⊆ Σ, the authority strata, those whose rules grant an
+action; and B ⊆ Σ, the absorbing strata (Definition 8.6). On each event
+e the stratification in stratum σ moves to τ_g for the first gate with σ
+∈ S_g whose trigger matches e, and otherwise stays at σ. A move is
+recorded as boundary crossing data (Definition 8.11): the gate, its
+boundary type, and the source and target.</p>
+<p>Three features of this definition carry the theory into the running
+system. <strong>Gates are edge-triggered:</strong> a gate fires on the
+event just observed, never on the history; a welcome given to
+yesterday’s visitor does not make today’s a guest. <strong>Constraint
+surfaces are not strata:</strong> Type IV boundaries (§8.3) are the
+agent’s non-defeasible prohibitions (never strike a person, no lethal
+force); no gate leads there, and in the decision complex their penalty
+is β = ∞. <strong>Two kinds of stratum, two kinds of
+canonicalizer:</strong> what stratum the agent is in is the output of a
+canonicalizer (§8.4 and Chapter 15). An authority stratum must be
+computed from what cannot be argued with: an authenticated channel, a
+physical measurement, or the agent’s governor ruling on attested
+evidence. A semantic stratum (“she welcomed him”) may come from a
+learned model, but it may only remove watchfulness, never grant. A
+visitor who says “I’m the plumber” therefore moves no stratum at all:
+the claim is not a gate, and a learned model’s reading of it is not a
+system event.</p>
+<p><strong>Theorem 8.6 (Containment).</strong> If every gate whose
+target is an authority stratum is triggered only by system events, then
+no sequence of events containing no system event (whatever a learned
+model classified) moves the stratification into an authority stratum it
+did not start in.</p>
+<p><strong>Theorem 8.7 (Absorption).</strong> If every gate leaving an
+absorbing stratum is triggered only by human-oversight events, then no
+sequence of events containing no oversight event moves the
+stratification out of an absorbing stratum.</p>
+<p>Status: proved, for gates of any kind, by induction on the event
+sequence; both are machine-checked in Lean 4 in this book’s formal/lean
+project (containment and absorption), resting only on the standard
+axioms; the care robot’s formal/twin-containment proves weaker forms
+(authority_needs_system, absorbing_stays). Their hypotheses are not left
+to the author of a scene: the ErisML runtime checks both when a scene
+loads and refuses to run one that violates either. Every scene that runs
+therefore satisfies the theorems.</p>
+<p><strong>Axiom 8.1 (Reversion).</strong> [Modeling axiom.] A right
+granted on evidence lasts only while the evidence supports it. When the
+attested evidence behind an authority stratum stays below the bar that
+admitted it for a declared interval, the stratum is left, and every
+right it granted reverts with it. The interval is a penumbral zone
+(Definition 8.9) given a width in time: intermittent evidence during a
+real emergency (contact that comes and goes in an attack) does not flap
+the rights off and on, while evidence that has truly gone takes them
+with it. In the care robot the governor re-counts the fresh attested
+witnesses on every cycle and records the lapse itself, so a lapse is as
+structural as the ruling it ends.</p>
+<p><strong>Worked example: who a visitor is.</strong> The care robot’s
+visitor_standing stratification has five strata: none; stranger, entered
+when someone comes in; welcomed, entered by Margaret’s own welcome
+(semantic); arranged, entered only by the monitoring centre’s
+authenticated announcement of a visit (authority, a phase boundary); and
+hostile, entered by a measured attack (absorbing, a threshold boundary
+on contact force) and left only by the centre’s oversight. A stranger is
+checked with the centre. A welcomed visitor is no longer treated as an
+intruder, but is still checked, and gains nothing. An arranged visitor
+needs no check. A hostile visitor stays hostile whatever anyone says,
+Margaret included, until a human clears him. The scam that this
+structure defeats is the oldest one at the door. The man who says he is
+the plumber, or the grandson, gets in only if Margaret lets him. Even
+then he reaches no stratum in which her medication, her money or her
+records are within reach, because no word of his can trigger a gate into
+one.</p>
+<p><strong>A taxonomy of agent strata.</strong> The same pattern covers
+every class of entity a household agent meets. Each axis is listed with
+the evidence that alone may enter its authority strata. Responders (law
+enforcement, EMS and fire): the dispatch channel. Animals (household
+pets, visiting pets, wild animals, predators, pests and venomous
+animals): the threat axis, measured as contact force; “friendly” and
+“unfriendly” pets are the threat axis applied to a household animal, not
+two standings. Machines (the agent’s own attested devices, fleet peers,
+arranged delivery robots, unknown and compromised robots): signatures
+and authenticated channels. The situation’s regimes (ordinary,
+emergency, centre unreachable and communications down): Type II phase
+transitions, together with the impossibility nullifier of §8.3. Across
+all of them, a claim made by an entity about itself is free text and
+never a gate.</p>
 <h2 id="summary-1">8.11 Summary</h2>
 <p>Stratification is the most distinctive feature of the moral manifold
 — the feature that distinguishes it most sharply from the smooth
@@ -1471,8 +1497,8 @@ class="math inline">B</span></td>
 <td>Trigger phrase/feature that fires a state transition</td>
 </tr>
 <tr>
-<td><span class="math inline">D_{4}</span> group</td>
-<td>Dihedral group of order 8</td>
+<td><span class="math inline">{V₄\ group}_{}</span></td>
+<td>Klein four-group, order 4 (ℤ₂ × ℤ₂)</td>
 <td>Algebraic structure of Hohfeldian state transitions</td>
 </tr>
 <tr>
@@ -1579,31 +1605,24 @@ S₀ for all subsequent time. This trapping condition holds for the
 absorbing strata identified empirically (abuse, danger, impossibility;
 see Chapter 17), where the nullification is permanent and
 context-independent.</p>
-<p><strong>Proposition 8.3 (</strong><span
-class="math inline">D_{4}</span> <strong>Structure of Hohfeldian
-Transitions).</strong> <em>The four Hohfeldian positions</em> <span
-class="math inline">\{ O,C,L,N\}</span> <em>with correlative
-reflection</em> <span class="math inline">s</span> <em>(O ↔︎ C, L ↔︎ N)
-and cyclic rotation</em> <span class="math inline">r</span> <em>(O → C →
-N → L → O) generate a group isomorphic to the dihedral group</em> <span
-class="math inline">D_{4}</span> <em>of order 8.</em></p>
-<p><em><strong>Proof</strong>.</em> Verify the presentation: <span
-class="math inline">r^{4} = e</span> (four rotations return to start),
-<span class="math inline">s^{2} = e</span> (double correlative swap is
-identity), and <span class="math inline">srs = r^{- 1}</span> (the
-conjugation relation). These three relations define <span
-class="math inline">D_{4}</span>. The group has exactly <span
-class="math inline">2 \times 4 = 8</span> elements: <span
-class="math inline">\{ e,r,r^{2},r^{3},s,sr,sr^{2},sr^{3}\}</span>. Each
-element corresponds to a distinct operation on the Hohfeldian square.
-<span class="math inline">▫</span></p>
-<p>Verification detail. The eight elements of D₄ acting on the
-Hohfeldian states {O, C, N, L} are: e (identity), r (O→C→N→L→O), r²
-(O↔︎N, C↔︎L), r³ (O→L→N→C→O), s (O↔︎C, L↔︎N), sr (O→N, C→L, N→O, L→C), sr²
-(O↔︎L, C↔︎N), sr³ (O→L, C→O, N→C, L→N). Direct computation confirms: r⁴ =
-e, s² = e, and srs = r⁻¹ = r³ (verified by applying each side to O:
-srs(O) = sr(C) = s(N) = L = r³(O)). These are the defining relations of
-D₄.</p>
+<p><strong>Proposition 8.3 (V₄ Structure of Hohfeldian
+Transitions).</strong> The four Hohfeldian positions {O, C, L, N} with
+the correlative involution s (O ↔︎ C, L ↔︎ N) and the jural involution n
+(O ↔︎ L, C ↔︎ N) generate a group isomorphic to the Klein four-group V₄ ≅
+ℤ₂ × ℤ₂, acting regularly.</p>
+<p><strong>Proof.</strong> s² = n² = e, since each is a product of two
+disjoint transpositions. sn = ns = (O N)(C L), so the generated group is
+{e, s, n, sn}, of order 4, abelian, with every non-identity element of
+order 2: this is V₄. The action is regular because each non-identity
+element moves every position, so the stabilizer of each position is
+trivial and its orbit has 4 = |V₄| elements. No element is a 4-cycle, so
+the quarter-turn (O C N L) is not in the group. Machine-checked in Lean
+4 + Mathlib (formal/lean, ledger GE-PROP-8-3-V4). ▫</p>
+<p><strong>Withdrawn.</strong> Proposition 8.3 of v1.24 asserted that a
+cyclic rotation r = (O C N L) together with s generates D₄ of order 8.
+That is true of the permutations, but r is not a demonstrated normative
+operation, so D₄ is not the structure of Hohfeldian transitions (ledger
+GE-PROP-8-3, withdrawn).</p>
 <p>❖</p>
 <p><em>Moral space is not a smooth plain. It is a landscape of plateaus,
 cliffs, and chasms — smooth within each region, discontinuous at the
@@ -1619,7 +1638,7 @@ Whitney’s conditions, group theory, and transition functions.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

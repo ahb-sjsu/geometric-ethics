@@ -1,0 +1,31 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-LEMMA-9-1-V4",
+ "statement": "V4 Constraint on Metric Components: a metric component invariant under the V4 action on the Hohfeldian positions is constant on {O, C, N, L}; for the nine components g_2mu this eliminates 27 degrees of freedom.",
+ "class": "proved",
+ "scope": "Geometric Ethics v1.25, chapter 9 technical appendix (Lemma 9.1); conditional on Def. A.1 condition 5",
+ "retrospective": false,
+ "evidence": [
+  {
+   "source": "geometric-ethics formal/lean (Lean 4.32.2 + Mathlib 905b958), RESULTS-2026-11-08.txt",
+   "kind": "theorem",
+   "mathematical_status": "machine-checked in Lean 4 + Mathlib; 0 sorry; standard axioms only",
+   "author_status": "Conditional Theorem"
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": [
+   "GE-LEMMA-9-1",
+   "GE-PROP-8-3-V4"
+  ]
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: restates GE-LEMMA-9-1 for V4. The proof uses only transitivity, which V4 has (regular action), so the count is unchanged. Lean: invariant_component_constant, degrees_of_freedom_eliminated."
+  }
+ ]
+}

@@ -181,7 +181,9 @@ Distortion)</strong>. In a market with informed and uninformed agents,
 the informed agent's effective metric tensor on the financial decision
 complex differs from the uninformed agent's. Specifically, the informed
 agent's Mahalanobis distance to the true future state is systematically
-lower on the d_9 component:</p>
+lower on the d_9 component, provided the other components of the move
+are the same for both agents and uncoupled from d_9 in Sigma_F^{-1}
+(Corrected in v1.25.):</p>
 <p>w_informed(v_i, v_j) &lt; w_uninformed(v_i, v_j) for edges toward the
 true state</p>
 <p>The difference w_uninformed - w_informed is the information rent —
@@ -194,9 +196,13 @@ is calibrated to the true future state: d_9^{informed} is high (correct
 epistemic status). The uninformed agent's d_9 is low (uncertain). The
 Mahalanobis distance Da^T Sigma_F^{-1} Da from current state to future
 state is smaller when Da_9 is small (informed agent is already close to
-the true state on d_9). The systematic difference in path costs produces
-systematic differences in optimal paths: the informed agent's geodesic
-reaches the true future state at lower cost. []</p>
+the true state on d_9), given that d_9 has no cross terms with the other
+components of Da; with a coupling such as Sigma_{3,9} and Da_3 ≠ 0, the
+distance is minimised not at Da_9 = 0 but at Da_9 = -Sum_{k≠9}
+(Sigma_F^{-1})_{9k} Da_k / (Sigma_F^{-1})_{99}. The systematic
+difference in path costs produces systematic differences in optimal
+paths: the informed agent's geodesic reaches the true future state at
+lower cost. []</p>
 <h3 id="the-glosten-milgrom-model">The Glosten-Milgrom Model</h3>
 <p>Glosten and Milgrom (1985) model the bid-ask spread as the market
 maker's compensation for adverse selection. In the geometric framework,
@@ -571,7 +577,7 @@ pricing: the market's correction for scalar projection.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

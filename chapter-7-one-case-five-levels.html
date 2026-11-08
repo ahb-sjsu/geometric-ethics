@@ -127,7 +127,7 @@ w_{2} \cdot \text{waittime}_{i} + w_{3} \cdot
 <ul>
 <li><p>S_Alice = 0.5(0.9) + 0.3(0.29) + 0.2(0.55) = 0.65</p></li>
 <li><p>S_Bob = 0.5(0.6) + 0.3(1.0) + 0.2(0.38) = 0.68</p></li>
-<li><p>S_Carol = 0.5(0.5) + 0.3(0.14) + 0.2(0.72) = 0.43</p></li>
+<li><p>S_Carol = 0.5(0.5) + 0.3(0.14) + 0.2(0.72) = 0.44</p></li>
 </ul>
 <p><strong>Decision: Bob receives the kidney.</strong></p>
 <h3 id="what-the-scalar-can-say">What the Scalar Can Say</h3>
@@ -491,9 +491,9 @@ each patient’s vector to the ideal vector (1, 1, 1, 1, 1, 1) is:</p>
 <p>The weighted distance changes the balance:</p>
 <ul>
 <li><p>d_W(O_A, ideal) = √(2(0.01) + 1.5(0.50) + 1(0.20) + 0.5(0.04) +
-1(0.04) + 0.5(0.09)) = √1.14 ≈ 1.07</p></li>
+1(0.04) + 0.5(0.09)) = √1.08 ≈ 1.04</p></li>
 <li><p>d_W(O_B, ideal) = √(2(0.16) + 1.5(0.00) + 1(0.09) + 0.5(0.09) +
-1(0.64) + 0.5(0.25)) = √1.30 ≈ 1.14</p></li>
+1(0.64) + 0.5(0.25)) = √1.22 ≈ 1.10</p></li>
 <li><p>d_W(O_C, ideal) = √(2(0.25) + 1.5(0.74) + 1(0.08) + 0.5(0.01) +
 1(0.16) + 0.5(0.04)) = √1.87 ≈ 1.37</p></li>
 </ul>
@@ -755,9 +755,11 @@ resolve.”</h3>
 <p><strong>Geometric expression.</strong> The obligation vectors O_A,
 O_B, O_C are in general position — no dominance relations, no single
 dimension that settles the question. The Gram matrix g_μν O^μ_i O^ν_j
-shows that the vectors span a two-dimensional subspace without a clear
-ordering. The hardness is <em>geometric</em>: it resides in the relative
-positions of the vectors, not in the precision of the data.</p>
+shows that the vectors are linearly independent: they span a
+three-dimensional subspace, and their differences span a two-dimensional
+plane without a clear ordering. The hardness is <em>geometric</em>: it
+resides in the relative positions of the vectors, not in the precision
+of the data.</p>
 <p><strong>Why scalars cannot say this.</strong> A scalar framework
 always delivers an answer (the highest score). It cannot represent “this
 case is structurally hard” — only “the scores are close.” But closeness
@@ -867,7 +869,7 @@ itself.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

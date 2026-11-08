@@ -1,0 +1,713 @@
+Geometric Ethics v1.24 -- MATLAB Symbolic Math checks (2026-11-08 20:21, MATLAB 26.1.0.3276743 (R2026a) Update 3)
+Source: source/Geometric-Ethics-v1.24.tex (line numbers = grep -n)
+PASS/FAIL are counted; NOTE and INFO lines are observations, not counted.
+
+--- check_ch02_05: parable, Ch.4 differential-geometry definitions ---
+NOTE  TEXT-Ch02        L5068   parable sequence S(x) = -1, +3, -2, "and so on" | values are assigned, not derived; no +10 occurs in v1.24 (grep "S(x) =")
+FAIL  TEXT-Ch02        L5165   book: S = -1 is "perhaps its magnitude" of v = (-0.8,-0.4,0,0,?) | algebra: |v| = (2*5^(1/2))/5 = 0.8944 > 0, so the magnitude cannot equal -1
+PASS  TEXT-Ch02        L5165   "or a weighted sum" reaching S = -1
+PASS  TEXT-Ch02        L5211   S = -1 +- 0.5 => [-1.5, -0.5]
+PASS  TEXT-Ch03        L6354   sqrt(0.6)|U>+sqrt(0.4)|D> normalised, P(U)=0.6
+PASS  GE-DEF-4-4       L7023   Levi-Civita Gamma^k_ij = 1/2 g^kl(d_j g_il + d_i g_jl - d_l g_ij) gives nabla g = 0 (generic 2-D metric)
+PASS  GE-DEF-4-4       L7023   same Gamma is torsion-free (Gamma^k_ij = Gamma^k_ji)
+PASS  GE-DEF-4-5       L7062   R^l_kij = d_i G^l_kj - d_j G^l_ki + G^l_im G^m_kj - G^l_jm G^m_ki: unit sphere R^th_{ph th ph} = sin^2 th
+PASS  GE-DEF-4-5       L7075   Ricci R_ij = R^k_ikj, scalar R = g^ij R_ij: unit sphere gives Ric = g, R = +2
+PASS  GE-DEF-10-3      L7038   S^2 parallel transport around a loop rotates the vector by the enclosed solid angle (latitude-circle check, 2*pi*(1-cos th0))
+PASS  GE-DEF-4-8       L7263   gauge curvature quadratic term f^a_bc A^b_mu A^c_nu T_a = [A_mu, A_nu] (su(2) check)
+PASS  TEXT-Ch05        L8470   simplex Delta^2: 1 interior, 3 edges, 3 vertices (counts by construction)
+PASS  TEXT-Ch05        L8494   g_ij = delta_ij/beta_i: moving toward higher-beta patient is cheaper
+
+--- check_ch06: satisfaction scalar and tensor algebra ---
+PASS  GE-PROP-6-1      L9698   I~_mu O~^mu = I_mu O^mu (Jacobian and inverse Jacobian cancel)
+PASS  GE-PROP-6-2      L9707   S' - S = (I'_mu - I_mu) O^mu
+PASS  GE-PROP-6-2      L9719   choosing O = e_mu isolates Delta I_mu (so S=S' for all O => I=I')
+PASS  GE-PROP-6-3      L9725   different metrics give different gradient directions for the same f
+FAIL  GE-PROP-6-3      L9740   book: (grad_g f) != (grad_ghat f) whenever df != 0 along a dimension where g^{-1} and ghat^{-1} differ | algebra: counterexample g^-1=[3 1;1 3], ghat^-1=2I (differ in every entry), df=(1,-1): both gradients = (2,-2); correct condition is (g^-1 - ghat^-1) df != 0
+PASS  TEXT-Ch06        L9491   S_physician terms 0.12+0.12+0.105+0.05+0.005+0.03+0.04+0.06+0.015 = 0.545
+PASS  TEXT-Ch06        L9501   S_family terms 0.18+0.20+0.035+0.075+0.005+0.006+0.052+0.018+0.006 = 0.577
+PASS  TEXT-Ch06        L9503   family satisfaction higher than physician's
+PASS  TEXT-Ch06        L9486   both interest covectors are normalised (weights sum to 1)
+PASS  TEXT-Ch06        L9488   physician weights welfare (0.20) most, rights = justice = 0.15
+PASS  TEXT-Ch06        L9477   O strongest in dims 2, 3, 8; weakest in dim 5
+NOTE  TEXT-Ch06        L9477   dims 2,3,8 named strongest | dim 1 (0.6) ties dim 8 (0.6)
+PASS  TEXT-Ch06        L9573   S = T^mu_mu = O^mu I_mu
+NOTE  TEXT-Ch06        L9576   "eigenvalues give the principal modes of satisfaction" | T = O (x) I has rank 1: a single nonzero eigenvalue = S, the other eigenvalues are 0
+FAIL  TEXT-Ch06        L9611   book: S = g^{mu alpha} E_alpha^beta I_beta . O^mu is a scalar | algebra: contracts two upper indices (mu); not invariant under x~=Ax (picks up A'A); a valid form is S = O^mu E_mu^beta I_beta (or lower mu with g_{mu nu})
+PASS  TEXT-Ch06        L9611   (reference) corrected contraction O^mu E_mu^beta I_beta is invariant
+
+--- check_ch07: One Case, Five Levels ---
+PASS  TEXT-Ch07        L9855   S_Alice = 0.5(0.9)+0.3(0.29)+0.2(0.55) = 0.65
+PASS  TEXT-Ch07        L9857   S_Bob = 0.5(0.6)+0.3(1.0)+0.2(0.38) = 0.68
+FAIL  TEXT-Ch07        L9859   book: S_Carol = 0.5(0.5)+0.3(0.14)+0.2(0.72) = 0.43 | algebra: 109/250 = 0.436, which rounds to 0.44
+PASS  TEXT-Ch07        L9868   ranking Bob > Alice > Carol; Bob receives the kidney
+PASS  TEXT-Ch07        L9851   normalised wait times 0.29, 1.0, 0.14 = years/7
+NOTE  TEXT-Ch07        L9851   age factors 0.55, 0.38, 0.72 | consistent with 1 - age/100 for ages 45, 62, 28 (the book does not state the rule)
+NOTE  TEXT-Ch07        L9970   Bob fairness x^3 = 0.70 | Alice/Carol fairness (0.55, 0.72) equal their Level-0 age factors, Bob's (0.70) does not (0.38); flag only, the book gives no rule
+PASS  TEXT-Ch07        L9994   no vector dominates another on all components
+PASS  TEXT-Ch07        L10001  O_A - O_B = (0.3, -0.71, -0.15, 0.1, 0.6, 0.2)
+PASS  TEXT-Ch07        L9987   profiles: Alice high-care, Bob highest wait / lowest care, Carol highest autonomy, fairness, epistemic
+PASS  TEXT-Ch07        L10031  pure I_1 -> Alice, I_2 -> Bob, I_3 -> Carol, I_7 (care) -> Alice
+PASS  TEXT-Ch07        L10488  Alice's decision region has larger volume than Bob's
+NOTE  TEXT-Ch07        L10488  decision-region shares (uniform on the interest simplex, N=2e6) | Alice 0.535, Bob 0.299, Carol 0.166
+PASS  TEXT-Ch07        L10500  O_B - O_C has a large positive wait-claim component (0.86)
+FAIL  TEXT-Ch07        L10549  book: O_A, O_B, O_C span a two-dimensional subspace (Gram matrix) | algebra: rank = 3, det(Gram) = 0.6022 (Euclidean): they span a 3-dimensional subspace
+PASS  TEXT-Ch07        L10157  utilitarian sums 3.17, 3.13, 2.65 -> Alice
+PASS  TEXT-Ch07        L10168  Rawlsian minima 0.40, 0.35, 0.30 -> Alice
+PASS  TEXT-Ch07        L10180  expert-weighted v=(0.3,0.1,0.1,0.1,0.4): 0.653, 0.659, 0.549 -> Bob
+PASS  TEXT-Ch07        L10124  Family(A) ranks Alice first (0.90); Family(B) ranks Bob first (0.95)
+PASS  TEXT-Ch07        L10131  physician and committee columns positively correlated
+PASS  TEXT-Ch07        L10132  family columns pairwise negatively correlated
+NOTE  TEXT-Ch07        L10473  D_prof and D_fam "can be orthogonal" (modal claim) | for this data cos(D_prof, D_fam) = 0.132, i.e. not orthogonal
+PASS  TEXT-Ch07        L10247  d(O_A,ideal) = sqrt(0.88) ~ 0.94
+PASS  TEXT-Ch07        L10250  d(O_B,ideal) = sqrt(1.23) ~ 1.11
+PASS  TEXT-Ch07        L10253  d(O_C,ideal) = sqrt(1.28) ~ 1.13
+PASS  TEXT-Ch07        L10257  Euclidean decision: Alice closest
+FAIL  TEXT-Ch07        L10267  book: d_W(O_A,ideal) = sqrt(2(0.01)+1.5(0.50)+1(0.20)+0.5(0.04)+1(0.04)+0.5(0.09)) = sqrt(1.14) ~ 1.07 | algebra: the listed terms sum to 43/40 (exact squares: 21673/20000), sqrt = 1.04, not sqrt(1.14)=1.07
+FAIL  TEXT-Ch07        L10270  book: d_W(O_B,ideal) = sqrt(2(0.16)+1.5(0.00)+1(0.09)+0.5(0.09)+1(0.64)+0.5(0.25)) = sqrt(1.30) ~ 1.14 | algebra: the listed terms sum to 61/50, sqrt = 1.10
+PASS  TEXT-Ch07        L10273  d_W(O_C,ideal) = sqrt(1.87) ~ 1.37
+PASS  TEXT-Ch07        L10276  weighted decision: Alice (unchanged by the corrected values)
+PASS  TEXT-Ch07        L10286  lexicographic on wait-claim: Bob 1.0 >> Alice 0.29 >> Carol 0.14 -> Bob
+PASS  TEXT-Ch07        L10338  negative g_12 reduces moral distance to the ideal when both deficits are positive
+PASS  TEXT-Ch07        L10516  utilitarian (sum) and Rawlsian (min) contractions both yield Alice
+
+--- check_ch08_09: stratification and metric ---
+PASS  TEXT-Ch08        L11857  t0: S_O = g22(0.8)+g44(0.3)+g77(0.7)+g27(0.8)(0.7)
+PASS  TEXT-Ch08        L11866  t2: autonomy cost up (x4 0.3->0.5, g44<0) lowers S_O
+PASS  TEXT-Ch08        L11873  t3: x7 0.7->0.2 lowers S_O; coupling term g27 x2 x7 shrinks 0.56 g27 -> 0.16 g27
+PASS  TEXT-Ch08        L11886  path t0..t4 crosses three stratum boundaries (O->L, L->O, O->N), two reversible, one absorbing
+PASS  TEXT-Ch08        L12020  co-directional change along correlated dims is cheaper (da=(1,1): cost 2/(1+rho), decreasing in rho)
+FAIL  TEXT-Ch08        L12020  book: "changes along highly correlated dimensions ... are cheaper than along independent ... dimensions" (unqualified) | algebra: only for co-directional moves: a single-dimension change costs -1/(rho^2 - 1) (=2.78 at rho=0.8, vs 1 independent), an opposite-sign change -2/(rho - 1) (=10 at rho=0.8, vs 2)
+FAIL  TEXT-Ch08        L12031  book: sum of Mahalanobis weights da' Sigma^-1 da over a refining path converges to the Riemannian arc length | algebra: the weight is a squared form: total = Lsq/N -> 0 as N -> inf; arc length needs sqrt(da' Sigma^-1 da) (sum -> sqrt(Lsq))
+PASS  TEXT-Ch08        L12031  (reference) with w = sqrt(da' Sigma^-1 da) the sum equals the arc length for every N
+NOTE  TEXT-Ch08        L12048  Type III (absorbing) boundaries "correspond to beta_k = infinity" (L12048) | while Prop 8.5(ii) proof (L12072) says "the beta_k are finite constants": internal inconsistency, not algebra
+PASS  TEXT-Ch08        L11343  jump Delta S of a threshold (step) = one-sided limit difference
+PASS  GE-PROP-9-2      L13257  f = p1/p2 satisfies f(1,1)=1 and f(p1,p2) f(p2,p1)=1
+FAIL  GE-PROP-9-2      L13260  book: f = p1/p2 "is the unique solution consistent with the correlative symmetry constraint" | algebra: conditions (2)-(3) are also met by f = (p1/p2)^k for every k (incl. f = 1); (1) f = g22(a)/g22(b) is a definition, so uniqueness is not established
+PASS  GE-LEMMA-9-2     L13298  Killing equation for xi = d/dx^7 is exactly d_7 g_{mu nu} = 0
+PASS  GE-LEMMA-9-2     L13294  g_{7 mu} = 0 for mu != 7 removes 8 off-diagonal components
+NOTE  GE-LEMMA-9-2     L13299  Killing alone forces g_{7mu} = 0? | no: any x^7-independent metric with g_{7mu} != 0 still has d/dx^7 Killing; the book correctly needs the extra A5 orthogonality assumption
+PASS  GE-THM-9-2       L13380  e13, e45 symmetric and linearly independent
+PASS  GE-THM-9-2       L13401  delta + t e13 positive definite for small t (eigenvalues 1 +- t/2: PD iff |t| < 2)
+PASS  GE-THM-9-2       L13408  g = delta + t e13 has g_13 = g_31 = t/2
+PASS  GE-PROP-9-1      L13225  Sym_9 has 45 independent components (dimension count base)
+
+--- check_ch10_12: dynamics, search, Noether ---
+PASS  GE-PROP-10-1     L14485  d/dt(I_mu O^mu) = 0 for parallel-transported O and I (holds for any connection)
+PASS  GE-PROP-10-3     L14550  D^2 xi/dt^2 = R^mu_{nu a b} u^nu u^a xi^b gives -K xi on the unit sphere (nearby geodesics converge)
+FAIL  GE-PROP-10-2     L14528  book: loop e_alpha then e_beta: H(O)^mu - O^mu = +R^mu_{nu alpha beta} O^nu dA^{alpha beta} | algebra: numerical holonomy (sphere, theta0=1, eps=1e-3) = (-0.5666,0.3001), R O = (0.5665,-0.3000); rel.err vs +R: 2.00e+00, vs -R: 3.21e-04
+NOTE  TEXT-Ch10        L13708  O(0)=(0,0.8,..,0.4,..) -> O(1)~(0.5,0.3,..,0.4,..) "rotated" under Levi-Civita transport | Euclidean norms 0.894 -> 0.707; consistent with norm preservation only if g differs between the two contexts
+NOTE  TEXT-Ch10        L13793  holonomy H(O): (.., O^7=0.5, ..) -> (0,0,0,0,0.1,0,0.35,0,0.05) | Levi-Civita holonomy is g_p-orthogonal; Euclidean norms 0.500 -> 0.367, so g_p cannot be the identity here (needs 0.1275 g77 = 0.01 g55 + 0.0025 g99 for diagonal g)
+PASS  TEXT-Ch10        L14314  O(t1) ~ (0.34, 0.68, ...) from Gamma^1_{4,2}=0.3, Gamma^2_{4,2}=-0.15 (first-order step)
+NOTE  TEXT-Ch10        L14314  step direction / exact ODE | fit needs dx^4 = -1 (a move toward LOWER x^4); exact transport ODE over that step gives (0.323, 0.689) vs first-order (0.34, 0.68)
+PASS  TEXT-Ch10        L14359  H(O(t0)) - 0 = O(t3) = (0.05,0,0.05,0.1,0,0.25)
+PASS  TEXT-Ch11        L15469  f = g + h: continue 100, swerve right 80, swerve left 67, brake 45 -> brake hard
+PASS  GE-THM-11-2      L15130  eps = 0.01, d = 9: N = (1/eps)^9 = 10^18 per stratum
+FAIL  GE-THM-11-2      L15131  book: "the edge count [is] on the order of m * 10^18" | algebra: with the O(N^2) edges assumed in the same step, edges ~ m * 10^36 (a pure grid gives (3^9-1) N ~ 2e22)
+PASS  GE-THM-11-2      L15638  T ~ 3 * 100^18 * 81 * log(3*10^18) ~ 1.5e40 operations
+NOTE  GE-THM-11-2      L15638  log base in T | 1.5e40 matches log base 2 (1.49e+40); natural log would give 1.03e+40
+PASS  GE-THM-11-2      L15640  1.5e40 / 1e10 ops/s = 1.5e30 s ~ 4.8e22 years
+PASS  GE-PROP-11-3     L15224  S = -I_mu g^{mu nu} d_nu h (formula)
+FAIL  GE-PROP-11-3     L15222  book: "the satisfaction scalar is the directional derivative of h in the interest direction" | algebra: S = -D_{I#} h: minus the directional derivative along I# (the displayed formula has the minus; the sentence omits it)
+PASS  GE-PROP-11-2     L15604  h(n) = d(n,G) satisfies h(n) <= c(n,n') + h(n') (Euclidean spot test, 199 pairs)
+PASS  TEXT-Ch12        L15795  J = (dL/dqdot) dq - F conserved when dL = dF/dt (check: constant force, J = qdot + g t, dJ/dt = EL residual)
+PASS  GE-THM-12-1      L16180  Euler-Lagrange of L = 1/2 g x'x' - V gives g_{mu nu} x''^nu + Gamma_{mu nu rho} x'^nu x'^rho = -d_mu V (generic 2-D metric)
+PASS  GE-THM-12-1      L16266  dH/dt = d/dt(dL/dx'^2) = dL/dx^2 = 0 when L does not depend on x^2 (xi = d/dx^2)
+PASS  GE-THM-A-1       L16764  xi = d/dphi satisfies Killing's equation on S^2
+PASS  GE-THM-A-1       L16768  H = g(gamma', xi) = sin^2(th) phi' conserved along S^2 geodesics
+FAIL  GE-THM-A-1       L16771  book: Thm A.1 as stated: xi Killing => H conserved along "geodesics" satisfying nabla_g' g' = -grad V | algebra: dH/dt = -xi^nu d_nu V (here -1 for flat R^2, xi = d/dz2, V = z2): the hypothesis xi.dV = 0 used in the proof is missing from the statement (true for V = 0 geodesics)
+PASS  GE-COR-A-1       L16790  maximally symmetric n-manifold has n(n+1)/2 Killing vectors; n = 9 -> 45 (flat R^3 check: 3 translations + 3 rotations = 6)
+PASS  TEXT-Ch12        L15908  F_{mu nu} = d_mu A_nu - d_nu A_mu invariant under A -> A + d alpha
+PASS  TEXT-Ch12        L16051  CHSH: local bound 2, maximally entangled up to 2 sqrt 2 ~ 2.83
+
+--- check_ch13: quantum normative dynamics ---
+PASS  TEXT-Ch13        L16945  sqrt(0.6)|U>+sqrt(0.4)|D>: norm 1, P(U)=0.6
+PASS  GE-PROP-13-1     L17245  [dA,dB] = [A,B] (used in Robertson proof)
+PASS  GE-PROP-13-1     L17235  dA*dB >= |<[A,B]>|/2 (2000 random 4x4 Hermitian pairs/states)
+FAIL  GE-PROP-13-1     L17254  book: "S = I_mu O^mu depends nonlinearly on the obligation" | algebra: S = I_mu O^mu is LINEAR in O: S(aO1+bO2) = aS(O1)+bS(O2) identically
+FAIL  TEXT-Ch13        L17099  book: rho_sup = |psi><psi| = p|a><a| + (1-p)|b><b| + sqrt(p(1-p))(e^{i th}|a><b| + e^{-i th}|b><a|), psi = sqrt(p)|a> + e^{i th}sqrt(1-p)|b> | algebra: phases swapped: |psi><psi| = p|a><a| + (1-p)|b><b| + sqrt(p(1-p))(e^{-i th}|a><b| + e^{+i th}|b><a|)
+FAIL  TEXT-Ch13        L17104  book: rho_sup - rho_mix = sqrt(p(1-p))(e^{i th}|a><b| + e^{-i th}|b><a|) | algebra: coherence term is sqrt(p(1-p))(e^{-i th}|a><b| + e^{i th}|b><a|) (same phase swap; harmless only for th = 0, pi)
+PASS  TEXT-Ch13        L17295  Pr(x) = (|<x|a>|^2 + |<x|b>|^2 + 2Re(e^{i th}<x|a>*<x|b>))/2
+PASS  TEXT-Ch13        L17295  interference formula, 200 random numeric cases
+FAIL  TEXT-Ch13        L17316  book: "When theta = 0, the framings are aligned: they reinforce everywhere" | algebra: theta=0, orthonormal framings: I(x+)=+1.00, I(x-)=-1.00; sum_x I(x)=2Re(e^{i th}<a|b>)=0 for any normalised state with <a|b>=0, so I(x) cannot be >=0 everywhere unless it is 0 everywhere
+PASS  TEXT-Ch13        L17449  purity Tr(rho^2) = 1 (pure), 1/n (maximally mixed), n=2..6
+PASS  GE-PROP-13-2     L18081  d/dt <psi|psi> = <-iH psi|psi> + <psi|-iH psi> = 0 for H = H^dagger
+PASS  GE-PROP-13-2     L18095  U(t) = exp(-iHt) unitary
+PASS  GE-PROP-13-3     L18118  exact T = [1 + V0^2 sinh^2(kd)/(4E(V0-E))]^-1 (matching conditions solved, E=0.3,V0=1,d=1.7)
+PASS  GE-PROP-13-3     L18104  T ~ 16E(V0-E)/V0^2 exp(-2d sqrt(2(V0-E))) for kd >> 1 (ratio -> 1)
+PASS  GE-PROP-13-4     L18134  rho_A = I/2 so S(rho_A) = ln 2 for all eps
+PASS  GE-PROP-13-4     L18134  -Tr(I/2 ln I/2) = ln 2
+FAIL  GE-PROP-13-4     L18138  book: 18123/18138: S(rho_A)=ln2 is the "entanglement entropy"; positions indeterminate "whenever the collective state has any entanglement" | algebra: rho_AB is separable (PPT, min eig of partial transpose = +0.175) for eps >= 2/3, yet S(rho_A) = ln2 there too: for mixed rho_AB, S(rho_A) does not measure entanglement (rho_AB entangled iff eps < 2/3)
+NOTE  TEXT-Ch13        L17696  "The 13% violation rate corresponds ... to rho_AB = 0.87|Psi+><Psi+| + 0.13 rho_noise" (noise unspecified) | with noise I/4 (Prop 13.4 model) the violation probability is 0.13 x 1/2 = 13/200 (6.5%); 13% requires product noise that always violates
+PASS  TEXT-Ch13        L17702  0.87/0.13 mixture is a "mixed entangled state"
+PASS  TEXT-Ch13        L17833  |S| up to 2 sqrt2 ~ 2.83 (CHSH, maximally entangled state)
+
+--- check_ch14: collective agency ---
+PASS  TEXT-Ch14        L18301  direct sum 9+9=18, tensor product 9x9=81, extra 81-18=63
+PASS  TEXT-Ch14        L18344  two-agent (1,2)-tensor 9^3=729; three-agent rank-4 9^4=6561
+PASS  TEXT-Ch14        L18397  Shapley phi_i: efficiency sum_i phi_i = v(N) (generic 3-player game)
+PASS  TEXT-Ch14        L18397  Shapley symmetry (swap players 1,2)
+PASS  TEXT-Ch14        L18496  Sigma_[CE] = (0.8 - 0.2)/2 = 0.3
+PASS  GE-PROP-14-3     L19266  completeness sum_S Pi_S = id
+FAIL  GE-PROP-14-3     L19267  book: Pi_S Pi_S' = delta_SS' Pi_S with C_(k) = marginal, C_(jk) = Tr C - C_(j) - C_(k) | algebra: C = all-ones: Pi_12 C = -J, Pi_1 Pi_12 C = -1*J (not 0), Pi_12 Pi_12 C = 1*J (not Pi_12 C = -J); the 0-body term (full trace) is missing: Moebius needs C_(jk) = Tr C - C_(j) - C_(k) + C_(empty)
+FAIL  GE-PROP-14-3     L19267  book: Pi_1 Pi_1 = Pi_1 (raw-trace reading) | algebra: raw trace: Pi_1 Pi_1 = d*Pi_1 (d = 2; d = 9 on M)
+FAIL  GE-PROP-14-1     L18579  book: <C_j, C_k> = 0 for j ~= k (1-body vs 2-body parts, Frobenius) | algebra: C = [1 2;3 5]: <C_1-body, C_2-body> = -60.5 (not 0); orthogonality needs centring (Hoeffding/ANOVA), i.e. the 0-body term
+FAIL  GE-PROP-14-1     L18583  book: "sum_{S:|S|=k} mu(S) mu(S') = 0 for |S'| ~= k" (Boolean lattice, mu(S) = (-1)^|S|) | algebra: n=3, k=1, |S'|=2: sum = C(3,1)(-1)^1(-1)^2 = -3 (nonzero; in general C(n,k)(-1)^(k+|S'|))
+PASS  GE-PROP-14-4     L19284  R_coll = sum R_a + R_E >= sum R_a when R_E >= 0
+PASS  GE-PROP-14-4     L19168  R = 0.30+0.15+0.20+0.15+0.10 = 0.90; Delta R = 1.00 - 0.90 = 0.10
+FAIL  TEXT-Ch14        L18667  book: 18667: mob "responsibility surplus Delta R > 0" (Delta R = R_coll - sum R_a, 18646) | algebra: Delta R = 0.10 > 0 means sum R_a < R_coll, which 18639 defines as a "responsibility gap", not a surplus
+PASS  GE-PROP-14-5     L19299  with individual obligations transported (O fixed), delta O_coll = (dC/dSigma) dSigma + O(dSigma^2)
+PASS  GE-PROP-14-5     L19316  Sigma constant => delta O_coll = 0
+PASS  TEXT-Ch14        L18811  reference: e_x is parallel along the circle (nabla O = 0)
+FAIL  TEXT-Ch14        L18822  book: 18811/18822: nabla O + Gamma gamma' O + Lambda Sigma' = 0 "reduces to individual transport" when Sigma' = 0 | algebra: a parallel-transported O gives nabla O + Gamma gamma' O = [[sin(t), cos(t)]] ~= 0: Gamma is counted twice; the equation should be dO/dt + Gamma gamma' O + Lambda Sigma' = 0 (or nabla O + Lambda Sigma' = 0)
+
+--- check_ch15: contraction ---
+PASS  TEXT-Ch15        L20289  (3 x 5) tensor with 15 independent components
+PASS  TEXT-Ch15        L20299  Utilitarian sums: Alice 3.17 > Bob 3.13 > Carol 2.65 -> Alice
+PASS  TEXT-Ch15        L20302  Rawlsian mins: Alice 0.40 > Bob 0.35 > Carol 0.30 -> Alice
+PASS  TEXT-Ch15        L20305  Expert-weighted (0.3/0.1/0.1/0.1/0.4): Bob 0.659 > Alice 0.653 > Carol 0.549 -> Bob
+PASS  TEXT-Ch15        L20330  0.1 x 0.92 = 0.092
+PASS  GE-PROP-15-3     L20527  C1(T) ~= C2(T) in general
+PASS  GE-PROP-15-3     L20525  equality iff a common maximising nu for all mu (w_mu > 0; exhaustive 2x3 T in {0,1,2}, w in {1,2}^2)
+FAIL  GE-PROP-15-3     L20525  book: "Equality holds if and only if the maximizing nu is the same for all mu" (no sign condition on w_mu stated) | algebra: needs w_mu > 0: T=[1 0;1 0], w=(1,-2) has a unanimous maximiser but C1=0, C2=-1; T=I, w=(1,0) has none but C1=C2=1
+PASS  GE-PROP-15-4     L20541  R_ia = M_ia - S >= 0 (S = per-option floor)
+FAIL  GE-PROP-15-4     L20554  book: "sum_{i,a} R_ia = sum_{i,a} M_ia - n*S where n = |A|" | algebra: M = [1 2;3 4]: sum R = 2, but sum M - |A|S = 8 or 4; correct: sum_{i,a} M_ia - |A| sum_i S_i = 2 (book form valid only for one option i)
+PASS  GE-PROP-15-5     L20577  C(g.T') = (w o g).T' and C(g.T') = C(T') for all T' iff w o g = w (coefficientwise)
+PASS  GE-DEF-15-2      L20600  R = T - C+(C(T)) is the g-orthogonal projection onto ker C; Penrose CC+C=C, C+CC+=C+
+FAIL  GE-PROP-15-1     L19891  book: "the moral residue R is nonzero unless T is already scalar" (rank >= 1) | algebra: rank-1 T = (1,2,3), C(T) = w.T with w = (1,2,3): R = T - C+(C(T)) = 0 (norm 0); R = 0 for every T on the line span(G^-1 w), as the supplement at 19907 concedes
+PASS  GE-PROP-15-1     L19904  dim ker C = n^r - 1 (n = 9: r = 1 -> 8, r = 2 -> 80)
+PASS  GE-THM-15-1      L19776  (i) for differentiable Q, dQ is 1 x 9, rank <= 1, dim ker dQ >= 8
+FAIL  GE-THM-15-1      L19768  book: "Let Q: R^9 -> R be ANY function ... (i) Q is not injective ... (ii) no psi with psi o Q = id" | algebra: false for arbitrary (discontinuous) Q: digit interleaving is injective with exact left inverse (verified on 20000 grid points; extends to [0,1)^9); the proof uses dQ, so the theorem needs Q continuous/differentiable (as Thm 20.2 states)
+FAIL  TEXT-Ch15        L19618  book: "Every ethical theory that yields a scalar verdict is performing a weighted contraction, differing only in the weights" | algebra: maximin S = min O (book, 19624) is not w.O for any fixed w: min(e_k) = 0 forces w = 0, yet min(1,...,1) = 1; lexicographic likewise
+PASS  GE-PROP-15-2     L20099  H(T) = H(C^-1 S) + H(R) by linearity
+FAIL  GE-PROP-15-2     L20098  book: "C^-1(S) is any pre-image ... has zero component along x7, so H(C^-1(S)) = 0" | algebra: w7 = 0 => e7 in ker C, so preimage S e1 + e7 has x7-component 1; only the minimal-norm preimage can qualify
+NOTE  GE-PROP-15-2     L20101  minimal-norm preimage has zero x7-component? depends on g_17 (Ch 9 Lemma 9.2 may force g_17 = 0) | metric coupling x1,x7 (g = [2 1;1 2]): C+(1) = (1, -0.5), x7-component nonzero; holds if g_17 = 0, or if H is the metric charge g(xi, .) (then g(e7, C+ s) = w7 s/(w G^-1 w) = 0)
+FAIL  GE-PROP-15-2     L20394  book: "Harm in residue: H(R) >= 0" | algebra: T = (1, 0.2) (H(T) = 0.2), w = (1,1), Euclidean: C+(S) = (0.6, 0.6), H(R) = -0.4 < 0
+NOTE  TEXT-Ch15        L20452  "(1) Utilitarian: allow (S = 0.62)" -- agent weights not given | not reproducible from the stated data; the book's own summative contraction S = sum_mu O^mu (19602, 20382) gives -11/10 (mean -11/90), i.e. negative
+PASS  TEXT-Ch15        L20456  effective_benefit = 0.18 at uncertainty 0.8 (= D1 x (1 - 0.8), formula assumed)
+PASS  TEXT-Ch15        L20462  residue autonomy -0.3, privacy -0.8, procedural -0.5 match D4, D5, D6
+PASS  TEXT-Ch15        L20491  allocations 200/200/100, 100/150/250, 80/170/250 each sum to the 500 GtCO2 budget
+PASS  TEXT-Ch15        L20484  rank-2 tensor (9 dimensions x 3 blocs) = 27 components
+
+--- check_ch16: moral uncertainty ---
+PASS  TEXT-Ch16        L20832  sum_k (sqrt c_k)^2 = 1
+PASS  TEXT-Ch16        L20953  sum_jk c_j c_k (S_Tj - S_Tk)^2 = 2 Var_c(S)  (so 20953 penalty = sqrt2 * std of Prop 16.4; lambda rescales)
+FAIL  GE-PROP-16-1     L21160  book: "perturbation ... is bounded by eps * max_k |I^(k)_mu O^mu|" | algebra: m = 4 theories, s = (1,1,.01,.01), dc = .99 eps (1,1,-1,-1): |sum dc_k s_k| = 1.96 eps > eps max|s_k|; valid bound is eps sum_k |s_k| (<= m eps max|s_k|)
+PASS  GE-PROP-16-1     L21156  conclusion: S_MEC = sum c_k s_k > 0 for O in the robust core (all s_k > 0), any credences
+PASS  GE-PROP-16-2     L21557  robust core nonempty iff 0 not in conv{I^(k)} (LP on 300 random covector sets in R^3)
+PASS  GE-PROP-16-2     L21562  Corollary: I_mu^(k) > 0 for all k => e_mu in the core
+FAIL  GE-PROP-16-4     L21605  book: "hedging a* = argmax[sum c_k S_k(a) - lambda std_k S_k(a)] converges, as lambda -> inf, to the minimax-regret strategy" | algebra: S(a1) = (0,0), S(a2) = (10,9), c = (1/2,1/2): lambda -> inf picks a1 (std 0, max regret 10); minimax regret picks a2 (max regret 0). Min-std is not min-max-regret (21619 "equivalent to minimizing sigma(a)" does not give regret)
+PASS  GE-PROP-16-4     L21626  lambda = 0 gives the MEC objective
+
+--- check_ch17_empirical: Ch17 derived statistics ---
+FAIL  TEXT-Ch17        L22311  book: "you promised" 91%, n=582, 95% Wilson CI [88.2%, 93.4%] (tol 0.1 pp) | algebra: no count k/n printing as 91% gives that Wilson CI; closest k=530: [88.5%, 93.1%] (book width 5.2 pp); Clopper-Pearson, Wald and Agresti-Coull do not match either
+FAIL  TEXT-Ch17        L22312  book: "only if convenient" 94%, n=347, 95% Wilson CI [91.1%, 96.2%] (tol 0.1 pp) | algebra: no count k/n printing as 94% gives that Wilson CI; closest k=326: [90.9%, 96.0%] (book width 5.1 pp); matches instead: Agresti-Coull k=327, Wald k=325
+FAIL  TEXT-Ch17        L22315  book: Cohen's h = 1.42 for pooled gate-trigger rate vs 50% chance (gates 86-94%, L22295-22299) | algebra: h(mean rate 90.2% vs 50%) = 0.93; even the highest gate (94%) gives h = 1.08; h = 1.42 needs a pooled rate of 99.4%
+PASS  TEXT-Ch17        L22418  Cohen's h = 1.57 (pi/2) for 100% vs 50% chance
+FAIL  TEXT-Ch17        L22417  book: 0 errors, n > 10,000 per language, 95% Clopper-Pearson CI [99.7%, 100%] | algebra: n = 10,000 gives [99.963%, 100%] (and larger n tighter); 99.7% corresponds to n = 1228
+FAIL  TEXT-Ch17        L22420  book: v10.16 replication: 300,000+ passages, 14 languages, perfect transfer, CI [99.8%, 100%] | algebra: per-language n = 21429 gives [99.9828%, 100%]; pooled n = 300,000 gives [99.99877%, 100%]
+FAIL  TEXT-Ch17        L23923  book: Methods appendix: 0 misclassifications, 95% binomial CI [99.7%, 100%] "given the sample size" (n > 10,000/language) | algebra: Clopper-Pearson at n = 10,000: [99.963%, 100%]; rule of three: [99.970%, 100%]
+PASS  TEXT-Ch17        L22529  Cohen's h = 0.74 (O<->C 87%) and 0.88 (L<->N 82%) -- reproduced as h vs perfect symmetry (100%)
+NOTE  TEXT-Ch17        L22529  the baseline for h = 0.74 / 0.88 is not stated; it is 100% (perfect symmetry), not the 50% chance baseline used at L22315/L22418 | vs 50%: h(87%)=0.83, h(82%)=0.69
+PASS  TEXT-Ch17        L23071  correlative anomaly = deviation from 100% = 13-18% (from 87% and 82%)
+PASS  TEXT-Ch17        L22453  content-transfer table F1 / chance ratios (0.9x,0.8x,0.9x,1.0x,1.3x,0.5x) and 0.374 = 3.7x chance share one chance F1
+      (consistent chance F1 in [0.10000, 0.10105])
+PASS  TEXT-Ch17        L22708  29.3% order-effect rate (95% CI 22.6-37.1%), N = 150 posts = 44/150 with Wilson CI
+FAIL  TEXT-Ch17        L23250  book: order effect 28.7%: "6.3 sigma above the 10% baseline, p < 10^-21" | algebra: 6.3 sigma gives two-sided p = 3e-10 (one-sided 1.5e-10); p = 1e-21 needs z = 9.6
+PASS  TEXT-Ch17        L23317  N = 630 evaluations = 30 trials x 7 levels x 3 conditions
+NOTE  TEXT-Ch17        L23321  busy vs free at levels 3-4: 100% vs 77%, p = 0.016 (test and n per cell not stated) | Fisher exact two-sided: 30/30 vs 23/30 -> p = 0.0105; 60/60 vs 46/60 -> p = 5.2e-05
+PASS  TEXT-Ch17        L23555  66 axis pairs = C(12,2) for the 12 moral axes (L23272)
+PASS  TEXT-Ch17        L23558  fairness<->liberty order effect 0.95 - 0.10 = 0.85
+PASS  TEXT-Ch17        L23593  interference ratio +46.6% from during 0.263 vs classical 0.179 (within rounding of inputs)
+PASS  TEXT-Ch17        L23603  cross-language variance of (0.252, 0.489, 0.466, 0.476) = 0.0096 (population variance)
+NOTE  TEXT-Ch17        L23603  the 0.0096 < 0.01 "invariance threshold" holds for the population variance only | sample (n-1) variance = 0.0127 exceeds 0.01; English (0.252) is 0.225 below the other three's mean
+FAIL  TEXT-Ch17        L23278  book: L23278: "Moderate variation: Rights (22%), Loyalty (18%)"; L23577 (same fuzz study, Discovery 2): "Loyalty (28%), Rights (17%)" | algebra: the two passages report different values (Rights 22 vs 17, Loyalty 18 vs 28) and order for the same by-axis result
+PASS  TEXT-Ch17        L23942  validation sample 500 letters = 2.5% of the 20,030-letter corpus
+FAIL  TEXT-Ch17        L8540   book: Ch5 L8540: "only if convenient" gate "at 89% effectiveness"; Ch17 table L22295: 94% | algebra: the two chapters give different rates for the same Dear Abby gate
+FAIL  TEXT-Ch17        L8543   book: Ch5 L8543: "you explicitly promised" L->O "94% effectiveness"; Ch17 table L22296 / L22311: 91% | algebra: the two chapters give different rates for the same gate
+
+--- check_ch18_19_alignment: Ch18-19 technical appendices ---
+PASS  GE-PROP-18-1     L25715  IV = Var_g[sum_mu Sigma^mu] = sum_mu Var[Sigma^mu] + sum_{mu~=nu} Cov[Sigma^mu,Sigma^nu] (exact, 8x4 integer sample)
+PASS  GE-PROP-18-2     L25753  S_AI - S* = (wAI - w*).V + w*.(V - V*) (symbolic)
+PASS  GE-PROP-18-2     L25740  |S_AI - S*| <= ||wAI - w*|| ||V|| + ||w*|| ||V - V*|| (20,000 random 9-D trials)
+FAIL  GE-PROP-18-4     L25803  book: proof: "L_inv >= 0 with equality iff Sigma(g(x)) = Sigma(x) for all g" with IV = Var[Sigma_total] (Prop 18.1 proof, L25728) | algebra: Sigma^1 = (t1,t2,t3), Sigma^2 = -Sigma^1 over g: Var[Sigma_total] = 0 for all t, yet the components are not invariant; the "iff" needs IV = sum_mu Var[Sigma^mu] (trace), which then breaks the covariance terms of Prop 18.1
+FAIL  GE-LEMMA-18-1    L25042  book: proof: dSigma/dx^i ~= 0 "otherwise dimension i would be degenerate in g" (statement L25035 claims ~= 0 for all i) | algebra: counterexample: g = I (det 1, non-degenerate), Sigma = x1 gives dSigma/dx2 = 0 everywhere; also the proof only reaches "for at least one configuration", weaker than the statement
+FAIL  GE-PROP-19-3     L27790  book: (=>) "If some J_k violates the BIP ... the weighted sum changes unless ... w_k = 0. Hence each J_k must satisfy the BIP" | algebra: J1 = f + h, J2 = f - h, w = (1/2,1/2): S(gF) - S(F) = 0 for every h, while J1(gF) - J1(F) = hgt - hg ~= 0; the "only if" direction is false (all w_k > 0)
+PASS  GE-PROP-19-3     L27774  (<=) invariant modules + fixed weights give an invariant weighted sum (linearity)
+FAIL  GE-PROP-19-4     L27811  book: proof step: max_g |Sigma(g(x)) - Sigma(x)| <= 2 std_g[Sigma(g(x))] | algebra: |G| = 100, one outlier: max deviation = 1.000 > 2 std = 0.199; the valid bound is 2*sqrt(|G|-1)*std (Samuelson) = 1.980
+FAIL  GE-PROP-19-4     L27815  book: statement: L_inv < eps => E[Bd] <= eps/tau; proof derives E[Bd] <= 2 sqrt(L_inv)/tau <= eps/tau only "when L_inv <= eps^2/4" | algebra: under the stated hypothesis L_inv < eps the proof gives 2 sqrt(eps)/tau, which exceeds eps/tau for all eps < 4 (e.g. eps = 0.01: 0.2 vs 0.01)
+PASS  GE-PROP-19-4     L27813  Jensen step E[sqrt(IV)] <= sqrt(E[IV])
+FAIL  GE-PROP-19-5     L27402  book: "no linear probe on O^mu can recover the gauge index"; language-probe accuracy "would drop to chance ... by structural impossibility" | algebra: tr_G removes the index g but not the dependence of T on the input's gauge: T_en, T_fr give O = (1,0) vs (3,0), separated by the probe O^1; chance accuracy needs T's gauge dependence to cancel in the g-sum, which the proposition does not assume
+
+--- check_ch20_21_econ_clinical: Ch20-21 ---
+FAIL  TEXT-Ch20        L28494  book: Daraprim $13.50 -> $750.00 per tablet = "a 5,455% increase" (tol 0.5 pp) | algebra: (750 - 13.50)/13.50 = 49100/9 = 5455.56%, which rounds to 5,456% (the book truncates)
+PASS  GE-LEMMA-20-1    L28222  max-over-agents step: ||T(s)-T(s')|| <= max_i(kappa_i/alpha_i) ||s-s'|| (product sup-norm, 5,000 random linear maps)
+FAIL  GE-LEMMA-20-1    L28213  book: "If alpha_i > kappa_i for all i ... L = max_i(kappa_i/alpha_i) < 1, and the BGE is unique" (norm not specified) | algebra: with Euclidean norms: n = 5 agents, kappa_i/alpha_i = 0.5 for each agent, T = (0.5/2)(J - I) has eigenvalue 1.00, fixed-point set of dimension 1 -- not unique; the proof's max-over-i step holds only in the sup-norm (Euclidean constant is L*sqrt(n-1))
+PASS  GE-THM-20-6      L28335  closed bilateral exchange of amount d on a transferable dimension: Da_k(A) + Da_k(B) = 0
+PASS  GE-THM-21-2      L28930  dQ: R^9 -> R has rank <= 1, so ker dQ has dimension >= 8 (rank-nullity; example gradient)
+NOTE  GE-THM-21-2      L28912  statement: "Let Q: R^9 -> R be any scalar QALY function ... Q is not injective" | true only for continuous Q (the proof uses rank-nullity/regular points); R^9 and R are equinumerous, so a discontinuous injective Q exists. Th 20.2 (L28094) states the continuity hypothesis; Th 21.2, 23.4 (L30335), 26.1 (L32723) do not
+PASS  GE-THM-21-3      L29009  Delta MI(t) = sum_k max(0, beta_k - tau) * 1[crossed] >= 0, so MI(T) is non-decreasing
+PASS  GE-THM-21-4      L29055  "90% survival rate" and "10% mortality rate" are the same fact (1 - 0.90 = 0.10)
+FAIL  TEXT-Ch21        L29212  book: Path B: Da_1 = -moderate, Da_5 = +moderate (trust reinforced); "Edge weight: w_B = (mortality risk)^2 / sigma_1^2" | algebra: Def. 21.2 (L28803) gives w_B = Da^T Sigma^-1 Da = da1^2/s1^2 + da5^2/s5^2 even for diagonal Sigma: the stated Da_5 ~= 0 adds da5^2/s5^2 (a quadratic form charges improvements too)
+NOTE  TEXT-Ch21        L28874  Th 21.1 proof: "This is the Heuristic Truncation Theorem of Chapter 11" | the Heuristic Truncation Theorem is Theorem 20.1 (Ch 20, L28030); cross-reference, not algebra
+
+--- check_ch23_finance: Ch23 ---
+FAIL  GE-THM-23-1      L30201  book: proof: Da^T Sigma_F^-1 Da "is smaller when Da_9 is small" | algebra: with a d1-d9 cross term (Sigma^-1 = [1 .9; .9 1], PD): Da = (1, -0.9) gives 0.19 but Da = (1, 0) gives 1.00; the quadratic is minimised at Da_9 = -(Sigma^-1)_91 Da_1/(Sigma^-1)_99, not at 0 -- the step needs no d9 cross terms
+NOTE  GE-THM-23-2      L30256  w_alg = (Da_1)^2 / sigma_11 is the marginal (1-D) Mahalanobis weight | it equals the d_1 term Da_1^2 (Sigma^-1)_11 of the full form only when sigma_1j = 0. Same expression at L33111 (Th 26.6) and L35694 (Th 28.6)
+PASS  GE-THM-23-2      L30256  (Sigma^-1)_11 - 1/sigma_11 = sigma_12^2/(sigma_11 det Sigma) >= 0 for PD Sigma, so the 1-D weight never exceeds the full-form d_1 term
+PASS  GE-THM-23-5      L30383  closed transfer d on d_1/d_2/d_4: Da_k(A) + Da_k(B) = 0
+PASS  GE-THM-23-6      L30434  h_market < 0 < h* implies f_market = g + h_market < g + h* (bubble path under-costed)
+
+--- check_ch25_environment: Ch25 ---
+FAIL  TEXT-Ch25        L31571  book: Nordhaus r = 3-5%: $1 in 100 years worth "less than a cent today" (r = 3%) | algebra: PV of $1 at r = 3%: $0.0498 continuous, $0.0520 annual compounding
+PASS  TEXT-Ch25        L31571  Nordhaus r = 3-5%: $1 in 100 years worth "less than a cent today" (r = 5%)
+PASS  TEXT-Ch25        L31572  Stern r = 0.1%: future damages "nearly as significant as present ones"
+NOTE  TEXT-Ch25        L31363  L31363: "Stern (2006) used a social discount rate of r = 0.1%" | by the Ramsey rule the book itself cites (L31620, r = delta + eta*g), 0.1% is Stern's pure time preference delta; with Stern's eta = 1, g = 1.3% the discount rate is r = 1.4% (Stern-Review parameters, not stated in the book)
+PASS  GE-THM-25-2      L31609  D_r: R^9 -> R has rank 1, dim ker = 9 - 1 = 8, ker = {a : a_1 = 0} (non-monetary vectors)
+FAIL  GE-THM-25-3      L31669  book: "For any positive discount rate, there exists a time horizon T beyond which the cumulative d_1 value at BGE_full exceeds ... BGE_1" | algebra: with discounting the comparison does not improve with T: BGE_full -> gs/r, BGE_1 = -(G*(exp(-k*r) - 1))/r; full wins iff gs > G(1 - e^{-rk}). Example G = 10, gs = 2, k = 5, r = 0.5: 4.00 (all T) < 18.36. Holds for undiscounted sums (r = 0) only
+PASS  GE-THM-25-3      L31667  undiscounted: T > G k / gs makes the sustainable path's cumulative d_1 exceed the collapse path's
+PASS  TEXT-Ch25        L31641  private benefit B exceeds own share C/n of the shared cost for large n (n > C/B) even when total cost C > B
+
+--- check_ch26_ai: Ch26 ---
+PASS  GE-THM-26-1      L32739  level set R^-1(r) of a (linear, regular) reward on R^9 is 8-dimensional
+FAIL  GE-THM-26-5      L33046  book: T(v) <= C K(v) L^2 (so T ~ 0 where K ~ 0; "In flat regions ... the scalar-optimal path is close to the manifold-optimal path") | algebra: constant-Sigma metric has all Christoffels 0 (flat=1, K = 0), yet scalar route A (d_1 cost 1, full 10) vs manifold route B (d_1 cost 4, full 4) gives alignment tax T = 3 > 0 = C*K*L^2
+FAIL  GE-THM-26-5      L33084  book: (c) "alignment tax increases with decision horizon (L^2 dependence) ... long-horizon planning ... is exponentially more expensive" | algebra: L^2 growth is polynomial: lim L^2/e^L = 0; the bound supports "quadratically", not "exponentially"
+PASS  TEXT-Ch26        L33519  Black defendants "nearly twice as likely" to be falsely flagged: FPR 44.9% vs 23.5%
+PASS  TEXT-Ch26        L33472  "scores 95% on an aggregate safety benchmark ... 95% safe on d_1 but 20% on d_3" is arithmetically possible
+NOTE  TEXT-Ch26        L33472  aggregation weights are not stated | with equal weights over 9 dimensions, 20% on d_3 caps the aggregate at 91.1% (< 95%); the example requires d_3 weight <= 1/16
+
+--- check_ch27_28_bio_military: Ch27-28 ---
+FAIL  GE-THM-27-1      L34089  book: "all n descendants carry the modification ... affected vertices grows as n(k) >= 2^k (assuming replacement fertility)" | algebra: descendants = 2^k, but each child inherits a heterozygous edit with p = 1/2: expected carriers at generation k = (2 x 1/2)^k = 1 (constant), not exponential growth. Prop 27.4 (L34657) itself uses 50% sharing for first-degree relatives
+FAIL  GE-THM-27-5      L34519  book: "expansion yields d^2w/dv^2 < 0 (negative curvature); restriction yields d^2w/dv^2 > 0" | algebra: for the quadratic Mahalanobis weight d^2w/dv^2 = 2/s44 > 0 whatever direction v moves (in general 2 (Sigma^-1)_44 > 0); the sign cannot distinguish expansion from restriction
+PASS  GE-PROP-27-4     L34657  first-degree relatives share ~50% of variants, second-degree ~25% (r = 2^-degree)
+PASS  GE-THM-28-2      L35395  C_constrained - C_unconstrained >= 0 (penalties >= 0 and a feasible subset cannot lower the minimum; 5,000 random path sets)
+PASS  TEXT-Ch28        L35489  "The scalar test captures only the first; the geometric test captures all six" (d1 + d6, d2, d4, d5, d7)
+NOTE  GE-THM-28-5      L35600  with beta_civilian = infinity, "nearly every engagement carries near-infinite expected boundary cost" via base rate > 0.9 | Inf * p = Inf for every p > 0 (even p = 0.01), so the base-rate argument is not needed; at p = 0 the product is undefined (Inf*0 = NaN)
+PASS  TEXT-Ch28        L36174  reparations: recommended 21,000 rand/yr x 6 yr vs one-time 30,000 rand "far less than recommended"
+PASS  TEXT-Ch28        L36149  amnesty: "Of the 7,112 amnesty applications filed, only 1,512 were granted"
+
+--- check_ch29_30: Ch 29 TA, Ch 30, App. B/C ---
+PASS  GE-PROP-20-1     L37384  sphere: R^th_{ph th ph} = sin^2(th) (curvature nonzero)
+INFO  Prop 29.1 sphere: DeltaO / (R O area) for e = [0.02 0.01 0.005] : [-1.00579 -1.00289 -1.00144]
+PASS  GE-PROP-20-1     L37392  DeltaO -> R^mu_{nu ab} O^nu x (enclosed area), |DeltaO| proportional to area x curvature (first order)
+NOTE  GE-PROP-20-1     L37392  sign and factor of the area element | ratio DeltaO/(R O e^2) -> -1.0014: holds with the oriented area element dx^a dx^b of one ordering; written as an unrestricted sum over a,b with dx^a ^ dx^b it double-counts (factor 2) unless 1/2 is included; sign is convention-dependent
+PASS  GE-PROP-20-2     L37425  Gam^m_{ab} v^a w^b - Gam^m_{ab} w^a v^b = (Gam^m_{ab} - Gam^m_{ba}) v^a w^b = T^m_{ab} v^a w^b (generic 3-D Gamma)
+PASS  GE-PROP-20-2     L37421  symmetric (torsion-free) connection gives zero closure failure
+NOTE  GE-PROP-20-2     L37425  sign of the transport step | parallel transport is V -> V - Gam V dx (L37425 writes +Gam); the closure failure is then -T v w, same zero set, so the criterion is unaffected
+PASS  GE-PROP-20-3     L37445  G_g(h,h) = Tr((g^-1 h)^2) > 0 for symmetric h ~= 0, g > 0 (200 random draws)
+NOTE  GE-PROP-20-3     L37447  justification "since g^-1 h is a real matrix" | insufficient: real A = [0 1; -1 0] has Tr(A^2) = -2 < 0; positivity holds because g^-1 h is similar to the symmetric g^-1/2 h g^-1/2
+PASS  GE-PROP-20-3     L37450  Tr(g^-1 h g^-1 k) invariant under g,h,k -> J^T (.) J
+FAIL  GE-PROP-20-3     L37439  book: statement: meta-metric "unique up to overall scale" under coordinate invariance | algebra: Tr(g^-1 h)Tr(g^-1 k) is ALSO invariant (checked), so the invariant family a Tr(g^-1hg^-1k) + b Tr(g^-1h)Tr(g^-1k) has two parameters: unique only up to scale AND b/a, as the proof itself (L37455) concludes
+PASS  TEXT-Ch30        L37530  S = -1 +/- 0.5 spans [-1.5, -0.5]
+PASS  TEXT-AppC        L38512  paired design, d = 0.5, alpha = .05, power .80: "N ~ 200 is sufficient"
+NOTE  TEXT-AppC        L38512  Study 1 sample size | sufficient but ~6x the required N = 34 (two-sided paired t); N = 200 gives power 1.0000
+PASS  TEXT-AppC        L38560  3 gate types x 150 = 450 total
+NOTE  TEXT-AppB        L38441  Bd tiers: App. B.6 <0.1 cosmetic / 0.1-0.5 substantive / >0.5 systematic; BIP-compliant iff Bd < 0.1 | App. D (L39208 etc.) uses deploy iff Bd < 0.01, and D.4 (L40724-40727) uses <0.01 / 0.01-0.10 / 0.10-1.0 / >1.0: the two tier scales disagree
+
+--- check_appD_1_triage: App. D.1 Emergency Triage ---
+PASS  TEXT-AppD        L38780  welfare_a 0.78 ~ (0.95+0.60)/2
+PASS  TEXT-AppD        L38806  welfare_b 0.90 ~ (0.95+0.85)/2
+FAIL  TEXT-AppD        L38832  book: welfare_g 0.62 stated as "(0.60 + 0.85)/2" | algebra: exact 0.725 (|diff| 0.105 > tol 0.005)
+PASS  TEXT-AppD        L39204  Transform 4: welfare 0.58 ~ (0.30+0.85)/2
+PASS  TEXT-AppD        L38858  I_phys weights sum to 1
+PASS  TEXT-AppD        L38858  I_Afam weights sum to 1
+PASS  TEXT-AppD        L38858  I_Bfam weights sum to 1
+PASS  TEXT-AppD        L38858  I_Cfam weights sum to 1
+PASS  TEXT-AppD        L38858  I_comm weights sum to 1
+PASS  TEXT-AppD        L38907  M_{a,phys} products
+PASS  TEXT-AppD        L38907  M_{a,phys} = 0.703 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L38910  M_{a,Afam} products
+PASS  TEXT-AppD        L38910  M_{a,Afam} = 0.687 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L38913  M_{a,Bfam} products
+PASS  TEXT-AppD        L38913  M_{a,Bfam} = 0.668 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L38916  M_{a,Cfam} products
+PASS  TEXT-AppD        L38916  M_{a,Cfam} = 0.557 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L38919  M_{a,comm} products
+PASS  TEXT-AppD        L38919  M_{a,comm} = 0.632 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L38926  M_{b,phys} products
+PASS  TEXT-AppD        L38926  M_{b,phys} = 0.820 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L38929  M_{b,Afam} products
+PASS  TEXT-AppD        L38929  M_{b,Afam} = 0.775 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L38932  M_{b,Bfam} products
+PASS  TEXT-AppD        L38932  M_{b,Bfam} = 0.668 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L38932  rounding-chain: book 0.668, exact 0.667
+PASS  TEXT-AppD        L38935  M_{b,Cfam} products
+PASS  TEXT-AppD        L38935  M_{b,Cfam} = 0.792 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L38938  M_{b,comm} products
+PASS  TEXT-AppD        L38938  M_{b,comm} = 0.758 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L38945  M_{g,phys} products
+PASS  TEXT-AppD        L38945  M_{g,phys} = 0.602 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L38945  rounding-chain: book 0.602, exact 0.601
+PASS  TEXT-AppD        L38948  M_{g,Afam} products
+PASS  TEXT-AppD        L38948  M_{g,Afam} = 0.443 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L38948  rounding-chain: book 0.443, exact 0.442
+PASS  TEXT-AppD        L38951  M_{g,Bfam} products
+PASS  TEXT-AppD        L38951  M_{g,Bfam} = 0.563 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L38954  M_{g,Cfam} products
+PASS  TEXT-AppD        L38954  M_{g,Cfam} = 0.545 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L38954  rounding-chain: book 0.545, exact 0.544
+PASS  TEXT-AppD        L38957  M_{g,comm} products
+PASS  TEXT-AppD        L38957  M_{g,comm} = 0.567 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L38995  beta top for 4/5 perspectives; Bfam a=b=0.668; beta never least
+PASS  TEXT-AppD        L39008  Utilitarian S_a = 3.247
+PASS  TEXT-AppD        L39009  Utilitarian S_b = 3.813
+PASS  TEXT-AppD        L39010  Utilitarian S_g = 2.720
+PASS  TEXT-AppD        L39013  Utilitarian winner beta
+PASS  TEXT-AppD        L39021  Rawlsian S_a = 0.557
+PASS  TEXT-AppD        L39022  Rawlsian S_b = 0.668
+PASS  TEXT-AppD        L39023  Rawlsian S_g = 0.443
+PASS  TEXT-AppD        L39026  Rawlsian winner beta (0.668)
+PASS  TEXT-AppD        L39029  expert weights sum to 1
+PASS  TEXT-AppD        L39036  Expert-weighted S_a products
+PASS  TEXT-AppD        L39036  Expert-weighted S_a = 0.659 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39036  rounding-chain: book 0.659, exact 0.65845
+PASS  TEXT-AppD        L39038  Expert-weighted S_b products
+PASS  TEXT-AppD        L39038  Expert-weighted S_b = 0.776 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39040  Expert-weighted S_g products
+PASS  TEXT-AppD        L39040  Expert-weighted S_g = 0.564 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39044  Expert-weighted winner beta
+PASS  TEXT-AppD        L39063  Euclid squared terms opt a
+PASS  TEXT-AppD        L39064  Euclid sum opt a = 0.802 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39064  Euclid step sqrt(0.802) ~ 0.896
+PASS  TEXT-AppD        L39064  Euclid d(O_a,ideal) end-to-end ~ 0.896 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39064  rounding-chain: book 0.896, exact 0.89543286
+PASS  TEXT-AppD        L39067  Euclid squared terms opt b
+PASS  TEXT-AppD        L39068  Euclid sum opt b = 0.511 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39068  rounding-chain: book 0.511, exact 0.5099
+PASS  TEXT-AppD        L39068  Euclid step sqrt(0.511) ~ 0.715
+PASS  TEXT-AppD        L39068  Euclid d(O_b,ideal) end-to-end ~ 0.715 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39068  rounding-chain: book 0.715, exact 0.71407283
+PASS  TEXT-AppD        L39071  Euclid squared terms opt g
+PASS  TEXT-AppD        L39072  Euclid sum opt g = 1.369 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39072  rounding-chain: book 1.369, exact 1.3683
+PASS  TEXT-AppD        L39072  Euclid step sqrt(1.369) ~ 1.170
+PASS  TEXT-AppD        L39072  Euclid d(O_g,ideal) end-to-end ~ 1.170 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39083  Weighted terms opt a (on rounded squares)
+PASS  TEXT-AppD        L39084  Weighted step sqrt(0.942) ~ 0.971
+PASS  TEXT-AppD        L39084  Weighted d_W(O_a) end-to-end ~ 0.971 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39084  Weighted sum opt a ~ 0.942 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39087  Weighted terms opt b (on rounded squares)
+PASS  TEXT-AppD        L39088  Weighted step sqrt(0.548) ~ 0.740
+PASS  TEXT-AppD        L39088  Weighted d_W(O_b) end-to-end ~ 0.740 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39088  rounding-chain: book 0.740, exact 0.74070912
+PASS  TEXT-AppD        L39088  Weighted sum opt b ~ 0.548 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39088  rounding-chain: book 0.548, exact 0.54865
+PASS  TEXT-AppD        L39091  Weighted terms opt g (on rounded squares)
+PASS  TEXT-AppD        L39092  Weighted step sqrt(1.992) ~ 1.411
+PASS  TEXT-AppD        L39092  Weighted d_W(O_g) end-to-end ~ 1.411 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39092  rounding-chain: book 1.411, exact 1.4116303
+PASS  TEXT-AppD        L39092  Weighted sum opt g ~ 1.992 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39092  rounding-chain: book 1.992, exact 1.9927
+PASS  TEXT-AppD        L39075  Euclid: beta closest, gamma farthest
+PASS  TEXT-AppD        L39095  Weighted: beta still wins
+PASS  TEXT-AppD        L39101  Lexicographic welfare beta>alpha>gamma
+PASS  TEXT-AppD        L39208  Bd = 0.0/0.01 = 0.0
+PASS  TEXT-AppD        L39260  transforms 44 invariance-preserving + 3 bond-changing = 47
+PASS  TEXT-AppD        L39235  TriageProtocolEM ranking = physician column, b>a>g
+PASS  TEXT-AppD        L39240  RightsFirstEM scores equal the committee column (0.758/0.632/0.567)
+PASS  TEXT-AppD        L39245  FairnessEM scores = C-family column
+PASS  TEXT-AppD        L39252  governance final scores a=6379/10000 b=793/1000 g=359/625, beta selected
+INFO  App.D.1 governance final_scores (book leaves unevaluated): a=0.6379 b=0.7930 g=0.5744
+
+--- check_appD_2_whistleblower: App. D.2 Whistleblower ---
+PASS  TEXT-AppD        L39395  gate fires: evidence_quality 0.92 >= tau_fraud 0.70
+PASS  TEXT-AppD        L39673  Transform 4: 0.30 < tau 0.70, gate does not fire
+PASS  TEXT-AppD        L39417  penumbral |a|^2+|b|^2 = 1 at all three stages
+PASS  TEXT-AppD        L39700  pre_gate amplitude 0.14 = sqrt(|a|^2=0.02)
+PASS  TEXT-AppD        L39700  pre_gate amplitude 0.99 = sqrt(|b|^2=0.98)
+PASS  TEXT-AppD        L39517  I_analyst weights sum to 1
+PASS  TEXT-AppD        L39525  I_invest weights sum to 1
+PASS  TEXT-AppD        L39531  I_reg weights sum to 1
+PASS  TEXT-AppD        L39537  I_company weights sum to 1
+PASS  TEXT-AppD        L39520  analyst weights welfare (0.30) and privacy (0.25) most
+PASS  TEXT-AppD        L39546  M_{R,analyst} products
+PASS  TEXT-AppD        L39546  M_{R,analyst} = 0.709 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39549  M_{R,invest} products
+PASS  TEXT-AppD        L39549  M_{R,invest} = 0.837 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39549  rounding-chain: book 0.837, exact 0.836
+PASS  TEXT-AppD        L39552  M_{R,reg} products
+PASS  TEXT-AppD        L39552  M_{R,reg} = 0.852 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39555  M_{R,company} products
+PASS  TEXT-AppD        L39555  M_{R,company} = 0.653 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39555  rounding-chain: book 0.653, exact 0.652
+PASS  TEXT-AppD        L39563  M_{S,analyst} products
+PASS  TEXT-AppD        L39563  M_{S,analyst} = 0.486 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39566  M_{S,invest} products
+PASS  TEXT-AppD        L39566  M_{S,invest} = 0.244 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39569  M_{S,reg} products
+PASS  TEXT-AppD        L39569  M_{S,reg} = 0.349 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39572  M_{S,company} products
+PASS  TEXT-AppD        L39572  M_{S,company} = 0.610 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39605  analyst prefers Report (0.709 > 0.486)
+PASS  TEXT-AppD        L39608  company is the closest perspective (0.653 vs 0.610)
+PASS  TEXT-AppD        L39620  Utilitarian S_R = 3.051
+PASS  TEXT-AppD        L39621  Rawlsian S_R = 0.653
+PASS  TEXT-AppD        L39622  expert weights 0.35+0.30+0.20+0.15 = 1
+FAIL  TEXT-AppD        L39622  book: Expert-weighted S_R = 0.35(0.852)+0.30(0.837)+0.20(0.709)+0.15(0.653) = 0.787 | algebra: exact 0.78905 (|diff| 0.00205 > tol 5.0e-4)
+PASS  TEXT-AppD        L39649  privacy loss 0.90 - 0.40 = 0.50
+PASS  TEXT-AppD        L39744  audit: privacy Delta = O_R - O_S = -0.50
+NOTE  TEXT-AppD        L39741  audit: welfare Delta = -0.30, autonomy Delta = -0.20 | book gives no baseline; O_R-O_S: welfare +0.30, autonomy +0.50; O_R vs 1: welfare -0.25, autonomy -0.20; text L39450 "reduces from 0.90": welfare -0.15
+PASS  TEXT-AppD        L39732  transforms 49 + 3 = 52
+
+--- check_appD_3_av: App. D.3 Autonomous Vehicle ---
+PASS  TEXT-AppD        L39956  I_ped weights sum to 1
+PASS  TEXT-AppD        L39962  I_pass weights sum to 1
+PASS  TEXT-AppD        L39968  I_child weights sum to 1
+PASS  TEXT-AppD        L39974  I_soc weights sum to 1
+PASS  TEXT-AppD        L39981  I_mfr weights sum to 1
+PASS  TEXT-AppD        L39902  B autonomy 0.75 is the highest autonomy score
+PASS  TEXT-AppD        L39927  C welfare 0.20 is the worst net welfare
+PASS  TEXT-AppD        L39990  M_{A,ped} products
+PASS  TEXT-AppD        L39990  M_{A,ped} = 0.343 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L39993  M_{A,pass} products
+PASS  TEXT-AppD        L39993  M_{A,pass} = 0.376 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39993  rounding-chain: book 0.376, exact 0.375
+PASS  TEXT-AppD        L39996  M_{A,child} products
+PASS  TEXT-AppD        L39996  M_{A,child} = 0.341 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39996  rounding-chain: book 0.341, exact 0.34
+PASS  TEXT-AppD        L39999  M_{A,soc} products
+PASS  TEXT-AppD        L39999  M_{A,soc} = 0.366 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L39999  rounding-chain: book 0.366, exact 0.365
+PASS  TEXT-AppD        L40002  M_{A,mfr} products
+PASS  TEXT-AppD        L40002  M_{A,mfr} = 0.398 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L40009  M_{B,ped} products
+PASS  TEXT-AppD        L40009  M_{B,ped} = 0.646 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L40009  rounding-chain: book 0.646, exact 0.645
+PASS  TEXT-AppD        L40012  M_{B,pass} products
+PASS  TEXT-AppD        L40012  M_{B,pass} = 0.648 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L40015  M_{B,child} products
+PASS  TEXT-AppD        L40015  M_{B,child} = 0.649 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L40015  rounding-chain: book 0.649, exact 0.6475
+PASS  TEXT-AppD        L40018  M_{B,soc} products
+PASS  TEXT-AppD        L40018  M_{B,soc} = 0.638 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L40021  M_{B,mfr} products
+PASS  TEXT-AppD        L40021  M_{B,mfr} = 0.635 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L40028  M_{C,ped} products
+PASS  TEXT-AppD        L40028  M_{C,ped} = 0.166 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L40028  rounding-chain: book 0.166, exact 0.165
+PASS  TEXT-AppD        L40031  M_{C,pass} products
+PASS  TEXT-AppD        L40031  M_{C,pass} = 0.183 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L40034  M_{C,child} products
+PASS  TEXT-AppD        L40034  M_{C,child} = 0.153 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L40037  M_{C,soc} products
+PASS  TEXT-AppD        L40037  M_{C,soc} = 0.158 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L40040  M_{C,mfr} products
+PASS  TEXT-AppD        L40040  M_{C,mfr} = 0.193 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L40078  B dominates across all five perspectives
+PASS  TEXT-AppD        L40096  Utilitarian S_A = 1.824
+PASS  TEXT-AppD        L40097  Utilitarian S_B = 3.216
+PASS  TEXT-AppD        L40098  Utilitarian S_C = 0.853
+PASS  TEXT-AppD        L40238  UtilitarianEM ranking B > A > C
+PASS  TEXT-AppD        L40138  Rawlsian S_A = 0.341
+PASS  TEXT-AppD        L40138  Rawlsian floor of A is child
+PASS  TEXT-AppD        L40139  Rawlsian S_B = 0.635
+PASS  TEXT-AppD        L40139  Rawlsian floor of B is mfr
+PASS  TEXT-AppD        L40140  Rawlsian S_C = 0.153
+PASS  TEXT-AppD        L40140  Rawlsian floor of C is child
+PASS  TEXT-AppD        L40174  evaluation tensor has 3 x 5 = 15 entries
+PASS  TEXT-AppD        L40278  welfare residue 0.45 = 1 - O^1_B(0.55)
+PASS  TEXT-AppD        L40280  epistemic residue 0.40 = 1 - O^9_B(0.60)
+PASS  TEXT-AppD        L40269  transforms 55 + 6 = 61
+PASS  TEXT-AppD        L40261  3 of 4 modules select B (Utilitarian, consent-adjusted, Rawlsian)
+
+--- check_appD_4_hiring: App. D.4 Algorithmic Hiring ---
+PASS  TEXT-AppD        L40451  Delta_orig = 86.7 - 82.1 = +4.6
+PASS  TEXT-AppD        L40453  Delta_T1 = -1.6
+PASS  TEXT-AppD        L40454  Delta_T2 = -0.9
+PASS  TEXT-AppD        L40455  Delta_T3 = 0.3
+PASS  TEXT-AppD        L40456  Delta_T4 = 2.1
+PASS  TEXT-AppD        L40457  Delta_T5 = -2.3
+PASS  TEXT-AppD        L40441  annotations: T1 J higher, T2 flipped, T3 K slightly, T4 K higher with smaller margin, T5 flipped
+PASS  TEXT-AppD        L40443  T3 "nearly equal" is the smallest |Delta|
+PASS  TEXT-AppD        L40461  |Delta_orig - Delta_Ti| = 6.2, 5.5, 4.3, 2.5, 6.9
+PASS  TEXT-AppD        L40462  sum = 25.4
+PASS  TEXT-AppD        L40462  D_op = (1/5)(25.4) = 5.08
+FAIL  TEXT-AppD        L40464  book: Bd = D_op/tau = 5.08 / 100 x (1/0.01) = 0.51 | algebra: exact 5.08 (|diff| 4.57 > tol 0.005)
+PASS  TEXT-AppD        L40467  Bd >> 0.10 threshold (bias detected)
+FAIL  TEXT-AppD        L40732  book: biased system falls in tier "0.10-1.0: Remediate" (L40726) | algebra: Bd as computed by the stated formula = 127/25, which is the "> 1.0: Fundamental redesign required" tier (L40727)
+PASS  TEXT-AppD        L40418  T4 age moves 27->34, 31->25 are within +/-10 years
+PASS  TEXT-AppD        L40550  I_comp weights sum to 1
+PASS  TEXT-AppD        L40556  I_cand weights sum to 1
+PASS  TEXT-AppD        L40562  I_reg weights sum to 1
+PASS  TEXT-AppD        L40568  I_soc weights sum to 1
+PASS  TEXT-AppD        L40696  I_pure weights sum to 1
+PASS  TEXT-AppD        L40577  M_{J,comp} products
+PASS  TEXT-AppD        L40577  M_{J,comp} = 0.835 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L40577  rounding-chain: book 0.835, exact 0.834
+PASS  TEXT-AppD        L40580  M_{J,cand} products
+PASS  TEXT-AppD        L40580  M_{J,cand} = 0.839 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L40580  rounding-chain: book 0.839, exact 0.838
+PASS  TEXT-AppD        L40583  M_{J,reg} products
+PASS  TEXT-AppD        L40583  M_{J,reg} = 0.820 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L40583  rounding-chain: book 0.820, exact 0.819
+PASS  TEXT-AppD        L40586  M_{J,soc} products
+PASS  TEXT-AppD        L40586  M_{J,soc} = 0.791 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L40593  M_{K,comp} products
+PASS  TEXT-AppD        L40593  M_{K,comp} = 0.805 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L40593  rounding-chain: book 0.805, exact 0.8035
+PASS  TEXT-AppD        L40596  M_{K,cand} products
+PASS  TEXT-AppD        L40596  M_{K,cand} = 0.824 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L40596  rounding-chain: book 0.824, exact 0.822
+PASS  TEXT-AppD        L40599  M_{K,reg} products
+PASS  TEXT-AppD        L40599  M_{K,reg} = 0.800 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L40599  rounding-chain: book 0.800, exact 0.7985
+PASS  TEXT-AppD        L40602  M_{K,soc} products
+PASS  TEXT-AppD        L40602  M_{K,soc} = 0.735 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L40636  J dominates K across all four perspectives
+NOTE  TEXT-AppD        L40637  margin "driven by two factors" (welfare 0.88 vs 0.82, societal 0.70 vs 0.55) | O_J and O_K differ in 8-vector positions [1 6 8] = dims 1, 6, 9 (welfare, societal AND epistemic 0.80 vs 0.75); epistemic adds e.g. 0.005 to the company margin
+PASS  TEXT-AppD        L40646  Utilitarian S_J = 3.285
+PASS  TEXT-AppD        L40647  Utilitarian S_K = 3.164
+PASS  TEXT-AppD        L40650  Rawlsian S_J = 0.791
+PASS  TEXT-AppD        L40651  Rawlsian S_K = 0.735
+PASS  TEXT-AppD        L40654  expert weights 0.40+0.30+0.20+0.10 = 1
+PASS  TEXT-AppD        L40655  Expert-weighted S_J products
+PASS  TEXT-AppD        L40655  Expert-weighted S_J = 0.821 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L40656  Expert-weighted S_K products
+PASS  TEXT-AppD        L40656  Expert-weighted S_K = 0.791 (tol = half last digit + propagated rounding of printed intermediates)
+PASS  TEXT-AppD        L40700  pure-meritocracy S_J products
+PASS  TEXT-AppD        L40700  pure-meritocracy S_J = 0.854 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L40700  rounding-chain: book 0.854, exact 0.853
+PASS  TEXT-AppD        L40703  pure-meritocracy S_K products
+PASS  TEXT-AppD        L40703  pure-meritocracy S_K = 0.831 (tol = half last digit + propagated rounding of printed intermediates)
+INFO  TEXT-AppD        L40703  rounding-chain: book 0.831, exact 0.8295
+PASS  TEXT-AppD        L40707  J still wins with zero societal weight
+PASS  TEXT-AppD        L40684  7-point gap (92 vs 85)
+PASS  TEXT-AppD        L40771  disparate impact 0.94 >= four-fifths 0.80 (PASS)
+
+--- check_appD_5_climate: App. D.5 Climate Policy ---
+PASS  TEXT-AppD        L40888  total current emissions = 14.55 Gt/yr
+PASS  TEXT-AppD        L40888  required reduction 50% = 7.275 Gt/yr
+PASS  TEXT-AppD        L41120  capacity N1 = GDP/max(GDP) = 1.00
+PASS  TEXT-AppD        L41121  responsibility N1 = hist/max(hist) = 1.00
+PASS  TEXT-AppD        L41122  current_share N1 = cur/14.55 = 0.344
+PASS  TEXT-AppD        L41120  capacity N2 = GDP/max(GDP) = 0.18
+PASS  TEXT-AppD        L41121  responsibility N2 = hist/max(hist) = 0.51
+PASS  TEXT-AppD        L41122  current_share N2 = cur/14.55 = 0.309
+PASS  TEXT-AppD        L41120  capacity N3 = GDP/max(GDP) = 0.12
+PASS  TEXT-AppD        L41121  responsibility N3 = hist/max(hist) = 0.006
+PASS  TEXT-AppD        L41122  current_share N3 = cur/14.55 = 0.003
+PASS  TEXT-AppD        L41120  capacity N4 = GDP/max(GDP) = 0.38
+PASS  TEXT-AppD        L41121  responsibility N4 = hist/max(hist) = 0.23
+PASS  TEXT-AppD        L41122  current_share N4 = cur/14.55 = 0.137
+PASS  TEXT-AppD        L41120  capacity N5 = GDP/max(GDP) = 0.69
+PASS  TEXT-AppD        L41121  responsibility N5 = hist/max(hist) = 0.34
+PASS  TEXT-AppD        L41122  current_share N5 = cur/14.55 = 0.206
+PASS  TEXT-AppD        L41125  stated v(S) is additive, so Shapley phi_i = v({i}) (enumerated over all 2^4 coalitions)
+FAIL  TEXT-AppD        L41143  book: phi_N1 = 0.387 (normalised Shapley share of the stated v) | algebra: exact 0.79174056 (|diff| 0.405 > tol 5.0e-4)
+FAIL  TEXT-AppD        L41154  book: phi_N2 = 0.212 (normalised Shapley share of the stated v) | algebra: exact 0.067654666 (|diff| 0.144 > tol 5.0e-4)
+FAIL  TEXT-AppD        L41165  book: phi_N3 = 0.003 (normalised Shapley share of the stated v) | algebra: exact 0.0000055682853 (|diff| 0.00299 > tol 5.0e-4)
+FAIL  TEXT-AppD        L41174  book: phi_N4 = 0.128 (normalised Shapley share of the stated v) | algebra: exact 0.027841426 (|diff| 0.1 > tol 5.0e-4)
+FAIL  TEXT-AppD        L41183  book: phi_N5 = 0.270 (normalised Shapley share of the stated v) | algebra: exact 0.11275778 (|diff| 0.157 > tol 5.0e-4)
+INFO  App.D.5 normalised Shapley shares of the stated v(S): [0.7917 0.06765 5.568e-06 0.02784 0.1128]
+INFO  App.D.5 same, from the rounded L41120-41122 table: [0.7951 0.06556 4.992e-06 0.02767 0.1117]
+PASS  TEXT-AppD        L41190  sum phi = 0.387+0.212+0.003+0.128+0.270 = 1.000
+PASS  TEXT-AppD        L41146  N1 fair share 0.387 x 7.275 = 2.815 Gt
+PASS  TEXT-AppD        L41146  N1 reduction % = 56.3
+PASS  TEXT-AppD        L41226  N1 residual = 2.185
+PASS  TEXT-AppD        L41157  N2 fair share 0.212 x 7.275 = 1.542 Gt
+PASS  TEXT-AppD        L41157  N2 reduction % = 34.3
+PASS  TEXT-AppD        L41227  N2 residual = 2.958
+PASS  TEXT-AppD        L41168  N3 fair share 0.003 x 7.275 = 0.022 Gt
+PASS  TEXT-AppD        L41168  N3 reduction % = 44.0
+PASS  TEXT-AppD        L41228  N3 residual = 0.028
+PASS  TEXT-AppD        L41177  N4 fair share 0.128 x 7.275 = 0.931 Gt
+PASS  TEXT-AppD        L41177  N4 reduction % = 46.6
+PASS  TEXT-AppD        L41229  N4 residual = 1.069
+PASS  TEXT-AppD        L41186  N5 fair share 0.270 x 7.275 = 1.964 Gt
+PASS  TEXT-AppD        L41186  N5 reduction % = 65.5
+PASS  TEXT-AppD        L41230  N5 residual = 1.036
+PASS  TEXT-AppD        L41231  total Shapley share 7.274
+PASS  TEXT-AppD        L41231  total residual 7.276
+PASS  TEXT-AppD        L41237  N1 largest absolute, N5 highest proportional burden
+PASS  TEXT-AppD        L41274  N1 gap = -0.815
+PASS  TEXT-AppD        L41275  N2 gap = -0.542
+PASS  TEXT-AppD        L41276  N3 gap = -0.012
+PASS  TEXT-AppD        L41277  N4 gap = -0.131
+PASS  TEXT-AppD        L41278  N5 gap = -0.764
+PASS  TEXT-AppD        L41279  NDC total 5.01
+PASS  TEXT-AppD        L41283  contraction loss 7.274 - 5.01 = 2.264
+PASS  TEXT-AppD        L41284  NDC achieves 69% of the Shapley-fair allocation
+PASS  TEXT-AppD        L41431  gap_pct 31.1
+PASS  TEXT-AppD        L41292  N1 undercommits 29% of its fair share
+PASS  TEXT-AppD        L41294  N5 undercommits 39% of its fair share
+PASS  TEXT-AppD        L41292  N1 has the largest absolute gap
+PASS  TEXT-AppD        L41443  transforms 32 + 6 = 38
+PASS  TEXT-AppD        L41308  per-capita metric amplifies g_33 (fairness)
+PASS  TEXT-AppD        L41325  capacity metric weights welfare (g_11) most
+PASS  TEXT-AppD        L41344  sovereignty metric weights autonomy (g_44) most
+NOTE  TEXT-AppD        L41316  phi'_N1 = 0.42 / 0.44, phi'_N2 = 0.18 / 0.15, phi'_N5 = 0.30 under metrics 1-2 | not recomputable: the stated v(S) (L41109) contains no metric g, so it gives no way to obtain these shifted values
+PASS  TEXT-AppD        L41369  Transform 3 (responsibility = 1): N1 share drops, N2 share rises (within the stated v)
+INFO  App.D.5 Transform 3 shares (stated v, resp=1): [0.5758 0.09568 0.0007087 0.08859 0.2392]; vs book phi N1 0.387 -> 0.576
+PASS  TEXT-AppD        L41514  D.6: CS5 obligation vectors are 5 nations x 7 dims
+
+==== SUMMARY: 455 PASS, 70 FAIL, 525 checks (+33 NOTE) ====
+  FAIL TEXT-Ch02 L5165 book: S = -1 is "perhaps its magnitude" of v = (-0.8,-0.4,0,0,?) | algebra: |v| = (2*5^(1/2))/5 = 0.8944 > 0, so the magnitude cannot equal -1
+  FAIL GE-PROP-6-3 L9740 book: (grad_g f) != (grad_ghat f) whenever df != 0 along a dimension where g^{-1} and ghat^{-1} differ | algebra: counterexample g^-1=[3 1;1 3], ghat^-1=2I (differ in every entry), df=(1,-1): both gradients = (2,-2); correct condition is (g^-1 - ghat^-1) df != 0
+  FAIL TEXT-Ch06 L9611 book: S = g^{mu alpha} E_alpha^beta I_beta . O^mu is a scalar | algebra: contracts two upper indices (mu); not invariant under x~=Ax (picks up A'A); a valid form is S = O^mu E_mu^beta I_beta (or lower mu with g_{mu nu})
+  FAIL TEXT-Ch07 L9859 book: S_Carol = 0.5(0.5)+0.3(0.14)+0.2(0.72) = 0.43 | algebra: 109/250 = 0.436, which rounds to 0.44
+  FAIL TEXT-Ch07 L10549 book: O_A, O_B, O_C span a two-dimensional subspace (Gram matrix) | algebra: rank = 3, det(Gram) = 0.6022 (Euclidean): they span a 3-dimensional subspace
+  FAIL TEXT-Ch07 L10267 book: d_W(O_A,ideal) = sqrt(2(0.01)+1.5(0.50)+1(0.20)+0.5(0.04)+1(0.04)+0.5(0.09)) = sqrt(1.14) ~ 1.07 | algebra: the listed terms sum to 43/40 (exact squares: 21673/20000), sqrt = 1.04, not sqrt(1.14)=1.07
+  FAIL TEXT-Ch07 L10270 book: d_W(O_B,ideal) = sqrt(2(0.16)+1.5(0.00)+1(0.09)+0.5(0.09)+1(0.64)+0.5(0.25)) = sqrt(1.30) ~ 1.14 | algebra: the listed terms sum to 61/50, sqrt = 1.10
+  FAIL TEXT-Ch08 L12020 book: "changes along highly correlated dimensions ... are cheaper than along independent ... dimensions" (unqualified) | algebra: only for co-directional moves: a single-dimension change costs -1/(rho^2 - 1) (=2.78 at rho=0.8, vs 1 independent), an opposite-sign change -2/(rho - 1) (=10 at rho=0.8, vs 2)
+  FAIL TEXT-Ch08 L12031 book: sum of Mahalanobis weights da' Sigma^-1 da over a refining path converges to the Riemannian arc length | algebra: the weight is a squared form: total = Lsq/N -> 0 as N -> inf; arc length needs sqrt(da' Sigma^-1 da) (sum -> sqrt(Lsq))
+  FAIL GE-PROP-9-2 L13260 book: f = p1/p2 "is the unique solution consistent with the correlative symmetry constraint" | algebra: conditions (2)-(3) are also met by f = (p1/p2)^k for every k (incl. f = 1); (1) f = g22(a)/g22(b) is a definition, so uniqueness is not established
+  FAIL GE-PROP-10-2 L14528 book: loop e_alpha then e_beta: H(O)^mu - O^mu = +R^mu_{nu alpha beta} O^nu dA^{alpha beta} | algebra: numerical holonomy (sphere, theta0=1, eps=1e-3) = (-0.5666,0.3001), R O = (0.5665,-0.3000); rel.err vs +R: 2.00e+00, vs -R: 3.21e-04
+  FAIL GE-THM-11-2 L15131 book: "the edge count [is] on the order of m * 10^18" | algebra: with the O(N^2) edges assumed in the same step, edges ~ m * 10^36 (a pure grid gives (3^9-1) N ~ 2e22)
+  FAIL GE-PROP-11-3 L15222 book: "the satisfaction scalar is the directional derivative of h in the interest direction" | algebra: S = -D_{I#} h: minus the directional derivative along I# (the displayed formula has the minus; the sentence omits it)
+  FAIL GE-THM-A-1 L16771 book: Thm A.1 as stated: xi Killing => H conserved along "geodesics" satisfying nabla_g' g' = -grad V | algebra: dH/dt = -xi^nu d_nu V (here -1 for flat R^2, xi = d/dz2, V = z2): the hypothesis xi.dV = 0 used in the proof is missing from the statement (true for V = 0 geodesics)
+  FAIL GE-PROP-13-1 L17254 book: "S = I_mu O^mu depends nonlinearly on the obligation" | algebra: S = I_mu O^mu is LINEAR in O: S(aO1+bO2) = aS(O1)+bS(O2) identically
+  FAIL TEXT-Ch13 L17099 book: rho_sup = |psi><psi| = p|a><a| + (1-p)|b><b| + sqrt(p(1-p))(e^{i th}|a><b| + e^{-i th}|b><a|), psi = sqrt(p)|a> + e^{i th}sqrt(1-p)|b> | algebra: phases swapped: |psi><psi| = p|a><a| + (1-p)|b><b| + sqrt(p(1-p))(e^{-i th}|a><b| + e^{+i th}|b><a|)
+  FAIL TEXT-Ch13 L17104 book: rho_sup - rho_mix = sqrt(p(1-p))(e^{i th}|a><b| + e^{-i th}|b><a|) | algebra: coherence term is sqrt(p(1-p))(e^{-i th}|a><b| + e^{i th}|b><a|) (same phase swap; harmless only for th = 0, pi)
+  FAIL TEXT-Ch13 L17316 book: "When theta = 0, the framings are aligned: they reinforce everywhere" | algebra: theta=0, orthonormal framings: I(x+)=+1.00, I(x-)=-1.00; sum_x I(x)=2Re(e^{i th}<a|b>)=0 for any normalised state with <a|b>=0, so I(x) cannot be >=0 everywhere unless it is 0 everywhere
+  FAIL GE-PROP-13-4 L18138 book: 18123/18138: S(rho_A)=ln2 is the "entanglement entropy"; positions indeterminate "whenever the collective state has any entanglement" | algebra: rho_AB is separable (PPT, min eig of partial transpose = +0.175) for eps >= 2/3, yet S(rho_A) = ln2 there too: for mixed rho_AB, S(rho_A) does not measure entanglement (rho_AB entangled iff eps < 2/3)
+  FAIL GE-PROP-14-3 L19267 book: Pi_S Pi_S' = delta_SS' Pi_S with C_(k) = marginal, C_(jk) = Tr C - C_(j) - C_(k) | algebra: C = all-ones: Pi_12 C = -J, Pi_1 Pi_12 C = -1*J (not 0), Pi_12 Pi_12 C = 1*J (not Pi_12 C = -J); the 0-body term (full trace) is missing: Moebius needs C_(jk) = Tr C - C_(j) - C_(k) + C_(empty)
+  FAIL GE-PROP-14-3 L19267 book: Pi_1 Pi_1 = Pi_1 (raw-trace reading) | algebra: raw trace: Pi_1 Pi_1 = d*Pi_1 (d = 2; d = 9 on M)
+  FAIL GE-PROP-14-1 L18579 book: <C_j, C_k> = 0 for j ~= k (1-body vs 2-body parts, Frobenius) | algebra: C = [1 2;3 5]: <C_1-body, C_2-body> = -60.5 (not 0); orthogonality needs centring (Hoeffding/ANOVA), i.e. the 0-body term
+  FAIL GE-PROP-14-1 L18583 book: "sum_{S:|S|=k} mu(S) mu(S') = 0 for |S'| ~= k" (Boolean lattice, mu(S) = (-1)^|S|) | algebra: n=3, k=1, |S'|=2: sum = C(3,1)(-1)^1(-1)^2 = -3 (nonzero; in general C(n,k)(-1)^(k+|S'|))
+  FAIL TEXT-Ch14 L18667 book: 18667: mob "responsibility surplus Delta R > 0" (Delta R = R_coll - sum R_a, 18646) | algebra: Delta R = 0.10 > 0 means sum R_a < R_coll, which 18639 defines as a "responsibility gap", not a surplus
+  FAIL TEXT-Ch14 L18822 book: 18811/18822: nabla O + Gamma gamma' O + Lambda Sigma' = 0 "reduces to individual transport" when Sigma' = 0 | algebra: a parallel-transported O gives nabla O + Gamma gamma' O = [[sin(t), cos(t)]] ~= 0: Gamma is counted twice; the equation should be dO/dt + Gamma gamma' O + Lambda Sigma' = 0 (or nabla O + Lambda Sigma' = 0)
+  FAIL GE-PROP-15-3 L20525 book: "Equality holds if and only if the maximizing nu is the same for all mu" (no sign condition on w_mu stated) | algebra: needs w_mu > 0: T=[1 0;1 0], w=(1,-2) has a unanimous maximiser but C1=0, C2=-1; T=I, w=(1,0) has none but C1=C2=1
+  FAIL GE-PROP-15-4 L20554 book: "sum_{i,a} R_ia = sum_{i,a} M_ia - n*S where n = |A|" | algebra: M = [1 2;3 4]: sum R = 2, but sum M - |A|S = 8 or 4; correct: sum_{i,a} M_ia - |A| sum_i S_i = 2 (book form valid only for one option i)
+  FAIL GE-PROP-15-1 L19891 book: "the moral residue R is nonzero unless T is already scalar" (rank >= 1) | algebra: rank-1 T = (1,2,3), C(T) = w.T with w = (1,2,3): R = T - C+(C(T)) = 0 (norm 0); R = 0 for every T on the line span(G^-1 w), as the supplement at 19907 concedes
+  FAIL GE-THM-15-1 L19768 book: "Let Q: R^9 -> R be ANY function ... (i) Q is not injective ... (ii) no psi with psi o Q = id" | algebra: false for arbitrary (discontinuous) Q: digit interleaving is injective with exact left inverse (verified on 20000 grid points; extends to [0,1)^9); the proof uses dQ, so the theorem needs Q continuous/differentiable (as Thm 20.2 states)
+  FAIL TEXT-Ch15 L19618 book: "Every ethical theory that yields a scalar verdict is performing a weighted contraction, differing only in the weights" | algebra: maximin S = min O (book, 19624) is not w.O for any fixed w: min(e_k) = 0 forces w = 0, yet min(1,...,1) = 1; lexicographic likewise
+  FAIL GE-PROP-15-2 L20098 book: "C^-1(S) is any pre-image ... has zero component along x7, so H(C^-1(S)) = 0" | algebra: w7 = 0 => e7 in ker C, so preimage S e1 + e7 has x7-component 1; only the minimal-norm preimage can qualify
+  FAIL GE-PROP-15-2 L20394 book: "Harm in residue: H(R) >= 0" | algebra: T = (1, 0.2) (H(T) = 0.2), w = (1,1), Euclidean: C+(S) = (0.6, 0.6), H(R) = -0.4 < 0
+  FAIL GE-PROP-16-1 L21160 book: "perturbation ... is bounded by eps * max_k |I^(k)_mu O^mu|" | algebra: m = 4 theories, s = (1,1,.01,.01), dc = .99 eps (1,1,-1,-1): |sum dc_k s_k| = 1.96 eps > eps max|s_k|; valid bound is eps sum_k |s_k| (<= m eps max|s_k|)
+  FAIL GE-PROP-16-4 L21605 book: "hedging a* = argmax[sum c_k S_k(a) - lambda std_k S_k(a)] converges, as lambda -> inf, to the minimax-regret strategy" | algebra: S(a1) = (0,0), S(a2) = (10,9), c = (1/2,1/2): lambda -> inf picks a1 (std 0, max regret 10); minimax regret picks a2 (max regret 0). Min-std is not min-max-regret (21619 "equivalent to minimizing sigma(a)" does not give regret)
+  FAIL TEXT-Ch17 L22311 book: "you promised" 91%, n=582, 95% Wilson CI [88.2%, 93.4%] (tol 0.1 pp) | algebra: no count k/n printing as 91% gives that Wilson CI; closest k=530: [88.5%, 93.1%] (book width 5.2 pp); Clopper-Pearson, Wald and Agresti-Coull do not match either
+  FAIL TEXT-Ch17 L22312 book: "only if convenient" 94%, n=347, 95% Wilson CI [91.1%, 96.2%] (tol 0.1 pp) | algebra: no count k/n printing as 94% gives that Wilson CI; closest k=326: [90.9%, 96.0%] (book width 5.1 pp); matches instead: Agresti-Coull k=327, Wald k=325
+  FAIL TEXT-Ch17 L22315 book: Cohen's h = 1.42 for pooled gate-trigger rate vs 50% chance (gates 86-94%, L22295-22299) | algebra: h(mean rate 90.2% vs 50%) = 0.93; even the highest gate (94%) gives h = 1.08; h = 1.42 needs a pooled rate of 99.4%
+  FAIL TEXT-Ch17 L22417 book: 0 errors, n > 10,000 per language, 95% Clopper-Pearson CI [99.7%, 100%] | algebra: n = 10,000 gives [99.963%, 100%] (and larger n tighter); 99.7% corresponds to n = 1228
+  FAIL TEXT-Ch17 L22420 book: v10.16 replication: 300,000+ passages, 14 languages, perfect transfer, CI [99.8%, 100%] | algebra: per-language n = 21429 gives [99.9828%, 100%]; pooled n = 300,000 gives [99.99877%, 100%]
+  FAIL TEXT-Ch17 L23923 book: Methods appendix: 0 misclassifications, 95% binomial CI [99.7%, 100%] "given the sample size" (n > 10,000/language) | algebra: Clopper-Pearson at n = 10,000: [99.963%, 100%]; rule of three: [99.970%, 100%]
+  FAIL TEXT-Ch17 L23250 book: order effect 28.7%: "6.3 sigma above the 10% baseline, p < 10^-21" | algebra: 6.3 sigma gives two-sided p = 3e-10 (one-sided 1.5e-10); p = 1e-21 needs z = 9.6
+  FAIL TEXT-Ch17 L23278 book: L23278: "Moderate variation: Rights (22%), Loyalty (18%)"; L23577 (same fuzz study, Discovery 2): "Loyalty (28%), Rights (17%)" | algebra: the two passages report different values (Rights 22 vs 17, Loyalty 18 vs 28) and order for the same by-axis result
+  FAIL TEXT-Ch17 L8540 book: Ch5 L8540: "only if convenient" gate "at 89% effectiveness"; Ch17 table L22295: 94% | algebra: the two chapters give different rates for the same Dear Abby gate
+  FAIL TEXT-Ch17 L8543 book: Ch5 L8543: "you explicitly promised" L->O "94% effectiveness"; Ch17 table L22296 / L22311: 91% | algebra: the two chapters give different rates for the same gate
+  FAIL GE-PROP-18-4 L25803 book: proof: "L_inv >= 0 with equality iff Sigma(g(x)) = Sigma(x) for all g" with IV = Var[Sigma_total] (Prop 18.1 proof, L25728) | algebra: Sigma^1 = (t1,t2,t3), Sigma^2 = -Sigma^1 over g: Var[Sigma_total] = 0 for all t, yet the components are not invariant; the "iff" needs IV = sum_mu Var[Sigma^mu] (trace), which then breaks the covariance terms of Prop 18.1
+  FAIL GE-LEMMA-18-1 L25042 book: proof: dSigma/dx^i ~= 0 "otherwise dimension i would be degenerate in g" (statement L25035 claims ~= 0 for all i) | algebra: counterexample: g = I (det 1, non-degenerate), Sigma = x1 gives dSigma/dx2 = 0 everywhere; also the proof only reaches "for at least one configuration", weaker than the statement
+  FAIL GE-PROP-19-3 L27790 book: (=>) "If some J_k violates the BIP ... the weighted sum changes unless ... w_k = 0. Hence each J_k must satisfy the BIP" | algebra: J1 = f + h, J2 = f - h, w = (1/2,1/2): S(gF) - S(F) = 0 for every h, while J1(gF) - J1(F) = hgt - hg ~= 0; the "only if" direction is false (all w_k > 0)
+  FAIL GE-PROP-19-4 L27811 book: proof step: max_g |Sigma(g(x)) - Sigma(x)| <= 2 std_g[Sigma(g(x))] | algebra: |G| = 100, one outlier: max deviation = 1.000 > 2 std = 0.199; the valid bound is 2*sqrt(|G|-1)*std (Samuelson) = 1.980
+  FAIL GE-PROP-19-4 L27815 book: statement: L_inv < eps => E[Bd] <= eps/tau; proof derives E[Bd] <= 2 sqrt(L_inv)/tau <= eps/tau only "when L_inv <= eps^2/4" | algebra: under the stated hypothesis L_inv < eps the proof gives 2 sqrt(eps)/tau, which exceeds eps/tau for all eps < 4 (e.g. eps = 0.01: 0.2 vs 0.01)
+  FAIL GE-PROP-19-5 L27402 book: "no linear probe on O^mu can recover the gauge index"; language-probe accuracy "would drop to chance ... by structural impossibility" | algebra: tr_G removes the index g but not the dependence of T on the input's gauge: T_en, T_fr give O = (1,0) vs (3,0), separated by the probe O^1; chance accuracy needs T's gauge dependence to cancel in the g-sum, which the proposition does not assume
+  FAIL TEXT-Ch20 L28494 book: Daraprim $13.50 -> $750.00 per tablet = "a 5,455% increase" (tol 0.5 pp) | algebra: (750 - 13.50)/13.50 = 49100/9 = 5455.56%, which rounds to 5,456% (the book truncates)
+  FAIL GE-LEMMA-20-1 L28213 book: "If alpha_i > kappa_i for all i ... L = max_i(kappa_i/alpha_i) < 1, and the BGE is unique" (norm not specified) | algebra: with Euclidean norms: n = 5 agents, kappa_i/alpha_i = 0.5 for each agent, T = (0.5/2)(J - I) has eigenvalue 1.00, fixed-point set of dimension 1 -- not unique; the proof's max-over-i step holds only in the sup-norm (Euclidean constant is L*sqrt(n-1))
+  FAIL TEXT-Ch21 L29212 book: Path B: Da_1 = -moderate, Da_5 = +moderate (trust reinforced); "Edge weight: w_B = (mortality risk)^2 / sigma_1^2" | algebra: Def. 21.2 (L28803) gives w_B = Da^T Sigma^-1 Da = da1^2/s1^2 + da5^2/s5^2 even for diagonal Sigma: the stated Da_5 ~= 0 adds da5^2/s5^2 (a quadratic form charges improvements too)
+  FAIL GE-THM-23-1 L30201 book: proof: Da^T Sigma_F^-1 Da "is smaller when Da_9 is small" | algebra: with a d1-d9 cross term (Sigma^-1 = [1 .9; .9 1], PD): Da = (1, -0.9) gives 0.19 but Da = (1, 0) gives 1.00; the quadratic is minimised at Da_9 = -(Sigma^-1)_91 Da_1/(Sigma^-1)_99, not at 0 -- the step needs no d9 cross terms
+  FAIL TEXT-Ch25 L31571 book: Nordhaus r = 3-5%: $1 in 100 years worth "less than a cent today" (r = 3%) | algebra: PV of $1 at r = 3%: $0.0498 continuous, $0.0520 annual compounding
+  FAIL GE-THM-25-3 L31669 book: "For any positive discount rate, there exists a time horizon T beyond which the cumulative d_1 value at BGE_full exceeds ... BGE_1" | algebra: with discounting the comparison does not improve with T: BGE_full -> gs/r, BGE_1 = -(G*(exp(-k*r) - 1))/r; full wins iff gs > G(1 - e^{-rk}). Example G = 10, gs = 2, k = 5, r = 0.5: 4.00 (all T) < 18.36. Holds for undiscounted sums (r = 0) only
+  FAIL GE-THM-26-5 L33046 book: T(v) <= C K(v) L^2 (so T ~ 0 where K ~ 0; "In flat regions ... the scalar-optimal path is close to the manifold-optimal path") | algebra: constant-Sigma metric has all Christoffels 0 (flat=1, K = 0), yet scalar route A (d_1 cost 1, full 10) vs manifold route B (d_1 cost 4, full 4) gives alignment tax T = 3 > 0 = C*K*L^2
+  FAIL GE-THM-26-5 L33084 book: (c) "alignment tax increases with decision horizon (L^2 dependence) ... long-horizon planning ... is exponentially more expensive" | algebra: L^2 growth is polynomial: lim L^2/e^L = 0; the bound supports "quadratically", not "exponentially"
+  FAIL GE-THM-27-1 L34089 book: "all n descendants carry the modification ... affected vertices grows as n(k) >= 2^k (assuming replacement fertility)" | algebra: descendants = 2^k, but each child inherits a heterozygous edit with p = 1/2: expected carriers at generation k = (2 x 1/2)^k = 1 (constant), not exponential growth. Prop 27.4 (L34657) itself uses 50% sharing for first-degree relatives
+  FAIL GE-THM-27-5 L34519 book: "expansion yields d^2w/dv^2 < 0 (negative curvature); restriction yields d^2w/dv^2 > 0" | algebra: for the quadratic Mahalanobis weight d^2w/dv^2 = 2/s44 > 0 whatever direction v moves (in general 2 (Sigma^-1)_44 > 0); the sign cannot distinguish expansion from restriction
+  FAIL GE-PROP-20-3 L37439 book: statement: meta-metric "unique up to overall scale" under coordinate invariance | algebra: Tr(g^-1 h)Tr(g^-1 k) is ALSO invariant (checked), so the invariant family a Tr(g^-1hg^-1k) + b Tr(g^-1h)Tr(g^-1k) has two parameters: unique only up to scale AND b/a, as the proof itself (L37455) concludes
+  FAIL TEXT-AppD L38832 book: welfare_g 0.62 stated as "(0.60 + 0.85)/2" | algebra: exact 0.725 (|diff| 0.105 > tol 0.005)
+  FAIL TEXT-AppD L39622 book: Expert-weighted S_R = 0.35(0.852)+0.30(0.837)+0.20(0.709)+0.15(0.653) = 0.787 | algebra: exact 0.78905 (|diff| 0.00205 > tol 5.0e-4)
+  FAIL TEXT-AppD L40464 book: Bd = D_op/tau = 5.08 / 100 x (1/0.01) = 0.51 | algebra: exact 5.08 (|diff| 4.57 > tol 0.005)
+  FAIL TEXT-AppD L40732 book: biased system falls in tier "0.10-1.0: Remediate" (L40726) | algebra: Bd as computed by the stated formula = 127/25, which is the "> 1.0: Fundamental redesign required" tier (L40727)
+  FAIL TEXT-AppD L41143 book: phi_N1 = 0.387 (normalised Shapley share of the stated v) | algebra: exact 0.79174056 (|diff| 0.405 > tol 5.0e-4)
+  FAIL TEXT-AppD L41154 book: phi_N2 = 0.212 (normalised Shapley share of the stated v) | algebra: exact 0.067654666 (|diff| 0.144 > tol 5.0e-4)
+  FAIL TEXT-AppD L41165 book: phi_N3 = 0.003 (normalised Shapley share of the stated v) | algebra: exact 0.0000055682853 (|diff| 0.00299 > tol 5.0e-4)
+  FAIL TEXT-AppD L41174 book: phi_N4 = 0.128 (normalised Shapley share of the stated v) | algebra: exact 0.027841426 (|diff| 0.1 > tol 5.0e-4)
+  FAIL TEXT-AppD L41183 book: phi_N5 = 0.270 (normalised Shapley share of the stated v) | algebra: exact 0.11275778 (|diff| 0.157 > tol 5.0e-4)
+

@@ -868,14 +868,17 @@ of Grounding Adequacy</h3>
 derive structural consequences that strengthen the No Escape
 Theorem.</p>
 <p><strong>Lemma 18.1 (Coverage Completeness). [Conditional on Def.
-18.1, C1]</strong> <em>If C1 holds, then the moral evaluation function Σ
-has no “blind spots”: ∂Σ/∂Ψ_i ≠ 0 for all i ∈ {1, …, 9}.</em></p>
+18.1, C1]</strong> <em>If C1 holds and Σ̃ depends non-trivially on every
+coordinate of M, then the moral evaluation function Σ has no “blind
+spots”: for each i ∈ {1, …, 9}, ∂Σ/∂Ψ_i ≠ 0 at some configuration.
+(Corrected in v1.25.)</em></p>
 <p><em><strong>Proof</strong>.</em> The moral evaluation is Σ(x) =
 Σ̃(Ψ(C(x))). By C1, each Ψ_i = φ_i ∘ π_i with φ_i non-trivial. Since Σ̃
-depends on the full metric g_μν and all nine dimensions contribute
-(non-degeneracy, Def. A.1 condition 2), the chain rule gives ∂Σ/∂Ψ_i =
-∂Σ̃/∂x^i ≠ 0 for at least one configuration (otherwise dimension i would
-be degenerate in g). □</p>
+depends non-trivially on every coordinate (the hypothesis;
+non-degeneracy of g_μν, Def. A.1 condition 2, does not imply it, since Σ̃
+= x¹ with g = I has ∂Σ̃/∂x² ≡ 0), the chain rule gives ∂Σ/∂Ψ_i = ∂Σ̃/∂x^i
+≠ 0 for at least one configuration (otherwise Σ̃ would not depend on
+dimension i). □</p>
 <p><strong>Lemma 18.2 (Robustness Implies Lipschitz Stability).
 [Conditional on Def. 18.1, C3] If C3 holds and Σ̃ is smooth on M with
 compact evaluation domain, then the moral evaluation is
@@ -1068,10 +1071,21 @@ class="math inline">\Psi(D_{1}) = \Psi(D_{2})</span>, so <span
 class="math inline">\Sigma(D_{1}) = \Sigma(D_{2})</span> by Theorem
 18.1(ii).</p>
 <p><strong>Empirical support.</strong> The BIP experiments (Chapter 17)
-confirmed that deontic structure — the obligation vs. liberty
-classification — is language-invariant across 11 languages at 100%
-transfer rate. The O/L axis is a gauge-invariant quantity that survives
-translation, paraphrase, and reformulation.</p>
+found that deontic structure, the obligation vs. liberty classification,
+is language-invariant across 11 languages at a 100% transfer rate in
+LaBSE embeddings, a model-mediated result (§17.3). The O/L axis is a
+gauge-invariant quantity that survives translation, paraphrase, and
+reformulation.</p>
+<p><strong>Measured since v1.24.</strong> Relabeling has now been tested
+on a deployed system. Averaging axis scores over a set of paraphrases
+halves how far natural rewording moves a decision (θ_d 0.219 against
+0.407, preregistered bar 0.5). Euphemistic rewrites of flagged content
+still pass after averaging, all three flagged items of six hand-built
+scenarios, because a euphemism’s paraphrases stay euphemistic. The
+canonicalizer this theorem assumes therefore blocks natural relabeling
+in the measured system and does not yet block adversarial relabeling
+(§17.7b). Requirement 1 is met for the first and is an open target for
+the second.</p>
 <h3 id="specification-gaming">18.9.2 Specification Gaming</h3>
 <p><strong>Attack.</strong> Find edge cases or loopholes in the
 specification that technically satisfy constraints while violating their
@@ -1178,6 +1192,14 @@ canaries. It instruments hidden states at selected layers, estimates the
 representation map via regularized Procrustes fitting, and maintains
 control charts for drift detection. A CI/CD policy gate blocks model
 releases when equivariance error exceeds declared thresholds.</p>
+<p><strong>Status of the I-EIP monitor (v1.25).</strong> A
+consumer-relative version of the monitor was tested in three sealed
+preregistrations, and all three failed: no ordering variable it proposed
+predicted where the monitor helps (graded 2026-09-17). A red-team
+preregistration of the shipped monitor is drafted and not sealed; its
+stated pre-data expectation is that the monitor fails to alert on local
+transforms. Requirement 4 is therefore an engineering target in this
+book, not a verified component.</p>
 <p><strong>The Decomposition Theorem.</strong> A central result of the
 coherence framework is that every coherence defect splits uniquely into
 a gauge-removable part (eliminable by better canonicalization—an
@@ -1560,9 +1582,12 @@ suite.</em></p>
 <p><em>Proof.</em> The invariance loss is defined as L_inv = E_{x ~
 D}[Var_{g ∈ G}[Σ(g(x))]] = E[IV(x, G)], where D is the training
 distribution. Since variance is non-negative, L_inv ≥ 0 with equality
-iff Σ(g(x)) = Σ(x) for all g ∈ G almost surely — i.e., iff Σ is
-gauge-invariant. Gradient-based training minimizes L_inv over the model
-class. At each training step, the gradient ∇_θ L_inv points toward
+iff Σ_total(g(x)) = Σ_total(x) for all g ∈ G almost surely — i.e., iff
+the total evaluation is gauge-invariant. (Invariance of each component
+Σᵘ is stronger: violations in different components can cancel in
+Σ_total, so componentwise invariance needs the per-dimension loss E[Σ_μ
+Var_g[Σᵘ(g(x))]].) Gradient-based training minimizes L_inv over the
+model class. At each training step, the gradient ∇_θ L_inv points toward
 reduced invariance violation (the loss is a sum of non-negative terms,
 each differentiable in the model parameters θ). By standard convergence
 results for gradient descent on smooth losses: if the model class is
@@ -1581,7 +1606,7 @@ geometry does not have loopholes.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

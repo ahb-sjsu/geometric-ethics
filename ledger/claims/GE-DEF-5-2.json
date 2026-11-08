@@ -24,6 +24,10 @@
   {
    "date": "2026-08-25",
    "event": "brownfield conversion from Appendix F registry (PE-BRW-1.0 s5.1-5.2); author status carried over"
+  },
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: Definition 5.2 now states nine coordinate dimensions of the canonical chart; their measured independence is qualified in section 5.3 (four learned axes collapse onto a general-valence channel; effective rank 5.19 of 8; identity_attack passed as a tenth axis; rights_respect failed as a learned axis; Scruples prereg-learned-v1 H3/H4 FAIL)."
   }
  ]
 }

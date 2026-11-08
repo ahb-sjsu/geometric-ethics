@@ -169,7 +169,8 @@ converges across cultures and languages (the cross-lingual evidence of
 years), it arises from structural necessity (any framework satisfying
 the three axioms of Chapter 9 produces an equivalent space), and it
 generates testable predictions that scalar alternatives cannot (the
-order-effect and semantic-gate results of §17.9–17.10). The
+semantic-gate results of §17.9–17.10; the order-effect results there
+have so far been observed in one language model, not in people). The
 dimensionality — nine, not seven or twelve — is a modeling choice whose
 adequacy is empirical. If future evidence reveals a moral phenomenon
 that the nine dimensions cannot represent, the manifold must be
@@ -248,7 +249,7 @@ cells:</p>
 </tr>
 </tbody>
 </table>
-<p>Each cell identifies an independent dimension of moral
+<p>Each cell identifies a conceptually distinct dimension of moral
 evaluation:</p>
 <ol type="1">
 <li><p><strong>Consequences and Welfare</strong> (Individual × What
@@ -280,7 +281,10 @@ violated (a beneficent paternalism). Rights can be respected while
 justice is denied (each individual treated correctly, but the aggregate
 distribution is skewed). Autonomy can be preserved while epistemic
 conditions are poor (free choice based on bad information). No cell is
-reducible to a combination of others.</p>
+reducible to a combination of others. That is a claim about the
+concepts. Measured on text, four of the learned axes cannot be separated
+from a single general-valence channel (see “What the measurements say”
+below).</p>
 <p><strong>Sufficiency.</strong> The claim is that these nine dimensions
 <em>subsume</em> existing ethical frameworks. The EU High-Level Expert
 Group’s seven requirements for trustworthy AI map onto the nine
@@ -293,30 +297,74 @@ identified as morally relevant.</p>
 <p><strong>Falsifiability.</strong> The completeness claim is
 falsifiable: produce a genuine moral consideration that is (a)
 independent of all nine dimensions and (b) not a combination of them. If
-such a consideration exists, the framework must be extended. This is the
-appropriate epistemic stance toward a structural claim: hold it
-provisionally, test it against cases, and revise if necessary.</p>
+such a consideration exists, the framework must be extended. Since v1.24
+that condition has been met (below). This is the appropriate epistemic
+stance toward a structural claim: hold it provisionally, test it against
+cases, and revise if necessary.</p>
 <p>The status of the number nine. The nine dimensions are a canonical
 engineering chart, derived from the 3x3 scope/mode grid for coverage and
 auditability - not a discovered empirical dimensionality. We do not
 claim nine is the unique or minimal basis: a learned latent
 representation, or a factor analysis of moral judgments, may recover
-fewer semi-independent factors, and we expect at least six. Recovering
-fewer than six would falsify the coverage claim; but the specific count
-of nine is a design choice, chosen so that each dimension maps to an
-established tradition - consequences and welfare (consequentialism),
-rights and duties (deontology and Hohfeldian jural relations), justice
-and fairness (Rawls, Sen), autonomy and agency, privacy and data,
-societal and environmental impact (capability and sustainability
-theories), virtue and care (virtue and care ethics), procedural
-legitimacy (institutional theory), and epistemic status. Its
+fewer semi-independent factors, and v1.24 said it expected at least six,
+and that fewer than six would falsify the coverage claim. The measured
+value is below six (below), so read literally that test has failed; but
+the specific count of nine is a design choice, chosen so that each
+dimension maps to an established tradition - consequences and welfare
+(consequentialism), rights and duties (deontology and Hohfeldian jural
+relations), justice and fairness (Rawls, Sen), autonomy and agency,
+privacy and data, societal and environmental impact (capability and
+sustainability theories), virtue and care (virtue and care ethics),
+procedural legitimacy (institutional theory), and epistemic status. Its
 justification is pragmatic coverage, not metaphysical necessity; where a
 tradition emphasizes a distinction the chart blurs, that is a limitation
 of the chart, not a claim about morality.</p>
+<p><strong>What the measurements say (v1.25).</strong> Five results
+since v1.24 test this section directly. They measure learned
+representations of text, not the concepts themselves, and they qualify
+the text above in four places.</p>
+<p><strong>Coverage.</strong> A tenth axis, identity attack (dignity and
+discrimination), carries signal the nine miss. It passed a preregistered
+gate in the Moral Spectrum Analyzer with held-out AUROC 0.80 across two
+corpora, 0.25 above its null (registered 2026-07-11). Purity and
+loyalty, which have no cell in the grid, also passed a gate (AUROC 0.81
+and 0.91; provisional, because the second corpus is thin). The
+falsification condition stated above is met. The nine are best read as a
+versioned interface with extension channels, not a complete basis.</p>
+<p><strong>Independence.</strong> Four learned axes (virtue and care,
+justice and fairness, procedural legitimacy, epistemic status) do no
+better than a single general-valence channel on their own held-out
+pairs, in a registered 12 × 12 specificity test (margins −0.018 to
+−0.065).</p>
+<p><strong>Count.</strong> The eight validated axis scores have
+effective rank 5.19 of 8 (participation ratio), and 5.68 of 9 with
+identity attack added, against an orthogonal bound of 6.08. That is
+below the six this section expected. The Moral Spectrum Analyzer reads
+the shortfall as a property of its training data rather than of moral
+space; the data cannot yet tell the two apart.</p>
+<p><strong>Rights.</strong> The rights-and-duties axis could not be
+learned as a graded score: AUROC 0.468 against a 0.517 null in a
+preregistered re-gate, and 0.509 against 0.512 on court opinions. DEME
+now treats rights as a hand-specified hard constraint (the Hohfeldian
+structure of Chapter 8), not a measured coordinate.</p>
+<p><strong>A learned basis.</strong> In a sealed test on the Scruples
+dilemmas (prereg-learned-v1, run 2026-10-30), learned coordinates beat a
+nine-axis codebook that follows this grid (the companion economics
+volume’s chart, with money in place of consequences), by 0.047 nats per
+annotation. The learned metric selected the top of its rank grid (32),
+so it was not low rank. The nine codebook axes overlapped the learned
+span less than random subspaces do (0.038 against a null mean of 0.060),
+and with learned weights they barely beat a constant model (log-loss
+0.6875 against 0.6927).</p>
+<p>Read together: the grid is a useful chart for coverage and audit, its
+cells are not independent measured coordinates, and its count of nine is
+neither confirmed nor minimal. Definition 5.2 below is stated for the
+chart.</p>
 <h3 id="formal-statement">Formal Statement</h3>
-<p><strong>Definition 5.2 (Dimension of the Moral Manifold). The moral
-manifold M has nine independent dimensions at generic (top-stratum)
-points; lower-dimensional strata may have fewer active dimensions. In
+<p><strong>Definition 5.2 (Dimension of the Moral Manifold). In the
+canonical chart, the moral manifold M has nine coordinate dimensions at
+generic (top-stratum) points (their measured independence is qualified
+in §5.3); lower-dimensional strata may have fewer active dimensions. In
 local coordinates, a point p ∈ M can be parameterized by</strong></p>
 <p><span class="math display">p = (x^{1},x^{2},\ldots,x^{9})</span></p>
 <p><em>where x^μ (μ = 1, …, 9) represents the state of the situation
@@ -478,11 +526,12 @@ descriptions d of a situation p ∈ M. Here g · d denotes the action of
 the re-description group element g on the description d (the fiber over
 p in the description bundle of §5.4), and G_adm is the group of
 admissible re-descriptions — the subgroup of Diff(fiber) satisfying the
-five admissibility conditions of §5.5. Chapter 12 will identify G_adm =
-D₄ × U(1)_H as the maximal such group consistent with axioms A1–A5. The
-BIP is thus a precise orbit-invariance condition, and the tensor
-transformation laws of §4.4 are the infinitesimal manifestation of this
-group action on the moral evaluation algebra.</p>
+five admissibility conditions of §5.5. Chapter 12 posits G_adm = V₄ ×
+U(1)_H. Its discrete factor V₄ is proved (§8.4); that this is the whole
+group is a modeling hypothesis. The BIP is thus a precise
+orbit-invariance condition, and the tensor transformation laws of §4.4
+are the infinitesimal manifestation of this group action on the moral
+evaluation algebra.</p>
 <h3 id="pre-flight-checklist-bond-invariance-principle">Pre-flight
 Checklist: Bond Invariance Principle</h3>
 <p>Before applying BIP, verify each item:</p>
@@ -493,8 +542,8 @@ same stratum, reversible, no evaluative loading.</p>
 on nine dimensions and an explicit stratum.</p>
 <p><strong>Tensor rank declared.</strong> The moral quantity has a
 declared type; BIP requires appropriate transformation.</p>
-<p><strong>Gauge group scope.</strong> Transformation is within G_ethics
-= D₄ × U(1)_H (Thm 12.3).</p>
+<p><strong>Gauge group scope.</strong> Transformation is within the
+posited G_ethics = V₄ × U(1)_H (§12.3).</p>
 <p><strong>Grounding adequate (AI).</strong> Ψ satisfies six adequacy
 conditions (Def. 18.1).</p>
 <h3 id="type-2-perspective-shifts">Type 2: Perspective Shifts</h3>
@@ -996,8 +1045,9 @@ rude.</p></li>
 <p>If the final obligation differs depending on which information came
 first, the moral manifold has <em>curvature</em> in this region. The
 non-commutativity of these information-updates — learning about rudeness
-and recalling the promise do not commute — is precisely the non-abelian
-structure formalized by the D₄ dihedral group (Chapter 12).</p>
+and recalling the promise do not commute — is curvature of the
+continuous connection (Chapter 10). It cannot come from the Hohfeldian
+group, which is abelian (§8.4).</p>
 <h2 id="the-manifold-as-common-ground">5.10 The Manifold as Common
 Ground</h2>
 <p>The moral manifold M is the base space over which all ethical tensors
@@ -1089,7 +1139,7 @@ has a claim to completeness.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

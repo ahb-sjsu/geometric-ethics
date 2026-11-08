@@ -1,7 +1,7 @@
 {
  "spec": "PE-CLS-1.0",
  "id": "GE-THM-22-1",
- "statement": "Octahedral Gauge Group",
+ "statement": "Symmetry of the Hohfeldian Octad (conjecture): G_Ho = V4 x|_phi V4.",
  "class": "exploratory",
  "scope": "Geometric Ethics v1.24, ch.22 (law); UNTAGGED in source and absent from Appendix F",
  "retrospective": true,
@@ -23,6 +23,10 @@
   {
    "date": "2026-08-25",
    "event": "brownfield conversion phase 2: entered from the untagged domain chapters. Class is exploratory by characterization (PE-BRW-1.0 s5.2), not by the author's assessment -- the source assigns none."
+  },
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: restated in the manuscript as Conjecture 22.1, G_Ho = V4 semidirect V4. The v1.24 theorem assumed D4 on each square (withdrawn) and misnamed D4 x| D4 (order 64) as octahedral (order 48). Not proved."
   }
  ]
 }

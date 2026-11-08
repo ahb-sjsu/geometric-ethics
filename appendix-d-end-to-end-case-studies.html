@@ -182,11 +182,12 @@ care.</li>
 <li>Epistemic 0.85: both prognoses are high-confidence.</li>
 </ul>
 <p><strong>O^μ_γ (Ventilate B+C):</strong></p>
-<pre><code>O_γ = (0.62,  0.60,  0.58,  0.55,  0.25,  0.65)
+<pre><code>O_γ = (0.725, 0.60,  0.58,  0.55,  0.25,  0.65)
        welf   rights fair   auton  care   epist</code></pre>
 <ul>
-<li>Welfare 0.62: moderate combined prognosis (0.60 + 0.85)/2, but
-denies the best prognosis (A).</li>
+<li>Welfare 0.725: moderate combined prognosis (0.60 + 0.85)/2 = 0.725;
+A, the best prognosis, is the patient denied. (v1.24 printed 0.62;
+corrected in v1.25, with every dependent value recomputed.)</li>
 <li>Rights 0.60: respects B’s seniority-based claim and C’s
 innocence-based claim.</li>
 <li>Fairness 0.58: saves youngest and oldest; moderate by life-years
@@ -255,20 +256,20 @@ M_{β,Cfam}  = 0.15(0.90) + 0.10(0.55) + 0.45(0.82) + 0.05(0.55) + 0.15(0.80) + 
 M_{β,comm}  = 0.20(0.90) + 0.20(0.55) + 0.25(0.82) + 0.10(0.55) + 0.10(0.80) + 0.15(0.85)
             = 0.180 + 0.110 + 0.205 + 0.055 + 0.080 + 0.128 = 0.758</code></pre>
 <p><strong>Option γ (B+C):</strong></p>
-<pre><code>M_{γ,phys}  = 0.40(0.62) + 0.10(0.60) + 0.10(0.58) + 0.05(0.55) + 0.05(0.25) + 0.30(0.65)
-            = 0.248 + 0.060 + 0.058 + 0.028 + 0.013 + 0.195 = 0.602
+<pre><code>M_{γ,phys}  = 0.40(0.725) + 0.10(0.60) + 0.10(0.58) + 0.05(0.55) + 0.05(0.25) + 0.30(0.65)
+            = 0.290 + 0.060 + 0.058 + 0.028 + 0.013 + 0.195 = 0.644
 
-M_{γ,Afam}  = 0.20(0.62) + 0.10(0.60) + 0.10(0.58) + 0.10(0.55) + 0.45(0.25) + 0.05(0.65)
-            = 0.124 + 0.060 + 0.058 + 0.055 + 0.113 + 0.033 = 0.443
+M_{γ,Afam}  = 0.20(0.725) + 0.10(0.60) + 0.10(0.58) + 0.10(0.55) + 0.45(0.25) + 0.05(0.65)
+            = 0.145 + 0.060 + 0.058 + 0.055 + 0.113 + 0.033 = 0.464
 
-M_{γ,Bfam}  = 0.10(0.62) + 0.45(0.60) + 0.10(0.58) + 0.15(0.55) + 0.10(0.25) + 0.10(0.65)
-            = 0.062 + 0.270 + 0.058 + 0.083 + 0.025 + 0.065 = 0.563
+M_{γ,Bfam}  = 0.10(0.725) + 0.45(0.60) + 0.10(0.58) + 0.15(0.55) + 0.10(0.25) + 0.10(0.65)
+            = 0.073 + 0.270 + 0.058 + 0.083 + 0.025 + 0.065 = 0.574
 
-M_{γ,Cfam}  = 0.15(0.62) + 0.10(0.60) + 0.45(0.58) + 0.05(0.55) + 0.15(0.25) + 0.10(0.65)
-            = 0.093 + 0.060 + 0.261 + 0.028 + 0.038 + 0.065 = 0.545
+M_{γ,Cfam}  = 0.15(0.725) + 0.10(0.60) + 0.45(0.58) + 0.05(0.55) + 0.15(0.25) + 0.10(0.65)
+            = 0.109 + 0.060 + 0.261 + 0.028 + 0.038 + 0.065 = 0.561
 
-M_{γ,comm}  = 0.20(0.62) + 0.20(0.60) + 0.25(0.58) + 0.10(0.55) + 0.10(0.25) + 0.15(0.65)
-            = 0.124 + 0.120 + 0.145 + 0.055 + 0.025 + 0.098 = 0.567</code></pre>
+M_{γ,comm}  = 0.20(0.725) + 0.20(0.60) + 0.25(0.58) + 0.10(0.55) + 0.10(0.25) + 0.15(0.65)
+            = 0.145 + 0.120 + 0.145 + 0.055 + 0.025 + 0.098 = 0.588</code></pre>
 <p><strong>The full evaluation tensor M_{ia}:</strong></p>
 <table style="width:100%;">
 <colgroup>
@@ -308,11 +309,11 @@ M_{γ,comm}  = 0.20(0.62) + 0.20(0.60) + 0.25(0.58) + 0.10(0.55) + 0.10(0.25) + 
 </tr>
 <tr>
 <td>γ (B+C)</td>
-<td>0.602</td>
-<td>0.443</td>
-<td><strong>0.563</strong></td>
-<td>0.545</td>
-<td>0.567</td>
+<td>0.644</td>
+<td>0.464</td>
+<td><strong>0.574</strong></td>
+<td>0.561</td>
+<td>0.588</td>
 </tr>
 </tbody>
 </table>
@@ -326,7 +327,7 @@ Contractions, Three Verdicts</h3>
 <p>S_i = Σ_a M_{ia}</p>
 <pre><code>S_α = 0.703 + 0.687 + 0.668 + 0.557 + 0.632 = 3.247
 S_β = 0.820 + 0.775 + 0.668 + 0.792 + 0.758 = 3.813
-S_γ = 0.602 + 0.443 + 0.563 + 0.545 + 0.567 = 2.720</code></pre>
+S_γ = 0.644 + 0.464 + 0.574 + 0.561 + 0.588 = 2.831</code></pre>
 <p><strong>Decision (Utilitarian): β (A+C) — highest total satisfaction
 (3.813).</strong></p>
 <p><strong>Contraction 2: Rawlsian (maximize the minimum across
@@ -334,7 +335,7 @@ agents)</strong></p>
 <p>S_i = min_a M_{ia}</p>
 <pre><code>S_α = min(0.703, 0.687, 0.668, 0.557, 0.632) = 0.557  (floor: C&#39;s family)
 S_β = min(0.820, 0.775, 0.668, 0.792, 0.758) = 0.668  (floor: B&#39;s family)
-S_γ = min(0.602, 0.443, 0.563, 0.545, 0.567) = 0.443  (floor: A&#39;s family)</code></pre>
+S_γ = min(0.644, 0.464, 0.574, 0.561, 0.588) = 0.464  (floor: A&#39;s family)</code></pre>
 <p><strong>Decision (Rawlsian): β (A+C) — highest floor of support
 (0.668).</strong></p>
 <p><strong>Contraction 3: Expert-weighted (physician 0.35, committee
@@ -345,8 +346,8 @@ S_γ = min(0.602, 0.443, 0.563, 0.545, 0.567) = 0.443  (floor: A&#39;s family)</
     = 0.246 + 0.069 + 0.067 + 0.056 + 0.221 = 0.659
 S_β = 0.35(0.820) + 0.10(0.775) + 0.10(0.668) + 0.10(0.792) + 0.35(0.758)
     = 0.287 + 0.078 + 0.067 + 0.079 + 0.265 = 0.776
-S_γ = 0.35(0.602) + 0.10(0.443) + 0.10(0.563) + 0.10(0.545) + 0.35(0.567)
-    = 0.211 + 0.044 + 0.056 + 0.055 + 0.198 = 0.564</code></pre>
+S_γ = 0.35(0.644) + 0.10(0.464) + 0.10(0.574) + 0.10(0.561) + 0.35(0.588)
+    = 0.225 + 0.046 + 0.057 + 0.056 + 0.206 = 0.590</code></pre>
 <p><strong>Decision (Expert-weighted): β (A+C) — highest expert-weighted
 satisfaction (0.776).</strong></p>
 <p><strong>Convergence.</strong> All three contractions agree: β (A+C)
@@ -366,9 +367,9 @@ d(O_β, ideal) = √[(1-0.90)² + (1-0.55)² + (1-0.82)² + (1-0.55)² + (1-0.80
               = √[0.010 + 0.203 + 0.032 + 0.203 + 0.040 + 0.023]
               = √0.511 ≈ 0.715
 
-d(O_γ, ideal) = √[(1-0.62)² + (1-0.60)² + (1-0.58)² + (1-0.55)² + (1-0.25)² + (1-0.65)²]
-              = √[0.144 + 0.160 + 0.176 + 0.203 + 0.563 + 0.123]
-              = √1.369 ≈ 1.170</code></pre>
+d(O_γ, ideal) = √[(1-0.725)² + (1-0.60)² + (1-0.58)² + (1-0.55)² + (1-0.25)² + (1-0.65)²]
+              = √[0.076 + 0.160 + 0.176 + 0.203 + 0.563 + 0.123]
+              = √1.301 ≈ 1.141</code></pre>
 <p><strong>Decision (Euclidean): β closest to ideal (0.715).</strong>
 Option γ is farthest, driven by the catastrophic care deficit
 (0.25).</p>
@@ -382,15 +383,15 @@ d_W(O_β, ideal) = √[2.0(0.010) + 1.5(0.203) + 1.0(0.032) + 0.5(0.203) + 2.0(0
                = √[0.020 + 0.304 + 0.032 + 0.101 + 0.080 + 0.011]
                = √0.548 ≈ 0.740
 
-d_W(O_γ, ideal) = √[2.0(0.144) + 1.5(0.160) + 1.0(0.176) + 0.5(0.203) + 2.0(0.563) + 0.5(0.123)]
-               = √[0.288 + 0.240 + 0.176 + 0.101 + 1.126 + 0.061]
-               = √1.992 ≈ 1.411</code></pre>
+d_W(O_γ, ideal) = √[2.0(0.076) + 1.5(0.160) + 1.0(0.176) + 0.5(0.203) + 2.0(0.563) + 0.5(0.123)]
+               = √[0.152 + 0.240 + 0.176 + 0.101 + 1.126 + 0.061]
+               = √1.856 ≈ 1.362</code></pre>
 <p><strong>Decision (Weighted): β still wins (0.740).</strong>
 Amplifying welfare and care further penalizes γ (care = 0.25) and
 reinforces β.</p>
 <p><strong>Metric 3: Lexicographic (Welfare first, then
 Fairness)</strong></p>
-<pre><code>Welfare: β (0.90) &gt; α (0.78) &gt; γ (0.62)</code></pre>
+<pre><code>Welfare: β (0.90) &gt; α (0.78) &gt; γ (0.725)</code></pre>
 <p>β wins on the first dimension alone. No tiebreaker needed.</p>
 <p><strong>Decision (Lexicographic): β.</strong></p>
 <p><strong>Meta-observation.</strong> Option β is the unanimous winner
@@ -493,17 +494,17 @@ correctly identified as a substantive moral change.</p>
   &quot;tier_2_evaluations&quot;: [
     {
       &quot;module&quot;: &quot;TriageProtocolEM&quot;,
-      &quot;ranking&quot;: [&quot;β (A+C): 0.820&quot;, &quot;α (A+B): 0.703&quot;, &quot;γ (B+C): 0.602&quot;],
+      &quot;ranking&quot;: [&quot;β (A+C): 0.820&quot;, &quot;α (A+B): 0.703&quot;, &quot;γ (B+C): 0.644&quot;],
       &quot;rationale&quot;: &quot;Medical triage criteria: maximize survival probability&quot;
     },
     {
       &quot;module&quot;: &quot;RightsFirstEM&quot;,
-      &quot;ranking&quot;: [&quot;β (A+C): 0.758&quot;, &quot;α (A+B): 0.632&quot;, &quot;γ (B+C): 0.567&quot;],
+      &quot;ranking&quot;: [&quot;β (A+C): 0.758&quot;, &quot;α (A+B): 0.632&quot;, &quot;γ (B+C): 0.588&quot;],
       &quot;rationale&quot;: &quot;No consent violations; all options respect available autonomy&quot;
     },
     {
       &quot;module&quot;: &quot;FairnessEM&quot;,
-      &quot;ranking&quot;: [&quot;β (A+C): 0.792&quot;, &quot;α (A+B): 0.557&quot;, &quot;γ (B+C): 0.545&quot;],
+      &quot;ranking&quot;: [&quot;β (A+C): 0.792&quot;, &quot;γ (B+C): 0.561&quot;, &quot;α (A+B): 0.557&quot;],
       &quot;rationale&quot;: &quot;Fair-innings and life-years remaining favor β&quot;
     }
   ],
@@ -513,7 +514,7 @@ correctly identified as a substantive moral change.</p>
     &quot;final_scores&quot;: {
       &quot;α&quot;: 0.40*0.703 + 0.30*0.632 + 0.30*0.557,
       &quot;β&quot;: 0.40*0.820 + 0.30*0.758 + 0.30*0.792,
-      &quot;γ&quot;: 0.40*0.602 + 0.30*0.567 + 0.30*0.545
+      &quot;γ&quot;: 0.40*0.644 + 0.30*0.588 + 0.30*0.561
     },
     &quot;result&quot;: &quot;β (A+C) selected&quot;
   },
@@ -803,7 +804,7 @@ Contraction (Redundant but Illustrative)</h3>
 constraint eliminates Silence:</p>
 <pre><code>Utilitarian:     S_R = 0.709 + 0.837 + 0.852 + 0.653 = 3.051  vs. S_S = −∞  → Report
 Rawlsian:        S_R = min(0.709, 0.837, 0.852, 0.653) = 0.653  vs. −∞  → Report
-Expert-weighted: S_R = 0.35(0.852) + 0.30(0.837) + 0.20(0.709) + 0.15(0.653) = 0.787  vs. −∞  → Report</code></pre>
+Expert-weighted: S_R = 0.35(0.852) + 0.30(0.837) + 0.20(0.709) + 0.15(0.653) = 0.789  vs. −∞  → Report</code></pre>
 <p><strong>The contraction is redundant.</strong> The stratum transition
 has already determined the verdict. This illustrates a key structural
 point: some moral decisions are not matters of degree (smooth
@@ -1525,9 +1526,9 @@ D_op = (1/5) Σ |Δ_orig − Δ_Ti|
      = (1/5)(6.2 + 5.5 + 4.3 + 2.5 + 6.9)
      = (1/5)(25.4) = 5.08
 
-Normalized to score scale [0,100]: Bd = D_op / τ = 5.08 / 100 × (1/0.01) = 0.51</code></pre>
-<p><strong>Bd = 0.51 &gt;&gt; 0.10 threshold. Substantive demographic
-bias detected. Remediation required.</strong></p>
+Normalized to score scale [0,100]: Bd = D_op / τ = 5.08 / 100 × (1/0.01) = 5.08</code></pre>
+<p><strong>Bd = 5.08 &gt; 1.0 threshold. Severe demographic bias
+detected. Fundamental redesign required.</strong></p>
 <p>The Bond Index pinpoints the bias: the system’s evaluation of J
 (female, Hispanic) is systematically lower than what her job-relevant
 qualifications warrant. Removing demographic information flips the
@@ -1710,10 +1711,10 @@ Step 3: Apply thresholds:
    &gt; 1.0:      Fundamental redesign required.</code></pre>
 <p>For the unbiased system: <strong>Bd = 0.0.</strong>
 Deployment-ready.</p>
-<p>For the biased system: <strong>Bd = 0.51.</strong> Remediation
-required. The audit artifact documents exactly which transforms caused
-ranking changes, which candidates were affected, and the magnitude of
-the bias.</p>
+<p>For the biased system: Bd = 5.08. Fundamental redesign required. The
+audit artifact documents exactly which transforms caused ranking
+changes, which candidates were affected, and the magnitude of the
+bias.</p>
 <h3 id="step-9-deme-audit-artifact-1">Step 9: DEME Audit Artifact</h3>
 <pre><code>{
   &quot;case_id&quot;: &quot;hiring-screen-001&quot;,
@@ -1806,7 +1807,7 @@ aggregate statistics might miss.</p></li>
 <h3 id="reference-implementation-3">Reference implementation: </h3>
 <p>erisml.examples.appendix_d_cs4_hiring (run_case_study_4()). Verifies
 evaluation tensor, all contractions, pure meritocracy check, BIP
-transforms, and Bond Index (Bd = 0.0 unbiased, Bd = 0.51 biased) against
+transforms, and Bond Index (Bd = 0.0 unbiased, Bd = 5.08 biased) against
 book reference values.</p>
 <h2 id="d.5-case-study-5-climate-policy-allocation">D.5 Case Study 5:
 Climate Policy Allocation</h2>
@@ -2032,14 +2033,32 @@ as Fair Allocation</h3>
 marginal contribution to the collective reduction goal, averaged over
 all possible coalition orderings.</p>
 <p><strong>Coalition value function v(S):</strong></p>
-<p>The coalition value v(S) measures the total emissions reduction
-achievable by coalition S, weighted by the moral quality of the
-allocation (fairness, capacity, historical responsibility). For a
+<p>The coalition value v(S) measures the share of the reduction burden
+that coalition S carries: the stand-alone burdens of its members, plus
+the burden that relationships inside S owe to a nation outside it. For a
 coalition S ⊆ {N₁, N₂, N₃, N₄, N₅}:</p>
-<pre><code>v(S) = Σ_{i∈S} capacity_i × responsibility_i × (current_emissions_i / total_emissions)</code></pre>
+<pre><code>v(S) = Σ_{i∈S} b_i + Σ_{S^a_{bc}} 3|S^a_{bc}| b_a · [b ∈ S, c ∈ S, a ∉ S],   b_i = (ĉ_i + r̂_i + ŝ_i) / 3</code></pre>
 <p>where: - capacity_i = GDP/capita normalized to [0, 1] -
 responsibility_i = historical_emissions_i / max(historical_emissions) -
-current share = current_emissions_i / 14.55</p>
+current share = current_emissions_i / 14.55 - ĉ_i is national capacity,
+capacity_i × current share_i, and ĉ_i, r̂_i, ŝ_i are the three normalized
+to sum to 1 across the five nations. Capacity is taken in national terms
+(per-capita capacity times current share, with current emissions
+standing in for economic size, since the case gives no population data)
+so that all three principles are measured on the same national scale. So
+b_i, the nation’s stand-alone burden, is the equal-weight mean of
+ability to pay, polluter pays and current emissions, and Σ b_i = 1. The
+structure tensor of Step 3 enters as a burden transfer: a coalition that
+contains b and c but not a carries the extra 3|S^a_{bc}| b_a, the share
+of a’s burden that the b–c relationship owes. By the Shapley formula
+this term lowers a’s value by |S^a_{bc}| b_a, raises b’s and c’s by half
+that each, and adds nothing to v(N). The scaling measures each component
+in units of the indexed nation’s own stand-alone burden: S^N3_{N1,N2} =
+0.35 moves 35% of N₃’s burden to N₁ and N₂ (N₃’s claim is amplified),
+and S^N2_{N1,N5} = −0.15 moves 15% of N₂’s burden to N₁ and N₅ (N₂’s
+burden is reduced). (A term present only when all three nations are in
+the coalition would be split equally among them and would raise N₃’s
+burden, the opposite of Step 3.)</p>
 <p><strong>Computed values:</strong></p>
 <pre><code>capacity:       N₁=1.00, N₂=0.18, N₃=0.12, N₄=0.38, N₅=0.69
 responsibility: N₁=1.00, N₂=0.51, N₃=0.006, N₄=0.23, N₅=0.34
@@ -2048,43 +2067,50 @@ current_share:  N₁=0.344, N₂=0.309, N₃=0.003, N₄=0.137, N₅=0.206</code
 = 120 orderings):</strong></p>
 <p>The Shapley value formula:</p>
 <pre><code>φ_i(v) = Σ_{S⊆N\{i}} [|S|!(n−|S|−1)!/n!] × [v(S∪{i}) − v(S)]</code></pre>
-<p>Rather than enumerate all 120 orderings, we compute the marginal
-contributions for key coalitions and average:</p>
+<p>We enumerate all 2⁴ = 16 coalitions S ⊆ N∖{i} for each nation
+(equivalent to the 120 orderings). The stand-alone burdens are b =
+(0.468, 0.216, 0.002, 0.112, 0.203) for N₁ to N₅. (Rebuilt in v1.25: the
+v1.24 value function was additive, so its Shapley values did not match
+the printed shares.)</p>
 <p><strong>φ_N1 (large developed):</strong> N₁ has the highest capacity
 (1.00) and highest responsibility (1.00). Its marginal contribution to
 any coalition is large — it brings the most reduction capacity and the
-strongest moral obligation.</p>
-<pre><code>φ_N1 = 0.387</code></pre>
-<p>N₁’s fair share of the 7.275 Gt reduction: <strong>0.387 × 7.275 =
-2.815 Gt</strong> (56.3% of its current emissions).</p>
-<p><strong>φ_N2 (large developing):</strong> N₂ has moderate capacity
-but high current emissions. Its marginal contribution is significant but
-reduced by lower historical responsibility.</p>
-<pre><code>φ_N2 = 0.212</code></pre>
-<p>N₂’s fair share: <strong>0.212 × 7.275 = 1.542 Gt</strong> (34.3% of
-its current emissions).</p>
-<p><strong>φ_N3 (small island state):</strong> N₃ has negligible
-capacity, negligible emissions, and negligible responsibility. Its
-Shapley value is near zero.</p>
-<pre><code>φ_N3 = 0.003</code></pre>
-<p>N₃’s fair share: <strong>0.003 × 7.275 = 0.022 Gt</strong>
-(essentially zero — 44% of its tiny 0.05 Gt).</p>
+strongest moral obligation — and both structure-tensor terms move burden
+onto it.</p>
+<pre><code>φ_N1 = 0.484</code></pre>
+<p>N₁’s fair share of the 7.275 Gt reduction: φ_N1 × 7.275 = 3.522 Gt
+(70.4% of its current emissions).</p>
+<p><strong>φ_N2 (large developing): N₂ has moderate capacity but high
+current emissions. Its marginal contribution is significant but reduced
+by lower historical responsibility, and the supply-chain term moves 15%
+of its stand-alone burden to N₁ and N₅.</strong></p>
+<pre><code>φ_N2 = 0.184</code></pre>
+<p>N₂’s fair share: φ_N2 × 7.275 = 1.337 Gt (29.7% of its current
+emissions).</p>
+<p><strong>φ_N3 (small island state): N₃ has negligible capacity,
+negligible emissions, and negligible responsibility, and the colonial
+term moves a further 35% of its stand-alone burden to N₁ and N₂. Its
+Shapley value is near zero.</strong></p>
+<pre><code>φ_N3 = 0.001</code></pre>
+<p>N₃’s fair share: φ_N3 × 7.275 = 0.010 Gt (essentially zero — 20% of
+its tiny 0.05 Gt).</p>
 <p><strong>φ_N4 (mid-income):</strong></p>
-<pre><code>φ_N4 = 0.128</code></pre>
-<p>N₄’s fair share: <strong>0.128 × 7.275 = 0.931 Gt</strong> (46.6% of
-its current emissions).</p>
+<pre><code>φ_N4 = 0.112</code></pre>
+<p>N₄’s fair share: φ_N4 × 7.275 = 0.812 Gt (40.6% of its current
+emissions).</p>
 <p><strong>φ_N5 (oil exporter):</strong></p>
-<pre><code>φ_N5 = 0.270</code></pre>
-<p>N₅’s fair share: <strong>0.270 × 7.275 = 1.964 Gt</strong> (65.5% of
-its current emissions).</p>
+<pre><code>φ_N5 = 0.219</code></pre>
+<p>N₅’s fair share: φ_N5 × 7.275 = 1.593 Gt (53.1% of its current
+emissions).</p>
 <p><strong>Verification:</strong> φ_N1 + φ_N2 + φ_N3 + φ_N4 + φ_N5 =
-0.387 + 0.212 + 0.003 + 0.128 + 0.270 = 1.000. ✓</p>
+0.484 + 0.184 + 0.001 + 0.112 + 0.219 = 1.000. ✓</p>
 <p><strong>The Shapley allocation satisfies four axioms</strong> that
 map to fairness criteria: 1. <strong>Efficiency:</strong> Total
 reduction sums to 7.275 Gt (the full requirement). 2.
 <strong>Symmetry:</strong> Nations with identical profiles receive
-identical allocations. 3. <strong>Dummy player:</strong> N₃ (negligible
-contribution) receives near-zero burden. 4. <strong>Additivity:</strong>
+identical allocations. 3. Null player: a nation that adds nothing to any
+coalition bears nothing; N₃, whose contribution is nearly nothing,
+receives near-zero burden (φ = 0.001). 4. <strong>Additivity:</strong>
 If the value function decomposes, so does the allocation.</p>
 <h3 id="step-5-fair-allocation-summary">Step 5: Fair Allocation
 Summary</h3>
@@ -2109,37 +2135,37 @@ Summary</h3>
 <tr>
 <td>N₁</td>
 <td>5.00</td>
-<td>2.815</td>
-<td>56.3%</td>
-<td>2.185</td>
+<td>3.522</td>
+<td>70.4%</td>
+<td>1.478</td>
 </tr>
 <tr>
 <td>N₂</td>
 <td>4.50</td>
-<td>1.542</td>
-<td>34.3%</td>
-<td>2.958</td>
+<td>1.337</td>
+<td>29.7%</td>
+<td>3.163</td>
 </tr>
 <tr>
 <td>N₃</td>
 <td>0.05</td>
-<td>0.022</td>
-<td>44.0%</td>
-<td>0.028</td>
+<td>0.010</td>
+<td>20.4%</td>
+<td>0.040</td>
 </tr>
 <tr>
 <td>N₄</td>
 <td>2.00</td>
-<td>0.931</td>
-<td>46.6%</td>
-<td>1.069</td>
+<td>0.812</td>
+<td>40.6%</td>
+<td>1.188</td>
 </tr>
 <tr>
 <td>N₅</td>
 <td>3.00</td>
-<td>1.964</td>
-<td>65.5%</td>
-<td>1.036</td>
+<td>1.593</td>
+<td>53.1%</td>
+<td>1.407</td>
 </tr>
 <tr>
 <td><strong>Total</strong></td>
@@ -2150,15 +2176,17 @@ Summary</h3>
 </tr>
 </tbody>
 </table>
-<p><strong>Key features of the Shapley allocation:</strong> - N₁ bears
-the largest absolute burden (2.815 Gt) — reflecting its combined
-capacity and historical responsibility. - N₅ bears the highest
-proportional burden (65.5%) — reflecting that oil exporters have both
-high per-capita emissions and high wealth, despite lower absolute
-totals. - N₃ bears negligible burden — the dummy player axiom correctly
-exempts nations with negligible contribution. - N₂ receives a moderate
-burden (34.3%) — its right to development partially offsets its current
-emissions.</p>
+<p><strong>Key features of the Shapley allocation: - N₁ bears the
+largest absolute burden (3.522 Gt) and the highest proportional burden
+(70.4%) — reflecting its combined capacity and historical
+responsibility, plus the burden both structure-tensor terms move onto
+it. - N₅ bears the next-highest proportional burden (53.1%) — reflecting
+that oil exporters have both high per-capita emissions and high wealth,
+despite lower absolute totals. - N₃ bears negligible burden (0.010 Gt) —
+a nation whose contribution is nearly nothing bears nearly nothing. - N₂
+receives the lowest proportional burden of the four large emitters
+(29.7%; N₃’s is 20.4%) — its right to development and the supply-chain
+term offset its current emissions.</strong></p>
 <h3 id="step-6-contraction-loss-and-the-paris-agreement">Step 6:
 Contraction Loss and the Paris Agreement</h3>
 <p>The actual Paris Agreement allocates targets via nationally
@@ -2186,32 +2214,32 @@ feasibility):</strong></p>
 <tr>
 <td>N₁</td>
 <td>2.00</td>
-<td>2.815</td>
-<td>−0.815</td>
+<td>3.522</td>
+<td>−1.522</td>
 </tr>
 <tr>
 <td>N₂</td>
 <td>1.00</td>
-<td>1.542</td>
-<td>−0.542</td>
+<td>1.337</td>
+<td>−0.337</td>
 </tr>
 <tr>
 <td>N₃</td>
 <td>0.01</td>
-<td>0.022</td>
-<td>−0.012</td>
+<td>0.010</td>
+<td>0.000</td>
 </tr>
 <tr>
 <td>N₄</td>
 <td>0.80</td>
-<td>0.931</td>
-<td>−0.131</td>
+<td>0.812</td>
+<td>−0.012</td>
 </tr>
 <tr>
 <td>N₅</td>
 <td>1.20</td>
-<td>1.964</td>
-<td>−0.764</td>
+<td>1.593</td>
+<td>−0.393</td>
 </tr>
 <tr>
 <td><strong>Total</strong></td>
@@ -2229,9 +2257,9 @@ not abstract: it translates to approximately 0.3°C of additional
 warming, disproportionately harming climate-vulnerable nations like
 N₃.</p>
 <p><strong>Where the loss concentrates:</strong> - N₁ undercommits by
-0.815 Gt (29% of its fair share). This is the largest absolute gap — the
+1.522 Gt (43% of its fair share). This is the largest absolute gap — the
 wealthiest, most historically responsible nation bearing less than its
-fair share. - N₅ undercommits by 0.764 Gt (39% of its fair share). The
+fair share. - N₅ undercommits by 0.393 Gt (25% of its fair share). The
 oil exporter’s political economy makes deep cuts difficult. - The gaps
 are not random — they track political power. The contraction loss of the
 NDC framework is systematically biased toward powerful nations, a
@@ -2242,11 +2270,19 @@ heavily)</strong></p>
 <p>Under per-capita equity, the metric g_33 (fairness-fairness
 component) is amplified:</p>
 <pre><code>g_μν = diag(1.0, 1.0, 3.0, 0.5, 1.5, 1.0, 0.5)</code></pre>
-<p>This metric increases N₁’s burden (highest per-capita historical
-emissions) and decreases N₂’s (low per-capita despite high absolute
-emissions). The Shapley allocation shifts:</p>
-<pre><code>φ&#39;_N1 = 0.42 (up from 0.387)
-φ&#39;_N2 = 0.18 (down from 0.212)</code></pre>
+<p>In v(S) a metric acts by weighting the three base terms: national
+capacity by g_11 (welfare: the economic cost of reducing),
+responsibility by g_33 (fairness: historical responsibility) and current
+share by g_66 (societal: climate stabilization). The Euclidean metric
+gives the equal weights of Step 4. This metric weights responsibility 3
+and current share 1.5 against capacity 1. Because N₁’s share of national
+capacity (0.58) exceeds its share of historical responsibility (0.48),
+the shift lowers N₁ slightly, and it raises N₂, whose historical share
+(0.24) exceeds its capacity share (0.09). (The case gives no population
+data, so per-capita equity can enter only through these weights.) The
+Shapley allocation shifts:</p>
+<pre><code>φ&#39;_N1 = 0.479 (down from 0.484)
+φ&#39;_N2 = 0.200 (up from 0.184)</code></pre>
 <p><strong>Metric 2: Capacity-weighted (g_μν weights welfare
 heavily)</strong></p>
 <p>Under capacity-weighted metrics, nations with higher GDP bear
@@ -2254,17 +2290,22 @@ more:</p>
 <pre><code>g_μν = diag(2.5, 0.5, 1.0, 0.5, 1.0, 0.5, 0.5)</code></pre>
 <p>This increases the burden on N₁ and N₅ (high GDP) while protecting N₂
 and N₃ (low GDP):</p>
-<pre><code>φ&#39;_N1 = 0.44 (up)
-φ&#39;_N5 = 0.30 (up)
-φ&#39;_N2 = 0.15 (down)</code></pre>
+<pre><code>φ&#39;_N1 = 0.518 (up)
+φ&#39;_N5 = 0.228 (up)
+φ&#39;_N2 = 0.149 (down)</code></pre>
 <p><strong>Metric 3: Sovereignty-preserving (g_μν weights autonomy
 heavily)</strong></p>
 <p>Under a sovereignty metric, each nation’s right to self-determination
 is paramount:</p>
 <pre><code>g_μν = diag(0.5, 0.5, 1.0, 3.0, 1.0, 0.5, 0.5)</code></pre>
-<p>This produces an allocation closer to the NDC framework — nations are
-not compelled beyond what they voluntarily commit. The contraction loss
-remains large, but the metric says that’s acceptable because autonomy
+<p>Autonomy (μ = 4) has no term in v(S), so this metric acts only
+through g_11 = 0.5, which halves the weight of capacity: φ'_N1 = 0.464
+(down from 0.484), φ'_N2 = 0.205 (up from 0.184), φ'_N5 = 0.214 (down
+from 0.219). This produces an allocation closer to the NDC framework
+(the distance between the allocation shares and the pledge shares falls
+from 0.101 to 0.082) — nations are asked for less beyond what they
+voluntarily commit. The contraction loss remains large (the total is
+still 7.275 Gt), but the metric says that’s acceptable because autonomy
 outweighs fairness.</p>
 <p><strong>The disagreement between metrics is the disagreement between
 value systems.</strong> The geometric framework does not pick a metric —
@@ -2286,12 +2327,15 @@ share drops (historical responsibility was a major factor), N₂’s share
 rises (large current emissions dominate). - <strong>Bd &gt; 0.</strong>
 Correctly identified as a substantive change — the moral content
 (whether history matters) has genuinely changed.</p>
-<p><strong>Transform 4 (bond-changing): Vulnerability
-weighting.</strong> Double the weight of climate vulnerability in the
-coalition value function. - N₃’s effective claim increases
-(vulnerability 0.95 × 2). N₃ shifts from near-zero allocation to a net
-recipient of climate finance. - <strong>Bd &gt; 0.</strong> Correctly
-identified — vulnerability weighting is a substantive moral choice.</p>
+<p><strong>Transform 4 (bond-changing): Vulnerability weighting. Add a
+climate-vulnerability term to the coalition value function (v(S) as
+defined has none). - This changes the value function itself, not its
+presentation: any such term lowers the burden of the most vulnerable
+nation, N₃ (vulnerability 0.95), and moves it to the others. Within an
+allocation of reductions N₃’s burden can fall to zero but not below;
+making N₃ a net recipient of climate finance needs a transfer outside
+this game. - Bd &gt; 0. Correctly identified — vulnerability weighting
+is a substantive moral choice.</strong></p>
 <p><strong>Aggregate Bond Index: Bd = 0.0</strong> (across
 invariance-preserving transforms).</p>
 <h3 id="step-9-deme-audit-artifact-2">Step 9: DEME Audit Artifact</h3>
@@ -2317,20 +2361,20 @@ invariance-preserving transforms).</p>
       {&quot;component&quot;: &quot;S^N3_{N1,N2}&quot;, &quot;value&quot;: 0.35, &quot;interpretation&quot;: &quot;Colonial/historical amplification of N3 claims&quot;},
       {&quot;component&quot;: &quot;S^N2_{N1,N5}&quot;, &quot;value&quot;: -0.15, &quot;interpretation&quot;: &quot;Fossil supply-chain reduces N2 relative burden&quot;}
     ],
-    &quot;emergence_degree&quot;: 0.28,
-    &quot;note&quot;: &quot;28% of collective obligation is emergent (not decomposable to individual terms)&quot;
+    &quot;emergence_degree&quot;: 0.07,
+    &quot;note&quot;: &quot;eta = |phi - b| / |phi| over the five Shapley shares: 7% of the allocation comes from the structure tensor (not decomposable to stand-alone burdens)&quot;
   },
   &quot;shapley_allocation&quot;: {
     &quot;method&quot;: &quot;CooperativeLayer.shapley_value&quot;,
-    &quot;coalition_value_function&quot;: &quot;capacity × responsibility × current_share&quot;,
+    &quot;coalition_value_function&quot;: &quot;mean(normalized national capacity, responsibility, current_share) + structure-tensor burden transfers&quot;,
     &quot;results&quot;: {
-      &quot;N1&quot;: {&quot;phi&quot;: 0.387, &quot;reduction_Gt&quot;: 2.815, &quot;reduction_pct&quot;: 56.3},
-      &quot;N2&quot;: {&quot;phi&quot;: 0.212, &quot;reduction_Gt&quot;: 1.542, &quot;reduction_pct&quot;: 34.3},
-      &quot;N3&quot;: {&quot;phi&quot;: 0.003, &quot;reduction_Gt&quot;: 0.022, &quot;reduction_pct&quot;: 44.0},
-      &quot;N4&quot;: {&quot;phi&quot;: 0.128, &quot;reduction_Gt&quot;: 0.931, &quot;reduction_pct&quot;: 46.6},
-      &quot;N5&quot;: {&quot;phi&quot;: 0.270, &quot;reduction_Gt&quot;: 1.964, &quot;reduction_pct&quot;: 65.5}
+      &quot;N1&quot;: {&quot;phi&quot;: 0.484, &quot;reduction_Gt&quot;: 3.522, &quot;reduction_pct&quot;: 70.4},
+      &quot;N2&quot;: {&quot;phi&quot;: 0.184, &quot;reduction_Gt&quot;: 1.337, &quot;reduction_pct&quot;: 29.7},
+      &quot;N3&quot;: {&quot;phi&quot;: 0.001, &quot;reduction_Gt&quot;: 0.010, &quot;reduction_pct&quot;: 20.4},
+      &quot;N4&quot;: {&quot;phi&quot;: 0.112, &quot;reduction_Gt&quot;: 0.812, &quot;reduction_pct&quot;: 40.6},
+      &quot;N5&quot;: {&quot;phi&quot;: 0.219, &quot;reduction_Gt&quot;: 1.593, &quot;reduction_pct&quot;: 53.1}
     },
-    &quot;axioms_satisfied&quot;: [&quot;efficiency&quot;, &quot;symmetry&quot;, &quot;dummy_player&quot;, &quot;additivity&quot;]
+    &quot;axioms_satisfied&quot;: [&quot;efficiency&quot;, &quot;symmetry&quot;, &quot;null_player&quot;, &quot;additivity&quot;]
   },
   &quot;contraction_loss&quot;: {
     &quot;ndc_total&quot;: 5.01,
@@ -2339,11 +2383,11 @@ invariance-preserving transforms).</p>
     &quot;gap_pct&quot;: 31.1,
     &quot;warming_impact&quot;: &quot;≈ 0.3°C additional warming from contraction loss&quot;,
     &quot;distribution_of_gap&quot;: {
-      &quot;N1&quot;: -0.815,
-      &quot;N2&quot;: -0.542,
-      &quot;N3&quot;: -0.012,
-      &quot;N4&quot;: -0.131,
-      &quot;N5&quot;: -0.764
+      &quot;N1&quot;: -1.522,
+      &quot;N2&quot;: -0.337,
+      &quot;N3&quot;: 0.000,
+      &quot;N4&quot;: -0.012,
+      &quot;N5&quot;: -0.393
     },
     &quot;structural_bias&quot;: &quot;Gap concentrates on high-capacity nations — political power inversely correlated with compliance&quot;
   },
@@ -2376,8 +2420,9 @@ invariance-preserving transforms).</p>
 benchmark; use NDC contraction loss as the measure of political
 shortfall.</strong></p>
 <h3 id="reference-implementation-4">Reference implementation: </h3>
-<p>erisml.examples.appendix_d_cs5_climate (run_case_study_5()). Verifies
-Shapley values, fair allocation, NDC comparison, contraction loss, gap
+<p>erisml.examples.appendix_d_cs5_climate (run_case_study_5()). Computes
+the Shapley values of the game above by exact enumeration and verifies
+them, fair allocation, NDC comparison, contraction loss, gap
 distribution, three metric analyses, and Bond Index — all against book
 reference values.</p>
 <h2 id="d.6-summary">D.6 Summary</h2>
@@ -2537,10 +2582,10 @@ as a bias detector and the constraint set as structural prohibition — a
 case where invariance testing serves both ethical and legal compliance
 purposes.</li>
 <li><strong>Case Study 5 (Climate)</strong> demonstrates the collective
-agency tensor and Shapley fair allocation — a case where emergent
-collective obligation exceeds the sum of individual duties, and
-contraction loss has measurable physical consequences (0.3°C additional
-warming).</li>
+agency tensor and Shapley fair allocation — a case where relational
+structure redistributes collective obligation in ways no individual duty
+assigns (η = 0.07), and contraction loss has measurable physical
+consequences (0.3°C additional warming).</li>
 </ul>
 <p>Reference implementation. All five case studies are implemented as
 executable Python in the erisml package (pip install erisml). The shared
@@ -2572,7 +2617,7 @@ to say.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

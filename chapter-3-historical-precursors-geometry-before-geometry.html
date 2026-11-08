@@ -504,14 +504,16 @@ transitions between them are all-or-nothing.</p>
 <p>In geometric terms, the Hohfeldian positions define the vertices of a
 discrete symmetry structure. The correlative and opposition relations
 generate a group of transformations on these vertices — and that group
-turns out to be <span class="math inline">D_{4}</span>, the dihedral
-group of order 8, which is also the symmetry group of the square.</p>
-<p>This identification is not metaphorical. The eight Hohfeldian
-positions map onto the eight elements of <span
-class="math inline">D_{4}</span> (four rotations, four reflections), and
-the correlative and opposition operations correspond to specific group
-elements. The transitions between positions — obligation flipping to
-liberty, claim dissolving to no-claim — are group actions.</p>
+is V₄, the Klein four-group: two commuting involutions, each its own
+inverse.</p>
+<p>This identification is not metaphorical. The two operations,
+correlative exchange and jural negation, act on the four positions so
+that any position reaches any other by exactly one operation
+(Proposition 8.3, machine-checked in Lean). The transitions between
+positions — obligation flipping to liberty, claim dissolving to no-claim
+— are group actions. Earlier editions identified the group as the
+dihedral group D₄ of order eight. That needs a quarter-turn cycling the
+four positions, and no such operation has been found (§8.4).</p>
 <p>The significance for geometric ethics is twofold:</p>
 <ol type="1">
 <li><p><strong>Discrete symmetry in moral space.</strong> The Hohfeldian
@@ -638,8 +640,7 @@ theory</td>
 <tr>
 <td>Hohfeld</td>
 <td>Jural relations are discrete</td>
-<td>Positions as <span class="math inline">D_{4}</span> group elements;
-transitions as group actions</td>
+<td>Positions acted on by V₄; transitions as group actions</td>
 </tr>
 <tr>
 <td>Moral uncertainty</td>
@@ -760,7 +761,7 @@ geometry.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

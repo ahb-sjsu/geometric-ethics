@@ -248,35 +248,37 @@ the ethical analogue of <span class="math inline">F_{\mu\nu}</span>:
 they are the gauge-invariant quantities that survive the freedom to
 re-describe.</p>
 <p>Identification of the Gauge Group</p>
-<p>[Theorem (conditional on axioms A1–A5); see Axiomatic Derivation
-below.] The abstract gauge group 𝒢 of admissible re-descriptions can be
-given a concrete identification. Analysis of the Hohfeldian state space
-(Chapter 8, §8.4) and experimental testing of state transitions reveal
-that the gauge group of the moral manifold is:</p>
-<p>𝒢_ethics = D₄ × U(1)ᴴ</p>
-<p>where D₄ = ⟨r, s | r⁴ = s² = e, srs = r⁻¹⟩ is the dihedral group of
-order 8 acting on the Hohfeldian square {O, C, L, N}, and U(1)ᴴ is the
+<p>[Modeling choice; the discrete factor is proved.] The abstract gauge
+group 𝒢 of admissible re-descriptions can be given a concrete
+identification. Analysis of the Hohfeldian state space (Chapter 8, §8.4)
+proves its discrete factor; the full group is posited as:</p>
+<p>𝒢_ethics = V₄ × U(1)ᴴ</p>
+<p>where V₄ = ⟨s, n | s² = n² = e, sn = ns⟩ is the Klein four-group
+acting on the Hohfeldian square {O, C, L, N}, and U(1)ᴴ is the
 continuous abelian group tracking harm/benefit magnitude. The two
-generators of D₄ have distinct characters (see §8.4):</p>
+generators of V₄ have distinct characters (see §8.4):</p>
 <p><strong>Reflection s:</strong> O ↔︎ C, L ↔︎ N (correlative exchange /
 perspective shift). Non-gated, immediate, and free—no semantic trigger
 required. This explains the 100% correlative symmetry rate (§17.3).</p>
-<p><strong>Rotation r:</strong> O → C → N → L → O (Hohfeldian state
-transitions via semantic gates). Discrete and gated—requires specific
-linguistic triggers (“You promised,” “Only if convenient”). This
-explains why state transitions are probabilistic and trigger-dependent
-(§8.4).</p>
-<p>The non-abelian property sr ≠ rs is the mathematical source of path
-dependence in moral reasoning (§10.5): the order in which moral
-considerations are applied can change the outcome, but only when the
-considerations cross Hohfeldian bond-type boundaries.</p>
+<p><strong>Jural flip n:</strong> O ↔︎ L, C ↔︎ N (Hohfeldian state
+transitions via semantic gates). Discrete and gated: it requires
+specific linguistic triggers (“You promised,” “Only if convenient”).
+This explains why state transitions are probabilistic and
+trigger-dependent (§8.4).</p>
+<p>Because s and n commute, the order in which a perspective shift and a
+negation are applied cannot change the outcome. v1.24 named the
+non-abelian property sr ≠ rs of D₄ as the mathematical source of path
+dependence in moral reasoning (§10.5). With D₄ withdrawn, that path
+dependence is attributed to curvature of the continuous connection
+(Chapter 10).</p>
 <h3 id="axiomatic-derivation-of-the-gauge-group">Axiomatic Derivation of
 the Gauge Group</h3>
-<p>The identification of D₄ × U(1)_H as the gauge group can be derived
-from five axioms grounded in Hohfeldian jurisprudence, conservation
-principles, and the empirical CHSH data. The derivation proceeds in
-three steps: discrete component, continuous component, and direct
-product.</p>
+<p>v1.24 derived D₄ × U(1)_H from five axioms, A1–A5 below. The
+derivation is withdrawn in v1.25. Its Axiom A3, the cyclic ordering of
+the four positions, is the quarter-turn, which is neither a demonstrated
+normative operation nor found in data (§8.4). Without A3, A1 and A2 give
+V₄. The axioms are kept below with A3 marked withdrawn, and the result
+for V₄ is a posit, not a uniqueness theorem.</p>
 <p><strong>Axiom A1 (Four positions). [Definition / Modeling
 choice.]</strong> The Hohfeldian state space H has exactly four
 elements: H = {O, C, L, N} (obligation, claim, liberty, no-right).</p>
@@ -284,12 +286,15 @@ elements: H = {O, C, L, N} (obligation, claim, liberty, no-right).</p>
 Modeling choice.]</strong> H admits two involutions: s_c: O ↔︎ C, L ↔︎ N
 (correlative exchange) and s_j: O ↔︎ L, C ↔︎ N (jural opposition). Both
 satisfy s_c² = s_j² = e.</p>
-<p><strong>Axiom A3 (Cyclic ordering from normative logic). [Definition
-/ Modeling choice.]</strong> The four positions admit a cyclic ordering
-O → C → N → L → O defined by the alternating composition of correlative
-and negation operations: O →(corr.) C →(neg.) N →(corr.) L →(neg.) O.
-This axiom is the key structural input: it encodes the fact that the
-correlative-of-the-negation cycles through all four positions.</p>
+<p><strong>Axiom A3 (Cyclic ordering from normative logic). [Withdrawn
+in v1.25.]</strong> The four positions admit a cyclic ordering O → C → N
+→ L → O defined by the alternating composition of correlative and
+negation operations: O →(corr.) C →(neg.) N →(corr.) L →(neg.) O. This
+axiom was the key structural input. It reads a walk as an operation:
+alternating s and n does visit all four positions, but each step is s or
+n, and the walk closes after four steps because (sn)² = e. No single
+operation cycles the positions, and none has been found in data
+(§8.4).</p>
 <p><strong>Axiom A4 (One continuous conserved quantity). [Definition /
 Modeling choice.]</strong> There exists exactly one independent
 continuous conserved quantity — harm magnitude — associated with the
@@ -300,23 +305,18 @@ symmetry operations (Hohfeldian transitions) and the continuous symmetry
 operation (harm magnitude) commute: applying a Hohfeldian transformation
 and then scaling harm gives the same result as scaling harm and then
 applying the Hohfeldian transformation.</p>
-<p><strong>Theorem 12.2 (The Discrete Symmetry Component is D₄).
-[Theorem (conditional on axioms A1–A3)]</strong> <em>The symmetry group
-of the Hohfeldian state space (H, adjacency) with the cyclic ordering of
-Axiom A3 is isomorphic to the dihedral group D₄ of order 8.</em></p>
-<p><em><strong>Proof</strong>.</em> From A3, define the 4-cycle r = (O C
-N L). From A2, we have the reflection s_c = (O C)(L N). Verify the
-presentation relations: (1) r⁴ = (O C N L)⁴ = e (four applications of
-the cycle return to start). (2) s_c² = (O C)(L N)(O C)(L N) = e (each
-transposition is its own inverse). (3) s_c ∘ r ∘ s_c = s_c(O C N L)s_c =
-(C O L N) = (O C N L)⁻¹ = r⁻¹, confirming s r s = r⁻¹. These are
-precisely the presentation relations of D₄ = ⟨r, s | r⁴ = s² = e, s r s
-= r⁻¹⟩. The jural involution s_j = (O L)(C N) = s_c ∘ r², so s_j is
-already in ⟨r, s_c⟩ and does not generate additional structure. The
-group has exactly |D₄| = 8 elements: {e, r, r², r³, s_c, s_c r, s_c r²,
-s_c r³}. Critical note: without A3, only s_c and s_j are available,
-generating V₄ ≅ ℤ₂ × ℤ₂ (order 4). The cyclic ordering is what promotes
-V₄ to D₄. □</p>
+<p><strong>Theorem 12.2 (The Discrete Symmetry Component is
+V₄).</strong> [Proved, from A1–A2.] The group generated by the
+correlative and jural involutions of A2, acting on the Hohfeldian state
+space H of A1, is isomorphic to the Klein four-group V₄ ≅ ℤ₂ × ℤ₂ of
+order 4.</p>
+<p><strong>Proof.</strong> From A2, s_c = (O C)(L N) and s_j = (O L)(C
+N). Both square to e, and s_c s_j = s_j s_c = (O N)(C L). So ⟨s_c, s_j⟩
+= {e, s_c, s_j, s_c s_j}, which is abelian of order 4 with every
+non-identity element of order 2: this is V₄. Machine-checked in Lean 4 +
+Mathlib (formal/lean; erisml-lib formal/HohfeldV4.lean). v1.24 added the
+4-cycle r = (O C N L) of Axiom A3, which promotes V₄ to D₄; with A3
+withdrawn, V₄ is the discrete component. □</p>
 <p><strong>Proposition 12.1 (The Continuous Symmetry Component is U(1)).
 [Theorem (conditional on axiom A4)]</strong> <em>Given exactly one
 independent continuous conserved quantity (Axiom A4), the continuous
@@ -330,29 +330,24 @@ and U(1) ≅ S¹. Physical realizability requires bounded representations
 The non-compact group ℝ has only unbounded faithful representations, so
 it is excluded. U(1) is the unique compact connected 1-dimensional Lie
 group. □</p>
-<p><strong>Theorem 12.3 (Gauge Group Uniqueness). [Theorem (conditional
-on axioms A1–A5)]</strong> <em>Under axioms A1–A5, the gauge group of
-the moral manifold is G_ethics = D₄ × U(1)_H, and this is the unique
-gauge group consistent with axioms A1–A5.</em></p>
-<p><em><strong>Proof</strong>.</em> By Theorem 12.2, the discrete
-component is D₄. By Proposition 12.1, the continuous component is
-U(1)_H. Axiom A5 states these commute, so the combined group is a direct
-product. The intersection D₄ ∩ U(1)_H = {e} (discrete meets continuous
-only at identity). Therefore G_ethics = D₄ × U(1)_H, and this
-decomposition is unique given A1–A5. □</p>
-<p>Uniqueness argument. The cyclic ordering of Axiom A3 endows the
-Hohfeldian state space H with the structure of the cycle graph C₄. The
-automorphism group Aut(C₄) has exactly 8 elements (4 rotations and 4
-reflections), and is isomorphic to D₄ (see, e.g., Godsil and Royle,
-Algebraic Graph Theory, Theorem 1.5.1). Since the group generated by r
-and s has order 8 = |Aut(C₄)|, it must be the full automorphism group —
-no additional symmetries of H exist beyond those generated by Axioms
-A1–A3. For the direct product claim: D₄ is a finite (hence discrete)
-group and U(1) is connected. The only element common to a discrete group
-and a connected group is the identity: D₄ ∩ U(1)_H = {e}. Since both D₄
-and U(1)_H are normal in G_ethics (by Axiom A5, they commute), the
-internal direct product theorem gives G_ethics = D₄ × U(1)_H uniquely.
-□</p>
+<p><strong>Posit 12.3 (Gauge Group).</strong> [Modeling choice.] The
+gauge group of the moral manifold is taken to be G_ethics = V₄ × U(1)_H:
+the proved discrete factor V₄ (Theorem 12.2) and the continuous harm
+factor U(1)_H (Proposition 12.1), which commute by Axiom A5. V₄ is
+finite and U(1)_H is connected, so V₄ ∩ U(1)_H = {e} and the product is
+direct.</p>
+<p><strong>Withdrawn.</strong> v1.24 stated this, with D₄, as Theorem
+12.3 (Gauge Group Uniqueness): the unique gauge group consistent with
+A1–A5. With A3 withdrawn there is no uniqueness claim. No result in this
+book excludes further discrete symmetries (ledger GE-THM-12-2 and
+GE-THM-12-3, withdrawn).</p>
+<p><strong>Why the uniqueness argument fails.</strong> v1.24 argued that
+A3 makes H the cycle graph C₄, whose automorphism group Aut(C₄) ≅ D₄ has
+order 8 (Lemma A.2, which is true), so no further symmetries exist. The
+argument assumes the cycle, and the cycle is A3. Without it, H carries
+only the two involutions, and the group they generate is V₄. The
+direct-product step (a finite group meets a connected group only at the
+identity) stands.</p>
 <p><strong>Corollary 12.1 (Exclusion of Non-Abelian Continuous
 Components). [Theorem (conditional) / Empirical result]</strong> <em>The
 CHSH Bell test results (N = 9,600 across 18 configurations; all |S| ≤ 2)
@@ -368,18 +363,18 @@ constitute a proof that no non-abelian continuous component exists —
 SU(2) can produce |S| ≤ 2 for non-maximally-entangled or separable
 states. The result excludes the specific prediction of maximal-violation
 behavior under SU(2), not SU(2) itself. The data are consistent with the
-abelian model D₄ × U(1)_H and inconsistent with models that predict |S|
+abelian model V₄ × U(1)_H and inconsistent with models that predict |S|
 &gt; 2 at the tested configurations. A stronger exclusion would require
 testing across a larger space of measurement settings and establishing
 that no SU(2) representation produces the observed correlation
 structure. □</p>
-<p>Epistemic upgrade. With this derivation, the gauge group
-identification is upgraded from [Definition / Modeling choice] to
-[Theorem (conditional on axioms A1–A5)]. The axioms themselves remain
-modeling choices grounded in Hohfeldian jurisprudence (A1–A3),
-conservation principles (A4), and commutativity of independent
-symmetries (A5). The derivation shows that given these axioms, D₄ ×
-U(1)_H is not a choice but a consequence.</p>
+<p><strong>Epistemic status.</strong> v1.24 upgraded the gauge group
+identification from [Definition / Modeling choice] to [Theorem
+(conditional on axioms A1–A5)]. v1.25 reverses that upgrade. V₄ is
+proved from A1–A2. The full group V₄ × U(1)_H is a [Modeling choice],
+resting on A4 and A5, which remain modeling choices grounded in
+conservation principles and the commutativity of independent
+symmetries.</p>
 <p>What BIP Guarantees and What It Does Not</p>
 <p>BIP compliance prevents lying-by-redescription: it ensures that
 euphemism, framing, and perspective shift cannot change a moral verdict.
@@ -390,41 +385,33 @@ moral disagreement, select the correct metric, or choose between
 competing contractions. The framework is pluralist by design (Chapters
 15–15): BIP ensures honest description; governance determines
 evaluation.</p>
-<h3 id="pre-flight-checklist-gauge-group-d₄-u1_h">Pre-flight Checklist:
-Gauge Group (D₄ × U(1)_H)</h3>
-<p>Conditional on five axioms. Verify:</p>
+<h3 id="pre-flight-checklist-gauge-group-v₄-u1_h-posited">Pre-flight
+Checklist: Gauge Group (V₄ × U(1)_H, posited)</h3>
+<p>Conditional on four axioms (A3 is withdrawn). Verify:</p>
 <p><strong>A1: Four positions.</strong> Domain uses {O, C, L, N}. Richer
 taxonomy changes discrete component.</p>
 <p><strong>A2: Two involutions.</strong> Correlative (O↔︎C, L↔︎N) and
 jural (O↔︎L, C↔︎N) hold.</p>
-<p><strong>A3: Cyclic ordering.</strong> O→C→N→L→O from Hohfeldian
-logic.</p>
+<p><strong>A3: withdrawn in v1.25 (no quarter-turn; §8.4).</strong></p>
 <p><strong>A4: One conserved quantity.</strong> Exactly one (harm
 magnitude). Multiple → beyond U(1).</p>
 <p><strong>A5: Commutativity.</strong> Discrete and continuous commute.
 CHSH (N=9,600; |S|≤2) supports this.</p>
 <p><strong>Empirical.</strong> New domains: verify Bell-type |S|≤2.
 Violation → non-abelian component.</p>
-<p>Computational verification (February 2026). The DEME V3 reference
-implementation includes a complete D₄ gauge structure demonstration
-(hohfeld_d4_demo.py) that computationally verifies the group
-identification derived above. The demo exercises: (i) the correlative
-symmetry s (perspective swap O ↔︎ C, L ↔︎ N) and negation symmetry r²
-(logical opposites O ↔︎ L, C ↔︎ N) as concrete functions on
-HohfeldianState enumerations; (ii) the non-abelian structure rs ≠ sr by
-explicit computation of d4_multiply(r, s) vs. d4_multiply(s, r) and
-demonstration that the results differ when applied to each Hohfeldian
-state; (iii) the Wilson observable (path holonomy) verifying the group
-relation srs = r⁻¹ by showing that the paths [s, r, s] and [r³] produce
-identical final states from any starting position; and (iv) the Klein
-four subgroup V₄ = {e, r², s, sr²} as the abelian core, confirming that
-operations within V₄ commute while operations involving quarter-turn
-elements (r, r³, sr, sr³) do not. The Bond Index computation measures
-deviation from correlative symmetry: a bond index of 0.0 indicates
-perfect gauge invariance, while positive values quantify the anomaly
-magnitude. The bond_invariance_demo.py exercises the full BIP testing
-methodology with transformation suites, JSON audit artifacts, and
-pass/fail verdicts for bond-preserving vs. bond-changing transforms.</p>
+<p><strong>Computational verification.</strong> The reference
+implementation (erisml-lib, the erisml.ethics.hohfeld module, V₄ since
+October 2026; demonstration hohfeld_v4_demo.py) implements the
+correlative s and the jural flip n as functions on Hohfeldian states,
+checks that they commute and generate four elements, and computes the
+Wilson observable (path holonomy) of a sequence of operations. The Bond
+Index measures deviation from correlative symmetry: 0.0 indicates
+perfect gauge invariance, and positive values quantify the anomaly.
+bond_invariance_demo.py exercises the full BIP testing methodology with
+transformation suites, JSON audit artifacts, and pass/fail verdicts for
+bond-preserving and bond-changing transforms. The v1.24 demonstration,
+hohfeld_d4_demo.py, which computed rs ≠ sr for the quarter-turn r, has
+been removed.</p>
 <p>A striking empirical consequence follows from this gauge structure.
 Because the moral evaluation is invariant under the re-description gauge
 group, and because the Hohfeldian modalities close under a discrete
@@ -613,14 +600,14 @@ path.</em></p>
 to an infinitesimal re-scaling of harm magnitude along a specific moral
 dimension — the continuous deformations generated by U(1)ₕ. (The
 discrete re-descriptions — relabeling agents, translating languages,
-permuting perspectives — are handled by D₄ invariance, which produces
+permuting perspectives — are handled by V₄ invariance, which produces
 selection rules rather than Noether charges; see the next subsection.)
 The conservation law states that the corresponding component of harm is
 invariant under these continuous re-descriptions.</p>
 <h3 id="continuous-vs.-discrete-symmetry">Continuous vs. Discrete
 Symmetry</h3>
-<p><strong>[Modeling choice.]</strong> The gauge group G_ethics = D₄ ×
-U(1)_H (§12.3) has both continuous and discrete factors, and they
+<p><strong>[Modeling choice.]</strong> The posited gauge group G_ethics
+= V₄ × U(1)_H (§12.3) has both continuous and discrete factors, and they
 contribute different kinds of invariants. This distinction matters
 because Noether’s theorem, strictly speaking, applies to continuous
 symmetries.</p>
@@ -631,19 +618,20 @@ Definition 12.2 applies directly: the Noether charge H_a is conserved
 along extremal paths, yielding the harm-accounting invariance law. This
 is the factor responsible for the quantitative claim that “the amount of
 harm is invariant under re-description.”</p>
-<p>| The D₄ Gauge Group Acting on the Hohfeldian Square The D₄ gauge
-group acting on the Hohfeldian square {O, C, L, N}. Rotation r: O → C →
-N → L → O (state transitions via semantic gates). Reflection s: O ↔︎ C, L
-↔︎ N (correlative exchange). The non-abelian property sr ≠ rs captures
-the order-dependence of moral considerations.</p>
-<p>The D₄ symmetry guarantees that the bond-type classification is
-stable under perspective shift (s: O ↔︎ C, L ↔︎ N) and state rotation (r:
-O → C → N → L)—but this stability takes the form of discrete invariants
+<p>| The V₄ Symmetry of the Hohfeldian Square The two demonstrated
+operations acting on the Hohfeldian square {O, C, L, N}: the correlative
+s (O ↔︎ C, L ↔︎ N, a change of perspective) and the jural flip n (O ↔︎ L, C
+↔︎ N, a gated change of state). They commute, so the order of a
+perspective shift and a negation cannot change the result; the
+quarter-turn of earlier editions is not in the group.</p>
+<p>The V₄ symmetry guarantees that the bond-type classification is
+stable under perspective shift (s: O ↔︎ C, L ↔︎ N) and jural negation (n:
+O ↔︎ L, C ↔︎ N)—but this stability takes the form of discrete invariants
 (which stratum, which bond type) rather than a continuously conserved
 charge. The empirical signature is the 100% correlative symmetry rate
 (§17.3) and the selective path dependence at cross-type boundaries
 (§10.5).</p>
-<p>In summary: U(1)_H gives conservation laws (Noether); D₄ gives
+<p>In summary: U(1)_H gives conservation laws (Noether); V₄ gives
 classification invariants (selection rules). Both are consequences of
 BIP gauge invariance, but they operate at different mathematical levels.
 The technical appendix to this chapter provides the formal details.</p>
@@ -1033,7 +1021,9 @@ satisfying:</em></p>
 <p><span class="math display">\nabla_{\mu}\xi_{\nu} +
 \nabla_{\nu}\xi_{\mu} = 0\quad\quad\text{(Killing’s
 equation)}</span></p>
-<p><em>Then the quantity</em> <span class="math inline">\mathcal{H
+<p><em>If, in addition, the potential V is invariant under the flow of ξ
+(ξ(V) = 0, i.e. ξᵛ∂ᵥV = 0, the condition used in the proof; corrected in
+v1.25), then the quantity</em> <span class="math inline">\mathcal{H
 =}g_{\mu\nu}{\dot{\gamma}}^{\mu}\xi^{\nu}</span> <em>is conserved along
 geodesics:</em> <span class="math inline">d\mathcal{H/}dt =
 0</span><em>.</em></p>
@@ -1073,36 +1063,24 @@ metric varies with context), so the actual number of Killing vectors is
 smaller. The BIP identifies a subgroup of the isometry group; the number
 of independent conservation laws is at least the dimension of this
 subgroup.</em></p>
-<p><strong>Proposition A.2 (Discrete Conservation from</strong> <span
-class="math inline">D_{4}</span> <strong>Symmetry).</strong>
-<em>The</em> <span class="math inline">D_{4}</span> <em>symmetry of
-Hohfeldian transitions (Chapter 8, §8.4) generates discrete conservation
-laws: the total Hohfeldian “charge” (number of obligations minus number
-of liberties, weighted by correlative partners) is conserved under</em>
-<span class="math inline">D_{4}</span> <em>transformations.</em></p>
-<p><em>Proof. The D₄ group has five conjugacy classes {e}, {r²}, {r,
-r³}, {s_c, s_c r²}, {s_c r, s_c r³} and five irreducible
-representations: the trivial χ₁, three sign representations χ₂, χ₃, χ₄,
-and the standard 2-dimensional χ₅. The space V = span{|O⟩, |C⟩, |N⟩,
-|L⟩} carries the natural 4-dimensional representation. By the character
-orthogonality relations, V ≅ χ₁ ⊕ χ₂ ⊕ χ₅. The projection onto χ₁ (the
-trivial representation) is the D₄-invariant subspace, spanned by |O⟩ +
-|C⟩ + |N⟩ + |L⟩. The Hohfeldian charge Q = n_O − n_L + n_C − n_N
-transforms under χ₂: r(Q) = −Q and s_c(Q) = Q, so Q² is D₄-invariant.
-For any D₄-invariant density matrix ρ: Tr(σ · ρ) = Tr(ρ) for all σ ∈ D₄,
-by the invariance of the trace under conjugation. Hence the total
-Hohfeldian charge (the trace over the χ₁ sector) is conserved under all
-D₄ transformations. □</em><span
-class="math inline">D_{4}D_{4}▫</span></p>
-<p>Clarification (February 2026). The Hohfeldian charge Q = n_O − n_L +
-n_C − n_N transforms under the χ₂ representation of D₄: the four-fold
-rotation r sends Q → −Q, so Q itself is not D₄-invariant. The
-D₄-invariant quantities are: (a) the total count n_O + n_C + n_N + n_L
-(the χ₁ projection), which is preserved under all eight group elements;
-and (b) |Q|², which is invariant because r(Q) = −Q implies r(Q²) = Q².
-The original statement should be read as asserting the invariance of the
-χ₁ sector (total count) and the χ₂ transformation law for Q, not the
-invariance of Q itself.</p>
+<p><strong>Proposition A.2 (Discrete Invariants from V₄
+Symmetry).</strong> [Restated for V₄ in v1.25.] Under the V₄ action on
+Hohfeldian positions (Chapter 8, §8.4), the total count N = n_O + n_C +
+n_N + n_L is invariant, and the Hohfeldian charge Q = n_O − n_L + n_C −
+n_N transforms by a sign character: s(Q) = Q and n(Q) = −Q. Hence Q² is
+invariant.</p>
+<p><strong>Proof.</strong> V₄ is abelian, so its four irreducible
+representations are one-dimensional characters. The action on V =
+span{|O⟩, |C⟩, |N⟩, |L⟩} is regular, so V contains each character
+exactly once; the trivial one is spanned by |O⟩ + |C⟩ + |N⟩ + |L⟩, which
+gives N. Directly: s exchanges n_O ↔︎ n_C and n_L ↔︎ n_N, so Q = (n_O +
+n_C) − (n_L + n_N) is unchanged; n exchanges n_O ↔︎ n_L and n_C ↔︎ n_N, so
+Q → −Q. Q therefore spans the character that is trivial on s and −1 on
+n, and Q² is invariant. □</p>
+<p><strong>Note.</strong> v1.24 stated this for D₄, with the
+quarter-turn r sending Q → −Q, and a February 2026 clarification
+corrected the claim that Q itself is conserved. Under V₄ the jural flip
+n plays that role; the invariant content, N and Q², is unchanged.</p>
 <p>Lemma A.2 (Automorphism Group of C₄). The automorphism group of the
 cycle graph C₄ is isomorphic to D₄.</p>
 <p>Proof. The cycle graph C₄ has vertex set {0, 1, 2, 3} and edge set
@@ -1129,11 +1107,12 @@ independent conserved quantity), connected (continuous deformations of
 harm magnitude form a continuous family), and compact (harm magnitude is
 bounded in any finite moral situation, so the group’s parameter space is
 bounded). By Lemma A.3, this group is U(1)_H. Combined with Theorem
-12.2, this completes the formal derivation of Theorem 12.3: G_ethics =
-D₄ × U(1)_H. The derivation rests on Lemma A.2 (Aut(C₄) ≅ D₄ for the
-discrete component), Lemma A.3 (compact connected 1-D Lie group ≅ U(1)
-for the continuous component), and Axiom A5 (commutativity ⇒ direct
-product).</p>
+12.2, this gives the two factors of the posited G_ethics = V₄ × U(1)_H
+(§12.3). Lemma A.2 (Aut(C₄) ≅ D₄) remains true but no longer enters: it
+applied only under the withdrawn Axiom A3. The posit rests on Theorem
+12.2 (V₄ for the discrete component), Lemma A.3 (compact connected 1-D
+Lie group ≅ U(1) for the continuous component), and Axiom A5
+(commutativity ⇒ direct product).</p>
 <p>❖</p>
 <p><em>Symmetry implies conservation. This is Noether’s insight, and it
 applies to ethics as surely as to physics.</em></p>
@@ -1159,7 +1138,7 @@ consequence of symmetry — in any domain where symmetry exists.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

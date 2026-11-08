@@ -1,0 +1,31 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-PROP-A-2-V4",
+ "statement": "Discrete Invariants from V4: under the V4 action the total count N = n_O + n_C + n_N + n_L is invariant, and the charge Q = n_O - n_L + n_C - n_N satisfies s(Q) = Q, n(Q) = -Q, so Q^2 is invariant.",
+ "class": "proved",
+ "scope": "Geometric Ethics v1.25, chapter 12 technical appendix (Proposition A.2)",
+ "retrospective": false,
+ "evidence": [
+  {
+   "source": "geometric-ethics formal/lean (Lean 4.32.2 + Mathlib 905b958), RESULTS-2026-11-08.txt",
+   "kind": "theorem",
+   "mathematical_status": "machine-checked in Lean 4 + Mathlib; 0 sorry; standard axioms only",
+   "author_status": "Restated"
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": [
+   "GE-PROP-A-2",
+   "GE-PROP-8-3-V4"
+  ]
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: restates GE-PROP-A-2 for V4. Lean: total_invariant, charge_s_n, charge_sq_V4_invariant."
+  }
+ ]
+}

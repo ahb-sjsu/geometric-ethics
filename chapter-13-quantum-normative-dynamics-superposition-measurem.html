@@ -237,13 +237,13 @@ e^{i\theta}\sqrt{1 - p}\,|b\rangle</span>, with density matrix:</p>
 <p><span class="math display">\rho_{\text{sup}} =
 |\psi\rangle\langle\psi| = p\,|a\rangle\langle a| + (1 -
 p)\,|b\rangle\langle b| + \sqrt{p(1 - p)}\left(
-e^{i\theta}\,|a\rangle\langle b| + e^{- i\theta}\,|b\rangle\langle a|
+e^{i\theta}\,|b\rangle\langle a| + e^{- i\theta}\,|a\rangle\langle b|
 \right)</span></p>
 <p>The <em>difference</em> between the two density matrices is the
 <strong>coherence term</strong>:</p>
 <p><span class="math display">\rho_{\text{sup}} - \rho_{\text{mix}} =
-\sqrt{p(1 - p)}\left( e^{i\theta}\,|a\rangle\langle b| + e^{-
-i\theta}\,|b\rangle\langle a| \right)</span></p>
+\sqrt{p(1 - p)}\left( e^{i\theta}\,|b\rangle\langle a| + e^{-
+i\theta}\,|a\rangle\langle b| \right)</span></p>
 <p>This off-diagonal term is precisely what enables interference. If it
 is zero (no coherence), the quantum state behaves classically. If it is
 nonzero, the two framings interact — reinforcing or canceling each other
@@ -384,10 +384,11 @@ anti-Hermitian for self-adjoint operators). Hence |⟨ΔÂ ΔB̂⟩|² ≥
 <span class="math inline">\widehat{S}</span> and the obligation operator
 <span class="math inline">{\widehat{O}}^{\mu}</span> do not commute —
 which they will not in general, because the satisfaction function <span
-class="math inline">S = I_{\mu}O^{\mu}</span> depends nonlinearly on the
-obligation — then <em>fixing the obligation precisely (determining
-exactly what is owed) introduces uncertainty in the satisfaction (how
-well the obligation serves the interests)</em>.</p>
+class="math inline">S = I_{\mu}O^{\mu}</span>, though linear in the
+obligation, involves the interest operator, which need not commute with
+the obligation operator — then <em>fixing the obligation precisely
+(determining exactly what is owed) introduces uncertainty in the
+satisfaction (how well the obligation serves the interests)</em>.</p>
 <p>This is a structural result, not a psychological observation. It
 states that the moral manifold has pairs of quantities that <em>cannot
 be simultaneously definite</em>, regardless of how carefully we
@@ -442,13 +443,16 @@ framings encodes the <em>alignment</em> between them — not their
 agreement (which is captured by the overlap <span
 class="math inline">\langle a|b\rangle</span>), but their
 <em>constructive or destructive relationship</em> at each point.</p>
-<p>When <span class="math inline">\theta = 0</span>, the framings are
-aligned: they reinforce everywhere, and the superposition acts like an
-enhanced version of either framing alone. When <span
-class="math inline">\theta = \pi</span>, the framings are anti-aligned:
-they cancel everywhere, and the superposition suppresses both framings
-simultaneously. For intermediate values, the interference pattern is
-complex — some verdicts are enhanced, others suppressed.</p>
+<p>When <span class="math inline">\theta = 0</span>, the interference at
+each verdict x is set by the overlap product ⟨x|a⟩*⟨x|b⟩ alone: the
+framings reinforce where their amplitudes agree in sign and cancel where
+they disagree. When <span class="math inline">\theta = \pi</span>, every
+sign is reversed: the verdicts enhanced at θ = 0 are suppressed, and
+vice versa; intermediate values shift the pattern continuously between
+the two. No phase makes the framings reinforce (or cancel) everywhere:
+summed over all verdicts, the interference is Σₓ I(x) = 2 Re(eⁱᶿ⟨a|b⟩),
+which is zero for orthogonal framings, so enhancement at some verdicts
+is paid for by suppression at others.</p>
 <p><strong>Moral content.</strong> Two framings of a case may
 <em>individually</em> point toward the same verdict (both give high
 amplitude to <span class="math inline">|x\rangle</span>), yet <em>in
@@ -496,14 +500,15 @@ findings in cognitive psychology, collected under the label <em>quantum
 cognition</em> (Busemeyer and Bruza, 2012). The application to
 specifically moral reasoning is an empirical program outlined in Chapter
 16.</p>
-<p><strong>Empirical confirmation (February 2026). Two independent
-experiments now confirm prediction 2 (order effects) in moral
-evaluation. A commutator matrix experiment (N=16,798 responses, 8 moral
-axes × 6 scenarios) found significant non-commutativity in 10+ framework
-pairs, with effect sizes of 15–29 percentage points (e.g., [Fairness,
-Harm] = −28.5 pp, t=9.6). An AITA ordering experiment (N=150 posts)
-found a 29.3% order-effect rate (z=13.67, p&lt;10⁻²²), with contested
-cases (NAH/ESH) showing 2.07× higher susceptibility than clear
+<p><strong>Empirical observation (February 2026). Two experiments on one
+language model (Claude Sonnet 4) found order effects, prediction 2, in
+its moral evaluations. No human test has yet been run (§17.10). A
+commutator matrix experiment (N=16,798 responses, 8 moral axes × 6
+scenarios) found significant non-commutativity in 10+ framework pairs,
+with effect sizes of 15–29 percentage points (e.g., [Fairness, Harm] =
+−28.5 pp, t=9.6). An AITA ordering experiment (N=150 posts) found a
+29.3% order-effect rate (z=13.67, p&lt;10⁻²²), with contested cases
+(NAH/ESH) showing 2.07× higher susceptibility than clear
 cases.</strong><span class="math inline">6.3\sigma p &lt; 10^{-
 21}{\widehat{\Pi}}_{a}{\widehat{\Pi}}_{b} \neq
 {\widehat{\Pi}}_{b}{\widehat{\Pi}}_{a}</span></p>
@@ -896,18 +901,18 @@ language-specific variation (Japanese: S=−1.91; Arabic: S=0.14) but none
 violated |S| ≤ 2. The Hardy non-locality test met 3 of 4 conditions but
 not the fourth. No-signaling conditions were satisfied in all scenarios
 (p &gt; 0.05).</p>
-<p><strong>Interpretation.</strong> The non-abelian structure identified
-in the Hohfeldian state space (§8.4; see §12.3 for the revised gauge
-group) is classical D₄, not quantum SU(2). The original gauge group
-proposal (SU(2)ᵢ × U(1)ᴴ) predicted quantum contextuality with |S| up to
-2√2 ≈ 2.83 for appropriate moral states. The data are consistent with
-classical correlations only.</p>
+<p><strong>Interpretation.</strong> The Hohfeldian state space carries
+the classical, abelian group V₄ (§8.4; see §12.3 for the revised gauge
+group), not quantum SU(2). The original gauge group proposal (SU(2)ᵢ ×
+U(1)ᴴ) predicted quantum contextuality with |S| up to 2√2 ≈ 2.83 for
+appropriate moral states. The data are consistent with classical
+correlations only.</p>
 <p>This does not invalidate the quantum formalism developed in this
 chapter. The mathematical structure of superposition, interference, and
 measurement remains a valid modeling tool for moral deliberation under
 genuine ambiguity (§13.3–12.5). What the CHSH results establish is that
-the gauge group governing Hohfeldian state transitions is the discrete
-D₄ (see §12.3), not the continuous SU(2) originally proposed. Quantum
+the gauge group governing Hohfeldian state transitions is discrete (V₄;
+see §12.3), not the continuous SU(2) originally proposed. Quantum
 effects, if present in moral cognition, operate at a level different
 from the Hohfeldian state transitions tested here.</p>
 <h2 id="worked-example-the-whistleblowers-dilemma">13.10 Worked Example:
@@ -1199,16 +1204,19 @@ state</em></p>
 <p><em>with</em> <span class="math inline">|\Psi^{+}\rangle =
 \frac{1}{\sqrt{2}}(|O,C\rangle + |L,N\rangle)</span> <em>and noise
 parameter</em> <span class="math inline">\epsilon \in \lbrack
-0,1\rbrack</span><em>, the entanglement entropy of the reduced
-state</em> <span class="math inline">\rho_{A} =
-\text{Tr}_{B}(\rho_{AB})</span> <em>is:</em></p>
+0,1\rbrack</span><em>, the von Neumann entropy of the reduced state</em>
+<span class="math inline">\rho_{A} = \text{Tr}_{B}(\rho_{AB})</span>
+<em>is:</em></p>
 <p><span class="math display">S(\rho_{A}) = -
 \text{Tr}(\rho_{A}\ln\rho_{A}) = ln2\quad\text{for all
 }\epsilon</span></p>
 <p><em>The reduced state of each agent is maximally uncertain regardless
 of the noise level — the correlative structure ensures that individual
-Hohfeldian positions are uniformly indeterminate whenever the collective
-state has any entanglement.</em></p>
+Hohfeldian positions are uniformly indeterminate at every noise level,
+including ε ≥ 2/3, where ρ_AB is separable and carries no entanglement
+at all (ρ_AB is entangled if and only if ε &lt; 2/3). For a mixed
+collective state, S(ρ_A) is therefore not a measure of entanglement.
+(Corrected in v1.25.)</em></p>
 <p><em><strong>Proof</strong>.</em> Compute the reduced state ρ_A =
 Tr_B(ρ_{AB}). The maximally mixed component contributes Tr_B(I/4) =
 I_A/2. For the pure component, expand |Ψ⁺⟩ = (1/√2)(|O⟩|C⟩ + |L⟩|N⟩);
@@ -1246,7 +1254,7 @@ richness.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>
