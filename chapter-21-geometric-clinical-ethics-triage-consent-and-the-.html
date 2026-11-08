@@ -472,13 +472,16 @@ QALY-optimal: transfuse.</p>
 boundary beta_consent = infinity for competent patient). Path B (respect
 refusal, optimize alternatives): Da_1 = -moderate (mortality risk), but
 Da_4 = 0, Da_2 = 0, Da_5 = +moderate (trust reinforced), Da_7 = 0. Edge
-weight: w_B = (mortality risk)^2 / sigma_1^2.</p>
+weight: w_B = Da^T Sigma^{-1} Da over the two nonzero components Da_1
+and Da_5 — the (mortality risk)^2 / sigma_1^2 term plus the d_5 and
+d_1-d_5 terms (the quadratic form charges the trust gain too) — finite,
+with no boundary crossed.</p>
 <p>The clinical geodesic selects Path B. This is not a "concession to
 autonomy" but manifold-optimal: Path A has infinite cost because
 beta_consent = infinity. The geodesic further computes: aggressive
 exploration of transfusion alternatives (erythropoietin, cell salvage,
 volume expanders, interventional radiology) to reduce Da_1 while
-maintaining zero cost on d_2 through d_9.</p>
+crossing no boundary on d_2 through d_9.</p>
 <p><strong>Example 21.2 (Withdrawing Life Support)</strong>. An
 82-year-old patient has been on mechanical ventilation for three weeks
 with no neurological recovery, no advance directive, and a divided
@@ -578,7 +581,7 @@ injustice that makes health equity policy evidence-based.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

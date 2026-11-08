@@ -275,8 +275,10 @@ weights. The weights <span class="math inline">w_{\mu}</span> are the
 components of the interest covector <span
 class="math inline">I_{\mu}</span>, so the fundamental formula <span
 class="math inline">S = I_{\mu}O^{\mu}</span> is a weighted contraction.
-<em>Every ethical theory that yields a scalar verdict is performing a
-weighted contraction, differing only in the weights.</em></p>
+<em>Every ethical theory that yields a scalar verdict by a fixed linear
+rule is performing a weighted contraction, differing only in the
+weights; the nonlinear rules below (maximin, lexicographic, satisficing)
+are not weighted contractions for any fixed weights.</em></p>
 <p><strong>Maximin contraction.</strong> Take the minimum across a
 relevant index:</p>
 <p><span class="math display">S = \min_{\mu}O^{\mu}\quad\text{or}\quad S
@@ -405,13 +407,14 @@ domain-specific critique of scalar reduction (QALY-based health
 economics, utility-maximizing economics, scalar sentencing
 guidelines).</p>
 <p>Theorem 15.1 (Scalar Irrecoverability). [Proved.] Let Q: ℝ⁹ → ℝ be
-any function that maps a 9-dimensional moral attribute vector to a
-scalar evaluation. Then: (i) Q is not injective: multiple morally
-distinct states map to the same scalar value. (ii) The information
-destroyed by Q is irrecoverable: there exists no function ψ: ℝ → ℝ⁹ such
-that ψ ∘ Q = id. (iii) The moral geodesic on the full manifold ℳ is in
-general different from the scalar-optimal path, and the divergence
-between them is not bounded by any function of Q alone.</p>
+any continuous function (continuously differentiable where the proof
+below uses dQ) that maps a 9-dimensional moral attribute vector to a
+scalar evaluation. (Corrected in v1.25.) Then: (i) Q is not injective:
+multiple morally distinct states map to the same scalar value. (ii) The
+information destroyed by Q is irrecoverable: there exists no function ψ:
+ℝ → ℝ⁹ such that ψ ∘ Q = id. (iii) The moral geodesic on the full
+manifold ℳ is in general different from the scalar-optimal path, and the
+divergence between them is not bounded by any function of Q alone.</p>
 <p>Proof. (i) The rank-nullity theorem requires dim(ker dQ) ≥ 8 at every
 regular point of Q: a map from ℝ⁹ to ℝ has a differential of rank at
 most 1, so its kernel has dimension at least 8. Any two states differing
@@ -514,10 +517,13 @@ residue is acknowledged or ignored.</p>
 <p><strong>Proposition 15.1 (Inevitability of Residue).</strong> <em>For
 any non-trivial moral tensor</em> <span class="math inline">T</span>
 <em>(rank</em> <span class="math inline">\geq 1</span><em>) and any
-contraction to a scalar, the moral residue</em> <span
-class="math inline">\mathcal{R}</span> <em>is nonzero unless</em> <span
-class="math inline">T</span> <em>is already scalar — that is, unless
-there was nothing to contract.</em></p>
+contraction to a scalar, the moral residue R is nonzero unless T is
+fully determined by its scalar, that is, unless T lies on the
+one-dimensional image of the section s (proof supplement). That image is
+a line in a space of dimension greater than one, so almost every moral
+tensor leaves a residue. (v1.24 said “unless T is already scalar”, which
+is false: a tensor on that line has zero residue. Corrected in v1.25;
+machine-checked, formal/lean.)</em></p>
 <p><em>Proof.</em> If <span class="math inline">T</span> has rank <span
 class="math inline">\geq 1</span>, it has at least <span
 class="math inline">9</span> independent components (for a vector) or
@@ -695,11 +701,13 @@ charge is in the residue.</em></p>
 <p><em>Proof.</em> By the Noether conservation theorem (Theorem 12.1),
 the harm charge H is a linear functional conserved under all admissible
 re-descriptions. Contraction is a linear projection C: T ↦ S, so T =
-C⁻¹(S) + R, where C⁻¹(S) is any pre-image and R = T − C⁻¹(S) is the
-residue. By linearity of H: H(T) = H(C⁻¹(S)) + H(R), giving H(R) = H(T)
-− H(C⁻¹(S)). If the contraction discards the harm dimension (the Killing
-direction ξ = ∂/∂x⁷), then C⁻¹(S) has zero component along x⁷, so
-H(C⁻¹(S)) = 0 and H(R) = H(T). □</p>
+C⁻¹(S) + R, where C⁻¹(S) is the minimal-norm pre-image (the pre-image
+orthogonal to ker C) and R = T − C⁻¹(S) is the residue. By linearity of
+H: H(T) = H(C⁻¹(S)) + H(R), giving H(R) = H(T) − H(C⁻¹(S)). If the
+contraction discards the harm dimension (the Killing direction ξ =
+∂/∂x⁷), then e₇ lies in ker C, so the minimal-norm pre-image C⁻¹(S) has
+zero component along x⁷ (for a metric in which x⁷ is orthogonal to the
+retained dimensions), so H(C⁻¹(S)) = 0 and H(R) = H(T). □</p>
 <p>This is a formal constraint on contraction: <strong>a contraction
 that hides harm does not eliminate harm.</strong> The harm moves from
 the visible verdict to the invisible residue, but it is conserved. An
@@ -820,6 +828,15 @@ dominated by gauge-invariant moral structure (principle 4). Six
 distributional fairness metrics (Gini, Rawlsian maximin, utilitarian,
 prioritarian, Atkinson, Theil) provide additional contraction
 diagnostics beyond the scalar verdict.</p>
+<p><strong>Measured: a learned contraction (v1.25).</strong> In the
+Moral Spectrum Analyzer, an equal-weight average of the validated axes
+predicted toxicity labels close to chance; a learned weighting of the
+same axes, with identity attack added, reached an out-of-fold AUROC of
+0.863 (F1 0.76). The interpretable form is approximately fairness minus
+a general-valence component (out-of-fold AUROC 0.758). The evidence was
+in the axes; the equal-weight contraction threw it away. What a
+contraction weights is a substantive choice, which is this chapter’s
+claim.</p>
 <h2 id="worked-example-the-kidney-allocation-revisited-1">15.12 Worked
 Example: The Kidney Allocation Revisited</h2>
 <h3 id="the-full-tensor">The Full Tensor</h3>
@@ -990,7 +1007,7 @@ class="math inline">\mathcal{L(}C)</span></td>
 </tr>
 <tr>
 <td>Harm in residue</td>
-<td>H(R) ≥ 0</td>
+<td>H(R) = H(T) − H(C⁻¹(S))</td>
 <td>Invariance of harm accounting through contraction</td>
 </tr>
 </tbody>
@@ -1094,10 +1111,12 @@ class="math inline">C_{2}</span> <em>selects the maximum over</em> <span
 class="math inline">\nu</span> <em>first and then contracts over</em>
 <span class="math inline">\mu</span><em>. In general:</em></p>
 <p><span class="math display">C_{1}(T) \neq C_{2}(T)</span></p>
-<p><em>Equality holds if and only if the maximizing</em> <span
-class="math inline">\nu</span> <em>is the same for all</em> <span
-class="math inline">\mu</span> <em>— that is, if there is a unanimous
-best option across all dimensions.</em></p>
+<p><em>With strictly positive weights wμ, equality holds if and only if
+a single ν maximizes Tμν for every μ — that is, if there is a unanimous
+best option across all dimensions. (The condition on the weights is
+needed: with a zero weight the “only if” fails, and with a negative
+weight the “if” fails. v1.24 omitted it. Corrected in v1.25;
+machine-checked, formal/lean.)</em></p>
 <p><em><strong>Proof</strong>.</em> <span class="math inline">C_{1}(T) =
 \max_{\nu}\sum_{\mu}^{}w_{\mu}T^{\mu\nu}</span>. <span
 class="math inline">C_{2}(T) =
@@ -1125,9 +1144,10 @@ greatest.</em></p>
 where a* = argmin_a M_{ia}. The residue is R_{ia} = M_{ia} − S. Since S
 = min_a M_{ia} ≤ M_{ia} for all a, we have R_{ia} ≥ 0, with equality iff
 a = a* (the worst-off perspective). The total residue is Σ_{i,a} R_{ia}
-= Σ_{i,a} M_{ia} − n·S where n = |A|. This is maximized when S is
-minimized relative to the mean — i.e., when the distribution across
-perspectives is maximally unequal. □</p>
+= Σ_{i,a} M_{ia} − n·Σ_i S_i where n = |A| and S_i = min_a M_{ia} is the
+floor for option i. This is maximized when S is minimized relative to
+the mean — i.e., when the distribution across perspectives is maximally
+unequal. □</p>
 <p><strong>Proposition 15.5 (Transparent Contraction and BIP
 Compliance).</strong> <em>A contraction procedure</em> <span
 class="math inline">C</span> <em>is BIP-compliant if and only if, for
@@ -1206,7 +1226,7 @@ contraction that circumstances required.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

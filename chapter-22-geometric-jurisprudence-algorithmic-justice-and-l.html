@@ -66,12 +66,12 @@ operating system of civilization — has an implicit mathematical
 structure that natural language obscures but geometry makes explicit.
 Legal reasoning is pathfinding on a directed simplicial complex (the
 judicial complex), constitutional review is a topological computation
-(path homology preservation), Hohfeldian jural relations form a gauge
-group (the octahedral group D_4 x| D_4), and conservation laws
-characterize valid legal transformations. The framework formalizes what
-the legal system already demands — equal treatment, procedural
-regularity, constitutional conformity — and makes those demands
-computationally checkable.</p>
+(path homology preservation), Hohfeldian jural relations carry a
+symmetry group (each square carries V₄; the coupled group of the full
+octad is conjectured), and conservation laws characterize valid legal
+transformations. The framework formalizes what the legal system already
+demands — equal treatment, procedural regularity, constitutional
+conformity — and makes those demands computationally checkable.</p>
 <h2 id="law-as-geometric-structure">22.1 Law as Geometric Structure</h2>
 <p>Legal reasoning has resisted formalization for centuries. Hart's
 positivism, Dworkin's interpretivism, and the law-and-economics movement
@@ -167,6 +167,14 @@ equivalence.</p>
 <p>where S is a test set of cases and tau ranges over bond-preserving
 transformations. LBI is computable from existing case databases and
 provides a quantitative measure of judicial consistency.</p>
+<p><strong>Status (v1.25).</strong> The Legal Bond Index has been
+accepted for publication (Journal of Science and Law, 2026) in a
+narrower framing: a matched-neighbourhood disparity diagnostic, inspired
+by individual-fairness principles. It is a research-stage screening
+signal that may contribute to an audit, not a validated audit standard.
+Conditional on the measured predictors, it cannot by itself establish
+that cases are fully similarly situated, a causal effect of a protected
+attribute, or discrimination.</p>
 <h2 id="the-hohfeldian-octad-and-gauge-theory">22.4 The Hohfeldian Octad
 and Gauge Theory</h2>
 <p>The Hohfeldian system of jural relations — developed by Wesley
@@ -179,30 +187,25 @@ fundamental positions organized in two squares:</p>
 &lt;-&gt; Liability (correlatives), Immunity &lt;-&gt; Disability
 (correlatives), Power &lt;-&gt; Disability (opposites), Immunity
 &lt;-&gt; Liability (opposites).</p>
-<p><strong>Theorem 22.1 (Octahedral Gauge Group)</strong>. The symmetry
-group of the full Hohfeldian octad is the semi-direct product:</p>
-<p>G_Ho = D_4 x|_phi D_4</p>
-<p>where the first D_4 acts on first-order relations
-(right-duty-liberty-no-right), the second D_4 acts on second-order
-relations (power-liability-immunity-disability), and the homomorphism
-phi: D_4 -&gt; Aut(D_4) encodes how second-order operations act on
-first-order positions.</p>
-<p><strong>Proof</strong>. Each Hohfeldian square admits D_4 symmetry:
-two correlative pairs generate the dihedral group of the square (two
-reflections plus rotations). However, the squares are not independent —
-second-order positions (powers, immunities) actively transform
-first-order positions (creating and destroying rights and duties). This
-asymmetric coupling is precisely the structure of a semi-direct product.
-The multiplication rule (g_1, g_2) * (h_1, h_2) = (g_1 * phi(g_2)(h_1),
-g_2 * h_2) encodes that the first-order transformation h_1 is "twisted"
-by the second-order transformation g_2. []</p>
-<p><strong>Remark</strong>. In the parent framework (Chapter 12), the
-gauge group was D_4 acting on the first four Hohfeldian positions. Law
-requires the full octad — both first-order relations (which govern
-static legal positions) and second-order relations (which govern legal
-change). The extension from D_4 to D_4 x| D_4 is the mathematical
-content of the distinction between static and dynamic legal
-structure.</p>
+<p><strong>Conjecture 22.1 (Symmetry of the Hohfeldian Octad).</strong>
+[Conjecture; v1.24 stated it as a theorem, with D₄.] The symmetry group
+of the full Hohfeldian octad is a semi-direct product G_Ho = V₄ ⋊_φ V₄,
+where the first V₄ acts on the first-order relations (right, duty,
+liberty, no-right), the second on the second-order relations (power,
+liability, immunity, disability), and φ: V₄ → Aut(V₄) encodes how
+second-order operations act on first-order positions.</p>
+<p><strong>Status.</strong> Each square carries the V₄ of its two
+commuting involutions (Proposition 8.3, applied to each square). That
+the coupling is a semi-direct product, and what φ is, are not proved.
+v1.24’s argument assumed that each square has D₄ symmetry, which needs
+the quarter-turn withdrawn in §8.4, and it called the result octahedral,
+which D₄ ⋊ D₄ (order 64) is not: the octahedral group has order 48.</p>
+<p><strong>Remark.</strong> In the parent framework (Chapter 12) the
+discrete symmetry is V₄, acting on the first four Hohfeldian positions.
+Law requires the full octad: first-order relations, which govern static
+legal positions, and second-order relations, which govern legal change.
+The conjectured extension from V₄ to V₄ ⋊ V₄ is the mathematical content
+of the distinction between static and dynamic legal structure.</p>
 <p><strong>Definition 22.6 (Legal Wilson Loop)</strong>. A legal Wilson
 loop is the holonomy around a closed path in the judicial complex:</p>
 <p>W(gamma) = P exp(integral_gamma A_mu dx^mu)</p>
@@ -542,9 +545,9 @@ Framework</h2>
 <p>The Geometric Jurisprudence program extends the parent framework in
 five directions:</p>
 <p>1. Chapter 3 introduced Hohfeldian relations as the discrete
-structure of moral bonds. This chapter elevates them to a gauge group
-(D_4 x| D_4) and shows that the semi-direct product structure captures
-the asymmetric coupling between static legal positions and dynamic legal
+structure of moral bonds. This chapter conjectures a symmetry group for
+them (V₄ ⋊ V₄), whose semi-direct product structure would capture the
+asymmetric coupling between static legal positions and dynamic legal
 change.</p>
 <p>2. Chapter 11 established pathfinding as the formal model of moral
 reasoning. This chapter shows that legal reasoning is adversarial
@@ -569,9 +572,8 @@ legal time and the asymmetry of legal authority.</p>
 applied to law, yields:</p>
 <p>1. The judicial complex K: a directed, weighted simplicial complex
 constructible from case law databases.</p>
-<p>2. The octahedral gauge group D_4 x| D_4: the full symmetry of
-Hohfeldian jural relations, extending the D_4 of the parent framework to
-include second-order legal change.</p>
+<p>2. The conjectured octad symmetry V₄ ⋊ V₄, extending the V₄ of the
+parent framework to include second-order legal change.</p>
 <p>3. Topological constitutionality: constitutional review as path
 homology preservation — a finite computation on a directed graph.</p>
 <p>4. Conservation laws: liability-damages conservation from Hohfeldian
@@ -587,7 +589,7 @@ existing data.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

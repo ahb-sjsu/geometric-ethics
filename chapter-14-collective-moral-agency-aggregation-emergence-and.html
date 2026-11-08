@@ -410,12 +410,15 @@ is emergent. □</p>
 <p><strong>Proof supplement (orthogonality).</strong> The projections
 P_k (onto the k-agent interaction subspace) are orthogonal because the
 inclusion-exclusion decomposition partitions tensor components by their
-interaction order. Formally, if C = Σ_k C_k where C_k involves exactly
-k-agent interactions, then ⟨C_j, C_k⟩ = 0 for j ≠ k. This follows from
-Möbius inversion on the subset lattice: the decomposition C_k =
-Σ_{|S|=k} μ(S) C_S (where μ is the Möbius function) produces orthogonal
-components because the Möbius function of a Boolean lattice satisfies
-the orthogonality relation Σ_{S: |S|=k} μ(S)μ(S’) = 0 for |S’| ≠ k.</p>
+interaction order. Formally, if C = Σ_k C_k where C_k (k = 0, …, n)
+involves exactly k-agent interactions, then ⟨C_j, C_k⟩ = 0 for j ≠ k.
+This holds when the decomposition is built as in Prop. 14.3, with
+normalized (averaged) partial traces and the 0-body term (the overall
+mean) included: it is then the Hoeffding (functional-ANOVA)
+decomposition, in which each component C_S averages to zero over every
+one of its own indices, so ⟨C_S, C_S’⟩ = 0 for S ≠ S’, and hence ⟨C_j,
+C_k⟩ = 0 for j ≠ k. Without this centring the components are not
+orthogonal.</p>
 <h2 id="distributed-responsibility">14.6 Distributed Responsibility</h2>
 <h3 id="the-responsibility-tensor">The Responsibility Tensor</h3>
 <p>When a collective acts — and especially when it acts wrongly — the
@@ -488,9 +491,10 @@ responsibilities: <span class="math inline">\Delta R &gt; 0</span>.</p>
 participant bears responsibility. But the mob — as a collective agent
 with emergent dynamics (escalation, deindividuation, collective action)
 — bears additional responsibility for creating the conditions under
-which individual members acted as they did. The responsibility surplus
-<span class="math inline">\Delta R &gt; 0</span> captures the moral
-content of incitement and collective frenzy.</p>
+which individual members acted as they did. The collective
+responsibility remainder <span class="math inline">\Delta R &gt;
+0</span> captures the moral content of incitement and collective
+frenzy.</p>
 <h3 id="the-complicity-gradient">The Complicity Gradient</h3>
 <p>In many collective situations, responsibility is not binary
 (guilty/innocent) but continuously graded. The <em>complicity
@@ -618,7 +622,10 @@ class="math inline">\mathcal{M}</span> <em>is governed by:</em></p>
 + \Lambda_{a}^{\mu}\,{\dot{\Sigma}}_{a} = 0</span></p>
 <p><em>where</em> <span
 class="math inline">\Gamma_{\nu\rho}^{\mu}</span> <em>is the Levi-Civita
-connection (as in Chapter 10),</em> <span
+connection (as in Chapter 10; because the connection term is written out
+explicitly, the first term here denotes the component derivative
+dO_collᵘ/dt along γ, not the covariant derivative, which would count the
+connection twice; corrected in v1.25),</em> <span
 class="math inline">\Lambda_{a}^{\mu}</span> <em>is the structural
 coupling — encoding how changes in the structure tensor</em> <span
 class="math inline">\Sigma</span> <em>affect the collective obligation —
@@ -1047,19 +1054,27 @@ pairwise interaction between agents</em> <span
 class="math inline">j</span> <em>and</em> <span
 class="math inline">k</span><em>, and</em> <span
 class="math inline">\mathcal{E}</span> <em>is the fully irreducible
-remainder. This is the moral analogue of the cluster expansion in
-statistical mechanics.</em></p>
+remainder. The expansion also contains a 0-body term C_(∅)ᵘ, the average
+of C over all member indices, about which the individual contributions
+are centred. (Corrected in v1.25.) This is the moral analogue of the
+cluster expansion in statistical mechanics.</em></p>
 <p><em><strong>Proof</strong>. Define the terms by inclusion-exclusion.
 For each subset S ⊆ {1,…,n}, the connected |S|-body term is: C_(S)ᵘ =
 Tr_{\S} Cᵘ_{ν₁⋯ν_n} − Σ_{S' ⊂ S} C_(S')ᵘ ⊗ ⨂_{k ∉ S'} δ_{ν_k}, where
-Tr_{\S} traces over all indices not in S. The 1-body terms are the
-marginals C_(k)ᵘ = Tr_{\{k}} Cᵘ. The 2-body terms are the connected
-correlations: C_(jk)ᵘ = Tr_{\{j,k}} Cᵘ − C_(j)ᵘ ⊗ δ_{ν_k} − δ_{ν_j} ⊗
-C_(k)ᵘ. The remainder E = C_({1,…,n})ᵘ is the fully connected n-body
-term. Uniqueness: Each m-body term is determined recursively from
-lower-order terms, so the decomposition is unique. The projections Π_S:
-C ↦ C_(S) satisfy Π_S Π_{S'} = δ_{SS'}Π_S (orthogonality) and Σ_S Π_S =
-id (completeness). □</em><span
+Tr_{\S} is the normalized trace (the average) over all indices not in S,
+and S' ranges over all proper subsets of S, including the empty set. The
+0-body term is the overall average C_(∅)ᵘ = Tr Cᵘ (normalized over all
+member indices). The 1-body terms are the centred marginals C_(k)ᵘ =
+Tr_{\{k}} Cᵘ − C_(∅)ᵘ. The 2-body terms are the connected correlations:
+C_(jk)ᵘ = Tr_{\{j,k}} Cᵘ − C_(j)ᵘ ⊗ δ_{ν_k} − δ_{ν_j} ⊗ C_(k)ᵘ − C_(∅)ᵘ.
+The remainder E = C_({1,…,n})ᵘ is the fully connected n-body term.
+Uniqueness: Each m-body term is determined recursively from lower-order
+terms, so the decomposition is unique. The projections Π_S: C ↦ C_(S)
+satisfy Π_S Π_{S'} = δ_{SS'}Π_S (orthogonality) and Σ_S Π_S = id
+(completeness), the sum running over all S including ∅. With the
+normalized traces and the 0-body term, this is the Hoeffding
+(functional-ANOVA) decomposition, whose components are mutually
+orthogonal in the Frobenius inner product. □</em><span
 class="math inline">n\mathcal{E}g▫</span></p>
 <p><strong>Proposition 14.4 (Responsibility Inequality).</strong>
 <em>For a collective with emergent obligations (</em><span
@@ -1133,7 +1148,7 @@ individual morality.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

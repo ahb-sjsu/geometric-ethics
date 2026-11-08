@@ -267,15 +267,20 @@ behavioral friction changes with i's own path choice) and let kappa_i
 &gt;= 0 measure the cross-sensitivity (how much i's behavioral friction
 changes with others' path choices). If</p>
 <p>alpha_i &gt; kappa_i for all i in N</p>
-<p>then the best-response mapping on Gamma+ is a contraction with
+<p>then, with kappa_i/alpha_i measured against the max-norm ||s_{-i}|| =
+max_{j≠i} ||s_j|| on the other agents' paths, the best-response mapping
+on Gamma+ is a contraction in the max-norm ||s|| = max_i ||s_i|| with
 Lipschitz constant L = max_i(kappa_i / alpha_i) &lt; 1, and the BGE is
-unique.</p>
+unique. (Corrected in v1.25.)</p>
 <p><strong>Proof</strong>. The best-response mapping T: S -&gt; S maps
 each profile to the profile of individual best responses. For agent i,
 ||T_i(s) - T_i(s')||≤ (kappa_i/alpha_i)||s_{-i} - s'_{-i}|| by the ratio
-of cross-sensitivity to self-separation. Taking the maximum over i,
-||T(s) - T(s')||≤ L||s - s'|| with L = max_i(kappa_i/alpha_i) &lt; 1. By
-Banach's fixed-point theorem, T has a unique fixed point. []</p>
+of cross-sensitivity to self-separation. Since ||s_{-i} - s'_{-i}|| ≤
+||s - s'|| in the max-norm, taking the maximum over i gives ||T(s) -
+T(s')||≤ L||s - s'|| with L = max_i(kappa_i/alpha_i) &lt; 1. (The norm
+matters: with Euclidean norms the same per-agent ratios give a Lipschitz
+constant of up to L√(n − 1), which need not be below 1.) By Banach's
+fixed-point theorem, T has a unique fixed point. []</p>
 <p><strong>Interpretation</strong>: BGE is unique when each agent's
 decision is dominated by their own manifold structure (high alpha_i)
 rather than by what others do (low kappa_i). This is the "weak coupling"
@@ -319,14 +324,23 @@ than on the d_1 projection.</p>
 goods even when free-riding is the Nash strategy. The BGE explanation:
 dimension d_6 (social impact) creates boundary penalties for free-riding
 that exceed the monetary savings.</p>
-<p>Each of these "anomalies" is predicted by BGE, not catalogued post
-hoc. The framework says: tell me the active dimensions and their
-weights, and I will tell you the equilibrium. This is a stronger claim
-than behavioral economics makes, and it is falsifiable.</p>
+<p>Each of these accounts is a reconstruction: the dimensions and
+weights are chosen to fit the games. The published calibration (Part I,
+A. H. Bond, IEEE Transactions on Computational Social Systems, 2026, DOI
+10.1109/TCSS.2026.3734068) says so. It reports cross-domain reuse of
+parameters within a jointly selected architecture, not held-out
+prediction; the lottery targets untouched by any fitting step have a
+mean absolute error of 5.0%; and its out-of-sample test, the stake
+invariance of ultimatum offers in Andersen et al. (2011), fails. The
+framework’s claim is that the reconstruction is constrained, one set of
+constants across games, and falsifiable, which that failure shows it
+is.</p>
 <h2 id="prospect-theory-as-manifold-geometry">20.8 Prospect Theory as
 Manifold Geometry</h2>
-<p>The major phenomena of Kahneman and Tversky's prospect theory are
-derived as geometric properties of the decision manifold:</p>
+<p>The major phenomena of Kahneman and Tversky's prospect theory can be
+read as geometric properties of the decision manifold. They are
+readings, not derivations, and the tests so far favor prospect theory
+itself (below):</p>
 <p><strong>Loss aversion</strong>. The edge weights in E are asymmetric:
 the weight for moving from state a to a worse state b (loss) exceeds the
 weight for the reverse move (gain), even when |Da| is the same.
@@ -356,6 +370,16 @@ Mahalanobis distance from "own the good" to "sell the good" differs from
 the distance from "don't own" to "buy the good" because the reference
 point has changed. This is not irrationality — it is path-dependence on
 a curved manifold.</p>
+<p><strong>Tests (v1.25).</strong> Sealed tests of geometric decision
+models against cumulative prospect theory (CPT) on risky choice favored
+CPT. On Psych-101, frozen CPT beat the frozen geometric model by 0.017
+nats per choice (95% interval [0.011, 0.025]). A stratified geometric
+model beat CPT in none of five corpora, and pooled it was worse by 0.019
+nats. On menu choice an additive model was best. These tests used a
+diagonal metric, a scalar cost and hand-coded coordinates, not the full
+Mahalanobis metric and tensor of this book, so they test a reduced form.
+A sealed test of the full Mahalanobis form with late contraction has
+been registered and not yet run.</p>
 <h2 id="attribute-conservation-in-bilateral-exchange">20.9 Attribute
 Conservation in Bilateral Exchange</h2>
 <p><strong>Theorem 20.6 (Attribute Conservation)</strong>. In a closed
@@ -502,7 +526,7 @@ acquired the U.S. marketing rights to Daraprim (pyrimethamine), a drug
 used to treat toxoplasmosis — a parasitic infection that is
 life-threatening in AIDS patients and others with compromised immune
 systems. Turing immediately raised the price from $13.50 to $750.00 per
-tablet, a 5,455% increase overnight. The drug had been off-patent since
+tablet, a 5,456% increase overnight. The drug had been off-patent since
 1953. Production cost was approximately $1 per tablet. Turing had
 conducted no new research on the compound. The price increase was pure
 rent extraction enabled by regulatory barriers to generic entry (the
@@ -595,7 +619,11 @@ systematically overestimate costs.</p>
 analysis of economic behavioral data should recover approximately nine
 independent dimensions. What would falsify: if the factor structure is
 consistently lower-rank (fewer than seven) or higher-rank (more than
-eleven).</p>
+eleven). Related evidence (v1.25), on moral-judgment rather than
+economic data: a sealed test on the Scruples dilemmas selected a learned
+metric of rank 32, the top of its grid, and DEME’s learned axes have
+effective rank 5.19 of 8 (§5.3). Neither tests this prediction on
+economic behavior.</p>
 <h2 id="connection-to-the-framework-1">20.12 Connection to the
 Framework</h2>
 <p>The Bond Geodesic Equilibrium completes the multi-agent story that
@@ -644,7 +672,7 @@ intelligence, bioethics, and military ethics.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>
