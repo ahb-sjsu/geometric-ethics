@@ -1,0 +1,34 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-THM-8-6",
+ "statement": "Containment: if every gate into an authority stratum is triggered only by system events, no event sequence without a system event enters an authority stratum it did not start in.",
+ "class": "proved",
+ "scope": "Geometric Ethics, section 8.10b",
+ "retrospective": false,
+ "evidence": [
+  {
+   "source": "gtc-prototype formal/twin-containment/TwinContainment.lean authority_needs_system",
+   "author_status": "Proved",
+   "kind": "theorem",
+   "mathematical_status": "machine-checked in Lean 4 + Mathlib, standard axioms only"
+  },
+  {
+   "source": "erisml-compiler runtime/strata.py load-time check",
+   "kind": "enforcement"
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-DEF-8-14"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-10-03",
+   "event": "added with the strata and V4 content updates (source/updates/)"
+  }
+ ]
+}

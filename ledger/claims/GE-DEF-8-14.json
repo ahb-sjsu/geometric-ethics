@@ -1,0 +1,27 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-DEF-8-14",
+ "statement": "Executable stratification: strata, an initial stratum, ordered semantic gates (source strata, triggering feature, target, boundary type), authority strata and absorbing strata; edge-triggered gates; crossings recorded as boundary crossing data.",
+ "class": "definition",
+ "scope": "Geometric Ethics, section 8.10b (source/updates/sec8_10b_executable_strata.tex)",
+ "retrospective": false,
+ "evidence": [
+  {
+   "source": "erisml-compiler src/erisml_compiler/runtime/strata.py (PRs 28, 29)",
+   "author_status": "Formal Definition",
+   "kind": "definition"
+  }
+ ],
+ "depends": {
+  "uses": [],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-10-03",
+   "event": "added with the strata and V4 content updates (source/updates/)"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "spec": "PE-CLS-1.0",
+ "id": "GE-AXIOM-8-1",
+ "statement": "Reversion: a right granted on evidence lasts only while the evidence supports it; when the attested evidence behind an authority stratum stays below its admitting bar for a declared interval (a penumbra in time), the stratum is left and its rights revert.",
+ "class": "exploratory",
+ "scope": "Geometric Ethics, section 8.10b",
+ "retrospective": false,
+ "evidence": [
+  {
+   "source": "owner, 2026-10-03; gtc-prototype twin/brain.py _lapse and scene evidence_lapse_s",
+   "author_status": "Modeling Axiom",
+   "kind": "axiom"
+  }
+ ],
+ "depends": {
+  "uses": [
+   "GE-DEF-8-14"
+  ],
+  "corroborates": [],
+  "cites": []
+ },
+ "status": "classified",
+ "history": [
+  {
+   "date": "2026-10-03",
+   "event": "added with the strata and V4 content updates (source/updates/)"
+  }
+ ]
+}

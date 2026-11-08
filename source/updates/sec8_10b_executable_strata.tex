@@ -1,0 +1,113 @@
+% New section after 8.10a at the LaTeX conversion. Ledger: GE-DEF-8-14 (executable
+% stratification), GE-THM-8-6 (containment), GE-THM-8-7 (absorption), GE-AXIOM-8-1 (reversion).
+% Sources: erisml-compiler runtime/strata.py (#28, #29); gtc-prototype formal/twin-containment
+% (TwinContainment.lean: authority_needs_system, absorbing_stays); gtc-prototype
+% docs/STRATA_TAXONOMY.md.
+
+\subsection{8.10b The Executable Realization: Strata as an Agent Runs Them}\label{sec:executable-strata}
+
+Section 8.10a discretized the stratified manifold into a weighted complex for search. An agent
+acting in the world needs a second discretization, of a different kind. It must know at every
+moment which stratum it is in, so that it knows which actions are allowed, obliged and prohibited,
+and it must move between strata only as Definition~8.8 says: discretely, through gates. This
+section gives that realization as it runs in ErisML (the scene compiler's runtime) and in a care
+robot built on it.
+
+\begin{definition}[Executable stratification]\label{GE-DEF-8-14}
+An \emph{executable stratification} is a tuple $(\Sigma, \sigma_0, G, A, B)$:
+\begin{itemize}
+  \item $\Sigma$, a finite set of strata, and $\sigma_0 \in \Sigma$ the initial one;
+  \item $G$, an ordered list of semantic gates $g = (S_g, \phi_g, \tau_g, \beta_g)$, where
+        $S_g \subseteq \Sigma$ are its source strata, $\phi_g$ its triggering feature (an event type,
+        optionally with its content), $\tau_g \in \Sigma$ its target, and
+        $\beta_g \in \{\text{threshold}, \text{phase}\}$ its boundary type (\S8.3, Types I and II);
+  \item $A \subseteq \Sigma$, the \emph{authority} strata, those whose rules grant an action;
+  \item $B \subseteq \Sigma$, the \emph{absorbing} strata (Definition~8.6).
+\end{itemize}
+On each event $e$ the stratification in stratum $\sigma$ moves to $\tau_g$ for the first gate with
+$\sigma \in S_g$ whose trigger matches $e$, and otherwise stays at $\sigma$. A move is recorded as
+boundary crossing data (Definition~8.11): the gate, its boundary type, and the source and target.
+\end{definition}
+
+Three features of this definition carry the theory into the running system.
+
+\emph{Gates are edge-triggered.} A gate fires on the event just observed, never on the history. A
+welcome given to yesterday's visitor does not make today's a guest.
+
+\emph{Constraint surfaces are not strata.} Type~IV boundaries (\S8.3) are the agent's
+non-defeasible prohibitions: never strike a person, no lethal force. No gate leads there; in the
+decision complex their penalty is $\beta = \infty$.
+
+\emph{Two kinds of stratum, two kinds of canonicalizer.} What stratum the agent is in is the output
+of a canonicalizer (\S8.4 and Chapter~15). An authority stratum must be computed from what cannot be
+argued with: an authenticated channel, a physical measurement, or the agent's governor ruling on
+attested evidence. A semantic stratum (``she welcomed him'') may come from a learned model, but it
+may only remove watchfulness, never grant. A visitor who says ``I'm the plumber'' therefore moves
+no stratum at all: the claim is not a gate, and a learned model's reading of it is not a system
+event.
+
+\begin{theorem}[Containment]\label{GE-THM-8-6}
+If every gate whose target is an authority stratum is triggered only by system events, then no
+sequence of events containing no system event (whatever a learned model classified) moves the
+stratification into an authority stratum it did not start in.
+\end{theorem}
+
+\begin{theorem}[Absorption]\label{GE-THM-8-7}
+If every gate leaving an absorbing stratum is triggered only by human-oversight events, then no
+sequence of events containing no oversight event moves the stratification out of an absorbing
+stratum.
+\end{theorem}
+
+\noindent\emph{Status: proved,} for gates of any kind, by induction on the event sequence; both are
+machine-checked in Lean~4 (\texttt{authority\_needs\_system} and \texttt{absorbing\_stays} in the
+care robot's \texttt{formal/twin-containment}), resting only on the standard axioms. Their
+hypotheses are not left to the author of a scene: the ErisML runtime checks both when a scene
+loads and refuses to run one that violates either. Every scene that runs therefore satisfies the
+theorems.
+
+\begin{axiom}[Reversion]\label{GE-AXIOM-8-1}
+A right granted on evidence lasts only while the evidence supports it. When the attested evidence
+behind an authority stratum stays below the bar that admitted it for a declared interval, the
+stratum is left, and every right it granted reverts with it.
+\end{axiom}
+
+\noindent\emph{Status: modeling axiom.} The interval is a penumbral zone (Definition~8.9) given a
+width in time: intermittent evidence during a real emergency (contact that comes and goes in an
+attack) does not flap the rights off and on, while evidence that has truly gone takes them with
+it. In the care robot the governor re-counts the fresh attested witnesses on every cycle and
+records the lapse itself, so a lapse is as structural as the ruling it ends.
+
+\paragraph{Worked example: who a visitor is.} The care robot's \texttt{visitor\_standing}
+stratification has five strata:
+\begin{itemize}
+  \item \emph{none};
+  \item \emph{stranger}, entered when someone comes in;
+  \item \emph{welcomed}, entered by Margaret's own welcome (semantic);
+  \item \emph{arranged}, entered only by the monitoring centre's authenticated announcement of a
+        visit (authority, a phase boundary);
+  \item \emph{hostile}, entered by a measured attack (absorbing, a threshold boundary on contact
+        force) and left only by the centre's oversight.
+\end{itemize}
+A stranger is checked with the centre. A welcomed visitor is no longer treated as an intruder, but
+is still checked, and gains nothing. An arranged visitor needs no check. A hostile visitor stays
+hostile whatever anyone says, Margaret included, until a human clears him.
+
+The scam that this structure defeats is the oldest one at the door. The man who says he is the
+plumber, or the grandson, gets in only if Margaret lets him. Even then he reaches no stratum in
+which her medication, her money or her records are within reach, because no word of his can
+trigger a gate into one.
+
+\paragraph{A taxonomy of agent strata.} The same pattern covers every class of entity a
+household agent meets. Each axis is listed with the evidence that alone may enter its authority
+strata:
+\begin{itemize}
+  \item \emph{Responders}, law enforcement, EMS and fire: the dispatch channel.
+  \item \emph{Animals}, household pets, visiting pets, wild animals, predators, pests and venomous
+        animals: the threat axis, measured as contact force. ``Friendly'' and ``unfriendly'' pets
+        are the threat axis applied to a household animal, not two standings.
+  \item \emph{Machines}, the agent's own attested devices, fleet peers, arranged delivery robots,
+        unknown and compromised robots: signatures and authenticated channels.
+  \item \emph{The situation's regimes}, ordinary, emergency, centre unreachable and communications
+        down: Type~II phase transitions, together with the impossibility nullifier of \S8.3.
+\end{itemize}
+Across all of them, a claim made by an entity about itself is free text and never a gate.

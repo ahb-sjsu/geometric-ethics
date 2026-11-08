@@ -1,13 +1,13 @@
 {
  "spec": "PE-CLS-1.0",
  "id": "GE-THM-12-2",
- "statement": "Discrete Symmetry = D\u2084",
+ "statement": "Discrete Symmetry = D₄",
  "class": "exploratory",
- "scope": "Geometric Ethics v1.24, \u00a7\u00a712.3; author status: Conditional Theorem",
+ "scope": "Geometric Ethics v1.24, §§12.3; author status: Conditional Theorem",
  "retrospective": true,
  "evidence": [
   {
-   "source": "Geometric-Ethics-v1.24.tex \u00a7\u00a712.3",
+   "source": "Geometric-Ethics-v1.24.tex §§12.3",
    "author_status": "Conditional Theorem",
    "kind": "theorem",
    "mathematical_status": "proved given the stated premises; the assertion about moral reasoning inherits the premises' class"
@@ -20,7 +20,7 @@
   "corroborates": [],
   "cites": []
  },
- "status": "classified",
+ "status": "withdrawn",
  "history": [
   {
    "date": "2026-08-25",
@@ -29,6 +29,10 @@
   {
    "date": "2026-08-25",
    "event": "edge to GE-D4-MEASURED added during conversion: this row is ABOUT the gauge group, so it depends on the gauge-group claim -- an edge the book carried in prose only (PE-BRW-1.0 s5.3)"
+  },
+  {
+   "date": "2026-10-03",
+   "event": "Owner decision 2026-10-03: D4 is obsolete. The two demonstrated operations generate V4 (erisml-lib formal/HohfeldV4.lean, machine-checked); the quarter-turn is not generated, has never been demonstrated, and the quarter-turn hunt (erisml-lib docs/papers/quarter-turn-hunt) did not find it. The discrete symmetry is V4; chapter 12 is rewritten at the LaTeX conversion."
   }
  ]
 }
