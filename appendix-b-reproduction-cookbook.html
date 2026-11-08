@@ -47,10 +47,11 @@ minutes.</p>
 <p>Hardware: any machine with Python 3.10 or later. No GPU required. The
 full test suite runs in under 5 minutes on a 2020-era laptop. Memory
 requirement: under 500 MB.</p>
-<p>Installation: pip install erisml. This installs the ErisML library
-and all dependencies (numpy, scipy, pydantic, lark, pettingzoo,
+<p>Installation: pip install erisml-lib. This installs the ErisML
+library and all dependencies (numpy, scipy, pydantic, lark, pettingzoo,
 gymnasium). Verify the installation with: python -c "import erisml;
-print(erisml.__version__)". Expected output: 2.0.0 or later.</p>
+print(erisml.__version__)". Expected output: 3.2.0 or later. The scene
+compiler is a separate package: pip install erisml-compiler.</p>
 <h2 id="b.2-quick-start-10-minute-smoke-test">B.2 Quick Start: 10-Minute
 Smoke Test</h2>
 <p>Step 1: Run the minimal DEME demonstration. Command: python -m
@@ -61,17 +62,23 @@ the rights-respecting option is preferred; the rights-violating option
 is forbidden. Runtime: under 2 seconds. This exercises the Layer 1
 (EthicalFacts generation) and Layer 2 (Ethics Module evaluation)
 pipeline described in Chapter 18.6.</p>
-<p>Step 2: Run the D₄ gauge structure verification. Command: python -m
-erisml.examples.hohfeld_d4_demo. This exercises all eight elements of
-the dihedral group D₄ acting on the Hohfeldian state space {O, C, N, L}.
-Expected output: all group relations verified (r⁴ = e, s² = e, srs =
-r⁻¹), non-abelian structure confirmed (rs ≠ sr), Klein four subgroup V₄
-identified, and Bond Index = 0.0 (perfect gauge invariance). Runtime:
-under 2 seconds. This exercises the algebraic structure described in
-Chapters 8 and 11.</p>
+<p>Step 2: Run the V₄ Hohfeldian structure verification. Command: python
+-m erisml.examples.hohfeld_v4_demo. This exercises the four elements of
+the Klein four-group V₄ acting on the Hohfeldian state space {O, C, N,
+L}. Expected output: the multiplication table of V₄, the regular action
+(one operation between any two positions), order-independent holonomy
+(Wilson observable), and Bond Index = 0.0 (perfect gauge invariance).
+Runtime: under 2 seconds. This exercises the algebraic structure
+described in Chapters 8 and 11.</p>
 <p>If both commands produce the expected output, the installation is
 correct and the core algebraic and ethical evaluation pipelines are
 functional.</p>
+<p><strong>Formal checks of the book itself.</strong> The book’s
+repository (ahb-sjsu/geometric-ethics) carries formal/lean, a Lean 4 +
+Mathlib project that machine-checks the claims marked Proved, and
+formal/matlab, MATLAB Symbolic Math Toolbox checks of the closed-form
+derivations and worked examples. formal/README.md lists each claim, its
+check and its result, and how to rerun them.</p>
 <h2 id="b.3-full-pipeline-60-minute-reproduction">B.3 Full Pipeline:
 60-Minute Reproduction</h2>
 <p>The following seven-step sequence exercises every major computational
@@ -81,11 +88,11 @@ chapter.</p>
 erisml.examples.hello_deme. Verifies: EthicalFacts generation from
 scenario description, Ethics Module evaluation producing ranked
 verdicts. Pass criterion: rights-violating option is forbidden.</p>
-<p>Step 2 — D₄ gauge verification (Chapters 8, 11): python -m
-erisml.examples.hohfeld_d4_demo. Verifies: all D₄ group relations,
-non-abelian structure, Wilson observable (path holonomy), Bond Index
-computation. Pass criterion: Bond Index = 0.0, all group relations
-hold.</p>
+<p>Step 2 — V₄ Hohfeldian verification (Chapters 8, 12): python -m
+erisml.examples.hohfeld_v4_demo. Verifies: the V₄ group relations, the
+regular action, order-independent Wilson observable (path holonomy),
+Bond Index computation. Pass criterion: Bond Index = 0.0, all group
+relations hold.</p>
 <p>Step 3 — Bond Invariance Principle (Chapter 18.7): python -m
 erisml.examples.bond_invariance_demo. Verifies: bond-preserving
 transforms (option reordering, identifier relabeling, unit/scale
@@ -135,7 +142,7 @@ differ. The audit artifact records which evidence dimension was modified
 and how the verdict changed. A bond-changing transform that does not
 change the verdict is not a failure — it indicates that the removed
 evidence was not decision-relevant.</p>
-<p>For the D₄ verification (Step 2): all eight group elements must
+<p>For the V₄ verification (Step 2): all four group elements must
 produce the correct permutation of Hohfeldian states. Any failure
 indicates a bug in the implementation, not a theoretical issue, since
 the group structure is mathematically determined.</p>
@@ -144,7 +151,7 @@ the group structure is mathematically determined.</p>
 test fails, the output identifies exactly which component failed and
 why. If a BIP test fails, the JSON audit artifact pinpoints which
 transform broke invariance and which ethics module produced the
-discrepant verdict. If a D₄ group relation fails, the output shows which
+discrepant verdict. If a V₄ group relation fails, the output shows which
 element pair violated the relation and what the actual vs. expected
 result was.</p>
 <p>If governance aggregation produces an unexpected result, the
@@ -178,7 +185,7 @@ Suite</h2>
 <p>For continuous integration and regression testing, run: pytest
 --cov=src/erisml. This executes the complete test suite including unit
 tests for each ethics module, integration tests for the DEME pipeline,
-property-based tests for D₄ group relations, and BIP compliance tests
+property-based tests for V₄ group relations, and BIP compliance tests
 for the standard transformation suite. Expected: all tests pass.
 Coverage report shows the tested fraction of the codebase.</p>
 <p>The test suite is designed to serve as a living specification: each
@@ -192,7 +199,7 @@ claims is documented in the test file docstrings.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

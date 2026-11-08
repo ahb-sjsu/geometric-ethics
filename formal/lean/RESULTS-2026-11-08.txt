@@ -1,0 +1,114 @@
+Geometric Ethics v1.25 -- Lean 4 + Mathlib build record, 2026-11-08
+Host: Atlas workstation, /archive/ahb-sjsu/geometric-ethics-lean (cores 12-23 via taskset)
+Mathlib: reused the local v4.32.2 build of /archive/ahb-sjsu/geometric-evaluation-theory/lean
+(.lake/packages copied; nothing downloaded -- Lake's post-update cache hook ran once and
+reported "No files to download", all 8639 files already present).
+Command: bash build-on-atlas.sh   (lake build; lake env lean Axioms.lean)
+
+== lean: Lean (version 4.32.2, x86_64-unknown-linux-gnu, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)
+== mathlib rev: 905b95818eb32af7874a58b427f50c1711a5e96c
+✔ [8655/8660] Built GeometricEthics.Search (9.9s)
+✔ [8656/8660] Built GeometricEthics.Strata (10s)
+✔ [8657/8660] Built GeometricEthics.Tensor (11s)
+✔ [8658/8660] Built GeometricEthics.Hohfeld (13s)
+✔ [8659/8660] Built GeometricEthics (17s)
+Build completed successfully (8660 jobs).
+== exit: 0
+== axioms
+'GeometricEthics.Hohfeld.s' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.n' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.quarterTurnBook' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.quarterTurnErisml' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.n_eq_erisml_r2' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.phi' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.phi_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.V4_eq_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.mem_V4_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.commuting_involutions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.V4MulEquivKlein' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.V4_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.V4_elements' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.V4_abelian_exponent_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.V4_transitive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.V4_free' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.quarter_turn_not_generated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.enc' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.action_is_xor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.liberty_to_claim_is_sn' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.gauge_group_V4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.chi' depends on axioms: [propext]
+'GeometricEthics.Hohfeld.total' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.charge' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.charge_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.act' depends on axioms: [Quot.sound]
+'GeometricEthics.Hohfeld.charge_act' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.total_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.charge_s_n' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.charge_sq_V4_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.invariant_component_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.invariantComponents' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.invariantEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.degrees_of_freedom_eliminated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.d4ToPerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.d4ToPerm_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.autSub' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.autSub_eq_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.autEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.autC4MulEquivD4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.card_aut_C4' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.book_generators' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.book_generators_generate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Hohfeld.book_presentation' depends on axioms: [propext, Quot.sound]
+'GeometricEthics.Search.geodesic_heuristic_consistent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Search.geodesic_heuristic_zero_on_goal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Search.pathCost' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Search.pathEnd' does not depend on any axioms
+'GeometricEthics.Search.consistent_implies_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Strata.ExecStrat.firing' depends on axioms: [propext, Quot.sound]
+'GeometricEthics.Strata.ExecStrat.step' depends on axioms: [propext, Quot.sound]
+'GeometricEthics.Strata.ExecStrat.run' depends on axioms: [propext, Quot.sound]
+'GeometricEthics.Strata.ExecStrat.crossings' depends on axioms: [propext, Quot.sound]
+'GeometricEthics.Strata.step_spec' depends on axioms: [propext, Quot.sound]
+'GeometricEthics.Strata.run_eq_last_crossing' depends on axioms: [propext, Quot.sound]
+'GeometricEthics.Strata.containment' depends on axioms: [propext, Quot.sound]
+'GeometricEthics.Strata.containment_outside' depends on axioms: [propext, Quot.sound]
+'GeometricEthics.Strata.absorption' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Strata.absorption_set' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.satisfaction_invariant' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.disagreement_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.disagreement_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.disagreement_needs_shared_dimension' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.agree_on_all_obligations_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.disagreement_component_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.gradient_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.gradients_differ_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.ginvA' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.ginvB' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.dfEx' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.gradient_sufficient_condition_fails' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.satisfaction_directional_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.residue_mem_ker' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.residue_eq_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.ker_contraction_finrank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.exists_nonzero_residue' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.residue_zero_for_nonscalar' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.C₁' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.C₂' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.IsRowMax' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.isRowMax_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.C₁_le_C₂' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.C₁_eq_C₂_iff_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.C₁_eq_C₂_iff_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.Tid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.contraction_order_matters' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.equality_without_unanimity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GeometricEthics.Tensor.unanimity_without_equality_negative_weight' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+== sorry count (source tokens): 0
+
+Summary
+  build: OK, 8660 jobs, 0 errors, 0 warnings in the GeometricEthics modules
+  sorry count: 0 (source tokens; no declaration reports sorryAx in the axiom audit)
+  axioms: every declaration depends only on a subset of {propext, Classical.choice, Quot.sound}

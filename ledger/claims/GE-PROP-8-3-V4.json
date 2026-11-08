@@ -3,7 +3,7 @@
  "id": "GE-PROP-8-3-V4",
  "statement": "V4 Structure of Hohfeldian Transitions: the correlative s and the jural flip n are commuting involutions generating the Klein four-group V4 = Z2 x Z2, acting regularly on the four positions; the quarter-turn is not generated.",
  "class": "proved",
- "scope": "Geometric Ethics, section 8.4 (source/updates/sec8_4_hohfeld_v4.tex)",
+ "scope": "Geometric Ethics v1.25, section 8.4 and the section 8 technical appendix (Proposition 8.3)",
  "retrospective": false,
  "evidence": [
   {
@@ -15,15 +15,19 @@
   {
    "source": "erisml-lib tests/test_hohfeld_v4.py",
    "kind": "test"
+  },
+  {
+   "source": "geometric-ethics formal/lean (Lean 4.32.2 + Mathlib 905b958), RESULTS-2026-11-08.txt",
+   "kind": "theorem",
+   "mathematical_status": "machine-checked in Lean 4 + Mathlib; 0 sorry; standard axioms only"
   }
  ],
  "depends": {
-  "uses": [
-   "GE-AXIOM-A1"
-  ],
+  "uses": [],
   "corroborates": [],
   "cites": [
-   "GE-PROP-8-3"
+   "GE-PROP-8-3",
+   "GE-AXIOM-A1"
   ]
  },
  "status": "classified",
@@ -31,6 +35,14 @@
   {
    "date": "2026-10-03",
    "event": "added with the strata and V4 content updates (source/updates/)"
+  },
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: written into the manuscript (section 8.4, Prop 8.3); proved again in the book's own formal/lean (commuting_involutions, V4_card, quarter_turn_not_generated for the book's cycle (O C N L); erisml-lib's r is the cycle (O C L N))."
+  },
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: GE-AXIOM-A1 moved from uses to cites. The proof is about the permutation group of four labels and does not rest on the modeling axiom; pe_lint P4 had flagged a support-cap violation."
   }
  ]
 }

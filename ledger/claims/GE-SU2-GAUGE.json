@@ -12,11 +12,15 @@
   {
    "date": "2026-08-25",
    "event": "entered as refuted; falsification documented in the corpus (PE-BRW-1.0 s5.4)"
+  },
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: scope updated for the D4 -> V4 change."
   }
  ],
  "statement": "The moral gauge group is SU(2)_i x U(1)_H (continuous, non-abelian), predicting quantum contextuality.",
  "class": "refuted",
- "scope": "Superseded by D4 x U(1)_H. Book \u00a713.9/\u00a717.10.",
+ "scope": "Superseded by a discrete gauge group; in v1.25 V4 x U(1)_H is posited (the D4 x U(1)_H of v1.24 is withdrawn). Book section 13.9 / 17.10.",
  "evidence": [
   {
    "source": "CHSH Bell v3 test, N=9600, 18 configs, 6 languages",

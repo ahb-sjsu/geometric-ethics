@@ -955,6 +955,33 @@ precise, the experiments are (mostly) designable, and the framework
 stands or falls on their outcomes. This is the appropriate epistemic
 stance for a mathematical framework with empirical aspirations: hold it
 provisionally, test it rigorously, and revise if necessary.</p>
+<h2 id="a-open-since-v1.24">29.13a Open Since v1.24</h2>
+<p>The results of v1.25 close some questions and open others. The open
+ones are these.</p>
+<p><strong>People, not models.</strong> Every order-effect result in
+this book comes from one language model, and the cross-lingual
+invariance results from embedding models. A preregistered study of human
+moral judgment is the most important missing evidence.</p>
+<p><strong>Adversarial rewording.</strong> Paraphrase averaging handles
+natural rewording and fails on euphemism. A preregistered
+adversarial-robustness gate is drafted with its thresholds still open,
+and has not been run.</p>
+<p><strong>The full metric.</strong> The geometric decision models
+tested so far used a diagonal metric and hand-coded coordinates. A
+sealed test of the full Mahalanobis metric with late contraction is
+registered and not yet run.</p>
+<p><strong>The chart.</strong> How identity attack, purity and loyalty
+enter the nine-dimensional chart, whether as new coordinates or as
+extension channels, and whether rights can be measured at all or only
+specified (§5.3).</p>
+<p><strong>Discrete symmetry beyond V₄.</strong> Whether the Hohfeldian
+octad carries V₄ ⋊ V₄ (Conjecture 22.1), and whether any discrete
+symmetry of moral re-description exists beyond the two demonstrated
+involutions.</p>
+<p><strong>Verification of representations.</strong> The
+consumer-relative I-EIP monitor failed its sealed tests; a red-team
+study of the shipped monitor is drafted. Requirement 4 of the No Escape
+Theorem (§18.9.6) needs a verified instrument.</p>
 <h2 id="the-shape-of-the-unknown">29.14 The Shape of the Unknown</h2>
 <p>This chapter has catalogued what we do not know. The list is long —
 longer, in some ways, than the list of what we have established. The
@@ -994,11 +1021,11 @@ class="math inline">\Delta O</span> <em>is proportional to the enclosed
 area times the average curvature.</em></p>
 <p><em>Proof.</em> By Proposition 10.2, the holonomy around an
 infinitesimal parallelogram enclosing area δA^{αβ} satisfies H_γ(O)ᵘ −
-Oᵘ = Rᵘ_{ναβ} Oᵛ δA^{αβ}. For a finite loop γ enclosing a surface Σ with
-∂Σ = γ, we tile Σ with infinitesimal parallelograms and sum the
+Oᵘ = −Rᵘ_{ναβ} Oᵛ δA^{αβ}. For a finite loop γ enclosing a surface Σ
+with ∂Σ = γ, we tile Σ with infinitesimal parallelograms and sum the
 contributions. By the non-abelian Stokes theorem, the total holonomy is
 the path-ordered exponential of the curvature integrated over the
-enclosed area: ΔOᵘ = ∮_Σ Rᵘ_{ναβ} Oᵛ dxᵅ ∧ dxᵝ + O(Area²), where the
+enclosed area: ΔOᵘ = −∮_Σ Rᵘ_{ναβ} Oᵛ dxᵅ ∧ dxᵝ + O(Area²), where the
 higher-order terms arise from the non-commutativity of successive
 parallel transports. To first order in the enclosed area, the integral
 is the average curvature times the area. Hence ΔOᵘ ≠ 0 implies Rᵘ_{ναβ}
@@ -1032,9 +1059,10 @@ space of admissible moral metrics</em> <span
 class="math inline">\mathcal{G = \{}g_{\mu\nu}:g\text{ satisfies the
 constraints of Chapter 9, §9.6}\}</span> <em>admits a natural Riemannian
 metric inherited from the space of positive-definite symmetric tensors.
-This meta-metric is unique up to overall scale if we require invariance
-under simultaneous change of coordinates on</em> <span
-class="math inline">\mathcal{M}</span><em>.</em></p>
+This meta-metric is unique up to two constants, an overall scale and the
+ratio b/a of the DeWitt family given in the proof (Corrected in v1.25.),
+if we require invariance under simultaneous change of coordinates
+on</em> <span class="math inline">\mathcal{M}</span><em>.</em></p>
 <p><em>Proof.</em> The space Sym⁺(9) of positive-definite symmetric 9×9
 matrices carries the DeWitt metric: G_g(h, k) = Tr(g⁻¹h g⁻¹k) for
 tangent vectors h, k ∈ T_g Sym⁺(9). This is a Riemannian metric because
@@ -1060,7 +1088,7 @@ own ignorance.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

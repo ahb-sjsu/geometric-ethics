@@ -23,6 +23,10 @@
   {
    "date": "2026-08-25",
    "event": "the corpus's own revision catches this; note the earlier draft treated Purity's absence as a NEGATIVE CONTROL, i.e. used the basis's incompleteness as evidence FOR the basis -- the same row asserted in opposite directions"
+  },
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: a second, independent falsifier is reported in section 5.3: identity_attack passed the preregistered gate as a tenth axis (AUROC 0.80, +0.25 over its null, registered 2026-07-11; moral-spectrum-analyzer docs/IDENTITY_ATTACK.md)."
   }
  ]
 }

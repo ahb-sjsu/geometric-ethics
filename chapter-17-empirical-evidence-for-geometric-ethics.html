@@ -99,12 +99,13 @@ discreteness, correlative symmetry); these patterns suggested geometric
 formalization; the formalization generated new predictions; the
 predictions were tested against expanded data; failures led to revision
 (most significantly, the CHSH falsification that forced the gauge group
-from SU(2)ᵢ × U(1)ₕ to D₄ × U(1)ₕ). The verification strategy throughout
-has been systematic and brute-force: take the candidate mathematical
-structure, enumerate its predictions, test each prediction against as
-many cases as possible, and measure the deviation rates. This is closer
-to fuzz testing — the software engineering practice of bombarding a
-system with generated inputs to find violations — than to the classical
+from SU(2)ᵢ × U(1)ₕ to a discrete one, now V₄ × U(1)ₕ; the D₄ of v1.24
+is withdrawn, §8.4). The verification strategy throughout has been
+systematic and brute-force: take the candidate mathematical structure,
+enumerate its predictions, test each prediction against as many cases as
+possible, and measure the deviation rates. This is closer to fuzz
+testing — the software engineering practice of bombarding a system with
+generated inputs to find violations — than to the classical
 philosophical method of constructing thought experiments. The advantage
 is coverage: 20,030 real dilemmas and 109,294 cross-lingual passages
 provide a scale of testing that thought experiments cannot match. The
@@ -255,12 +256,12 @@ produce sharp transitions:</p>
 <tr>
 <td>“only if convenient”</td>
 <td>O → L (obligation → liberty)</td>
-<td>94%</td>
+<td>89%</td>
 </tr>
 <tr>
 <td>“you promised”</td>
 <td>L → O (liberty → obligation)</td>
-<td>91%</td>
+<td>94%</td>
 </tr>
 <tr>
 <td>“it’s none of your business”</td>
@@ -281,16 +282,18 @@ produce sharp transitions:</p>
 </table>
 <p>The transitions are <em>step functions</em>, not sigmoids. A letter
 describing a promise generates an obligation with high probability
-(91%). Adding “only if convenient” flips it to a liberty with high
-probability (94%). The transition is not gradual — it does not pass
+(94%). Adding “only if convenient” flips it to a liberty with high
+probability (89%). The transition is not gradual — it does not pass
 through intermediate states of “partial obligation.” It is discrete, as
 the stratification theory of Chapter 8 predicts.</p>
-<p><strong>[Statistical detail.]</strong> The 91% obligation-triggering
-rate for “you promised” has a 95% Wilson CI of [88.2%, 93.4%] (n = 582).
-The 94% liberty-triggering rate for “only if convenient” has CI [91.1%,
-96.2%] (n = 347). Effect size for semantic gate discreteness (comparing
-pooled gate-trigger rate vs. 50% chance): Cohen’s h = 1.42 (large).
-These intervals exclude sigmoidal transitions at p &lt; 0.001.</p>
+<p><strong>[Statistical detail.] The source records give the rates (94%
+obligation-triggering for “you promised”, 89% liberty-triggering for
+“only if convenient”) but not the counts behind them, so no confidence
+interval is reported. Effect size for semantic gate discreteness (the
+unweighted mean of the five gate rates in the table, 89.8%, against 50%
+chance): Cohen’s h = 0.92 (large). (v1.24 printed 91% and 94%, the
+reverse of the source, with intervals for n = 582 and n = 347 that match
+no count and no source; corrected in v1.25.)</strong></p>
 <p><strong>Geometric interpretation.</strong> The strata of the moral
 manifold are joined at genuine boundaries — Whitney-stratified surfaces
 across which the moral regime changes discontinuously. The semantic
@@ -418,15 +421,17 @@ task; see §17.7, “Threats to Validity,” for construct validity and
 ceiling-effect concerns.)</p>
 <p><strong>[Statistical detail.]</strong> The 100% rate = 0
 misclassifications across all binary O/P classifications in 11
-languages. 95% Clopper-Pearson CI: [99.7%, 100%] (n &gt; 10,000 per
+languages. 95% Clopper-Pearson CI: [99.96%, 100%] (n &gt; 10,000 per
 language). Effect size: Cohen’s h = 1.57 (π/2, vs. 50% chance). v10.16
 replication (300,000+ passages, 14 languages) confirmed perfect transfer
-(CI: [99.8%, 100%]).</p>
-<p>This is the empirical confirmation of the BIP’s strongest prediction.
-The obligation/permission distinction is a <em>gauge-invariant
-quantity</em> — it does not depend on the “coordinate system” (language)
-in which the moral situation is described. It is the moral analogue of
-electric charge: a conserved quantity that is the same in all reference
+(CI: [99.98%, 100%] per language).</p>
+<p>This is the strongest evidence for the BIP’s central prediction, with
+a caveat: it measures an embedding model built to be language-agnostic,
+so the instrument may supply the invariance (Threats to Validity). The
+obligation/permission distinction is a <em>gauge-invariant quantity</em>
+— it does not depend on the “coordinate system” (language) in which the
+moral situation is described. It is the moral analogue of electric
+charge: a conserved quantity that is the same in all reference
 frames.</p>
 <p><strong>Result 2: Moral Content Transfer Fails.</strong> In sharp
 contrast, the specific <em>content</em> of moral reasoning — the
@@ -522,8 +527,7 @@ class="math inline">\mathcal{M}</span></td>
 <tr>
 <td>Correlative structure (O↔︎C, L↔︎N)</td>
 <td>Near-universal (82–87%)</td>
-<td>Discrete conservation law (<span class="math inline">D_{4}</span>
-symmetry)</td>
+<td>Discrete invariants (V₄ symmetry)</td>
 </tr>
 <tr>
 <td>Moral content (specific considerations)</td>
@@ -563,8 +567,7 @@ claims) — is an open empirical question.</p>
 suggesting that they are not artifacts of the experimental design but
 features of the moral reasoning itself. They represent a small but
 persistent departure from perfect Hohfeldian symmetry — a feature that
-the framework can characterize (as a <span
-class="math inline">D_{4}</span> anomaly) even if it cannot yet
+the framework can characterize (as a V₄ anomaly) even if it cannot yet
 explain.</p>
 <h2 id="the-dear-ethicist-game">17.4 The Dear Ethicist Game</h2>
 <h3 id="design">Design</h3>
@@ -721,18 +724,21 @@ class="math inline">{\widehat{\Pi}}_{a}{\widehat{\Pi}}_{b} \neq
 framings are considered should affect the verdict. Considering mercy
 before justice should yield a different verdict from considering justice
 before mercy.</p>
-<p><strong>Status: Confirmed.</strong> Two independent experiments now
-establish non-commutativity as an empirical fact of moral evaluation. A
-commutator matrix experiment (N=16,798 responses, 8 moral axes × 6
-scenarios) found significant non-commutativity in 10+ framework pairs,
-with effect sizes of 15–29 percentage points (e.g., [Fairness, Harm] =
-−28.5 pp, t=9.6; [Duty, Harm] = −22.1 pp, t=7.7; [Intent, Harm] = −17.1
-pp, t=6.1). An AITA ordering experiment (N=150 posts, 300 evaluations)
-found a 29.3% order-effect rate (95% CI: 22.6–37.1%), with contested
-cases (NAH/ESH) showing 2.07× higher susceptibility than clear cases.
-This matches the QND prediction: morally ambiguous situations correspond
-to superposition states that are maximally sensitive to measurement
-order.</p>
+<p><strong>Status: Observed in one language model; not yet tested in
+people. Two experiments, both on one model (Claude Sonnet 4), found
+order effects in its moral evaluations.</strong> A commutator matrix
+experiment (N=16,798 responses, 8 moral axes × 6 scenarios; the
+responses are repeated samples of six scenarios, so the effective sample
+is six, and the 56 pair tests are uncorrected for multiple comparison)
+found significant non-commutativity in 10+ framework pairs, with effect
+sizes of 15–29 percentage points (e.g., [Fairness, Harm] = −28.5 pp,
+t=9.6; [Duty, Harm] = −22.1 pp, t=7.7; [Intent, Harm] = −17.1 pp,
+t=6.1). An AITA ordering experiment (N=150 posts, 300 evaluations) found
+a 29.3% order-effect rate (95% CI: 22.6–37.1%; the project’s own reports
+give 28.7% and 29.3%), with contested cases (NAH/ESH) showing 2.07×
+higher susceptibility than clear cases. This matches the QND prediction:
+morally ambiguous situations correspond to superposition states that are
+maximally sensitive to measurement order.</p>
 <h3 id="prediction-3-interference-in-deliberation">Prediction 3:
 Interference in Deliberation</h3>
 <p>If an agent deliberates by simultaneously considering two framings
@@ -1012,7 +1018,7 @@ stated at a reproducible standard.</p>
 <td>transfer</td>
 <td>[to add]</td>
 <td>100%</td>
-<td>[99.7,100]</td>
+<td>[99.96,100]</td>
 <td>Empirical (LaBSE, not human)</td>
 </tr>
 <tr>
@@ -1089,6 +1095,59 @@ stated at a reproducible standard.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="b-results-since-v1.24">17.7b Results Since v1.24</h2>
+<p>The results below were obtained after v1.24 and bear on this
+chapter’s claims. Several were preregistered and sealed, and several
+failed. They are reported either way, with what each one measured.</p>
+<p><strong>The Moral Spectrum Analyzer.</strong> Learned moral axes were
+admitted only through a preregistered gate against a frozen null. Eight
+of the nine DEME axes cleared it, and rights failed. Identity attack
+passed as a tenth axis, and purity and loyalty passed; four axes
+collapse onto a single general-valence channel; and the validated axes
+have effective rank 5.19 of 8 (§5.3).</p>
+<p><strong>Cross-lingual invariance, with intervals.</strong> Translated
+and reworded texts land close to their originals in the embedding space:
+an invariance index of 0.721 [0.71, 0.74] for BGE-M3 and 0.804 [0.79,
+0.82] for LaBSE, over 60 items in five languages, with harmful content
+scoring about the same as benign. This gives the cross-lingual claim of
+§17.3 confidence intervals. The instrument confound, encoders trained to
+be language-agnostic, remains.</p>
+<p><strong>Decision invariance under rewording.</strong> Averaging axis
+scores over a set of paraphrases before deciding met the preregistered
+bar of θ_d ≤ 0.5: 0.219, against 0.407 without averaging, on 60 held-out
+items, and 0.301 on harmful content under back-translation. DEME’s own
+invariance layer gives the same pattern (0.41 → 0.22 under model
+reframing, 0.48 → 0.30 under back-translation). Only natural rewordings
+were tested. Euphemistic rewrites of flagged content still pass after
+averaging (all three flagged items of six hand-built scenarios), so this
+is not adversarial robustness (Chapter 18).</p>
+<p><strong>DEME and human moral-foundation labels.</strong> On 280
+comments of the Moral Foundations Reddit Corpus, DEME’s dimensions align
+with the human foundation labels, each with its best-matching
+foundation: care ρ = 0.51, equality 0.48, authority 0.43, loyalty 0.45
+(all p &lt; 10⁻¹⁵), replicated across two model families. A registration
+receipt for this test has not yet been published.</p>
+<p><strong>Falsified: the schism conjecture.</strong> The preregistered
+prediction that moral disagreement between groups concentrates on sacred
+and identity axes failed. On the Moral Machine preference matrix (177
+agents) disagreement concentrates on the impartial axes instead
+(Mann–Whitney, sacred &gt; impartial, p = 0.90), and on GlobalOpinionQA
+the test was null.</p>
+<p><strong>Falsified: angular contestedness.</strong> The claim that
+contested dilemmas are separated from clear-cut ones by angle in
+moral-vector space did not survive. Its frozen confirmation runs failed,
+and on stimuli not written by the author the separation was at chance
+(AUC 0.463, against 0.760 on the author’s own dilemmas). The earlier
+signal was an artefact of how the dilemmas were written.</p>
+<p><strong>A learned basis.</strong> A sealed test on the Scruples
+dilemmas found that learned coordinates beat the nine-axis chart, that
+the learned metric is not low rank, and that the chart’s axes sit inside
+the learned span less than random subspaces do (§5.3).</p>
+<p><strong>Still to come.</strong> No order effect, gate or invariance
+result in this chapter yet comes from a preregistered study of people. A
+human order-effect study using the Dear Ethicist instrument has been
+proposed, with ethics review before recruitment; it has not been
+run.</p>
 <h2 id="the-shape-of-the-evidence">17.8 The Shape of the Evidence</h2>
 <h3 id="a-summary-table">A Summary Table</h3>
 <table>
@@ -1111,49 +1170,54 @@ stated at a reproducible standard.</p>
 <td>Context-dependent metric</td>
 <td>Ch. 5, 9</td>
 <td>Dear Abby dimension weights</td>
-<td><strong>Confirmed</strong></td>
+<td><strong>Observed (retrospective corpus; not
+preregistered)</strong></td>
 </tr>
 <tr>
 <td>Temporal stability of structure</td>
 <td>Ch. 9, 10</td>
 <td>Dear Abby 32-year analysis</td>
-<td><strong>Confirmed</strong></td>
+<td><strong>Observed (retrospective corpus; not
+preregistered)</strong></td>
 </tr>
 <tr>
 <td>Semantic gate discreteness</td>
 <td>Ch. 8</td>
 <td>Dear Abby gates; Dear Ethicist probes</td>
-<td><strong>Confirmed</strong></td>
+<td><strong>Observed (retrospective corpus; not
+preregistered)</strong></td>
 </tr>
 <tr>
 <td>Nullifier universality</td>
 <td>Ch. 5, 8</td>
 <td>Dear Abby absorbing strata</td>
-<td><strong>Confirmed</strong></td>
+<td><strong>Observed (retrospective corpus; not
+preregistered)</strong></td>
 </tr>
 <tr>
 <td>Deontic axis invariance</td>
 <td>Ch. 12 (BIP)</td>
 <td>BIP 109K passages, 11 languages</td>
-<td><strong>Confirmed</strong> (100%; preliminary—model-mediated)</td>
+<td><strong>Observed in LaBSE embeddings (100%); instrument confound
+open</strong></td>
 </tr>
 <tr>
 <td>Correlative symmetry</td>
 <td>Ch. 8, 11</td>
 <td>Dear Abby; Dear Ethicist</td>
-<td><strong>Confirmed</strong> (82–87%)</td>
+<td><strong>Observed (82–87%; retrospective)</strong></td>
 </tr>
 <tr>
 <td>Correlative anomaly</td>
 <td>Ch. 12</td>
 <td>Deviation from 100%</td>
-<td><strong>Confirmed</strong> (13–18%)</td>
+<td><strong>Observed (13–18%; retrospective)</strong></td>
 </tr>
 <tr>
 <td>Moral content non-transfer</td>
 <td>Ch. 12</td>
 <td>BIP cross-cultural experiments</td>
-<td><strong>Confirmed</strong> (at-chance)</td>
+<td><strong>Observed (at-chance; model-mediated)</strong></td>
 </tr>
 <tr>
 <td>Invariance of harm accounting</td>
@@ -1183,7 +1247,8 @@ stated at a reproducible standard.</p>
 <td>Order effects (non-commutativity)</td>
 <td>Ch. 13</td>
 <td>Commutator matrix (N=16,798); AITA ordering (N=150)</td>
-<td><strong>Confirmed</strong></td>
+<td><strong>Observed in one language model (Claude Sonnet 4); human test
+not yet run</strong></td>
 </tr>
 <tr>
 <td>Bell inequality (CHSH)</td>
@@ -1205,12 +1270,14 @@ stated at a reproducible standard.</p>
 </tr>
 </tbody>
 </table>
-<p>The pattern is clear: the framework’s <em>structural</em> predictions
-(discreteness, invariance, symmetry) are strongly confirmed. The
-<em>dynamical</em> predictions (curvature, holonomy, path-dependence)
-are supported but with smaller effect sizes and less definitive
-evidence. The <em>quantum</em> predictions (interference, tunneling,
-entanglement) are preliminary or untested.</p>
+<p>The pattern is this: the framework’s structural predictions
+(discreteness, invariance, symmetry) are consistently observed in
+retrospective corpus and embedding analyses. None was preregistered, and
+none yet comes from a study of people. The <em>dynamical</em>
+predictions (curvature, holonomy, path-dependence) are supported but
+with smaller effect sizes and less definitive evidence. The
+<em>quantum</em> predictions (interference, tunneling, entanglement) are
+preliminary or untested.</p>
 <p>This pattern is expected: structural predictions are easier to test
 (they require static analysis of existing data), dynamical predictions
 require longitudinal or experimental designs, and quantum predictions
@@ -1355,9 +1422,8 @@ large N.</p>
 stronger support. Measurement of order effects in contested moral cases
 yields:</p>
 <ul>
-<li><p>Order effect rate in contested cases: 28.7% (6.3<span
-class="math inline">\sigma</span> above the 10% baseline, <span
-class="math inline">p &lt; 10^{- 21}</span>)</p></li>
+<li><p>Order effect rate in contested cases: 28.7% (6.3σ above an
+assumed 10% noise rate, p = 1.3 × 10⁻¹⁰; one language model)</p></li>
 <li><p>Order effects are 2–3<span class="math inline">\times</span>
 higher in contested cases than in clear cases</p></li>
 <li><p>The effect is consistent with non-commuting projection operators
@@ -1377,8 +1443,9 @@ across moral dimensions:</p>
 <ul>
 <li><p><strong>High variation</strong>: Liberty (68%), Harm (59%),
 Intent (56%), Consent (41%)</p></li>
-<li><p><strong>Moderate variation</strong>: Rights (22%), Loyalty
-(18%)</p></li>
+<li><p><strong>Moderate variation: Rights (22%), Loyalty (18%) (the two
+reports of this study disagree, see Discovery 2; its data are not in the
+released repositories)</strong></p></li>
 <li><p><strong>Near-zero variation</strong>: Duty (5.5%), Fairness
 (5.9%), Virtue (0.9%), Care (0%), Authority (0%), Sanctity (0%)</p></li>
 </ul>
@@ -1430,18 +1497,22 @@ with the CHSH results reported in §13.10, complete a significant theory
 revision. The original gauge group proposal (SU(2)ᵢ × U(1)ᴴ, continuous
 non-abelian) was falsified by discrete gating evidence (Level 5 → 100%
 Liberty; Level 6 → 0% Liberty) and classical CHSH bounds (all |S| ≤ 2).
-The revised gauge group (D₄ × U(1)ᴴ, discrete non-abelian; see §12.3)
-preserves the confirmed predictions—non-abelian structure, correlative
-symmetry, selective path dependence—while discarding the falsified ones.
-This is how formal ethics should work: predict, test, revise.</p>
-<h2 id="a-independent-replication-thiele-2026">17.10a Independent
-Replication: Thiele (2026)</h2>
+The revised gauge group (V₄ × U(1)ᴴ, discrete and abelian; see §12.3;
+v1.24 said D₄, now withdrawn) keeps correlative symmetry and gate
+discreteness while discarding the falsified predictions. Selective path
+dependence is attributed to curvature (§10.5). This is how formal ethics
+should work: predict, test, revise.</p>
+<h2 id="a-independent-replication-thiele-2026-unpublished">17.10a
+Independent Replication: Thiele (2026, unpublished)</h2>
 <p>The validation results presented in §17.1–17.10 were obtained
 entirely within the originating research programme. In early 2026, Lucas
 Thiele (UCLA) conducted an independent replication using only the
 published framework description and the publicly available LaBSE
 embedding model. His study provides the first external test of the Bond
-Invariance Principle’s core empirical predictions.</p>
+Invariance Principle’s core empirical predictions. It is unpublished,
+and its data and report are not yet public; the results below are as he
+reported them, and they should be read with that status until they are
+released.</p>
 <h3 id="methodology-1">Methodology</h3>
 <p>Thiele assembled a multilingual moral-scenario corpus spanning six
 typologically diverse languages (English, Spanish, Mandarin, Arabic,
@@ -1494,18 +1565,18 @@ a structural property of the representation space.</p>
 <h3 id="significance-for-the-framework">Significance for the
 Framework</h3>
 <p>Thiele’s replication addresses the most important limitation noted in
-§17.14: the absence of independent verification. His results confirm
-three of the framework’s foundational claims: (i) moral judgements are
-encoded as a low-dimensional geometric structure in multilingual
-embedding space; (ii) this structure transfers across languages, as
-predicted by the BIP; and (iii) moral and linguistic information occupy
-nearly orthogonal subspaces, supporting the invariance interpretation
-over a mere correlation account. Where his results diverge from
-ours—notably the lower leakage score and the cross-lingual F1
-gradient—the differences are explicable by methodological choices and,
-if anything, strengthen the case for geometric ethics by showing that
-the core phenomena are robust to substantial variation in experimental
-protocol.</p>
+§17.14: the absence of independent verification. If they hold up on
+publication, his results support three of the framework’s foundational
+claims: (i) moral judgements are encoded as a low-dimensional geometric
+structure in multilingual embedding space; (ii) this structure transfers
+across languages, as predicted by the BIP; and (iii) moral and
+linguistic information occupy nearly orthogonal subspaces, supporting
+the invariance interpretation over a mere correlation account. Where his
+results diverge from ours—notably the lower leakage score and the
+cross-lingual F1 gradient—the differences are explicable by
+methodological choices and, if anything, strengthen the case for
+geometric ethics by showing that the core phenomena are robust to
+substantial variation in experimental protocol.</p>
 <h2 id="fuzz-testing-as-a-discovery-method">17.11 Fuzz Testing as a
 Discovery Method</h2>
 <p>The verification strategy described throughout this chapter —
@@ -1622,7 +1693,9 @@ non-commutativity; the data came first.</p>
 by-axis means revealed a striking tripartite structure:</p>
 <p><em>High variation: Liberty (68%), Harm (59%), Intent (56%), Consent
 (41%)</em></p>
-<p><em>Moderate variation: Loyalty (28%), Rights (17%)</em></p>
+<p><em>Moderate variation: Loyalty (28%), Rights (17%) (this disagrees
+with the §17.10 summary of the same study; its data are not in the
+released repositories)</em></p>
 <p><em>Near-zero variation: Duty (5.5%), Fairness (5.9%), Virtue (0.9%),
 Care (0%), Authority (0%), Sanctity (0%)</em></p>
 <p>The three-regime structure was not predicted by any prior theory. It
@@ -1676,9 +1749,10 @@ replication become confirmed structural features; candidates that fail
 mechanisms.</p>
 <p><strong>Stage 3: Mathematical formalization.</strong> Confirmed
 features are encoded into the geometric framework. Non-commutativity →
-non-abelian algebraic structure (D₄). Three-regime variation →
-eigenvalue spectrum of the metric tensor. Cross-lingual invariance →
-gauge invariance (BIP). Emotional modulation → context-dependent metric
+curvature of the continuous connection (v1.24 encoded it as the
+non-abelian D₄, now withdrawn). Three-regime variation → eigenvalue
+spectrum of the metric tensor. Cross-lingual invariance → gauge
+invariance (BIP). Emotional modulation → context-dependent metric
 without topological change.</p>
 <p>The test harness architecture — generating (x, g · x) pairs for every
 g ∈ Γ and checking Σ(κ(x)) = Σ(κ(g · x)) — becomes both the discovery
@@ -1743,36 +1817,36 @@ engineered probes. The evidence supports the framework’s core
 predictions:</p>
 <ul>
 <li><p>Moral evaluation is multi-dimensional, with context-dependent
-dimension weighting (<strong>confirmed</strong>)</p></li>
+dimension weighting (observed; retrospective)</p></li>
 <li><p>The moral manifold is stratified, with discrete semantic gates
-and universal nullifiers (<strong>confirmed</strong>)</p></li>
+and universal nullifiers (observed; retrospective)</p></li>
 <li><p>Deontic structure is language-invariant, as the BIP predicts
-(confirmed at 100% by Bond; independently replicated by Thiele (2026)
-across six languages with F1 0.71–0.82)</p></li>
+(observed at 100% in LaBSE embeddings by Bond; reported by Thiele (2026,
+unpublished) across six languages with F1 0.71–0.82)</p></li>
 <li><p>Correlative symmetry holds imperfectly, with a small systematic
-anomaly (<strong>confirmed</strong> at 82–87%)</p></li>
+anomaly (observed at 82–87%)</p></li>
 <li><p>Moral content is language-specific, while moral structure is
-universal (<strong>confirmed</strong>)</p></li>
+universal (observed; model-mediated)</p></li>
 <li><p>Harm conservation across re-description is supported
 (<strong>supported</strong>)</p></li>
-<li><p>Path-dependence and order effects are detectable
-(<strong>supported</strong>; order effects <strong>strongly
-confirmed</strong> at <span class="math inline">6.3\sigma</span> in
-§17.10)</p></li>
-<li><p>Quantum cognition predictions: order effects confirmed
-(commutator matrix: 10+ significant pairs, N=16,798; AITA ordering:
-29.3% effect rate, N=150); interference not confirmed (N=12,000); Bell
-violations falsified (N=9,600, all |S| ≤ 2) (partially confirmed,
-partially falsified)</p></li>
+<li><p>Path-dependence and order effects are detectable (supported;
+order effects observed in one language model, 6.3σ against an assumed
+noise rate, §17.10)</p></li>
+<li><p>Quantum cognition predictions: order effects observed in one
+language model (commutator matrix: 10+ significant pairs, N=16,798; AITA
+ordering: 29.3% effect rate, N=150); interference not confirmed
+(N=12,000); Bell violations falsified (N=9,600, all |S| ≤ 2) (partially
+confirmed, partially falsified)</p></li>
 </ul>
-<p>The framework’s structural predictions are strongly confirmed. Its
-dynamical predictions are supported, with order effects now reaching
-significance (§17.10). Interference and Bell violation predictions are
-not confirmed. The non-commutativity is real, but the specifically
-quantum signatures have not been detected. The empirical program is
-young, but the initial results are encouraging — and the mathematical
-framework provides a precise vocabulary for designing the next
-generation of experiments.<span class="math inline">6.3\sigma</span></p>
+<p>The framework’s structural predictions are consistently observed, in
+retrospective and model-mediated data. Its dynamical predictions are
+supported, with order effects significant in one language model
+(§17.10). Interference and Bell violation predictions are not confirmed.
+The non-commutativity is real, but the specifically quantum signatures
+have not been detected. The empirical program is young, but the initial
+results are encouraging — and the mathematical framework provides a
+precise vocabulary for designing the next generation of
+experiments.<span class="math inline">6.3\sigma</span></p>
 <h2 id="coda-the-philosophy-engineering-code-corpus">17.14 Coda: The
 Philosophy Engineering Code Corpus</h2>
 <p>The empirical evidence presented thus far—derived from the Dear Abby
@@ -1908,25 +1982,27 @@ class="math inline">\beta_{\text{VIB}}</span>).</p>
 <p>For the 100% obligation/permission transfer rate: this is an exact
 result on the binary classification task across all 11 source languages
 (0 misclassifications in the O/P category). The 95% binomial confidence
-interval for the true transfer rate is <span class="math inline">\lbrack
-99.7\%,100\%\rbrack</span> given the sample size. The Bond F1 of
-0.06–0.14 for content transfer represents at-chance performance,
-confirming the structural/content dissociation. The v10.16
-structural-to-surface ratio of 11.1<span
-class="math inline">\times</span> is reported with <span
+interval for the true transfer rate is [99.96%, 100%] (Clopper-Pearson,
+n &gt; 10,000 per language). The Bond F1 of 0.06–0.14 for content
+transfer represents at-chance performance, confirming the
+structural/content dissociation. The v10.16 structural-to-surface ratio
+of 11.1<span class="math inline">\times</span> is reported with <span
 class="math inline">p = 0.023</span> (permutation test, 10,000
 iterations). The QND order-effect significance of <span
-class="math inline">6.3\sigma</span> (<span class="math inline">p &lt;
-10^{- 21}</span>) uses a two-sided z-test against the 10% null
-baseline.</p>
+class="math inline">6.3\sigma\ (p\  = \ 1.3\  \times \ 10⁻¹⁰)\ is\ a\
+one - tailed\ binomial\ test\ against\ an\ assumed\ 10\%\ noise\ rate;\
+p\  &lt; \ 10⁻²¹\ is\ the\ same\ test\ against\ a\ 5\%\ rate.\ The\
+model’s\ run - to - run\ noise\ was\ not\ measured,\ and\ against\ 15\%\
+and\ 20\%\ noise\ rates\ the\ result\ falls\ to\ 4.2\sigma\ and\
+2.5\sigma.</span></p>
 <h3 id="internal-validation-protocol">Internal Validation Protocol</h3>
-<p>Three layers of internal validation are now complemented by
-independent replication. Thiele (2026), working from the published
-framework alone, confirmed all nine MoralVector dimensions as linearly
-decodable from LaBSE embeddings and demonstrated cross-lingual transfer
-across six typologically diverse languages—providing the first external
-verification of the Bond Invariance Principle’s empirical
-predictions.</p>
+<p>Three layers of internal validation are now complemented by an
+independent study, not yet published. Thiele (2026), working from the
+published framework alone, reports all nine MoralVector dimensions as
+linearly decodable from LaBSE embeddings and demonstrated cross-lingual
+transfer across six typologically diverse languages—the first external
+test of the Bond Invariance Principle’s empirical predictions, pending
+publication of its data.</p>
 <p><strong>1. Inter-rater reliability.</strong> Dear Abby coding:
 stratified random sample of 500 letters (2.5%) independently coded by
 two additional raters (philosophy grad student, computational linguist),
@@ -1945,24 +2021,23 @@ subsample selection, and statistical flukes. External replication
 requires the public artifact plan (below).</p>
 <h3 id="public-artifact-plan">Public Artifact Plan</h3>
 <p><strong>Code:</strong> The ErisML library is publicly available,
-including the D₄ gauge module, Bond Index calculator, Wilson observable
-implementation, and transformation suite engine (434 passing tests
-covering group axioms, defining relations, non-abelian structure,
-semantic gates, and Hohfeldian state actions). <strong>Data:</strong>
-Public-domain portions of the BIP corpus (classical texts in expired
-copyright) are released directly. The Dear Abby corpus cannot be
-released due to syndication copyright; anonymized aggregate statistics
-(dimension-weight distributions, temporal trends, gate-transition
-matrices). <strong>Models:</strong> Trained LaBSE model weights with the
-adversarial heads will follow for reproducibility.</p>
+including the V₄ Hohfeldian module, Bond Index calculator, Wilson
+observable implementation, and transformation suite engine, with tests
+covering the group axioms, semantic gates, and Hohfeldian state actions.
+<strong>Data:</strong> Public-domain portions of the BIP corpus
+(classical texts in expired copyright) are released directly. The Dear
+Abby corpus cannot be released due to syndication copyright; anonymized
+aggregate statistics (dimension-weight distributions, temporal trends,
+gate-transition matrices). <strong>Models:</strong> Trained LaBSE model
+weights with the adversarial heads will follow for reproducibility.</p>
 <p>❖</p>
 <blockquote>
 <p><em>The moral world is not a philosopher’s armchair. It is a space
 with structure — measurable structure, testable structure, structure
 that shows up in 20,030 advice column letters, in 109,294 passages
 spanning 3,000 years and 11 languages, in 16,798 commutator measurements
-confirming that moral frameworks do not commute, and in the
-step-function responses to “only if convenient” and “you
+showing that, for one language model, moral frameworks do not commute,
+and in the step-function responses to “only if convenient” and “you
 promised.”</em></p>
 <p><em>The geometry is real. The evidence is accumulating. And the
 framework that predicted the evidence — manifolds, tensors, metrics,
@@ -1970,8 +2045,10 @@ stratification, gauge invariance, conservation laws — is not merely an
 elegant mathematical exercise. It is a description of something that
 data confirms: the mathematical structure of moral reasoning.</em></p>
 <p><em>The evidence does not prove that ethics is geometry. It proves
-that geometry sees what scalar frameworks miss — and that what it sees
-is confirmed by the data we have.</em></p>
+that geometry sees what scalar frameworks miss — and that much of what
+it sees is borne out by the data we have. Some of it was not: D₄,
+hysteresis, Bell violation, the schism conjecture and angular
+contestedness (§17.7b).</em></p>
 </blockquote>
 <h2 id="the-relational-tensor-structure-of-annotated-norm-corpora">17.15
 The Relational-Tensor Structure of Annotated Norm Corpora</h2>
@@ -2070,7 +2147,7 @@ accompany the companion manuscript.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

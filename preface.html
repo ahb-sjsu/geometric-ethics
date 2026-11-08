@@ -83,9 +83,11 @@ Whitney structure as phase spaces in gauge theory. The way moral
 obligations transform under change of perspective turned out to follow
 the same transformation law as vector fields under change of
 coordinates. And the discrete transitions between deontic states:
-obligation, claim, liberty, no-claim. These turned out to exhibit the
-symmetry of the D<span class="math inline">_{4}</span> dihedral group,
-the symmetry group of a square.</p>
+obligation, claim, liberty, no-claim. These turned out to be two
+commuting involutions, the correlative and the negation, which generate
+the Klein four-group V₄. (Earlier editions said the dihedral group D₄,
+the symmetry group of a square; the quarter-turn D₄ needs was never
+found, §8.4.)</p>
 <p>And then another correspondence, perhaps the most arresting. The
 framework predicted that moral reasoning: the deliberative process by
 which agents choose how to act. This is formally equivalent to A*
@@ -105,7 +107,9 @@ domain. Category theory appears in database theory; this does not mean
 databases are secretly topological. But the correspondences accumulated.
 They predicted empirical results — cross-lingual invariance of deontic
 structure, specific patterns in corpus analysis, quantum-cognition
-effects in moral deliberation. These predictions were confirmed; they
+effects in moral deliberation. Many of these predictions were borne out,
+in corpus and model-mediated data (the order effects so far in one
+language model, not in people), and some failed (Chapter 17); they
 yielded a theorem: the <em><strong>No Escape Theorem</strong></em>,
 proving that geometric constraints on AI evaluation cannot be
 circumvented through representational manipulation. And they organized
@@ -239,11 +243,13 @@ before the framework can be used.</p>
 <p><strong>The methodology is inductive, not axiomatic.</strong> The
 mathematical structures in this book — the manifold, the gauge group,
 the conservation law — were not postulated and then illustrated. They
-were discovered in data and then formalized. The D₄ symmetry of the
-Hohfeldian square was found by testing every transformation against
-thousands of moral scenarios. The invariance of harm accounting was
-inferred from cross-lingual invariance patterns across 109,294 passages.
-The stratification into discrete strata was measured from semantic gate
+were discovered in data and then formalized. The correlative symmetry of
+the Hohfeldian square was measured by testing every transformation
+against thousands of moral scenarios, and its group, V₄, was then proved
+(§8.4). The larger D₄ that earlier editions claimed was not found in
+data and is withdrawn. The invariance of harm accounting was inferred
+from cross-lingual invariance patterns across 109,294 passages. The
+stratification into discrete strata was measured from semantic gate
 effectiveness rates in a 32-year corpus. The verification strategy is
 closer to fuzz testing in software engineering than to proof in pure
 mathematics: generate or collect a large number of cases, apply every
@@ -294,24 +300,25 @@ decisions with empirical motivation.</p>
 <p><strong>BIP (Axiom 5.1). [Definition / Modeling choice.] Stipulated
 symmetry. Empirical: confirmed at 100% for deontic axis (model-mediated;
 see §17.7).</strong></p>
-<p><strong>Gauge group (Thm. 12.3).</strong> [Theorem (conditional on
-A1–A5).] Uniquely determined. Axioms = modeling choices. CHSH data
-consistent with abelian model; do not exhibit non-abelian maximal
-violations.</p>
+<p><strong>Gauge group (§12.3). [Modeling choice; the discrete factor V₄
+is proved.] Not uniquely determined: the v1.24 uniqueness theorem is
+withdrawn. Axioms = modeling choices.</strong> CHSH data consistent with
+abelian model; do not exhibit non-abelian maximal violations.</p>
 <p><strong>Invariance of harm accounting (Thm. 12.1).</strong> [Theorem
 (conditional on BIP + Lagrangian form).] Lagrangian form = modeling
 choice.</p>
 <p><strong>No Escape (Thm. 18.1).</strong> [Theorem (conditional on Req.
 1–4).] Proven. Open: practical satisfiability.</p>
 <p><strong>Semantic gate discreteness (§8.4). [Empirical (robust).] n =
-20,030 + 109,294. Cohen’s h = 1.42 (see §17.3 for comparison
+20,030 + 109,294. Cohen’s h = 0.92 (see §17.3 for comparison
 specification).</strong></p>
 <p><strong>100% deontic transfer (§17.3).</strong> [Empirical (robust,
-model-mediated).] [Boundary] CI: [99.7%, 100%]. Via LaBSE, not human
+model-mediated).] [Boundary] CI: [99.96%, 100%]. Via LaBSE, not human
 subjects.</p>
 <p><strong>Quantum normative dynamics (Ch. 13).</strong> [Speculation /
-Extension.] Order effects confirmed; interference unconfirmed; Bell
-violations falsified.</p>
+Extension.] Order effects observed in one language model, not yet in
+people; interference unconfirmed; Bell violations not found (|S| ≤
+2).</p>
 <p><strong>Moral field equation (§29.4).</strong> [Speculation / Open
 problem.] No derivation exists.</p>
 <p><strong>Governance account (Ch. 9).</strong> [Modeling choice /
@@ -372,6 +379,33 @@ undertake that evaluation - with the governance, security, and
 validation it requires - remains an open question.</p>
 <p>This book is an attempt to ensure that, when the question is asked,
 the answer is available.</p>
+<h3 id="a-note-on-version-1.25">A note on version 1.25</h3>
+<p>This version brings the book up to date with the research since
+v1.24, and several of its claims are weaker for it. The Hohfeldian
+transitions form the Klein four-group V₄, not the dihedral group D₄: the
+quarter-turn D₄ needs was never demonstrated and was not found when
+searched for, and V₄ is now machine-checked (§8.4). The gauge group of
+Chapter 12 is posited rather than derived. The nine dimensions are a
+chart for coverage and audit, not a complete or independent basis: a
+tenth axis passed a preregistered gate, four axes collapse onto one, and
+rights could not be learned as a measured coordinate (§5.3). The order
+effects of Chapter 17 come from one language model, not from people, and
+its labels now say so. Two preregistered conjectures failed, and the
+risky-choice tests of the companion economics volume favored prospect
+theory (§17.7b, §20.8). Executable strata (§8.10b), measured invariance
+with confidence intervals, and a learned contraction (§15.11) are new.
+The claims marked Proved are checked in Lean 4 with Mathlib, and the
+closed-form derivations with MATLAB’s Symbolic Math Toolbox (formal/ in
+the book’s repository). The checks found errors. Lean found four
+statements that were false as printed (Propositions 6.3, 11.3, 15.1 and
+15.3). The MATLAB pass flagged 70 discrepancies in derivations and
+worked examples, of which 68 were errors in the book and 2 were errors
+in the checks. All are corrected in place, and every correction that
+changes a statement carries a note. Five conclusions change
+(Propositions 16.4, 19.3 and 19.5, Theorems 25.3 and 27.5), and so does
+one case-study verdict (Appendix D.4). The triage and climate case
+studies (Appendix D.1 and D.5) were recomputed from their stated
+rules.</p>
 <p>Andrew H. Bond</p>
 <p>San Jose, California 2026</p>
 
@@ -380,7 +414,7 @@ the answer is available.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

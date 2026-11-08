@@ -367,9 +367,11 @@ difference between the AI system's scalar-optimal path gamma_scalar
 <p>where cost_1 denotes the path cost on the d_1 component alone. The
 alignment tax measures the performance "sacrifice" required to maintain
 multi-dimensional alignment.</p>
-<p><strong>Theorem 26.5 (Curvature Bound on Alignment Tax)</strong>. The
-alignment tax T(v) is bounded above by the sectional curvature K(v) of
-the moral manifold at the decision point v:</p>
+<p><strong>Theorem 26.5 (Curvature Bound on Alignment Tax)</strong>. If
+the scalar-optimal and manifold-optimal paths coincide wherever the
+manifold is flat, the alignment tax T(v) is bounded above by the
+sectional curvature K(v) of the moral manifold at the decision point v
+(Corrected in v1.25.):</p>
 <p>T(v) &lt;= C * K(v) * L^2</p>
 <p>where C is a constant depending on the covariance structure Sigma_A
 and L is the geodesic length (decision horizon). In regions of low moral
@@ -381,10 +383,12 @@ T(v) can be large.</p>
 <p><strong>Proof</strong>. The alignment tax is the d_1 cost of
 deviating from the scalar-optimal path to the manifold-optimal path. In
 flat regions (K(v) approximately 0), the manifold is locally Euclidean,
-and the projection from 9D to 1D preserves path optimality to first
-order — the scalar-optimal path is close to the manifold-optimal path on
-all dimensions. As curvature increases, the geodesic on the full
-manifold curves away from the 1D projection, and the d_1 cost of
+and by hypothesis the scalar-optimal path is close to the
+manifold-optimal path. Flatness alone does not give this: under a
+constant covariance Sigma_A the manifold is exactly flat (K = 0), yet
+costs on d_2–d_9 can make the manifold-optimal path differ from the
+scalar one, with T &gt; 0. As curvature increases, the geodesic on the
+full manifold curves away from the 1D projection, and the d_1 cost of
 following the manifold geodesic rather than the scalar geodesic
 increases. The Taylor expansion of the geodesic deviation in Riemann
 normal coordinates gives the bound T(v) &lt;= C * K(v) * L^2, where the
@@ -403,7 +407,7 @@ reduced capability on benchmarks.</p></li>
 <li><p>The alignment tax increases with decision horizon (L^2
 dependence) — short-horizon decisions are cheap to align, but
 long-horizon planning with compounding moral consequences is
-exponentially more expensive.</p></li>
+quadratically more expensive.</p></li>
 </ol>
 <h2 id="autonomous-weapons-as-boundary-penalty-zeroing">26.6 Autonomous
 Weapons as Boundary Penalty Zeroing</h2>
@@ -1050,9 +1054,10 @@ violating the Bond Invariance Principle (Theorem 26.3). The
 fairness-accuracy trade-off is a false dichotomy created by scalar
 projection (Theorem 26.4).</p>
 <p>3. The alignment tax as curvature-bounded: the performance cost of
-alignment is bounded by the curvature of the moral manifold, explaining
-why alignment is cheap for routine decisions but expensive for morally
-fraught edge cases (Theorem 26.5).</p>
+alignment is bounded by the curvature of the moral manifold where scalar
+and manifold optima agree in flat regions, explaining why alignment is
+cheap for routine decisions but expensive for morally fraught edge cases
+(Theorem 26.5).</p>
 <p>4. Autonomous weapons as dimensional collapse: AWS with scalar
 objectives cannot satisfy the inherently multi-dimensional requirements
 of international humanitarian law (Theorem 26.6). Meaningful human
@@ -1085,7 +1090,7 @@ mathematically precise alternative to principles-based approaches.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

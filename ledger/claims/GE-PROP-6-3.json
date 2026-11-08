@@ -11,6 +11,11 @@
    "author_status": "Proved",
    "kind": "theorem",
    "mathematical_status": "follows from standard mathematics alone"
+  },
+  {
+   "source": "geometric-ethics formal/lean (Lean 4.32.2 + Mathlib 905b958), RESULTS-2026-11-08.txt",
+   "kind": "theorem",
+   "mathematical_status": "machine-checked in Lean 4 + Mathlib; 0 sorry; standard axioms only"
   }
  ],
  "depends": {
@@ -25,6 +30,10 @@
   {
    "date": "2026-08-25",
    "event": "brownfield conversion from Appendix F registry (PE-BRW-1.0 s5.1-5.2); author status carried over"
+  },
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: the printed claim that the gradients differ whenever df is nonzero along a dimension where the inverse metrics differ is false (counterexample g^-1 = 3I, g^-1' = [[2,1],[1,2]], df = (1,1)); corrected to: they differ exactly when (g^-1 - g^-1') df != 0. Lean: gradients_differ_iff, gradient_sufficient_condition_fails."
   }
  ]
 }

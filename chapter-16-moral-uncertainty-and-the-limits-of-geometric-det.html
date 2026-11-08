@@ -519,7 +519,8 @@ term is positive. A perturbation of <span
 class="math inline">c_{k}</span> changes <span
 class="math inline">S_{\text{MEC}}</span> by <span
 class="math inline">\sum_{k}^{}\delta c_{k}I_{\mu}^{(k)}O^{\mu}</span>,
-which is bounded by <span class="math inline">\epsilon \cdot
+which, for m theories, is bounded by m times <span
+class="math inline">\epsilon \cdot
 \max_{k}|I_{\mu}^{(k)}O^{\mu}|</span>. For sufficiently small <span
 class="math inline">\epsilon</span>, the perturbation does not change
 the sign of <span class="math inline">S_{\text{MEC}}</span>. <span
@@ -928,32 +929,39 @@ all parties agree on the facts. The disagreement is not empirical but
 structural — it lies in the metric, the interest covector, or the
 contraction procedure. No amount of factual evidence can resolve a
 structural disagreement.</p>
-<p><strong>Proposition 16.4 (Hedging as Minimax Regret).</strong>
+<p><strong>Proposition 16.4 (Hedging and Minimax Regret).</strong>
 <em>Under certain regularity conditions, the hedging strategy</em></p>
 <p><span class="math display">a^{*} = \arg\max_{a}\left\lbrack
 \sum_{k}^{}c_{k}S_{T_{k}}(a) - \lambda \cdot
 \text{std}_{k}(S_{T_{k}}(a)) \right\rbrack</span></p>
 <p><em>converges, as</em> <span class="math inline">\lambda \rightarrow
-\infty</span><em>, to the minimax-regret strategy:</em></p>
+\infty</span><em>, to the minimum-dispersion strategy a* = argmin_a
+std_k(S_{T_k}(a)) (ties broken by the MEC mean), and not, in general, to
+the minimax-regret strategy (Corrected in v1.25.):</em></p>
 <p><span class="math display">a^{*} = \arg\min_{a}\max_{k}\left\lbrack
 \max_{a&#39;}S_{T_{k}}(a&#39;) - S_{T_{k}}(a) \right\rbrack</span></p>
-<p><em>That is, extreme hedging minimizes the worst-case regret across
-all theories. The hedging parameter</em> <span
+<p><em>That is, extreme hedging minimizes cross-theory disagreement,
+which is not the same as worst-case regret: with two equally credible
+theories and S(a₁) = (0, 0), S(a₂) = (10, 9), λ → ∞ selects a₁ (σ = 0,
+worst-case regret 10), whereas minimax regret selects a₂ (worst-case
+regret 0). The hedging parameter</em> <span
 class="math inline">\lambda</span> <em>interpolates between MEC
-(</em><span class="math inline">\lambda = 0</span><em>) and minimax
-regret (</em><span class="math inline">\lambda \rightarrow
+(</em><span class="math inline">\lambda = 0</span><em>) and minimum
+dispersion (</em><span class="math inline">\lambda \rightarrow
 \infty</span><em>).</em></p>
 <p><em><strong>Proof</strong>.</em> Write the objective as J(a;λ) = S̄(a)
 − λ·σ(a), where S̄(a) = Σ_k c_k S_{T_k}(a) is the weighted mean
 satisfaction and σ(a) = std_k(S_{T_k}(a)) is the cross-theory standard
 deviation. As λ → ∞, the penalty term λ·σ(a) dominates, so maximizing J
 is equivalent to minimizing σ(a). The regret of action a under theory
-T_k is r_k(a) = max_{a'} S_{T_k}(a') − S_{T_k}(a) ≥ 0. Minimizing the
-worst-case deviation as λ → ∞ converges to minimizing max_k r_k(a)
-(under the regularity condition that the maximum is achieved by a single
-theory): a* = argmin_a max_k[max_{a'} S_{T_k}(a') − S_{T_k}(a)], which
-is the minimax-regret strategy. For λ = 0, J(a;0) = S̄(a), the MEC
-objective. Hence λ interpolates between MEC and minimax regret. □</p>
+T_k is r_k(a) = max_{a'} S_{T_k}(a') − S_{T_k}(a) ≥ 0. Minimizing σ(a)
+is not, in general, minimizing the worst-case regret max_k r_k(a) =
+max_k[max_{a'} S_{T_k}(a') − S_{T_k}(a)]: adding the same constant to
+every S_{T_k}(a) for one action a leaves σ(a) unchanged but changes its
+regrets, so the two criteria can select different actions (the example
+after the statement separates them). For λ = 0, J(a;0) = S̄(a), the MEC
+objective. Hence λ interpolates between MEC and minimum dispersion.
+□</p>
 <p>❖</p>
 <p><em>The geometric framework is modest in what it claims. It does not
 claim to settle all moral questions. It claims that moral questions have
@@ -987,7 +995,7 @@ complex.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

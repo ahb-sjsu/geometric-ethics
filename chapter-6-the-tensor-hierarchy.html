@@ -830,8 +830,8 @@ Decision</h3>
 is the operation that reduces rank and produces scalars. The full chain
 of contractions from high-rank moral tensors to a scalar action-decision
 can be written:</p>
-<p><span class="math display">S =
-g^{\mu\alpha}E_{\alpha}^{\beta}I_{\beta} \cdot O^{\mu}</span></p>
+<p><span class="math display">S = E_{\mu}^{\beta}I_{\beta} \cdot
+O^{\mu}</span></p>
 <p>or in various other arrangements depending on which tensors are
 contracted first. The <em>order</em> of contraction may matter when the
 tensors are not simply related — different contraction orders correspond
@@ -965,17 +965,21 @@ Direction).</strong> <em>The gradient vector of a scalar function f on M
 depends on the metric:</em></p>
 <p><span class="math display">(\text{grad }f)^{\mu} =
 g^{\mu\nu}\frac{\partial f}{\partial x^{\nu}}</span></p>
-<p><em>Different metrics yield different gradient directions for the
-same function. In particular, the “direction of moral improvement” — the
-gradient of the satisfaction function — depends on the metric, which is
-to say: on the ethical theory.</em></p>
+<p><em>Different metrics generally yield different gradient directions
+for the same function. In particular, the “direction of moral
+improvement” — the gradient of the satisfaction function — depends on
+the metric, which is to say: on the ethical theory.</em></p>
 <p><em>Proof.</em> The gradient of f is the unique vector field
 satisfying g(grad f, V) = df(V) for all vector fields V. In coordinates:
 g_{μα}(grad f)ᵅ = ∂f/∂xᵘ. Multiplying both sides by g^{μν}: (grad f)ᵛ =
 g^{μν} ∂f/∂xᵘ. Since g^{μν} appears explicitly, the gradient depends on
-the metric. For two admissible metrics g and ĝ with g^{μν} ≠ ĝ^{μν}, we
-have (grad_g f)ᵛ ≠ (grad_{ĝ} f)ᵛ whenever ∂f/∂xᵘ ≠ 0 along a dimension
-where the inverse metrics differ. □</p>
+the metric. For two admissible metrics g and ĝ with g^{μν} ≠ ĝ^{μν}, the
+gradients differ exactly when (g^{μν} − ĝ^{μν}) ∂f/∂xᵘ ≠ 0 for some ν,
+that is, when df does not lie in the kernel of the difference of the
+inverse metrics. They can agree even where the inverse metrics differ:
+with g⁻¹ = 3I, ĝ⁻¹ = [[2, 1], [1, 2]] and df = (1, 1), both gradients
+are (3, 3). (v1.24 said the gradients always differ in that case.
+Corrected in v1.25; machine-checked, formal/lean.) □</p>
 <p>This result is central to the framework. The <em>facts</em> of the
 situation (the obligation field O) may be common ground, but the
 <em>direction of improvement</em> (the gradient of S) depends on the
@@ -992,7 +996,7 @@ generates, constrains, and illuminates the decision.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

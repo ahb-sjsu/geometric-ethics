@@ -23,6 +23,10 @@
   {
    "date": "2026-08-25",
    "event": "entered exploratory: retrospective, model-mediated, and the instrument confound is conceded but not excluded"
+  },
+  {
+   "date": "2026-11-08",
+   "event": "v1.25: section 17.7b adds confidence intervals from moral-spectrum-analyzer (invariance index BGE-M3 0.721 [0.71, 0.74], LaBSE 0.804 [0.79, 0.82], 60 items, 5 languages). The instrument confound remains. The section 17.8 table label is now 'Observed in LaBSE embeddings (100%); instrument confound open'."
   }
  ]
 }

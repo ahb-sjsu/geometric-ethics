@@ -172,6 +172,22 @@ engineering challenge. Sections 18.3–18.5 develop the ErisML language.
 Sections 18.6–18.9 develop the DEME architecture. Section 18.10 presents
 the Grand Unified AI Safety Stack (GUASS) that integrates them. Section
 19.11 works through a case study.</p>
+<p><strong>The software as shipped (v1.25).</strong> This chapter
+describes the design. The released software is organized as follows.
+erisml-lib (version 3.2.0; pip install erisml-lib) holds DEME: the
+MoralVector, the ethics modules, the Bond Index, the Hohfeldian V₄
+module and the governance profiles. erisml-compiler (version 0.10)
+compiles a scene or a text through a 12-pass pipeline into a typed
+MoralGraph of stakeholders, acts, maxims, commitments, facts and norms,
+with a canonical SHA-256 hash. Four framework projections read that
+graph: consequentialist (per-stakeholder harm and care, with Gini,
+worst-off and Shapley summaries), deontic (Kantian categorical gates:
+universalizability, mere means, valid consent, legitimate authority),
+virtue, and care ethics. When the projections disagree, the compiler
+does not aggregate them; it reports every verdict and defers the choice.
+The compiler’s earlier EM-DAG implementation (ten one-dimension modules)
+and its hardware evaluator target were retired in version 0.10, so the
+EM-DAG of §19.8 is a design, not shipped code.</p>
 <h2 id="the-engineering-challenge">19.2 The Engineering Challenge</h2>
 <p>AI systems that make morally significant decisions face four types of
 chaos that any governance infrastructure must handle:</p>
@@ -249,11 +265,10 @@ manifold:</p>
       emergency_status = critical;
     };
 }</code></pre>
-<p>The
-<code>@</code><code> uncertain(</code><code>self_report</code><code>)</code>
-annotation declares that pain level is not directly measurable but
-inferred from patient testimony — encoding the epistemic dimension of
-the moral manifold (Chapter 5, dimension D9). The stochastic dynamics
+<p>The <code>@ uncertain(self_report)</code> annotation declares that
+pain level is not directly measurable but inferred from patient
+testimony — encoding the epistemic dimension of the moral manifold
+(Chapter 5, dimension D9). The stochastic dynamics
 (<code>@ prob 0.95</code>) encode the environment’s inherent
 uncertainty, which feeds into the uncertainty tensor (Chapter 16).</p>
 <h3 id="agent-specification">Agent Specification</h3>
@@ -323,13 +338,13 @@ declared source of authority — mapping to the governance account of
 Chapter 9. The metric is not discovered or stipulated; it is governed by
 a declared institutional process.</p>
 <p><strong>Context sensitivity.</strong> Norms adapt to context
-(<code>during </code><code>emergency_status</code><code> == critical</code>),
-implementing the context-dependent weighting that the Dear Abby corpus
-revealed (Chapter 17, §17.2): the same situation activates different
-obligation strengths depending on the stratum.</p>
+(<code>during emergency_status == critical</code>), implementing the
+context-dependent weighting that the Dear Abby corpus revealed (Chapter
+17, §17.2): the same situation activates different obligation strengths
+depending on the stratum.</p>
 <p><strong>Priority ordering.</strong> The declaration
-<code>patient.safety</code><code> &gt; efficiency &gt; comfort</code> is
-a lexicographic contraction (Chapter 15, §15.5): safety is satisfied
+<code>patient.safety &gt; efficiency &gt; comfort</code> is a
+lexicographic contraction (Chapter 15, §15.5): safety is satisfied
 first, then efficiency, then comfort. The contraction order is explicit
 and auditable.</p>
 <p><strong>Human override.</strong> The override mechanism implements
@@ -1008,7 +1023,7 @@ with correlative enforcement—the O/L verdict for one party automatically
 implies the C/N verdict for the other.</p>
 <p>The EM-DAG demonstrates that the separation principle is not merely a
 design aspiration. Seventy years of naturalistic moral reasoning data
-can be organized into a computable architecture that respects the D₄
+can be organized into a computable architecture that respects the V₄
 structure (Chapter 8), the nullifier hierarchy (§8.5), and the
 correlative symmetry that BIP demands.</p>
 <h3
@@ -1162,6 +1177,9 @@ Safety Stack</h2>
 <p>ErisML and DEME are not standalone systems. They are layers in a
 comprehensive safety architecture — the Grand Unified AI Safety Stack
 (GUASS) — that integrates all components of geometric AI governance.</p>
+<p>[Conceptual.] The seven-layer stack below is a map of the research
+programme, not of the released software, which is organized as described
+in §19.1.</p>
 <table style="width:100%;">
 <colgroup>
 <col style="width: 99%" />
@@ -1203,11 +1221,10 @@ framework:</strong></p>
 <p><strong>L1 (QND)</strong> implements the quantum extension of Chapter
 13: moral superposition, interference, and the stratified Lagrangian.
 This is the foundational mathematical layer — the “physics” of moral
-deliberation. <em>Update:</em> The BIP v10.16 experiments (§17.10) have
-now provided the first empirical evidence for QND-predicted order
-effects: a 28.7% order-effect magnitude in contested moral cases, <span
-class="math inline">6.3\sigma</span> above the null baseline (<span
-class="math inline">p &lt; 10^{- 21}</span>), consistent with the
+deliberation. <em>Update: The BIP v10.16 experiments (§17.10) have
+provided the first evidence, in one language model, for QND-predicted
+order effects: a 28.7% order-effect magnitude in contested moral cases,
+6.3σ above an assumed 10% noise rate,</em> consistent with the
 non-commutative evaluation operators that QND predicts.</p>
 <p><strong>L2 (Noether Ethics)</strong> implements the conservation laws
 of Chapter 12: the BIP gauge symmetry, the invariance of harm
@@ -1506,17 +1523,21 @@ literal tensor contraction.</p>
 <p><strong>Proposition 19.5 (Gauge-Fiber Severance)</strong>. Let Tᵘ be
 a rank-2 canonicalization tensor and Oᵘ = trG(T) its trace over the
 gauge index. Then for any linear functional f: G → ℝ that depends only
-on the gauge fiber, f(O) = 0. That is, the canonicalized output carries
-zero gauge-fiber information in the sense that no linear probe on Oᵘ can
-recover the gauge index g. Proof sketch. Oᵘ = ∑ Tᵘ is the image of T
-under the trace map trG: TₚM ⊗ G* → TₚM. Since trG projects onto the
-first factor, the image lies entirely in TₚM and has no component in G*.
-Any linear functional f that factors through G* therefore evaluates to
-zero on Oᵘ. This is the algebraic counterpart of gauge-fixing: the trace
-eliminates the fiber direction exactly, not approximately. The 99.8%
-language-probe accuracy of Section 17.10 would drop to chance level
-(~50%) under this architecture — not by better training, but by
-structural impossibility.</p>
+on the gauge fiber, f(O) = 0. That is, the canonicalized output has no
+gauge-fiber component: the gauge index g is not a coordinate of Oᵘ. This
+does not by itself stop a probe from recovering the input’s language,
+because Oᵘ still depends on the input through T; the trace removes that
+dependence only if tr_G(T(g·x)) = tr_G(T(x)) for all g, the condition
+the contrastive objective below trains for. (Corrected in v1.25.) Proof
+sketch. Oᵘ = ∑ Tᵘ is the image of T under the trace map trG: TₚM ⊗ G* →
+TₚM. Since trG projects onto the first factor, the image lies entirely
+in TₚM and has no component in G*. Any linear functional f that factors
+through G* therefore evaluates to zero on Oᵘ. This is the algebraic
+counterpart of gauge-fixing: the trace eliminates the fiber direction
+exactly, not approximately. If that condition holds exactly, the 99.8%
+language-probe accuracy of Section 17.10 would drop to chance level (the
+16.7% chance rate quoted there) under this architecture; the trace alone
+does not guarantee it.</p>
 <p>The rank-2 canonicalization tensor has a precise geometric meaning.
 In the fiber-bundle structure of Chapter 4 (Section 4.7), the moral
 manifold M is the base space and the linguistic representations form the
@@ -1541,16 +1562,17 @@ equivalent inputs (x, g · x), the traces must match, while the full
 tensors may differ. An adversarial gauge-fiber discriminator is trained
 to recover g from Oᵘ; the canonicalizer is penalized if the probe
 succeeds. This replaces the post-hoc linear probe test of Section 17.10
-with an architectural guarantee. Implementation status: proposed; not
-yet implemented in DEME V3.</p>
-<p><strong>Empirical support</strong>. Thiele (2026) provides direct
-evidence for this architectural choice: principal-component analysis of
-LaBSE embeddings shows that the moral-judgement subspace and the
-language-identity subspace are nearly orthogonal (shared variance &lt;
-3%). A rank-2 canonicalization tensor operating on the moral subspace
-therefore leaves linguistic provenance untouched, exactly as required by
-the Bond Invariance Principle. The measured cross-lingual F1 scores
-(0.71–0.82 across six languages) confirm that the tensor’s action
+with an architectural constraint whose invariance is enforced in
+training. Implementation status: proposed; not yet implemented in DEME
+V3.</p>
+<p><strong>Empirical support. Thiele (2026, unpublished) reports direct
+evidence for this architectural choice:</strong> principal-component
+analysis of LaBSE embeddings shows that the moral-judgement subspace and
+the language-identity subspace are nearly orthogonal (shared variance
+&lt; 3%). A rank-2 canonicalization tensor operating on the moral
+subspace therefore leaves linguistic provenance untouched, exactly as
+required by the Bond Invariance Principle. The measured cross-lingual F1
+scores (0.71–0.82 across six languages) confirm that the tensor’s action
 generalises without per-language tuning.</p>
 <h3 id="proposal-2-rank-3-uncertainty-aware-canonicalization">Proposal
 2: Rank-3 Uncertainty-Aware Canonicalization</h3>
@@ -1885,39 +1907,45 @@ governance-specified stakeholder weights. The aggregated verdict</em>
 weighted contraction (Chapter 15, §15.5). If hard vetoes</em> <span
 class="math inline">V</span> <em>are active, the contraction is
 lexicographic: vetoed actions are eliminated before weighted aggregation
-proceeds. The aggregation satisfies the BIP if and only if all EMs
-satisfy the BIP and the aggregation weights are
-gauge-invariant.</em></p>
-<p><em><strong>Proof</strong>.</em> (⇒) Suppose the aggregation
-satisfies the BIP: S(g·F) = S(F) for all g ∈ G. Then Σ_k w_k J_k(g·F) =
-Σ_k w_k J_k(F). If some J_k violates the BIP, then J_k(g·F) ≠ J_k(F) for
-some g, and the weighted sum changes unless the violation is exactly
-cancelled by other terms — which cannot hold for all F unless w_k = 0.
-Hence each J_k must satisfy the BIP. Similarly, if w is not
-gauge-invariant, the aggregation would change under re-description. (⇐)
-Suppose each J_k satisfies the BIP and w is gauge-invariant. Then S(g·F)
-= Σ_k w_k J_k(g·F) = Σ_k w_k J_k(F) = S(F). The lexicographic structure
-preserves BIP compliance because veto predicates (BIP-compliant by
-assumption) eliminate actions before the linear aggregation step. □</p>
+proceeds. The aggregation satisfies the BIP if all EMs satisfy the BIP
+and the aggregation weights are gauge-invariant; the converse fails,
+because BIP violations in different EMs can cancel in the weighted sum.
+(Corrected in v1.25.)</em></p>
+<p><em><strong>Proof</strong>.</em> Suppose each J_k satisfies the BIP
+and w is gauge-invariant. Then S(g·F) = Σ_k w_k J_k(g·F) = Σ_k w_k
+J_k(F) = S(F). The lexicographic structure preserves BIP compliance
+because veto predicates (BIP-compliant by assumption) eliminate actions
+before the linear aggregation step. The converse fails: if f is
+gauge-invariant and h is not, the modules J_1 = f + h and J_2 = f − h
+with w_1 = w_2 = 1/2 give S = f, which satisfies the BIP although
+neither module does. □</p>
 <p><strong>Proposition 19.4 (Bond Index Convergence).</strong> <em>For
-an AI system with invariance loss</em> <span
+an AI system with a finite transformation suite G (containing the
+identity) and invariance loss</em> <span
 class="math inline">\mathcal{L}_{\text{inv}} &lt; \epsilon</span>
 <em>(Chapter 18, §18.10), the expected Bond Index satisfies</em> <span
-class="math inline">\mathbb{E\lbrack}\text{Bd}\rbrack \leq
-\epsilon/\tau</span><em>, where</em> <span
+class="math inline">\mathbb{E\lbrack}\text{Bd}\rbrack \leq 2\sqrt{}((|G|
+- 1)\epsilon)/\tau</span><em>, where</em> <span
 class="math inline">\tau</span> <em>is the domain-specific tolerance.
-As</em> <span class="math inline">\mathcal{L}_{\text{inv}} \rightarrow
-0</span> <em>during training,</em> <span class="math inline">\text{Bd}
+(Corrected in v1.25.) As</em> <span
+class="math inline">\mathcal{L}_{\text{inv}} \rightarrow 0</span>
+<em>during training,</em> <span class="math inline">\text{Bd}
 \rightarrow 0</span><em>. The Bond Index thus provides a monotonic
 measure of alignment progress.</em></p>
 <p><em><strong>Proof</strong>.</em> The Bond Index is defined as Bd(x) =
 max_{g ∈ G} |Σ(g(x)) − Σ(x)| / τ. The invariance violation is IV(x, G) =
-Var_{g ∈ G}[Σ(g(x))]. Since max_g |Σ(g(x)) − Σ(x)| ≤ 2 std_g[Σ(g(x))] =
-2√(IV(x,G)) (the maximum deviation from the mean is bounded by twice the
-standard deviation), we have Bd(x) ≤ 2√(IV(x,G))/τ. Taking expectations
-and applying Jensen’s inequality: E[Bd] ≤ 2√(E[IV])/τ. The invariance
-loss satisfies L_inv = E[IV] by definition. Hence E[Bd] ≤ 2√(L_inv)/τ ≤
-ε/τ when L_inv ≤ ε²/4. As L_inv → 0, E[Bd] → 0 monotonically. □</p>
+Var_{g ∈ G}[Σ(g(x))]. Since the identity lies in G, |Σ(g(x)) − Σ(x)| is
+at most twice the largest deviation of the |G| values Σ(g(x)) from their
+mean, and by Samuelson’s inequality no value lies more than √(|G| − 1)
+standard deviations from the mean. Hence max_g |Σ(g(x)) − Σ(x)| ≤ 2√(|G|
+− 1) std_g[Σ(g(x))] = 2√((|G| − 1) IV(x,G)), and Bd(x) ≤ 2√((|G| − 1)
+IV(x,G))/τ. (Twice the standard deviation alone is not a bound: with |G|
+= 100 and one outlying value, the maximum deviation is about five times
+2 std.) Taking expectations and applying Jensen’s inequality: E[Bd] ≤
+2√((|G| − 1) E[IV])/τ. The invariance loss satisfies L_inv = E[IV] by
+definition. Hence E[Bd] ≤ 2√((|G| − 1) L_inv)/τ &lt; 2√((|G| − 1) ε)/τ,
+and E[Bd] ≤ ε/τ holds once L_inv ≤ ε²/(4(|G| − 1)). As L_inv → 0, this
+bound, and with it E[Bd], goes to 0. □</p>
 <p>❖</p>
 
       </div>
@@ -1925,7 +1953,7 @@ loss satisfies L_inv = E[IV] by definition. Hence E[Bd] ≤ 2√(L_inv)/τ ≤
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

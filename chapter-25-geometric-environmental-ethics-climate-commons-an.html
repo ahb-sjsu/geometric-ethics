@@ -271,11 +271,12 @@ Rate as Dimensional Collapse</h2>
 <p>The social discount rate is the central parameter of environmental
 cost-benefit analysis. It determines how much weight current decisions
 give to future costs and benefits. A high discount rate (Nordhaus: 3-5%)
-implies that a dollar of climate damage in 100 years is worth less than
-a cent today. A low discount rate (Stern: 0.1%) implies that future
-damages are nearly as significant as present ones. The policy difference
-between these two rates is the difference between modest carbon taxes
-and wartime-level mobilization.</p>
+implies that a dollar of climate damage in 100 years is worth about five
+cents today at 3% and less than one cent at 5%. A low discount rate
+(Stern: 0.1%) implies that future damages are nearly as significant as
+present ones. The policy difference between these two rates is the
+difference between modest carbon taxes and wartime-level
+mobilization.</p>
 <p><strong>Theorem 25.2 (Discount Rate as Dimensional
 Collapse)</strong>. The social discount rate r collapses the temporal
 dimension of the moral manifold to a scalar via the discount operator
@@ -343,8 +344,9 @@ Pareto-dominated by the BGE on the full manifold. Specifically, let
 BGE_1 be the equilibrium in which each agent's edge weights include only
 d_1, and let BGE_full be the equilibrium in which edge weights include
 all nine dimensions with nonzero weight on d_6 (social and ecological
-impact). Then for sufficiently large n, every agent achieves higher
-long-run d_1 value at BGE_full than at BGE_1.</p>
+impact). Then for sufficiently large n and a sufficiently low discount
+rate, every agent achieves higher long-run d_1 value at BGE_full than at
+BGE_1. (Corrected in v1.25.)</p>
 <p><strong>Proof</strong>. At BGE_1, each agent maximizes d_1 without
 internalizing d_6 costs. The aggregate extraction rate exceeds the
 regeneration rate of the commons, producing resource depletion. The d_1
@@ -355,11 +357,17 @@ each agent's edge weight computation. The covariance term Sigma_{1,6}
 commons. The optimal path under the full metric involves sustainable
 extraction at a rate below the regeneration threshold. The d_1
 trajectory at BGE_full is: lower initial gain, but sustained returns
-over time. For any positive discount rate, there exists a time horizon T
-beyond which the cumulative d_1 value at BGE_full exceeds the cumulative
-d_1 value at BGE_1 (because BGE_1 produces zero d_1 after collapse). For
+over time. Without discounting, there exists a time horizon T beyond
+which the cumulative d_1 value at BGE_full exceeds the cumulative d_1
+value at BGE_1 (because BGE_1 produces zero d_1 after collapse). With a
+discount rate r &gt; 0 both discounted totals converge, so a long
+horizon does not settle the comparison: if BGE_1 yields G per period
+until collapse at time k and BGE_full yields g_s per period
+indefinitely, BGE_full wins if and only if g_s &gt; G(1 − e^{−rk}),
+which holds at low discount rates and can fail at high ones. For
 intergenerational decisions, where the relevant time horizon is
-effectively infinite, BGE_full strictly dominates. []</p>
+effectively infinite and the discount rate is low, BGE_full strictly
+dominates. []</p>
 <p>The tragedy is a perceptual failure, not a rational one. Commons
 agents who can perceive only d_1 cannot see the cooperative geodesics
 that exist on the full manifold. Adding d_6 to the agent's perceptual
@@ -1175,10 +1183,10 @@ dispute is a consequence of irrecoverable dimensional collapse.</p>
 <p>6. Chapter 20 established Bond Geodesic Equilibrium for multi-agent
 decisions. This chapter applies BGE to commons management (Theorem
 25.3), showing that the tragedy of the commons is a BGE on the d_1
-projection that is Pareto-dominated by the BGE on the full manifold.
-Environmental ethics is the hardest test case for the geometric
-framework: intergenerational, irreversible, and requiring global
-collective action under deep uncertainty.</p>
+projection that, at low discount rates, is Pareto-dominated by the BGE
+on the full manifold. Environmental ethics is the hardest test case for
+the geometric framework: intergenerational, irreversible, and requiring
+global collective action under deep uncertainty.</p>
 <h2 id="summary-16">25.14 Summary</h2>
 <p>This chapter has shown that the geometric ethics framework, when
 applied to environmental and climate ethics, yields:</p>
@@ -1194,8 +1202,8 @@ chapters.</p>
 <p>3. The tragedy of the commons as dimensional restriction: commons
 collapse occurs when agents optimize on d_1 alone; the BGE on the full
 manifold, incorporating d_6 (ecological impact), produces sustainable
-cooperative geodesics that Pareto-dominate the d_1-only equilibrium
-(Theorem 25.3).</p>
+cooperative geodesics that Pareto-dominate the d_1-only equilibrium at
+low discount rates (Theorem 25.3).</p>
 <p>4. Species extinction as absorbing boundary: extinction irreversibly
 removes vertices and edges from the environmental decision complex,
 permanently reducing the path space available to future agents (Theorem
@@ -1222,7 +1230,7 @@ decision.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.24</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>
