@@ -1,0 +1,86 @@
+{
+  "A_grid_convergence": {
+    "fixed_connectivity_r1": [
+      {
+        "n": 50,
+        "r": 1,
+        "max_rel_err": 0.08239213056679096,
+        "mean_rel_err": 0.05386679772624847
+      },
+      {
+        "n": 100,
+        "r": 1,
+        "max_rel_err": 0.08239219823986255,
+        "mean_rel_err": 0.05431520180224007
+      },
+      {
+        "n": 200,
+        "r": 1,
+        "max_rel_err": 0.0823922002319728,
+        "mean_rel_err": 0.0545605396615143
+      },
+      {
+        "n": 400,
+        "r": 1,
+        "max_rel_err": 0.08239220023196658,
+        "mean_rel_err": 0.05466924703575909
+      }
+    ],
+    "radius_growing_with_n": [
+      {
+        "n": 50,
+        "r": 1,
+        "max_rel_err": 0.08239213056679096,
+        "mean_rel_err": 0.05386679772624847
+      },
+      {
+        "n": 100,
+        "r": 2,
+        "max_rel_err": 0.027486295888454304,
+        "mean_rel_err": 0.014250597682175086
+      },
+      {
+        "n": 200,
+        "r": 4,
+        "max_rel_err": 0.007549003397439691,
+        "mean_rel_err": 0.0024355487815138238
+      },
+      {
+        "n": 400,
+        "r": 8,
+        "max_rel_err": 0.0019361392934766908,
+        "mean_rel_err": 0.0003257920476435303
+      }
+    ],
+    "theory_max_rel_err_r1": 0.08239220029239402,
+    "fixed_error_does_not_vanish": true,
+    "growing_radius_error_shrinks": true
+  },
+  "B_moral_pathfind": {
+    "trials": 300,
+    "nodes": 8,
+    "boundaries": 2,
+    "penalty_form_equals_dijkstra": 300,
+    "penalty_form_max_abs_diff": 0.0,
+    "separate_budget_changes_optimum": 85,
+    "separate_budget_makes_infeasible": 106,
+    "penalty_form_is_plain_shortest_path": true
+  },
+  "C_whitney_umbrella": {
+    "path1_on_surface": true,
+    "path1_limit_unit_normal": [
+      "1",
+      "0",
+      "0"
+    ],
+    "path1_plane_contains_z_axis": true,
+    "path2_on_surface": true,
+    "path2_limit_unit_normal": [
+      "0",
+      "0",
+      "-1"
+    ],
+    "path2_plane_contains_z_axis": false,
+    "condition_A_fails_at_origin_with_z_axis_as_one_stratum": true
+  }
+}
