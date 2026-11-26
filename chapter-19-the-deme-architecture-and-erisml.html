@@ -1932,20 +1932,25 @@ class="math inline">\mathcal{L}_{\text{inv}} \rightarrow 0</span>
 <em>during training,</em> <span class="math inline">\text{Bd}
 \rightarrow 0</span><em>. The Bond Index thus provides a monotonic
 measure of alignment progress.</em></p>
-<p><em><strong>Proof</strong>.</em> The Bond Index is defined as Bd(x) =
-max_{g ∈ G} |Σ(g(x)) − Σ(x)| / τ. The invariance violation is IV(x, G) =
-Var_{g ∈ G}[Σ(g(x))]. Since the identity lies in G, |Σ(g(x)) − Σ(x)| is
-at most twice the largest deviation of the |G| values Σ(g(x)) from their
-mean, and by Samuelson’s inequality no value lies more than √(|G| − 1)
-standard deviations from the mean. Hence max_g |Σ(g(x)) − Σ(x)| ≤ 2√(|G|
-− 1) std_g[Σ(g(x))] = 2√((|G| − 1) IV(x,G)), and Bd(x) ≤ 2√((|G| − 1)
-IV(x,G))/τ. (Twice the standard deviation alone is not a bound: with |G|
-= 100 and one outlying value, the maximum deviation is about five times
-2 std.) Taking expectations and applying Jensen’s inequality: E[Bd] ≤
-2√((|G| − 1) E[IV])/τ. The invariance loss satisfies L_inv = E[IV] by
-definition. Hence E[Bd] ≤ 2√((|G| − 1) L_inv)/τ &lt; 2√((|G| − 1) ε)/τ,
-and E[Bd] ≤ ε/τ holds once L_inv ≤ ε²/(4(|G| − 1)). As L_inv → 0, this
-bound, and with it E[Bd], goes to 0. □</p>
+<p><em><strong>Proof</strong>.</em> Write Bd_max(x) = max_{g ∈ G}
+|Σ(g(x)) − Σ(x)| / τ for the worst case over the suite. The Bond Index
+Bd(x) of Chapter 18 is the mean of |Σ(g(x)) − Σ(x)| over G, divided by
+τ, so Bd(x) ≤ Bd_max(x), and a bound on the worst case is a bound on the
+index. (Stated this way in v1.26; earlier versions called the worst case
+the Bond Index. The inequality proved is unchanged.) The invariance
+violation is IV(x, G) = Var_{g ∈ G}[Σ(g(x))]. Since the identity lies in
+G, |Σ(g(x)) − Σ(x)| is at most twice the largest deviation of the |G|
+values Σ(g(x)) from their mean, and by Samuelson’s inequality no value
+lies more than √(|G| − 1) standard deviations from the mean. Hence max_g
+|Σ(g(x)) − Σ(x)| ≤ 2√(|G| − 1) std_g[Σ(g(x))] = 2√((|G| − 1) IV(x,G)),
+and Bd(x) ≤ Bd_max(x) ≤ 2√((|G| − 1) IV(x,G))/τ. (Twice the standard
+deviation alone is not a bound: with |G| = 100 and one outlying value,
+the maximum deviation is about five times 2 std.) Taking expectations
+and applying Jensen’s inequality: E[Bd] ≤ 2√((|G| − 1) E[IV])/τ. The
+invariance loss satisfies L_inv = E[IV] by definition. Hence E[Bd] ≤
+2√((|G| − 1) L_inv)/τ &lt; 2√((|G| − 1) ε)/τ, and E[Bd] ≤ ε/τ holds once
+L_inv ≤ ε²/(4(|G| − 1)). As L_inv → 0, this bound, and with it E[Bd],
+goes to 0. □</p>
 <p>❖</p>
 
       </div>
@@ -1953,7 +1958,7 @@ bound, and with it E[Bd], goes to 0. □</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.26</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>
