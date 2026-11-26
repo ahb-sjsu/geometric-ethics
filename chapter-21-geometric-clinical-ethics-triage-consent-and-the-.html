@@ -433,7 +433,16 @@ paths:</p>
 <p>BI(P, S) = E_{s in S}[CF(gamma_P*(s)) - CF(gamma_C*(s))]</p>
 <p>where gamma_P*(s) is the path mandated by policy P for patient s, and
 gamma_C*(s) is the clinical geodesic on the full manifold.</p>
-<p><strong>Proposition 21.3 (Bond Index Detects Structural
+<p>The clinical Bond Index shares a name with the Bond Index of Chapter
+18 and is a different quantity. The Bond Index measures how much an
+evaluation changes under re-descriptions that should not change it, and
+0 is perfect invariance. BI(P, S) measures how much more the path a
+policy mandates costs a population than the manifold-optimal path, and 0
+means the policy costs that population nothing beyond the optimum. The
+two are not interchangeable, and a value of one says nothing about the
+other. Geometric Medicine (Book 8, Chapter 12) develops the clinical
+Bond Index under this name. (Note added in v1.27.)</p>
+<p><strong>Proposition 21.3 (The Clinical Bond Index Detects Structural
 Injustice)</strong>. If BI(P, S_1) &gt;&gt; BI(P, S_2), then policy P
 imposes systematically higher clinical-moral cost on population S_1 than
 on S_2. This makes "policy P is structurally unjust toward population
@@ -450,7 +459,7 @@ patients bear systematically higher manifold cost than the QALY score
 reflects.</p>
 <p>Age discrimination: If triage protocols underweight equal moral worth
 (d_3) and dignity in aging (d_7), elderly patients bear higher cost,
-with the Bond Index quantifying the magnitude.</p>
+with the clinical Bond Index quantifying the magnitude.</p>
 <p>BI(P, S) is computable from measurable quantities: edge weights from
 clinical decision data, boundary penalties from clinician surveys, and
 population covariance matrices from behavioral data. Health equity
@@ -518,11 +527,11 @@ preferences should not change under clinically equivalent reframing
 ("90% survival" vs. "10% mortality"). Prediction: framing-variant
 patients have lower health literacy scores. Falsified if: framing
 variance is independent of health literacy.</p>
-<p><strong>Prediction 4 (Bond Index Predicts Disparities)</strong>:
-BI(P, S) computed from policy analysis should predict patient-reported
-experience disparities (HCAHPS scores) across race, age, and disability
-status. Falsified if: BI is uncorrelated with experience
-disparities.</p>
+<p><strong>Prediction 4 (The Clinical Bond Index Predicts
+Disparities)</strong>: BI(P, S) computed from policy analysis should
+predict patient-reported experience disparities (HCAHPS scores) across
+race, age, and disability status. Falsified if: BI(P, S) is uncorrelated
+with experience disparities.</p>
 <p><strong>Prediction 5 (Triage Resistance Correlates)</strong>:
 Clinician resistance to utilitarian triage protocols should correlate
 with pre-crisis boundary-penalty profiles (beta_k^{clin} values).
@@ -581,7 +590,7 @@ injustice that makes health equity policy evidence-based.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.26</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.27</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

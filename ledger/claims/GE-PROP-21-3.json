@@ -1,7 +1,7 @@
 {
  "spec": "PE-CLS-1.0",
  "id": "GE-PROP-21-3",
- "statement": "Bond Index Detects Structural Injustice",
+ "statement": "The Clinical Bond Index Detects Structural Injustice",
  "class": "exploratory",
  "scope": "Geometric Ethics v1.24, ch.21 (clinical); UNTAGGED in source and absent from Appendix F",
  "retrospective": true,
@@ -23,6 +23,10 @@
   {
    "date": "2026-08-25",
    "event": "brownfield conversion phase 2: entered from the untagged domain chapters. Class is exploratory by characterization (PE-BRW-1.0 s5.2), not by the author's assessment -- the source assigns none."
+  },
+  {
+   "date": "2026-11-25",
+   "event": "v1.27: title reworded to name the clinical Bond Index, and a note after Def. 21.10 states that BI(P, S), an expected excess cost, is a different quantity from the Bond Index of ch. 18, an invariance defect. Statement and class unchanged."
   }
  ]
 }

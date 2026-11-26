@@ -29,6 +29,10 @@
   {
    "date": "2026-08-25",
    "event": "registration pass: NOT registrable yet -- requires Bond Index scores on human subjects plus their economic-game behaviour"
+  },
+  {
+   "date": "2026-11-25",
+   "event": "v1.27: wording corrected. The text said agents with HIGHER Bond Index scores; a Bond Index of 0 is perfect invariance, so the prediction is stated for agents with a LOWER index. Content, falsifier and class unchanged; still untested and unregistered."
   }
  ]
 }

@@ -144,10 +144,14 @@ Dennis et al. 2016) monitors agent behavior against formal
 specifications. Geometric ethics extends this with the BIP compliance
 methodology: rather than checking individual actions against rules, the
 Bond Index measures the system’s structural invariance under the full
-transformation suite. A Bd = 0 certificate is stronger than rule-by-rule
-compliance because it guarantees that no redescription of the input can
-change the evaluation — including redescriptions the verifier has not
-anticipated.</p>
+transformation suite. A Bd = 0 result is a different kind of evidence
+from rule-by-rule compliance: it shows that none of the re-descriptions
+in the declared suite changes the evaluation, whatever rules the system
+follows. It covers the suite that was tested and nothing outside it, so
+the suite is part of the result and has to be reported with it.
+(Corrected in v1.27: earlier versions said a Bd = 0 certificate
+guarantees invariance under redescriptions the verifier has not
+anticipated. No test over a finite suite can show that.)</p>
 <h2 id="a.4-gauge-theory-outside-physics">A.4 Gauge Theory Outside
 Physics</h2>
 <p>Information geometry (Amari 1985; Amari and Nagaoka 2000) applies
@@ -339,7 +343,7 @@ fully.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.26</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.27</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>
