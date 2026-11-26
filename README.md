@@ -3,7 +3,7 @@
 The Mathematical Structure of Moral Reasoning. Volume 2 of the Geometric Series.
 Served at https://erisml.org/book/ via the erisml-lib `site` submodule.
 
-> **Epistemic status (stated for v1.25, 2026-11-08; current through v1.29, 2026-11-26, with the
+> **Epistemic status (stated for v1.25, 2026-11-08; current through v1.30, 2026-11-26, with the
 > notes below): posited framework, partially instrumented.**
 > This is the series' most-instrumented domain, and the instruments have pushed back.
 > MoBSE's moral-dimension encoders clear a pre-registered frozen-null gate on **8 of 9
@@ -37,10 +37,17 @@ Served at https://erisml.org/book/ via the erisml-lib `site` submodule.
 > observation in an embedding model, a retrospective reading or an unsourced result as a confirmed
 > finding, and cross-references left from an earlier numbering. No result is added and none is
 > strengthened. See [CHANGES-v1.29.md](CHANGES-v1.29.md).
+>
+> **v1.30 (2026-11-26)** settles seven small items: the risky-choice and learned-basis tests are
+> said to have been run in the economics volume's repository, which that volume does not yet
+> report; Theorem 21.4 says valid consent *requires* gauge invariance (its proof gives that
+> direction only); the calibration of the covariance matrix in Part VI is described as work to be
+> done; DEME has one expansion; a figure number, two chapter ranges and one table column are
+> corrected. No result changes. See [CHANGES-v1.30.md](CHANGES-v1.30.md).
 
 ## Structure
 
-- `source/*.docx` — the manuscript (source of truth; currently v1.29).
+- `source/*.docx` — the manuscript (source of truth; currently v1.30).
 - `*.html`, `images/` — the published per-section HTML + figures, **generated**
   from the docx and served. `book.css` is a static shared asset.
 - `.build/` — the build kit (`build_ethics.py` + `template.html`).

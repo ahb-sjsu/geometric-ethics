@@ -23,6 +23,10 @@
   {
    "date": "2026-08-25",
    "event": "brownfield conversion phase 2: entered from the untagged domain chapters. Class is exploratory by characterization (PE-BRW-1.0 s5.2), not by the author's assessment -- the source assigns none."
+  },
+  {
+   "date": "2026-11-27",
+   "event": "v1.30: the theorem's text changes from 'Valid informed consent is equivalent to a gauge-invariance condition' to 'requires': its statement and proof give the necessary direction only, as Geometric Medicine's copy (Theorem 8.1) was found to. Class unchanged."
   }
  ]
 }

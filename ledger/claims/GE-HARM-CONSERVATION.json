@@ -37,6 +37,10 @@
   {
    "date": "2026-08-25",
    "event": "BLAST RADIUS: ZERO suspensions, and that is the finding rather than an absence of one. No live claim is suspended because the author had already rewritten every dependent passage to assert the weaker claim. The defect here is not an unpropagated correction (cf. GE-D4-MEASURED) but an UNRECORDED one: propagation was complete, the record was lost."
+  },
+  {
+   "date": "2026-11-26",
+   "event": "v1.29: the two section titles that still named harm conservation (12.7 and 12.9) are renamed to the invariance of harm accounting, so no title advertises the withdrawn claim."
   }
  ]
 }

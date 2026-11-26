@@ -24,6 +24,10 @@
   {
    "date": "2026-08-25",
    "event": "added as a root: the inventory found the domain chapters hang off it, but the source registry never lists it"
+  },
+  {
+   "date": "2026-11-26",
+   "event": "v1.29: the text's tag changes from [Proved] to [Theorem (conditional on Def. 5.2)], agreeing with this row's class (exploratory); Appendix F now lists the theorem as a Conditional Theorem. The scope note above describes the book before v1.29."
   }
  ]
 }
