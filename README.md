@@ -25,10 +25,15 @@ Served at https://erisml.org/book/ via the erisml-lib `site` submodule.
 > **v1.26 and v1.27 (2026-11-25)** give the Bond Index one definition, correct two statements about
 > it, and settle three passages that used the name loosely. No result changes. See
 > [CHANGES-v1.26.md](CHANGES-v1.26.md) and [CHANGES-v1.27.md](CHANGES-v1.27.md).
+>
+> **v1.28 (2026-11-26)** states the evidence status of the metric: no measurement shows a metric
+> predicting moral judgements better than the boundaries alone, and the one registered test of the
+> question was void. Three paragraphs added, nothing else changed. See
+> [CHANGES-v1.28.md](CHANGES-v1.28.md).
 
 ## Structure
 
-- `source/*.docx` — the manuscript (source of truth; currently v1.27).
+- `source/*.docx` — the manuscript (source of truth; currently v1.28).
 - `*.html`, `images/` — the published per-section HTML + figures, **generated**
   from the docx and served. `book.css` is a static shared asset.
 - `.build/` — the build kit (`build_ethics.py` + `template.html`).
