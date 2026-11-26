@@ -174,9 +174,12 @@ tractability as rank increases (see Chapter 19 for implementation
 details). <img
 src="images/image4.png"
 style="width:5.5in;height:3.52431in" />Figure <a
-href="#fig:tensor-hierarchy">1</a> illustrates the full rank hierarchy
+href="#fig-2">2</a> illustrates the full rank hierarchy
 and its contraction structure.</p>
-<p>| The Tensor Rank Tower</p>
+<p>The MoralTensor rank hierarchy (ranks 0–6). Each step preserves more
+of the original moral structure, from a single number (rank 0) to the
+full distributional tensor (rank 6).</p>
+<p id="fig-2">Figure 2 | The Tensor Rank Tower</p>
 <p>Each step up the hierarchy preserves more information. The crucial
 insight is that the scalar S is always recoverable from the higher-rank
 objects by <em>contraction</em> — summation over paired indices — but
@@ -193,7 +196,7 @@ matrices along each mode (moral dimensions, agents, time steps),
 enabling tractable computation while preserving multi-modal
 structure.</p></figcaption>
 </figure>
-<p>| Tucker Decomposition for Tractability</p>
+<p id="fig-3">Figure 3 | Tucker Decomposition for Tractability</p>
 <h2 id="obligations-as-vectors">6.2 Obligations as Vectors</h2>
 <h3 id="the-directional-character-of-duty">The Directional Character of
 Duty</h3>
@@ -231,9 +234,11 @@ consequences/welfare</p></li>
 impact</p></li>
 <li><p>O⁷ = obligation to exercise virtue and care</p></li>
 <li><p>O⁸ = obligation to ensure procedural legitimacy</p></li>
+<li><p>O⁹ = obligation to maintain epistemic integrity (honesty,
+evidence standards, and uncertainty reporting along D₉)</p></li>
 </ul>
-<p>| The Nine Dimensions of the Moral Manifold</p>
-<p>Figure <a href="#fig:moral-dims">3</a> provides a visual map of these
+<p id="fig-4">Figure 4 | The Nine Dimensions of the Moral Manifold</p>
+<p>Figure <a href="#fig-5">5</a> provides a visual map of these
 nine dimensions and shows how higher-rank tensors build upon them.</p>
 <p><span id="fig:moral-dims" class="anchor"></span></p>
 <h3 id="section"></h3>
@@ -249,7 +254,14 @@ duty exists) and O⁷ &gt; 0 (the care relationship calls for action),
 while the components along other dimensions may be zero or negligible.
 The <em>direction</em> of O in the nine-dimensional tangent space
 encodes which moral considerations are in play.</p>
-<p>| Building Higher-Rank Tensors from the 9 Dimensions</p>
+<h3 id="transformation-behavior">Transformation Behavior</h3>
+<figure>
+<img
+src="images/image7.png"
+style="width:6.5in;height:5.59514in" />
+<figcaption><p id="fig-5">Figure 5 | Building Higher-Rank Tensors from the 9
+Dimensions</p></figcaption>
+</figure>
 <p>Because O^μ is a vector (a (1,0)-tensor), it transforms under
 coordinate redescription by the Jacobian:</p>
 <p><span class="math display">{\widetilde{O}}^{\mu} =
