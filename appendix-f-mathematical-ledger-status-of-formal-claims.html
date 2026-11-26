@@ -38,14 +38,21 @@ F: Mathematical Ledger — Status of Formal Claims</span>
       <div class="chapter-content">
 <h1 id="appendix-f-mathematical-ledger-status-of-formal-claims">Appendix
 F: Mathematical Ledger — Status of Formal Claims</h1>
-<p>This appendix catalogues every numbered formal statement in the
-manuscript — definitions, axioms, theorems, propositions, lemmas,
-corollaries, and conventions — together with its epistemic status and
-dependencies. The purpose is transparency: a reader should be able to
-see at a glance what is assumed (as a modeling choice mapping ethical
-phenomena to mathematical structures), what is proved (given those
-assumptions), and what is conjectured or proposed for future
-investigation.</p>
+<p>This appendix catalogues the numbered formal statements of Chapters 4
+through 19, and the three propositions of Chapter 29 — definitions,
+axioms, theorems, propositions, lemmas, corollaries, and conventions —
+each with its epistemic status and dependencies. The purpose is
+transparency: a reader should be able to see at a glance what is assumed
+(as a modeling choice mapping ethical phenomena to mathematical
+structures), what is proved (given those assumptions), and what is
+conjectured or proposed for future investigation. (v1.29: earlier
+versions said that the appendix catalogues every numbered formal
+statement in the manuscript. The statements of the domain chapters, 20
+through 28, are not catalogued here. All but one of them carry no status
+tag in the text, and the repository ledger classes most of their
+theorems, propositions, lemmas and corollaries. Six statements of the
+catalogued chapters are not yet listed: Proposition 8.5, Definition
+11.5, Theorem 11.1b, Corollary 12.1, and Definitions 14.5 and 14.6.)</p>
 <p>Five epistemic categories are used. Formal Definition: a standard
 mathematical construction carrying no ethical modeling claim (e.g.,
 “topological manifold”). Modeling Axiom: a mathematical structure
@@ -146,7 +153,7 @@ chapter’s Technical Appendix.</p>
 <td>Dimension of the Moral Manifold (k = 9)</td>
 <td>Modeling Axiom</td>
 <td>Def 5.1</td>
-<td>§5.2</td>
+<td>§5.3</td>
 </tr>
 <tr>
 <td>Def 5.3</td>
@@ -160,7 +167,7 @@ chapter’s Technical Appendix.</p>
 <td>Bond Invariance Principle (BIP)</td>
 <td>Modeling Axiom</td>
 <td>Def 5.1, Def 4.8</td>
-<td>§5.3</td>
+<td>§5.5</td>
 </tr>
 <tr>
 <td>Def 5.4</td>
@@ -188,7 +195,7 @@ chapter’s Technical Appendix.</p>
 <td>Moral Singularity</td>
 <td>Modeling Axiom</td>
 <td>Def 5.4</td>
-<td>§5.6</td>
+<td>§5.7</td>
 </tr>
 <tr>
 <td>Def A.1–A.6</td>
@@ -307,7 +314,7 @@ chapter’s Technical Appendix.</p>
 <td>Moral Phase Transition</td>
 <td>Modeling Axiom</td>
 <td>Defs 8.1, 8.5</td>
-<td>§8.6</td>
+<td>§8.7</td>
 </tr>
 <tr>
 <td>Def 8.11</td>
@@ -345,11 +352,54 @@ chapter’s Technical Appendix.</p>
 <td>§8 TA</td>
 </tr>
 <tr>
+<td>Def 8.12</td>
+<td>The Moral Decision Complex</td>
+<td>Modeling Axiom</td>
+<td>Defs 5.1, 5.2</td>
+<td>§8.10a</td>
+</tr>
+<tr>
+<td>Def 8.13</td>
+<td>Mahalanobis Edge Weights with Boundary Penalties (metric untested,
+§8.10a)</td>
+<td>Formal Definition</td>
+<td>Def 8.12</td>
+<td>§8.10a</td>
+</tr>
+<tr>
+<td>Def 8.14</td>
+<td>Executable Stratification</td>
+<td>Formal Definition</td>
+<td>Defs 8.6, 8.8, 8.11</td>
+<td>§8.10b</td>
+</tr>
+<tr>
+<td>Thm 8.6</td>
+<td>Containment</td>
+<td>Proved (Lean)</td>
+<td>Def 8.14</td>
+<td>§8.10b</td>
+</tr>
+<tr>
+<td>Thm 8.7</td>
+<td>Absorption</td>
+<td>Proved (Lean)</td>
+<td>Def 8.14</td>
+<td>§8.10b</td>
+</tr>
+<tr>
+<td>Axiom 8.1</td>
+<td>Reversion</td>
+<td>Modeling Axiom</td>
+<td>Defs 8.9, 8.14</td>
+<td>§8.10b</td>
+</tr>
+<tr>
 <td>Def 9.1</td>
 <td>Partial Order on Metrics</td>
 <td>Formal Definition</td>
 <td>Def 4.5</td>
-<td>§9.4</td>
+<td>§9.8</td>
 </tr>
 <tr>
 <td>Def A.1</td>
@@ -542,8 +592,8 @@ chapter’s Technical Appendix.</p>
 </tr>
 <tr>
 <td>Axiom A3</td>
-<td>Cyclic Ordering</td>
-<td>Modeling Axiom</td>
+<td>Cyclic Ordering (withdrawn in v1.25)</td>
+<td>Withdrawn</td>
 <td>Axioms A1–A2</td>
 <td>§12.3</td>
 </tr>
@@ -558,7 +608,7 @@ chapter’s Technical Appendix.</p>
 <td>Axiom A5</td>
 <td>Commutativity of Discrete and Continuous</td>
 <td>Modeling Axiom</td>
-<td>Axioms A1–A4</td>
+<td>Axioms A1–A2, A4</td>
 <td>§12.3</td>
 </tr>
 <tr>
@@ -593,7 +643,7 @@ chapter’s Technical Appendix.</p>
 <td>Thm 12.2</td>
 <td>Discrete Symmetry = V₄ (v1.24: D₄, withdrawn)</td>
 <td>Proved (Lean)</td>
-<td>Axioms A1–A3</td>
+<td>Axioms A1–A2</td>
 <td>§12.3</td>
 </tr>
 <tr>
@@ -601,7 +651,7 @@ chapter’s Technical Appendix.</p>
 <td>Gauge Group: G = V₄ × U(1)ₕ posited (v1.24 uniqueness theorem
 withdrawn)</td>
 <td>Modeling choice</td>
-<td>Axioms A1–A5</td>
+<td>Axioms A1–A2, A4–A5</td>
 <td>§12.3</td>
 </tr>
 <tr>
@@ -616,35 +666,35 @@ withdrawn)</td>
 <td>Number of Conservation Laws</td>
 <td>Conditional Theorem</td>
 <td>Thm A.1</td>
-<td>§11 TA</td>
+<td>§12 TA</td>
 </tr>
 <tr>
 <td>Prop A.2</td>
 <td>Discrete Invariants from V₄ (restated)</td>
 <td>Conditional Theorem</td>
 <td>Thm 12.2</td>
-<td>§11 TA</td>
+<td>§12 TA</td>
 </tr>
 <tr>
 <td>Thm A.1</td>
 <td>Moral Noether (Formal Statement)</td>
 <td>Conditional Theorem</td>
 <td>BIP + C² Lagrangian</td>
-<td>§11 TA</td>
+<td>§12 TA</td>
 </tr>
 <tr>
 <td>Lemma A.2</td>
 <td>Aut(C₄) ≅ D₄ (true; no longer used)</td>
 <td>Proved</td>
 <td>None</td>
-<td>§11 TA</td>
+<td>§12 TA</td>
 </tr>
 <tr>
 <td>Lemma A.3</td>
 <td>Compact Connected 1-D Lie Group = U(1)</td>
 <td>Proved</td>
 <td>None</td>
-<td>§11 TA</td>
+<td>§12 TA</td>
 </tr>
 <tr>
 <td>Def 13.1</td>
@@ -658,42 +708,42 @@ withdrawn)</td>
 <td>Moral Observable</td>
 <td>Conjecture/Proposal</td>
 <td>Def 13.1</td>
-<td>§13.2</td>
+<td>§13.4</td>
 </tr>
 <tr>
 <td>Def 13.3</td>
 <td>Moral Density Matrix</td>
 <td>Conjecture/Proposal</td>
 <td>Def 13.1</td>
-<td>§13.3</td>
+<td>§13.6</td>
 </tr>
 <tr>
 <td>Def 13.4</td>
 <td>Moral Decoherence</td>
 <td>Conjecture/Proposal</td>
 <td>Def 13.3</td>
-<td>§13.4</td>
+<td>§13.6</td>
 </tr>
 <tr>
 <td>Def 13.5</td>
 <td>Stratified Lagrangian</td>
 <td>Modeling Axiom</td>
 <td>Def 12.1, Def 8.1</td>
-<td>§13.5</td>
+<td>§13.7</td>
 </tr>
 <tr>
 <td>Def 13.6</td>
 <td>Junction Conditions</td>
 <td>Formal Definition</td>
 <td>Defs 12.5, 8.11</td>
-<td>§13.5</td>
+<td>§13.7</td>
 </tr>
 <tr>
 <td>Def 13.7</td>
 <td>Moral Hamiltonian</td>
 <td>Conjecture/Proposal</td>
 <td>Def 13.5</td>
-<td>§13.6</td>
+<td>§13.7</td>
 </tr>
 <tr>
 <td>Def 13.8</td>
@@ -714,49 +764,49 @@ withdrawn)</td>
 <td>Decomposition of H by Strata</td>
 <td>Conditional Theorem</td>
 <td>Def 13.1, Def 8.1</td>
-<td>§12 TA</td>
+<td>§13 TA</td>
 </tr>
 <tr>
 <td>Prop 13.1</td>
 <td>Moral Uncertainty Principle</td>
 <td>Conditional Theorem</td>
 <td>Defs 12.1–12.2</td>
-<td>§13.3</td>
+<td>§13.4</td>
 </tr>
 <tr>
 <td>Prop 13.2</td>
 <td>Conservation of Probability</td>
 <td>Conditional Theorem</td>
 <td>Def 13.7</td>
-<td>§12 TA</td>
+<td>§13 TA</td>
 </tr>
 <tr>
 <td>Prop 13.3</td>
 <td>Tunneling Rate Through Moral Barrier</td>
 <td>Conditional Theorem</td>
 <td>Def 13.8</td>
-<td>§12 TA</td>
+<td>§13 TA</td>
 </tr>
 <tr>
 <td>Prop 13.4</td>
 <td>Entanglement Entropy</td>
 <td>Conditional Theorem</td>
 <td>Def 13.9</td>
-<td>§12 TA</td>
+<td>§13 TA</td>
 </tr>
 <tr>
 <td>Def 14.1</td>
 <td>Collective Agency Tensor</td>
 <td>Modeling Axiom</td>
 <td>Defs 6.1–6.4</td>
-<td>§14.2</td>
+<td>§14.3</td>
 </tr>
 <tr>
 <td>Def 14.2</td>
 <td>Collective Decomposition</td>
 <td>Formal Definition</td>
 <td>Def 14.1</td>
-<td>§14.2</td>
+<td>§14.3</td>
 </tr>
 <tr>
 <td>Def 14.3</td>
@@ -770,98 +820,105 @@ withdrawn)</td>
 <td>Responsibility Tensor</td>
 <td>Modeling Axiom</td>
 <td>Def 14.1</td>
-<td>§14.5</td>
+<td>§14.6</td>
 </tr>
 <tr>
 <td>Prop 14.1</td>
 <td>Emergent Obligation Criterion</td>
 <td>Conditional Theorem</td>
 <td>Def 14.1</td>
-<td>§14.3</td>
+<td>§14.5</td>
 </tr>
 <tr>
 <td>Prop 14.2</td>
 <td>Emergent Moral Property</td>
 <td>Conditional Theorem</td>
 <td>Defs 13.1–13.2</td>
-<td>§14.3</td>
+<td>§14.10</td>
 </tr>
 <tr>
 <td>Prop 14.3</td>
 <td>Decomposition Theorem</td>
 <td>Conditional Theorem</td>
 <td>Def 14.2</td>
-<td>§13 TA</td>
+<td>§14 TA</td>
 </tr>
 <tr>
 <td>Prop 14.4</td>
 <td>Responsibility Inequality</td>
 <td>Conditional Theorem</td>
 <td>Def 14.4</td>
-<td>§13 TA</td>
+<td>§14 TA</td>
 </tr>
 <tr>
 <td>Prop 14.5</td>
 <td>Structural Coupling</td>
 <td>Conditional Theorem</td>
 <td>Def 14.3</td>
-<td>§13 TA</td>
+<td>§14 TA</td>
 </tr>
 <tr>
 <td>Def 15.1</td>
 <td>Contraction Loss</td>
 <td>Formal Definition</td>
 <td>Defs 6.1–6.4</td>
-<td>§15.2</td>
+<td>§15.6</td>
+</tr>
+<tr>
+<td>Thm 15.1</td>
+<td>Scalar Irrecoverability</td>
+<td>Conditional Theorem</td>
+<td>Def 5.2</td>
+<td>§15.6</td>
 </tr>
 <tr>
 <td>Def 15.2</td>
 <td>Moral Residue</td>
 <td>Formal Definition</td>
 <td>Def 15.1</td>
-<td>§15.3</td>
+<td>§15.7</td>
 </tr>
 <tr>
 <td>Prop 15.1</td>
 <td>Inevitability of Residue</td>
 <td>Proved</td>
 <td>Defs 14.1–14.2</td>
-<td>§15.3</td>
+<td>§15.7</td>
 </tr>
 <tr>
 <td>Prop 15.2</td>
 <td>Harm Survives Contraction</td>
 <td>Conditional Theorem</td>
 <td>Defs 14.1, 11.2</td>
-<td>§15.4</td>
+<td>§15.10</td>
 </tr>
 <tr>
 <td>Prop 15.3</td>
 <td>Non-Commutativity of Contraction</td>
 <td>Proved</td>
 <td>Def 15.1</td>
-<td>§14 TA</td>
+<td>§15 TA</td>
 </tr>
 <tr>
 <td>Prop 15.4</td>
 <td>Residue of Maximin Contraction</td>
 <td>Conditional Theorem</td>
 <td>Defs 14.1–14.2</td>
-<td>§14 TA</td>
+<td>§15 TA</td>
 </tr>
 <tr>
 <td>Prop 15.5</td>
 <td>Transparent Contraction and BIP</td>
 <td>Conditional Theorem</td>
 <td>Def 15.1, BIP</td>
-<td>§14 TA</td>
+<td>§15 TA</td>
 </tr>
 <tr>
 <td>Rmk A.1</td>
 <td>Residue as Moore–Penrose Pseudoinverse</td>
 <td>Formal Definition</td>
 <td>Def 15.2, metric gµᵥ</td>
-<td>§14 TA</td>
+<td>§15 TA</td>
 </tr>
 <tr>
 <td>Def 16.1</td>
@@ -875,35 +932,35 @@ withdrawn)</td>
 <td>Robust Obligation</td>
 <td>Formal Definition</td>
 <td>Def 16.1</td>
-<td>§16.4</td>
+<td>§16.6</td>
 </tr>
 <tr>
 <td>Prop 16.1</td>
 <td>Stability of Robust Obligations</td>
 <td>Conditional Theorem</td>
 <td>Def 16.2</td>
-<td>§16.4</td>
+<td>§16.6</td>
 </tr>
 <tr>
 <td>Prop 16.2</td>
 <td>Structure of the Robust Core</td>
 <td>Conditional Theorem</td>
 <td>Def 16.2</td>
-<td>§15 TA</td>
+<td>§16 TA</td>
 </tr>
 <tr>
 <td>Prop 16.3</td>
 <td>Irreducibility of Theory Uncertainty</td>
 <td>Conditional Theorem</td>
 <td>Def 16.1</td>
-<td>§15 TA</td>
+<td>§16 TA</td>
 </tr>
 <tr>
 <td>Prop 16.4</td>
 <td>Hedging and Minimax Regret</td>
 <td>Conditional Theorem</td>
 <td>Def 16.2</td>
-<td>§15 TA</td>
+<td>§16 TA</td>
 </tr>
 <tr>
 <td>Def 18.1</td>
@@ -931,56 +988,56 @@ withdrawn)</td>
 <td>Coverage Completeness</td>
 <td>Conditional Theorem</td>
 <td>Def 18.1</td>
-<td>§18.8</td>
+<td>§18.7</td>
 </tr>
 <tr>
 <td>Lemma 18.2</td>
 <td>Robustness Implies Lipschitz Stability</td>
 <td>Conditional Theorem</td>
 <td>Def 18.1</td>
-<td>§18.8</td>
+<td>§18.7</td>
 </tr>
 <tr>
 <td>Prop 18.1</td>
 <td>Invariance Violation Decomposition</td>
 <td>Conditional Theorem</td>
 <td>Thm 18.1, BIP</td>
-<td>§17 TA</td>
+<td>§18 TA</td>
 </tr>
 <tr>
 <td>Prop 18.2</td>
 <td>Contraction Mismatch Bound</td>
 <td>Conditional Theorem</td>
 <td>Thm 18.1</td>
-<td>§17 TA</td>
+<td>§18 TA</td>
 </tr>
 <tr>
 <td>Prop 18.3</td>
 <td>No Escape — Conditional Guarantee</td>
 <td>Conditional Theorem</td>
 <td>Reqs 1–4</td>
-<td>§17 TA</td>
+<td>§18 TA</td>
 </tr>
 <tr>
 <td>Prop 18.4</td>
 <td>Alignment Gap Convergence</td>
 <td>Conditional Theorem</td>
 <td>Thm 18.1, BIP</td>
-<td>§17 TA</td>
+<td>§18 TA</td>
 </tr>
 <tr>
 <td>Prop 18.5</td>
 <td>Testability of Adequacy Clauses</td>
 <td>Conditional Theorem</td>
 <td>Def 18.1</td>
-<td>§17 TA</td>
+<td>§18.7</td>
 </tr>
 <tr>
 <td>Def 19.1</td>
 <td>Norm-Constrained Scoring Game (NCSG)</td>
 <td>Modeling Axiom</td>
 <td>Def 5.1</td>
-<td>§19.5</td>
+<td>§19.3</td>
 </tr>
 <tr>
 <td>Def 19.5</td>
@@ -1015,28 +1072,28 @@ withdrawn)</td>
 <td>NCSG Well-Posedness</td>
 <td>Conditional Theorem</td>
 <td>Def 19.1</td>
-<td>§18 TA</td>
+<td>§19 TA</td>
 </tr>
 <tr>
 <td>Prop 19.2</td>
 <td>Compilation Residue</td>
 <td>Conditional Theorem</td>
 <td>Defs 18.1, 14.1</td>
-<td>§18 TA</td>
+<td>§19 TA</td>
 </tr>
 <tr>
 <td>Prop 19.3</td>
 <td>Democratic Aggregation</td>
 <td>Conditional Theorem</td>
 <td>Def 19.1</td>
-<td>§18 TA</td>
+<td>§19 TA</td>
 </tr>
 <tr>
 <td>Prop 19.4</td>
 <td>Bond Index Convergence</td>
 <td>Conditional Theorem</td>
 <td>Def 19.1, BIP</td>
-<td>§18 TA</td>
+<td>§19 TA</td>
 </tr>
 <tr>
 <td>Prop 19.5</td>
@@ -1046,25 +1103,25 @@ withdrawn)</td>
 <td>§19.13</td>
 </tr>
 <tr>
-<td>Prop 20.1</td>
+<td>Prop 29.1</td>
 <td>Curvature Detection Criterion</td>
 <td>Conjecture/Proposal</td>
 <td>Def 10.3</td>
-<td>§19 TA</td>
+<td>§29 TA</td>
 </tr>
 <tr>
-<td>Prop 20.2</td>
+<td>Prop 29.2</td>
 <td>Torsion Detection Criterion</td>
 <td>Conjecture/Proposal</td>
 <td>Def 4.4</td>
-<td>§19 TA</td>
+<td>§29 TA</td>
 </tr>
 <tr>
-<td>Prop 20.3</td>
+<td>Prop 29.3</td>
 <td>Meta-Metric Existence</td>
 <td>Conjecture/Proposal</td>
 <td>Def 9.1</td>
-<td>§19 TA</td>
+<td>§29 TA</td>
 </tr>
 </tbody>
 </table>
@@ -1074,7 +1131,7 @@ withdrawn)</td>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.28</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.29</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

@@ -3,7 +3,8 @@
 The Mathematical Structure of Moral Reasoning. Volume 2 of the Geometric Series.
 Served at https://erisml.org/book/ via the erisml-lib `site` submodule.
 
-> **Epistemic status (v1.25, 2026-11-08): posited framework, partially instrumented.**
+> **Epistemic status (stated for v1.25, 2026-11-08; current through v1.29, 2026-11-26, with the
+> notes below): posited framework, partially instrumented.**
 > This is the series' most-instrumented domain, and the instruments have pushed back.
 > MoBSE's moral-dimension encoders clear a pre-registered frozen-null gate on **8 of 9
 > dimensions**; `rights_respect` fails, twice, and rights are now a specified constraint rather
@@ -30,10 +31,16 @@ Served at https://erisml.org/book/ via the erisml-lib `site` submodule.
 > predicting moral judgements better than the boundaries alone, and the one registered test of the
 > question was void. Three paragraphs added, nothing else changed. See
 > [CHANGES-v1.28.md](CHANGES-v1.28.md).
+>
+> **v1.29 (2026-11-26)** reconciles the book with itself and with its ledger: the status tag of
+> Theorem 15.1, Appendix F, the tier of the hiring case in Appendix D, passages that stated an
+> observation in an embedding model, a retrospective reading or an unsourced result as a confirmed
+> finding, and cross-references left from an earlier numbering. No result is added and none is
+> strengthened. See [CHANGES-v1.29.md](CHANGES-v1.29.md).
 
 ## Structure
 
-- `source/*.docx` — the manuscript (source of truth; currently v1.28).
+- `source/*.docx` — the manuscript (source of truth; currently v1.29).
 - `*.html`, `images/` — the published per-section HTML + figures, **generated**
   from the docx and served. `book.css` is a static shared asset.
 - `.build/` — the build kit (`build_ethics.py` + `template.html`).

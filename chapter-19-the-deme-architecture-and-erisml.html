@@ -1735,14 +1735,14 @@ requires maintaining state across turns, which the existing DEME V3
 architecture supports through the rank-4 temporal MoralTensor (Section
 6.1, dimensions k × k × k × τ). The holonomy computation requires a
 connection on the moral manifold, which has not yet been empirically
-measured (this is Open Problem 19.2). In practice, an approximate
-connection can be estimated from the curvature implied by the Dear Abby
-corpus analysis (Section 17.2) or from the BIP v10.16 structural
-similarity data (Section 17.10). The holonomy threshold h_max is a
-governance parameter in the DEMEProfile. The audit trail records the
-full trajectory γ(t) and the holonomy H(t) at each turn. Implementation
-status: proposed; depends on Open Problem 19.2 (empirical curvature
-measurement) for the connection coefficients.</p>
+measured (this is the open problem of §29.2). In practice, an
+approximate connection can be estimated from the curvature implied by
+the Dear Abby corpus analysis (Section 17.2) or from the BIP v10.16
+structural similarity data (Section 17.10). The holonomy threshold h_max
+is a governance parameter in the DEMEProfile. The audit trail records
+the full trajectory γ(t) and the holonomy H(t) at each turn.
+Implementation status: proposed; depends on the open problem of §29.2
+(empirical curvature measurement) for the connection coefficients.</p>
 <h3 id="synthesis-and-architectural-integration">Synthesis and
 Architectural Integration</h3>
 <table>
@@ -1827,17 +1827,17 @@ not be well-defined — a phrase that is morally loaded in one language
 but neutral in another challenges the assumption that moral content and
 linguistic framing are independent. Second, Proposal 4 depends on an
 empirical connection on the moral manifold that has not yet been
-measured (Open Problem 19.2). Until the curvature is measured, the
-holonomy alarm uses an approximate connection with unknown error bounds.
-Third, the proposals increase the dimensionality of the canonicalization
-layer’s output, with corresponding computational cost. Tucker
-decomposition mitigates this (Section 6.1), but the trade-off between
-structural guarantee and computational cost has not been empirically
-characterized. Fourth, none of these proposals addresses the grounding
-adequacy problem (Section 18.7): tensor-structured canonicalization
-ensures that the representation separates moral content from linguistic
-framing, but it does not ensure that the moral content is correct — that
-remains a governance problem (Chapter 9).</p>
+measured (the open problem of §29.2). Until the curvature is measured,
+the holonomy alarm uses an approximate connection with unknown error
+bounds. Third, the proposals increase the dimensionality of the
+canonicalization layer’s output, with corresponding computational cost.
+Tucker decomposition mitigates this (Section 6.1), but the trade-off
+between structural guarantee and computational cost has not been
+empirically characterized. Fourth, none of these proposals addresses the
+grounding adequacy problem (Section 18.7): tensor-structured
+canonicalization ensures that the representation separates moral content
+from linguistic framing, but it does not ensure that the moral content
+is correct — that remains a governance problem (Chapter 9).</p>
 <p>The tensor hierarchy of Chapter 6 was developed to describe moral
 evaluation — the structured output of ethical reasoning. The proposals
 in this section apply the same hierarchy to the input of ethical
@@ -1958,7 +1958,7 @@ goes to 0. □</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.28</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.29</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

@@ -653,8 +653,8 @@ situation involves harm when described in English, the same harm exists
 when described in Mandarin, Arabic, or Sanskrit. The charge <span
 class="math inline">\mathcal{H}_{\text{translate}}</span> is conserved
 across linguistic re-descriptions. This is a strong prediction, testable
-by cross-lingual experiments — and it is confirmed by the BIP
-experiments (§12.8).</p>
+by cross-lingual experiments — and it is supported, in a multilingual
+embedding model, by the BIP experiments (§12.8; caveats in §17.7).</p>
 <p><strong>Harm can be generated.</strong> Invariance of harm accounting
 under <em>re-description</em> does not mean harm cannot be created at
 all. Wrongdoing generates harm. The conservation law states only that
@@ -689,8 +689,8 @@ thermodynamics: energy can be converted between forms (kinetic,
 potential, thermal) but the total is conserved. Harm can be generated,
 repaired, or redistributed, but the total — measured invariantly — is
 conserved across representations.</p>
-<h2 id="four-consequences-of-harm-conservation">12.7 Four Consequences
-of Harm Conservation</h2>
+<h2 id="four-consequences-of-the-invariance-of-harm-accounting">12.7
+Four Consequences of the Invariance of Harm Accounting</h2>
 <h3 id="consequence-1-euphemism-does-not-reduce-harm">Consequence 1:
 Euphemism Does Not Reduce Harm</h3>
 <p>A direct application: if an institution causes harm (say, by
@@ -836,8 +836,8 @@ is broken, analogous to quantum anomalies in gauge theories where a
 classical symmetry fails to survive quantization. Whether the moral
 anomaly has a systematic source (perhaps related to power asymmetries or
 cognitive biases) is an open empirical question.</p>
-<h2 id="harm-conservation-and-ai-alignment">12.9 Harm Conservation and
-AI Alignment</h2>
+<h2 id="the-invariance-of-harm-accounting-and-ai-alignment">12.9 The
+Invariance of Harm Accounting and AI Alignment</h2>
 <h3 id="invariance-testing-as-alignment-verification">Invariance Testing
 as Alignment Verification</h3>
 <p>The invariance of harm accounting provides a concrete, testable
@@ -863,10 +863,11 @@ law and is misaligned.</p></li>
 </ol>
 <p>This is not a theoretical exercise. It is an implementable test
 suite. The BIP experiments have already demonstrated that deontic
-structure is language-invariant for the 109K-passage corpus. The same
-methodology can be applied to AI systems: present the system with the
-same moral situation in multiple descriptions and check whether its harm
-assessment is stable.</p>
+structure is language-invariant for the 109K-passage corpus, as a
+multilingual embedding model represents it (§17.7). The same methodology
+can be applied to AI systems: present the system with the same moral
+situation in multiple descriptions and check whether its harm assessment
+is stable.</p>
 <p><strong>BIP v10.16 quantitative results (February 2026).</strong> The
 updated BIP experiments (§17.10) strengthen this evidence with precise
 quantitative measures. A LaBSE-based encoder trained with contrastive
@@ -994,12 +995,12 @@ class="math inline">d\mathcal{H/}dt = 0</span> under re-description</td>
 <p>The moral Noether’s theorem is not a metaphor. It is a formal result
 within the geometric framework, following from the same mathematical
 structure that generates conservation laws in physics. The symmetry (the
-BIP) is testable and has been confirmed empirically across 11 languages.
-The conserved quantity (harm) is measurable, at least in principle and
-increasingly in practice. The consequences (euphemism doesn’t reduce
-harm, harm is auditable, moral debt persists) are substantive and have
-direct implications for AI alignment, institutional accountability, and
-restorative justice.</p>
+BIP) is testable and has been observed across 11 languages in a
+multilingual embedding model (§17.7). The conserved quantity (harm) is
+measurable, at least in principle and increasingly in practice. The
+consequences (euphemism doesn’t reduce harm, harm is auditable, moral
+debt persists) are substantive and have direct implications for AI
+alignment, institutional accountability, and restorative justice.</p>
 <p>Noether’s original insight was that conservation is not a coincidence
 or an empirical regularity — it is a <em>mathematical consequence of
 symmetry</em>. The same insight applies to ethics: the invariance of
@@ -1138,7 +1139,7 @@ consequence of symmetry — in any domain where symmetry exists.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.28</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.29</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>
