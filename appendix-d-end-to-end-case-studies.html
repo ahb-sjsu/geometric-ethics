@@ -1527,8 +1527,8 @@ D_op = (1/5) Σ |Δ_orig − Δ_Ti|
      = (1/5)(25.4) = 5.08
 
 Normalized to score scale [0,100]: Bd = D_op / τ = 5.08 / 100 × (1/0.01) = 5.08</code></pre>
-<p><strong>Bd = 5.08 &gt; 1.0 threshold. Severe demographic bias
-detected. Fundamental redesign required.</strong></p>
+<p><strong>Bd = 5.08, in the 1–10 tier of Chapter 18 (high). Demographic
+bias detected. Do not deploy.</strong></p>
 <p>The Bond Index pinpoints the bias: the system’s evaluation of J
 (female, Hispanic) is systematically lower than what her job-relevant
 qualifications warrant. Removing demographic information flips the
@@ -1707,14 +1707,16 @@ Step 2: Compute Bd for the full ranking.
 Step 3: Apply thresholds:
    Bd &lt; 0.01:  Deploy. System is demographically invariant.
    0.01–0.10:  Deploy with monitoring. Minor sensitivity detected.
-   0.10–1.0:   Remediate. Substantive bias. Do not deploy.
-   &gt; 1.0:      Fundamental redesign required.</code></pre>
+   0.10–1.0:   Remediate before deployment. Substantive bias.
+   1.0–10:     Do not deploy.
+   &gt; 10:       Fundamental redesign required.</code></pre>
 <p>For the unbiased system: <strong>Bd = 0.0.</strong>
 Deployment-ready.</p>
-<p>For the biased system: Bd = 5.08. Fundamental redesign required. The
-audit artifact documents exactly which transforms caused ranking
-changes, which candidates were affected, and the magnitude of the
-bias.</p>
+<p>For the biased system: Bd = 5.08. Do not deploy (the 1–10 tier;
+v1.29: earlier versions gave “fundamental redesign required”, which in
+the five tiers of Chapter 18 begins above 10). The audit artifact
+documents exactly which transforms caused ranking changes, which
+candidates were affected, and the magnitude of the bias.</p>
 <h3 id="step-9-deme-audit-artifact-1">Step 9: DEME Audit Artifact</h3>
 <pre><code>{
   &quot;case_id&quot;: &quot;hiring-screen-001&quot;,
@@ -2617,7 +2619,7 @@ to say.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.28</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.29</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>
