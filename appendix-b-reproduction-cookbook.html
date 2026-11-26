@@ -168,13 +168,13 @@ Practice</h2>
 <p>The Bond Index Bd quantifies the degree of gauge non-invariance in a
 moral evaluation system. In practice: Bd = 0.0 indicates perfect
 invariance (the system’s verdicts are completely insensitive to
-admissible redescriptions). Bd &lt; 0.1 indicates cosmetic relabeling
-artifacts (minor formatting or tokenization differences that do not
-affect the moral substance). Bd between 0.1 and 0.5 indicates
-substantive framing sensitivity (the system’s verdicts are influenced by
-how the situation is described, which is a potential bias). Bd &gt; 0.5
-indicates systematic bias (the system’s moral evaluations are dominated
-by framing effects rather than moral content).</p>
+admissible redescriptions). The tiers are those of Chapter 18. Bd &lt;
+0.01 is negligible: deploy. Bd from 0.01 to 0.1 is low: deploy with
+monitoring. Bd from 0.1 to 1 is moderate: the verdicts depend on how the
+situation is described, and the system is remediated before deployment.
+Bd from 1 to 10 is high: do not deploy. Bd above 10 is severe:
+fundamental redesign. (v1.26: this section previously used a different
+scale, with thresholds at 0.1 and 0.5.)</p>
 <p>For a system to be considered BIP-compliant, it must achieve Bd &lt;
 0.1 on the standard transformation suite. The ErisML reference
 implementation achieves Bd = 0.0 on all bond-preserving transforms by
@@ -199,7 +199,7 @@ claims is documented in the test file docstrings.</p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.26</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>

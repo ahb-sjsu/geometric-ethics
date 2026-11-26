@@ -21,10 +21,13 @@ Served at https://erisml.org/book/ via the erisml-lib `site` submodule.
 >
 > **What changed in v1.25** is summarized in the Preface ("A note on version 1.25") and listed in
 > [CHANGES-v1.25.md](CHANGES-v1.25.md).
+>
+> **v1.26 (2026-11-25)** gives the Bond Index one definition and corrects two statements about it.
+> No result changes. See [CHANGES-v1.26.md](CHANGES-v1.26.md).
 
 ## Structure
 
-- `source/*.docx` — the manuscript (source of truth; currently v1.25).
+- `source/*.docx` — the manuscript (source of truth; currently v1.26).
 - `*.html`, `images/` — the published per-section HTML + figures, **generated**
   from the docx and served. `book.css` is a static shared asset.
 - `.build/` — the build kit (`build_ethics.py` + `template.html`).

@@ -1170,15 +1170,24 @@ invariance violation.</p>
 <p><strong>Requirement 3: Audit via the Bond Index.</strong> The
 coherence framework provides a dimensionless audit metric—the Bond Index
 Bd = D_op / τ—that quantifies how well a system respects its declared
-equivalences. Three coherence defects are measured: the commutator
-defect Ω_op (order-sensitivity of re-descriptions), the mixed defect μ
-(context-dependence of re-descriptions), and the permutation defect π₃
-(higher-order composition sensitivity). The Bond Index is calibrated
-against human raters (n ≥ 50, Krippendorff’s α &gt; 0.67) and produces a
-five-tier deployment rating: Bd &lt; 0.01 (deploy), 0.01–0.1 (deploy
-with monitoring), 0.1–1.0 (remediate), 1–10 (do not deploy), &gt; 10
-(fundamental redesign). Every evaluation produces machine-checkable
-audit artifacts.</p>
+equivalences. D_op is the mean, over the inputs tested and the
+re-descriptions declared, of the distance between the evaluation before
+and after the re-description: 0 or 1 for a verdict or a Hohfeldian
+position, the absolute change over the scale for a score, and the
+distance under the moral metric for a vector or a tensor. It is reported
+with the worst single case and with the share of tests in which the
+evaluation moved at all, because a mean hides both. The game's index of
+Chapter 17, the verdict and score forms of Appendix D and the Legal Bond
+Index of Chapter 22 are this one definition in different output spaces
+(stated once here in v1.26). Three coherence defects are measured: the
+commutator defect Ω_op (order-sensitivity of re-descriptions), the mixed
+defect μ (context-dependence of re-descriptions), and the permutation
+defect π₃ (higher-order composition sensitivity). The Bond Index is
+calibrated against human raters (n ≥ 50, Krippendorff’s α &gt; 0.67) and
+produces a five-tier deployment rating: Bd &lt; 0.01 (deploy), 0.01–0.1
+(deploy with monitoring), 0.1–1.0 (remediate), 1–10 (do not deploy),
+&gt; 10 (fundamental redesign). Every evaluation produces
+machine-checkable audit artifacts.</p>
 <p><strong>Requirement 4: External verification via the I-EIP
 Monitor.</strong> Behavioral invariance (EIP) can be satisfied “by
 accident”—compensating errors, memorized shortcuts, or surface-level
@@ -1606,7 +1615,7 @@ geometry does not have loopholes.</em></p>
     </div>
   </article>
   <footer class="book-footer">
-    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.25</p>
+    <p>&copy; 2026 Andrew H. Bond. <em>Geometric Ethics: The Mathematical Structure of Moral Reasoning.</em> &middot; v1.26</p>
     <p class="footer-note">The geometry was always real. The scalars were always insufficient.</p>
   </footer>
   <script src="../assets/js/series.js"></script>
